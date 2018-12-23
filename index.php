@@ -23,6 +23,7 @@ require_once "includes/header.inc.php";
                 <div class="slider-content">
                     <div class="carousel-caption caption-left">
                         <div class="content">
+
                             <h2>Something cool</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>tempor incididunt ut labore adipiscing</p>
                             <a  href="service.html" class="btn btn-primary inverse">Contact us</a>
@@ -31,7 +32,11 @@ require_once "includes/header.inc.php";
                 </div>
             </div>
             <div class="slider-items" style="background-image:url(images/slider/3.jpg);">
-                <div class="slider-overlay"></div>
+                <div class="slider-overlay">
+                    <video class="video-fluid" autoplay loop muted>
+                        <source src="promo%20video/Dog%20Walking%20On%20Grass.mp4" type="video/mp4" />
+                    </video>
+                </div>
                 <div class="slider-content">
                     <div class="carousel-caption caption-right">
                         <div class="content">
