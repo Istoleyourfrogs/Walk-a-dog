@@ -1001,7 +1001,7 @@ main-navigation
 #main-navigation li > a:hover,
 #main-navigation li.current-menu-item > a,
 #main-navigation li:hover > a {
-    color: #FFA5A5;
+    color: #EC368D;
 }
 
 #main-navigation ul li.menu-item-has-children.current-menu-item > a::after{
