@@ -171,6 +171,7 @@ input, input:before, input:after {
       user-select: initial;
      }
 
+
 textarea {
     padding: 0 20px;
     border: 0;
@@ -204,7 +205,7 @@ select::-moz-placeholder,
 select::-webkit-input-placeholder,
 select:-ms-input-placeholder,
 select:-moz-placeholder {
-    color: #fff;
+    color: #777;
 }
 
 input::-moz-placeholder,
@@ -311,7 +312,7 @@ input:-webkit-autofill:focus {
 
 select:focus,
 select:active {
-    box-shadow: 0px;
+    box-shadow: none;
     border: 0px;
     outline: 0px;
 }
@@ -501,9 +502,9 @@ footer .newsletter-form .form-group button[type="submit"],
 .bizface-breadcrumb {
     padding: 20px 15px;
     position: relative;
-    -webkit-background-size: cover;
+   -webkit-background-size: cover;
     background-size: cover;
-    background-attachment: fixed;
+   background-attachment: fixed;
     text-align: center;
 }
 
@@ -514,11 +515,11 @@ footer .newsletter-form .form-group button[type="submit"],
 }
 
 .bizface-breadcrumb .bizface-breadcrumb-title h1 {
-    font-size: 18px;
-    color: #ffffff;
+    font-size: 32px;
+    color: #440381;
     margin-top: 0;
     text-transform: uppercase;
-    margin-bottom: 10px;
+    margin-bottom: 10px;;
     font-weight: 700;
 }
 
@@ -547,7 +548,7 @@ footer .newsletter-form .form-group button[type="submit"],
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(68, 3, 129, 0.9);
+    /*background-color: rgba(68, 3, 129, 0.9);*/
 }
 
 
@@ -3883,4 +3884,7 @@ a.scroll-top {
 
 a.scroll-top::before {
     font-size: 25px;
+}
+input:focus{
+    outline:none;
 }
