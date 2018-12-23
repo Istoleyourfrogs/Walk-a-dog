@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="504492d6-84bf-42bb-8976-75c360890588" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contact.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/form.php" beforeDir="false" afterPath="$PROJECT_DIR$/form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contact.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,27 +15,14 @@
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/contact.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="345">
-                  <caret line="52" column="80" selection-start-line="52" selection-start-column="80" selection-end-line="52" selection-end-column="80" />
-                </state>
-              </provider>
+            <entry file="file://$PROJECT_DIR$/booking.php">
+              <provider selected="true" editor-type-id="text-editor" />
             </entry>
           </file>
         </leaf>
       </split-first>
       <split-second>
         <leaf>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/contact.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1374">
-                  <caret line="144" column="14" selection-start-line="144" selection-start-column="14" selection-end-line="144" selection-end-column="14" />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/includes/footer.inc.php">
               <provider selected="true" editor-type-id="text-editor">
@@ -191,12 +175,12 @@
       <workItem from="1545516880232" duration="2949000" />
       <workItem from="1545557141989" duration="2873000" />
       <workItem from="1545562147101" duration="412000" />
-      <workItem from="1545569045932" duration="7061000" />
+      <workItem from="1545569045932" duration="7281000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27158000" />
+    <option name="totallyTimeSpent" value="27378000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -341,13 +325,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/footer.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
-          <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/images/background/breadcrumb.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -399,6 +376,16 @@
           <caret line="3890" lean-forward="true" selection-start-line="3890" selection-end-line="3890" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/footer.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="736">
+          <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/booking.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
