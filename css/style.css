@@ -3885,6 +3885,17 @@ a.scroll-top {
 a.scroll-top::before {
     font-size: 25px;
 }
-input:focus{
-    outline:none;
+.none{
+    visibility: hidden;
+}
+.noneDog{
+    visibility: hidden;
+}
+@media (max-width: 990px) {
+    .none{
+        display: none;
+    }
+    .noneDog{
+        display: none;
+    }
 }

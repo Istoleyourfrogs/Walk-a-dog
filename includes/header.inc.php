@@ -26,7 +26,6 @@ echo "<!DOCTYPE html>
     <!-- stylesheet start -->
     <link href=\"https://fonts.googleapis.com/css?family=Kalam:700\" rel=\"stylesheet\">
     <link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\">
-
 </head>
 <!--head end-->
 
