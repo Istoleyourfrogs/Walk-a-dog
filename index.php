@@ -453,116 +453,106 @@ require_once "includes/header.inc.php";
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="sec-title">
                         <h2>Our price</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod Praesent interdum.</p>
+                        <!--lmao <p>You can't put a price on your dog's health, but we can!</p>-->
+                        <p>Let us help you choose what's best for your dog!</p>
                     </div>
                 </div>
                 <div class="bizface-price-inner">
-                    <div class="col-sm-6 col-md-3">
+                    <div class="col-sm-6 col-md-4">
                         <div class="price-content">
                             <div class="price-content-header">
-                                Personal
+                                One-time offer
                             </div>
                             <div class="price-content-cost">
                                 <div class="price-content-cost-inner">
                                     <span class="currency">$</span>
-                                    <span class="amount">6</span>
-                                    <span class="cent">per month</span>
+                                    <span class="amount">0</span>
+                                    <span class="cent">per walk</span>
                                 </div>
                             </div>
                             <div class="price-content-list">
                                 <ul>
-                                    <li>15 projects</li>
-                                    <li>1 Year of Updates & Support</li>
-                                    <li>30 GB Storage</li>
-                                    <li>Unlimited Data Transfer</li>
-                                    <li>50 GB Bandwith</li>
+                                    <li>Get the first walk</li>
+                                    <li><b>FOR FREE</b></li>
+                                    <li>Not sure if you want to hire us?</li>
+                                    <li>Test and see if you are satisfied </li>
+                                    <li>with the services we provide</li>
                                 </ul>
                             </div>
                             <div class="price-btn">
-                                <a href="#" class="btn btn-primary">order now</a>
+                                <a href="#" class="btn btn-primary">WALK A DOG FOR FREE</a>
+                            </div>
+                            <div class="price-content-list">
+                                <ul>
+                                    <li>(Every next separate walk costs 10$)</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-3">
+                    <div class="col-sm-6 col-md-4">
                         <div class="price-content premium-price">
                             <div class="price-content-header">
-                                Preimium
+                                Daily walks
                             </div>
                             <div class="price-content-ribbon">
                                 <div class="price-ribbon-inner">
-                                    popular
+                                    best offer
                                 </div>
                             </div>
                             <div class="price-content-cost">
                                 <div class="price-content-cost-inner">
                                     <span class="currency">$</span>
-                                    <span class="amount">18</span>
-                                    <span class="cent">per month</span>
+                                    <span class="amount">5</span>
+                                    <span class="cent">per walk</span>
                                 </div>
                             </div>
                             <div class="price-content-list">
                                 <ul>
-                                    <li>30 projects</li>
-                                    <li>1 Year of Updates & Support</li>
-                                    <li>30 GB Storage</li>
-                                    <li>Unlimited Data Transfer</li>
-                                    <li>50 GB Bandwith</li>
+                                    <li>Don't miss out on a deal to get a</li>
+                                    <li><b>50% DISCOUNT</b></li>
+                                    <li>Want to make your dog happy?</li>
+                                    <li>This is the deal your dog</li>
+                                    <li>would want you to choose!</li>
                                 </ul>
                             </div>
                             <div class="price-btn">
-                                <a href="#" class="btn btn-primary">order now</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3">
-                        <div class="price-content">
-                            <div class="price-content-header">
-                                Standard
-                            </div>
-                            <div class="price-content-cost">
-                                <div class="price-content-cost-inner">
-                                    <span class="currency">$</span>
-                                    <span class="amount">12</span>
-                                    <span class="cent">per month</span>
-                                </div>
+                                <a href="#" class="btn btn-primary">WALK A DOG DAILY</a>
                             </div>
                             <div class="price-content-list">
                                 <ul>
-                                    <li>15 projects</li>
-                                    <li>1 Year of Updates & Support</li>
-                                    <li>30 GB Storage</li>
-                                    <li>Unlimited Data Transfer</li>
-                                    <li>50 GB Bandwith</li>
+                                    <li>Let us do what we do best - every day!</li>
                                 </ul>
-                            </div>
-                            <div class="price-btn">
-                                <a href="#" class="btn btn-primary">order now</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-3">
+                    <div class="col-sm-6 col-md-4">
                         <div class="price-content">
                             <div class="price-content-header">
-                                Business
+                                Weekly walks
                             </div>
                             <div class="price-content-cost">
                                 <div class="price-content-cost-inner">
                                     <span class="currency">$</span>
                                     <span class="amount">8</span>
-                                    <span class="cent">per month</span>
+                                    <span class="cent">per walk</span>
                                 </div>
                             </div>
                             <div class="price-content-list">
                                 <ul>
-                                    <li>15 projects</li>
-                                    <li>1 Year of Updates & Support</li>
-                                    <li>30 GB Storage</li>
-                                    <li>Unlimited Data Transfer</li>
-                                    <li>50 GB Bandwith</li>
+                                    <li>With this deal comes along a </li>
+                                    <li><b>20% DISCOUNT</b></li>
+                                    <li>Does your dog need a walk</li>
+                                    <li>only every now and then?</li>
+                                    <li>We have the perfect deal for you:</li>
                                 </ul>
                             </div>
                             <div class="price-btn">
-                                <a href="#" class="btn btn-primary">order now</a>
+                                <a href="#" class="btn btn-primary">WALK A DOG WEEKLY</a>
+                            </div>
+                            <div class="price-content-list">
+                                <ul>
+                                    <li>We will walk your dog once a week!</li>
+                                </ul>
                             </div>
                         </div>
                     </div>

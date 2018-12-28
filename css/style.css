@@ -2990,11 +2990,10 @@ slider-media srceen
 }
 
 .price-content .price-content-list ul li {
-    font-size: 15px;
-    line-height: 1.5em;
-    margin: 0px 0px 15px;
+      font-size: 15px;
+      line-height: 1.5em;
+      margin: 0px 0px 15px;
 }
-
 .price-content .price-content-list ul li a {
     color: #222;
 }
