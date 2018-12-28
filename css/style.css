@@ -3899,3 +3899,20 @@ a.scroll-top::before {
         display: none;
     }
 }
+.headingDog{
+    text-decoration: underline;
+    font-weight: bolder;
+    color: black;
+    text-transform: uppercase;
+}
+.btn-primary{
+    background-color: #51E5FF;
+    border-color: #51E5FF;
+}
+.btn-primary:hover{
+    background-color: #43BCC9;
+    border-color: #43BCC9;
+}
+.text-light{
+    color: #fff;
+}

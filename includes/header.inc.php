@@ -1,4 +1,5 @@
 <?php
+session_start();
 echo "<!DOCTYPE html>
 <html lang=\"en\">
 
@@ -24,7 +25,7 @@ echo "<!DOCTYPE html>
     <link rel=\"icon\" href=\"images/favicon.png\" type=\"image/x-icon\">
 
     <!-- stylesheet start -->
-    <link href=\"https://fonts.googleapis.com/css?family=Kalam:700\" rel=\"stylesheet\">
+    <link href=\"https://fonts.googleapis.com/css?family=Kalam:400,700\" rel=\"stylesheet\">
     <link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\">
 </head>
 <!--head end-->
