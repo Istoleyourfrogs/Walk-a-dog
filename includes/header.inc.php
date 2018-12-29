@@ -1,5 +1,6 @@
 <?php
 session_start();
+$host = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 echo "<!DOCTYPE html>
 <html lang=\"en\">
 
@@ -26,7 +27,12 @@ echo "<!DOCTYPE html>
 
     <!-- stylesheet start -->
     <link href=\"https://fonts.googleapis.com/css?family=Kalam:400,700\" rel=\"stylesheet\">
-    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\">
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\">";
+    if($host == 'localhost/PHP/walk-a-dog/Walk-a-dog/admin.php' or $host == 'localhost/PHP/walk-a-dog/Walk-a-dog/admin.php?login=success' or $host == 'localhost/PHP/walk-a-dog/Walk-a-dog/admin.php?login=error' or $host == 'localhost/PHP/walk-a-dog/Walk-a-dog/admin.php?login=char' or $host == 'localhost/PHP/walk-a-dog/Walk-a-dog/admin.php?login=fatalError')
+    {
+        echo "<link rel=\"stylesheet\" href=\"css/admin.css\">";
+    }
+echo"
 </head>
 <!--head end-->
 

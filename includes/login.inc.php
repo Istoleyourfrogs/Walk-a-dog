@@ -14,7 +14,6 @@ if(isset($_POST['submit'])){
     if($username === 'lukaku' and $password === 'gaku'){
 
         $_SESSION['username'] = $username;
-        echo $_SESSION['username'];
         header("Location: ../admin.php?login=success");
         exit();
 
