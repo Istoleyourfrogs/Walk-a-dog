@@ -912,18 +912,40 @@ require_once "includes/header.inc.php";
                     </div>
                 </div>
 
-                <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="col-md-3 col-sm-6 col-xs-12" id="newsletter">
                     <div class="footer-widget subscribe-widget">
                         <h3>Newsletter</h3>
                         <div class="widget-content">
                             <div class="text">Lorem ipsum dolor sit amet, adipiscing </div>
                             <div class="newsletter-form">
-                                <form>
+                                <form action="includes/newsletter.inc.php" method="post">
                                     <div class="form-group">
-                                        <input type="email" name="email" value="" placeholder="Email Address..." required>
+                                        <input type="text" name="email" placeholder="Email Address..." >
+                                    </div>
+                                    <div>
+                                        <span><?php
+                                                if(isset($_GET['mail'])){
+                                                    $mail = $_GET['mail'];
+                                                    if($mail == 'error'){
+                                                        echo "Error! Please fill in the field!";
+                                                    }
+                                                    if($mail == 'mail'){
+                                                        echo "Please enter a valid email!";
+                                                    }
+                                                    if($mail == 'fatalError'){
+                                                        echo "Oops something went wrong. Please try again!";
+                                                    }
+                                                    if($mail == 'success'){
+                                                        echo "Thank you for sigin up to our newsletter";
+                                                    }
+                                                    if($mail == 'same'){
+                                                        echo "You are already subscribed";
+                                                    }
+                                                }
+                                            ?></span>
                                     </div>
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-primary">suscribe now</button>
+                                        <button type="submit" name="submit" class="btn btn-primary">suscribe now</button>
                                     </div>
                                 </form>
                             </div>

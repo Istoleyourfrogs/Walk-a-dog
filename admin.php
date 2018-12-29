@@ -47,6 +47,5 @@ require "includes/header.inc.php";
 </div>";
     }
 
-require "includes/footer.inc.php";
 
 
