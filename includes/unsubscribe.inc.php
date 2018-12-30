@@ -9,6 +9,10 @@ if(isset($_GET['key'])){
         $sql = "DELETE FROM mail WHERE hashedMail = '$hashedMail'";
         $query = mysqli_query($connect,$sql);
         echo "you are unsubscribe!";
+    }else{
+        echo "we cant find you in our database";
     }
 
+}else{
+    echo "Oops something went wrong!";
 }
