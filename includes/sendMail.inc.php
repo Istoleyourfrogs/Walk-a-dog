@@ -20,7 +20,6 @@ if(isset($_POST['submit'])) {
             $headers .= 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
 
-        echo "$to <br> $subject <br> $txt <br><br><br>";
         mail($to, $subject, $txt, $headers);
 
         $to = '';
@@ -30,7 +29,7 @@ if(isset($_POST['submit'])) {
 
 
     }
-    header("Loaction: admin.php?mail=success");
+    header("Location: ../admin.php?mail=success");
     exit();
 
 }

@@ -1,29 +1,39 @@
 <?php
 require "includes/header.inc.php";
 ?>
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12">
-            <h1 class="text-center">Newsletter</h1>
-        </div>
-        <div class="col-sm-12">
-            <form method="post" action="includes/sendMail.inc.php">
-                <label>Subject</label>
-                <input type="text" name="subject">
-                <label>Message</label>
-                <textarea name="txt"></textarea>
-                <button type="submit" name="submit">Send</button>
-            </form>
-        </div>
-    </div>
-</div>
 
 <?php
     if(isset($_SESSION['username'])) {
+            if(isset($_GET['mail'])){
+                $mail = $_GET['mail'];
+            }
+            if($mail == 'success'){
+                $mailSuccess = "<h1 class=\"text-center\">Newsletter sent successfully</h1>";
+            }
             echo "<h1>HELLO <span style=\"color: red\"> ".$_SESSION['username']."</span></h1>";
             echo "<form action=\"includes/logout.inc.php\" method=\"post\">
                 <button type=\"submit\" name=\"submit\">Logout</button>
-                </form>";
+                </form>
+                <div class=\"container\">
+                    <div class=\"row\">
+                        <div class=\"col-sm-12\">
+                            <h1 class=\"text-center\">Newsletter</h1>
+                        </div>
+                        <div class=\"col-sm-12\">
+                            <form method=\"post\" action=\"includes/sendMail.inc.php\">
+                                <label>Subject</label>
+                                <input type=\"text\" name=\"subject\">
+                                <label>Message</label>
+                                <textarea name=\"txt\"></textarea>
+                                <button type=\"submit\" name=\"submit\">Send</button>
+                            </form>
+                            $mailSuccess
+                            
+                        </div>
+                    </div>
+                </div>
+
+                ";
         if(isset($_GET['login'])){
             if($_GET['login'] == 'success')
             $success = $_GET['login'];
