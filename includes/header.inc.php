@@ -1,6 +1,13 @@
 <?php
 session_start();
-$host = $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+//displaying the logout button if the session has started
+if(isset($_SESSION['username'])){
+    $logout = "<form action=\"includes/logout.inc.php\" method=\"post\">
+                <button class=\"btn btn-primary\" type=\"submit\" name=\"submit\">Logout</button>
+                </form>";
+    $admin = "<a href=\"admin.php\">Admin</a>";
+}
+
 echo "<!DOCTYPE html>
 <html lang=\"en\">
 
@@ -27,12 +34,7 @@ echo "<!DOCTYPE html>
 
     <!-- stylesheet start -->
     <link href=\"https://fonts.googleapis.com/css?family=Kalam:400,700\" rel=\"stylesheet\">
-    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\">";
-    if($host == 'localhost/PHP/walk-a-dog/Walk-a-dog/admin.php' or $host == 'localhost/PHP/walk-a-dog/Walk-a-dog/admin.php?login=success' or $host == 'localhost/PHP/walk-a-dog/Walk-a-dog/admin.php?login=error' or $host == 'localhost/PHP/walk-a-dog/Walk-a-dog/admin.php?login=char' or $host == 'localhost/PHP/walk-a-dog/Walk-a-dog/admin.php?login=fatalError')
-    {
-        echo "<link rel=\"stylesheet\" href=\"css/admin.css\">";
-    }
-echo"
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\">
 </head>
 <!--head end-->
 
@@ -66,8 +68,13 @@ echo"
                                 <li><a href=\"#pricing\">Pricing</a></li>
                                 <li><a href=\"#booking\">Booking</a></li>
                                 <li><a href=\"#contact\">Contact</a></li>
+                                <li>$admin</li>
+                                <li>$logout</li>
 
                             </ul>
+                            
+                            
+                            
                         </nav>
                     </div>
                 </div>

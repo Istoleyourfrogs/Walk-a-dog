@@ -1,3 +1,9 @@
+
+form.login{
+    background: #440381;
+    margin: 100px auto;
+    border-radius: 15px;
+}
 .footer-bottom{
     position:absolute;
     bottom: 0px;
@@ -5,4 +11,23 @@
 }
 .scroll-top{
     display: none;
+}
+.btn:hover,
+.btn:focus,
+.btn:active {
+    color: #fff;
+    box-shadow: none;
+    outline: none;
+    background: #FFA5A5;
+}
+.btn.btn-primary {
+    font-size: 15px;
+    background: #51E5FF;
+    text-align: center;
+    display: inline-block;
+    border: none;
+    outline: none;
+    color: #fff;
+    text-transform: capitalize;
+    font-weight: bold;
 }
