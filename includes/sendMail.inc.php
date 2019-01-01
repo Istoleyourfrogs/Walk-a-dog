@@ -2,7 +2,12 @@
 
 require "database.inc.php";
 if(isset($_POST['submit'])) {
-
+    $txt = $_POST['txt'];
+    $subject = $_POST['subject'];
+    if(empty($txt) or empty($subject)){
+        header("Location: ../admin.php?mail=error");
+        exit();
+    }
     $sql = "SELECT mail,hashedMail FROM mail";
     $query = mysqli_query($connect, $sql);
 

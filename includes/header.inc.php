@@ -63,11 +63,11 @@ echo "<!DOCTYPE html>
                                 <i class=\"fa fa-close\"></i>
                             </div>
                             <ul>
-                                <li><a href=\"#home\">Home</a></li>
-                                <li><a href=\"#about\">About</a> </li>
-                                <li><a href=\"#pricing\">Pricing</a></li>
-                                <li><a href=\"#booking\">Booking</a></li>
-                                <li><a href=\"#contact\">Contact</a></li>
+                                <li><a href=\"index.php#home\">Home</a></li>
+                                <li><a href=\"index.php#about\">About</a> </li>
+                                <li><a href=\"index.php#pricing\">Pricing</a></li>
+                                <li><a href=\"index.php#booking\">Booking</a></li>
+                                <li><a href=\"index.php#contact\">Contact</a></li>
                                 <li>$admin</li>
                                 <li>$logout</li>
 

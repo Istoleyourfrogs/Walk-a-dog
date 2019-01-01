@@ -12,22 +12,22 @@ if(isset($_POST['submit'])) {
     $mailCheck = $result['mail'];
     //if the hidden input is not empty display error
     if(!empty($empty)){
-        header("Location: ../index.php?mail=fatalError#newsletter");
+        header("Location: ../admin.php?mail=fatalError#newsletter");
         exit();
     }
     //if the input is empty display error
     if(empty($mailFrom)){
-        header("Location: ../index.php?mail=error#newsletter");
+        header("Location: ../admin.php?mail=error#newsletter");
         exit();
     }
     //if there is a mail in the database return back with an error
     if($mailCheck == $mailFrom) {
-        header("Location: ../index.php?mail=same#newsletter");
+        header("Location: ../admin.php?mail=same#newsletter");
         exit();
     }
     //validating an email
     if(!filter_var($mailFrom, FILTER_VALIDATE_EMAIL)){
-        header("Location: ../index.php?mail=mail#newsletter");
+        header("Location: ../admin.php?mail=mail#newsletter");
         exit();
     }
     //inserting the email into the database
@@ -35,7 +35,7 @@ if(isset($_POST['submit'])) {
     $query = mysqli_query($connect,$sql);
 
 
-    header("Location: ../index.php?mail=success#newsletter");
+    header("Location: ../admin.php?mail=success#newsletter");
 }else{
-    header("Location: ../index.php?mail=fatalError#newsletter");
+    header("Location: ../admin.php?mail=fatalError#newsletter");
 }

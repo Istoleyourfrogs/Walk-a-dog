@@ -12,7 +12,10 @@ require "includes/header.inc.php";
                 $mail = $_GET['mail'];
             }
             if($mail == 'success'){
-                $mailSuccess = "<h1 class=\"text-center\">Newsletter sent successfully</h1>";
+                $mailSuccess = "<span class=\"text-center\">Newsletter sent successfully</span>";
+            }
+            if($mail == 'error'){
+                $mailSuccess = "<span class=\"text-center\">There was an error! Please try again</span>";
             }
             if(isset($_GET['login'])){
                 if($_GET['login'] == 'success')
@@ -37,35 +40,73 @@ require "includes/header.inc.php";
                     </div>
                     <div class=\"col-sm-10 col-sm-offset-1 table-scroll\">
                     <table class=\"table table-striped table-danger\">
-                    <thead class=\"thead-light\">
-                    <tr>
-                    <th>#</th>
-                    <th>email</th>
-                    <th>hashed-email</th>
-                    <th>update/delete</th>
-                    <tr>
-                    </thead>
-                    <tbody>
-                    ";
+                        <thead class=\"thead-light\">
+                            <tr>
+                                <th>#</th>
+                                <th>email</th>
+                                <th>hashed-email</th>
+                                <th>update/delete</th>
+                            <tr>
+                        </thead>
+                        <tbody>
+                        ";
             /*displays every emial from table mail
             inside is a form where you can delete or update the email*/
             while($result = mysqli_fetch_assoc($query)) {
                 echo "
                     <tr>
-                    <td>{$result['id']}</td>
-                    <td>{$result['mail']}</td>
-                    <td>{$result['hashedMail']}</td>
-                    <td><form method=\"post\" action=\"includes/editMail.inc.php\"><input type=\"hidden\" name=\"id\" value=\"{$result['id']}\"><button type=\"submit\" name=\"update\" value=\"update\" class=\"btn btn-primary\">UPDATE</button><button onclick=\"return confirm('Are you sure you wish to delete this item?');\"  type=\"submit\" name=\"delete\" value=\"delete\" class=\"btn btn-primary ml-3\">DELETE</button></form></td>
+                        <td>{$result['id']}</td>
+                        <td>{$result['mail']}</td>
+                        <td>{$result['hashedMail']}</td>
+                        <td><form method=\"post\" action=\"includes/editMail.inc.php\"><input type=\"hidden\" name=\"id\" value=\"{$result['id']}\"><button type=\"submit\" name=\"update\" value=\"update\" class=\"btn btn-primary\">UPDATE</button><button onclick=\"return confirm('Are you sure you wish to delete this item?');\"  type=\"submit\" name=\"delete\" value=\"delete\" class=\"btn btn-primary ml-3\">DELETE</button></form></td>
                     </tr>
-                    ";}
+                ";
+            }
             echo "  
                     </tbody>
                     </table>
                     </div>
-               
-           
-             </div>    
-        ";
+            <div class=\"col-sm-5 col-sm-offset-1 mt-5\">
+                <form action=\"includes/adminNewsletter.inc.php\" method=\"post\">
+                                        <div class=\"form-group\">
+                                            <input type=\"hidden\" name=\"hidden\">
+                                            <input type=\"text\" name=\"email\" placeholder=\"Email Address...\" >
+                                        </div>
+                                        <div>
+                                            <span>";
+                                                    if(isset($_GET['mail'])){
+                                                        $mail = $_GET['mail'];
+                                                        if($mail == 'error'){
+                                                            echo "Error! Please fill in the field!";
+                                                        }
+                                                        if($mail == 'mail'){
+                                                            echo "Please enter a valid email!";
+                                                        }
+                                                        if($mail == 'fatalError'){
+                                                            echo "Oops something went wrong. Please try again!";
+                                                        }
+                                                        if($mail == 'success'){
+                                                            echo "Thank you for sigin up to our newsletter";
+                                                        }
+                                                        if($mail == 'same'){
+                                                            echo "You are already subscribed";
+                                                        }
+                                                    }
+                echo "
+                                                </span>
+                                        </div>
+                                        <div class=\"form-group\">
+                                            <button type=\"submit\" name=\"submit\" class=\"btn btn-primary\">suscribe now</button>
+                                        </div>
+                                    </form>
+                                    </div>
+                                    <div class=\"col-sm-12\">
+                                    <hr>
+                                    </div>
+                                   
+                                    </div>   
+                                    ";
+
         //if the admin is not logged in it will display a login form
     }else{
         echo "<div class=\"container\">
