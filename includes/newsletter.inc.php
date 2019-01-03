@@ -211,7 +211,7 @@ if(isset($_POST['submit'])) {
                         <p style=\"margin: 0; font-size: 30px; font-weight: 700;\"><a href=\"https://walkadog.secondsection.in.rs/index.php#contact\" target=\"_blank\" style=\"color: #ffffff;\">We&rsquo;re here, ready to talk</a></p>
                         <br>
                         <!-- UNSUBSCRIBE -->
-                        <p style=\"margin: 0; color: #ffffff; font-size:16px\">if these emails get annoying, please feel free to <a href=\"https://walkadog.secondsection.in.rs/includes/unsubscribe.inc.php/key={$hashedMail}\" target=\"_blank\" style=\"color: #ffffff; font-weight: 700;\">unsubscribe</a>.</p>
+                        <p style=\"margin: 0; color: #ffffff; font-size:16px\">if these emails get annoying, please feel free to <a href=\"https://walkadog.secondsection.in.rs/includes/unsubscribe.inc.php?key={$hashedMail}\" target=\"_blank\" style=\"color: #ffffff; font-weight: 700;\">unsubscribe</a>.</p>
                     </td>
 
                 </tr>
@@ -237,10 +237,11 @@ if(isset($_POST['submit'])) {
     <a href=\"https://walkadog.secondsection.in.rs/includes/unsubscribe.inc.php?key={$result['hashedMail']}\">Unsubscribe</a>
 ";*/
     $headers = "From:  walk·a·dog <walkadog@secondsection.in.rs>" . " \r\n" .
-        $headers .= 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'MIME-Version: 1.0' . "\r\n";
     $headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
 
     mail($to, $subject, $txt, $headers);
+
 
 
     header("Location: ../index.php?mail=success#newsletter");
