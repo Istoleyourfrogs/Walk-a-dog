@@ -3885,18 +3885,7 @@ a.scroll-top::before {
     font-size: 25px;
 }
 .none{
-    visibility: hidden;
-}
-.noneDog{
-    visibility: hidden;
-}
-@media (max-width: 990px) {
-    .none{
-        display: none;
-    }
-    .noneDog{
-        display: none;
-    }
+    display: none;
 }
 .headingDog{
     text-decoration: underline;

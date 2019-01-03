@@ -82,6 +82,7 @@ require "includes/header.inc.php";
                         <div class="contact-page-title">
                             <h4>Enter your dogs information below</h4>
                         </div>
+                        <!--
                         <div class="row">
                             <div class="col-sm-4 none" dog="1">
                                 <h4>First dog</h4>
@@ -93,64 +94,31 @@ require "includes/header.inc.php";
                                 <h4>Third dog</h4>
                             </div>
                         </div>
-                        <hr>
+                        -->
+                        
                         <form method="post" action="">
                             <div id="dog" class="row">
                                 <div class="col-md-4 none" dog="1">
+                                    <h4>First dog</h4>
+                                    <hr>
                                     <div class="form-group ">
                                         <label>Name First</label>
                                         <input type="text" class="form-control" placeholder="name first">
                                     </div>
-                                </div>
-                                <div class="col-md-4 none" dog="2">
-                                    <div class="form-group ">
-                                        <label>Name Second</label>
-                                        <input type="text"  class="form-control" placeholder="email">
-                                    </div>
-                                </div>
-                                <div class="col-md-4 none" dog="3">
-                                    <div class="form-group ">
-                                        <label>Name Third</label>
-                                        <input type="text" class="form-control" placeholder="name">
-                                    </div>
-                                </div>
-                                <div class="col-md-4 none" dog="1">
+
                                     <div class="form-group ">
                                         <label>Age First</label>
                                         <input type="text" class="form-control" placeholder="name first">
                                     </div>
-                                </div>
-                                <div class="col-md-4 none" dog="2">
-                                    <div class="form-group ">
-                                        <label>Age Second</label>
-                                        <input type="text"  class="form-control" placeholder="email">
-                                    </div>
-                                </div>
-                                <div class="col-md-4 none" dog="3">
-                                    <div class="form-group ">
-                                        <label>Age Third</label>
-                                        <input type="text" class="form-control" placeholder="name">
-                                    </div>
-                                </div>
-                                <div class="col-md-4 none" dog="1">
+
+
+
                                     <div class="form-group ">
                                         <label>Breed First</label>
                                         <input type="text" class="form-control" placeholder="name first">
                                     </div>
-                                </div>
-                                <div class="col-md-4 none" dog="2">
-                                    <div class="form-group ">
-                                        <label>Breed Second</label>
-                                        <input type="text"  class="form-control" placeholder="email">
-                                    </div>
-                                </div>
-                                <div class="col-md-4 none" dog="3">
-                                    <div class="form-group ">
-                                        <label>Breed Third</label>
-                                        <input type="text" class="form-control" placeholder="name">
-                                    </div>
-                                </div>
-                                <div class="col-md-4 none" dog="1">
+
+
                                     <div class="form-group ">
                                         <label class="headingDog">Vaccinated First</label><br>
                                         <label for="vacYes1">YES</label>
@@ -158,26 +126,9 @@ require "includes/header.inc.php";
                                         <label for="vacNo1">NO</label>
                                         <input type="radio" id="vacNo1" name="vac1"><br>
                                     </div>
-                                </div>
-                                <div class="col-md-4 none" dog="2">
-                                    <div class="form-group ">
-                                        <label class="headingDog">Vaccinated Second</label><br>
-                                        <label for="vacYes2">YES</label>
-                                        <input type="radio" id="vacYes2" name="vac2"><br>
-                                        <label for="vacNo2">NO</label>
-                                        <input type="radio" id="vacNo2" name="vac2"><br>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 none" dog="3">
-                                    <div class="form-group">
-                                        <label class="headingDog">Vaccinated Third</label><br>
-                                        <label for="vacYes3">YES</label>
-                                        <input type="radio" id="vacYes3" name="vac3"><br>
-                                        <label for="vacNo3">NO</label>
-                                        <input type="radio" id="vacNo3" name="vac3"><br>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 none" dog="1">
+
+
+
                                     <div class="form-group ">
                                         <label class="headingDog">Trained First</label><br>
                                         <label for="t11">Not agressive</label>
@@ -187,30 +138,7 @@ require "includes/header.inc.php";
                                         <label for="t13">Agressive</label>
                                         <input type="radio" id="t13" name="trained1">
                                     </div>
-                                </div>
-                                <div class="col-md-4 none" dog="2">
-                                    <div class="form-group ">
-                                        <label class="headingDog">Trained Second</label><br>
-                                        <label for="t21">Not agressive</label>
-                                        <input type="radio" id="t21" name="trained2"><br>
-                                        <label for="t22">Little agressive</label>
-                                        <input type="radio" id="t22" name="trained2"><br>
-                                        <label for="t23">Agressive</label>
-                                        <input type="radio" id="t23" name="trained2">
-                                    </div>
-                                </div>
-                                <div class="col-md-4 none" dog="3">
-                                    <div class="form-group ">
-                                        <label class="headingDog">Trained Third</label><br>
-                                        <label for="t31">Not agressive</label>
-                                        <input type="radio" id="t31" name="trained3"><br>
-                                        <label for="t32">Little agressive</label>
-                                        <input type="radio" id="t32" name="trained3"><br>
-                                        <label for="t33">Agressive</label>
-                                        <input type="radio" id="t33" name="trained3">
-                                    </div>
-                                </div>
-                                <div class="col-md-4 none" dog="1">
+
                                     <div class="form-group ">
                                         <label class="headingDog">Agression First</label><br>
                                         <label for="ag11">Not agressive</label>
@@ -220,46 +148,133 @@ require "includes/header.inc.php";
                                         <label for="ag13">Agressive</label>
                                         <input type="radio" id="ag13" name="agression1">
                                     </div>
-                                </div>
-                                <div class="col-md-4 none" dog="2">
-                                    <div class="form-group ">
-                                        <label class="headingDog">Agression Second</label><br>
-                                        <label for="ag21">Not agressive</label>
-                                        <input type="radio" id="ag21" name="agression2"><br>
-                                        <label for="ag22">Little agressive</label>
-                                        <input type="radio" id="ag22" name="agression2"><br>
-                                        <label for="ag23">Agressive</label>
-                                        <input type="radio" id="ag23" name="agression2">
-                                    </div>
-                                </div>
-                                <div class="col-md-4 none" dog="3">
-                                    <div class="form-group ">
-                                        <label class="headingDog">Agression Third</label><br>
-                                        <label for="ag31">Not agressive</label>
-                                        <input type="radio" id="ag31" name="agression3"><br>
-                                        <label for="ag32">Little agressive</label>
-                                        <input type="radio" id="ag32" name="agression3"><br>
-                                        <label for="ag33">Agressive</label>
-                                        <input type="radio" id="ag33" name="agression3">
-                                    </div>
-                                </div>
-                                <div class="col-md-4 none" dog="1">
+
+
                                     <div class="form-group ">
                                         <label class="headingDog">Other First</label>
                                         <textarea placeholder="Enter text here" rows="5"></textarea>
                                     </div>
+                                    <hr>
                                 </div>
+
+
+
                                 <div class="col-md-4 none" dog="2">
+                                    <h4>Second dog</h4>
+                                    <hr>
                                     <div class="form-group ">
-                                        <label class="headingDog">Other Second</label>
+                                        <label>Name First</label>
+                                        <input type="text" class="form-control" placeholder="name first">
+                                    </div>
+
+                                    <div class="form-group ">
+                                        <label>Age First</label>
+                                        <input type="text" class="form-control" placeholder="name first">
+                                    </div>
+
+
+
+                                    <div class="form-group ">
+                                        <label>Breed First</label>
+                                        <input type="text" class="form-control" placeholder="name first">
+                                    </div>
+
+
+                                    <div class="form-group ">
+                                        <label class="headingDog">Vaccinated First</label><br>
+                                        <label for="vacYes1">YES</label>
+                                        <input type="radio" id="vacYes1" name="vac1"><br>
+                                        <label for="vacNo1">NO</label>
+                                        <input type="radio" id="vacNo1" name="vac1"><br>
+                                    </div>
+
+
+
+                                    <div class="form-group ">
+                                        <label class="headingDog">Trained First</label><br>
+                                        <label for="t11">Not agressive</label>
+                                        <input type="radio" id="t11" name="trained1"><br>
+                                        <label for="t12">Little agressive</label>
+                                        <input type="radio" id="t12" name="trained1"><br>
+                                        <label for="t13">Agressive</label>
+                                        <input type="radio" id="t13" name="trained1">
+                                    </div>
+
+                                    <div class="form-group ">
+                                        <label class="headingDog">Agression First</label><br>
+                                        <label for="ag11">Not agressive</label>
+                                        <input type="radio" id="ag11" name="agression1"><br>
+                                        <label for="ag12">Little agressive</label>
+                                        <input type="radio" id="ag12" name="agression1"><br>
+                                        <label for="ag13">Agressive</label>
+                                        <input type="radio" id="ag13" name="agression1">
+                                    </div>
+
+
+                                    <div class="form-group ">
+                                        <label class="headingDog">Other First</label>
                                         <textarea placeholder="Enter text here" rows="5"></textarea>
                                     </div>
+                                    <hr>
                                 </div>
+
                                 <div class="col-md-4 none" dog="3">
+                                    <h4>Third dog</h4>
+                                    <hr>
                                     <div class="form-group ">
-                                        <label class="headingDog">Other Third</label>
+                                        <label>Name First</label>
+                                        <input type="text" class="form-control" placeholder="name first">
+                                    </div>
+
+                                    <div class="form-group ">
+                                        <label>Age First</label>
+                                        <input type="text" class="form-control" placeholder="name first">
+                                    </div>
+
+
+
+                                    <div class="form-group ">
+                                        <label>Breed First</label>
+                                        <input type="text" class="form-control" placeholder="name first">
+                                    </div>
+
+
+                                    <div class="form-group ">
+                                        <label class="headingDog">Vaccinated First</label><br>
+                                        <label for="vacYes1">YES</label>
+                                        <input type="radio" id="vacYes1" name="vac1"><br>
+                                        <label for="vacNo1">NO</label>
+                                        <input type="radio" id="vacNo1" name="vac1"><br>
+                                    </div>
+
+
+
+                                    <div class="form-group ">
+                                        <label class="headingDog">Trained First</label><br>
+                                        <label for="t11">Not agressive</label>
+                                        <input type="radio" id="t11" name="trained1"><br>
+                                        <label for="t12">Little agressive</label>
+                                        <input type="radio" id="t12" name="trained1"><br>
+                                        <label for="t13">Agressive</label>
+                                        <input type="radio" id="t13" name="trained1">
+                                    </div>
+
+                                    <div class="form-group ">
+                                        <label class="headingDog">Agression First</label><br>
+                                        <label for="ag11">Not agressive</label>
+                                        <input type="radio" id="ag11" name="agression1"><br>
+                                        <label for="ag12">Little agressive</label>
+                                        <input type="radio" id="ag12" name="agression1"><br>
+                                        <label for="ag13">Agressive</label>
+                                        <input type="radio" id="ag13" name="agression1">
+                                    </div>
+
+
+                                    <div class="form-group ">
+                                        <label class="headingDog">Other First</label>
                                         <textarea placeholder="Enter text here" rows="5"></textarea>
                                     </div>
+                                    <hr>
                                 </div>
                             </div>
                         </form>
