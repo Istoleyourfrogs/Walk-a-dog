@@ -95,7 +95,7 @@ require "includes/header.inc.php";
                             </div>
                         </div>
                         -->
-                        
+
                         <form method="post" action="">
                             <div id="dog" class="row">
                                 <div class="col-md-4 none" dog="1">
