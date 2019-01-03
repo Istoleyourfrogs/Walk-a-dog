@@ -54,7 +54,7 @@
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
     <!-- LOGO -->
     <tr>
-        <td bgcolor="#FFA73B" align="center">
+        <td bgcolor="#51E5FF" align="center">
             <!--[if (gte mso 9)|(IE)]>
             <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
                 <tr>
@@ -64,7 +64,7 @@
                 <tr>
                     <td align="center" valign="top" style="padding: 40px 10px 40px 10px;">
                         <a href="http://litmus.com" target="_blank">
-                            <img alt="Logo" src="http://litmuswww.s3.amazonaws.com/community/template-gallery/ceej/logo.png" width="40" height="40" style="display: block; width: 40px; max-width: 40px; min-width: 40px;   color: #ffffff; font-size: 18px;" border="0">
+                            <img alt="Logo" src="images/dog.svg" width="250" height="125" style="display: block; color: #ffffff; font-size: 18px;" border="0">
                         </a>
                     </td>
                 </tr>
@@ -78,7 +78,7 @@
     </tr>
     <!-- HERO -->
     <tr>
-        <td bgcolor="#FFA73B" align="center" style="padding: 0px 10px 0px 10px;">
+        <td bgcolor="#51E5FF" align="center" style="padding: 0px 10px 0px 10px;">
             <!--[if (gte mso 9)|(IE)]>
             <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
                 <tr>
@@ -121,7 +121,7 @@
                                 <td bgcolor="#ffffff" align="center" style="padding: 20px 30px 60px 30px;">
                                     <table border="0" cellspacing="0" cellpadding="0">
                                         <tr>
-                                            <td align="center" style="border-radius: 3px;" bgcolor="#FFA73B"><a href="https://litmus.com" target="_blank" style="font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 2px; border: 1px solid #FFA73B; display: inline-block;">Confirm Account</a></td>
+                                            <td align="center" style="border-radius: 3px;" bgcolor="#EC368D"><a href="https://litmus.com" target="_blank" style="font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 2px; border: 1px solid #EC368D; display: inline-block;">Confirm Account</a></td>
                                         </tr>
                                     </table>
                                 </td>
@@ -138,7 +138,7 @@
                 <!-- COPY -->
                 <tr>
                     <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 20px 30px; color: #666666;   font-size: 18px; font-weight: 400; line-height: 25px;" >
-                        <p style="margin: 0;"><a href="http://litmus.com" target="_blank" style="color: #FFA73B;">XXX.XXXXXXX.XXX/XXXXXXXXXXXXX</a></p>
+                        <p style="margin: 0;"><a href="http://litmus.com" target="_blank" style="color: #EC368D;">XXX.XXXXXXX.XXX/XXXXXXXXXXXXX</a></p>
                     </td>
                 </tr>
                 <!-- COPY -->
@@ -172,9 +172,9 @@
             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;" >
                 <!-- HEADLINE -->
                 <tr>
-                    <td bgcolor="#FFECD1" align="center" style="padding: 30px 30px 30px 30px; border-radius: 4px 4px 4px 4px; color: #666666;   font-size: 18px; font-weight: 400; line-height: 25px;" >
-                        <h2 style="font-size: 20px; font-weight: 400; color: #111111; margin: 0;">Need more help?</h2>
-                        <p style="margin: 0;"><a href="http://litmus.com" target="_blank" style="color: #FFA73B;">We&rsquo;re here, ready to talk</a></p>
+                    <td bgcolor="#FFA5A5" align="center" style="padding: 30px 30px 30px 30px; border-radius: 4px 4px 4px 4px; color: #666666;   font-size: 18px; font-weight: 400; line-height: 25px;" >
+                        <h2 style="font-size: 20px; font-weight: 400; color: #fff; margin: 0;">Need more help?</h2>
+                        <p style="margin: 0;"><a href="http://litmus.com" target="_blank" style="color: #fff;">We&rsquo;re here, ready to talk</a></p>
                     </td>
                 </tr>
             </table>
