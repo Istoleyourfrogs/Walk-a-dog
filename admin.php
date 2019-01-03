@@ -146,7 +146,7 @@ require "includes/header.inc.php";
 <script>
     $(document).ready(function () {
         //checking if the url has /admin.php and adds admin.css to the <head>
-    if (top.location.pathname === '/admin.php') {
+    if( (top.location.pathname === '/admin.php') || (top.location.pathname === '/admin')) {
         $('head').append('<link rel="stylesheet" type="text/css" href="css/admin.css">');
     }
 
