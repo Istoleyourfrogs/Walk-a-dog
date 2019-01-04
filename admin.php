@@ -5,7 +5,7 @@ require "includes/header.inc.php";
     //if the $_SESSION has started you can seee the admin panel
     if(isset($_SESSION['username']) and $_SESSION='lukaku') {
             //gets all the emails from the table mail
-            $sql = "SELECT * FROM mail";
+            $sql = "SELECT * FROM newsletter";
             $query = mysqli_query($connect,$sql);
             //error checking for the newsletter form
             if(isset($_GET['mail'])){

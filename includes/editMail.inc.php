@@ -4,7 +4,7 @@ require "database.inc.php";
 if(isset($_POST['update'])){
     //enterer and a new email adress
     $id = mysqli_real_escape_string($connect,trim($_POST['id']));
-    $sql = "SELECT * FROM mail WHERE id=$id";
+    $sql = "SELECT * FROM newsletter WHERE id=$id";
     $query = mysqli_query($connect,$sql);
     $result = mysqli_fetch_assoc($query);
     //sending to the same page where the new email will be sent to the database
@@ -21,7 +21,7 @@ if(isset($_POST['delete'])){
     $id = mysqli_real_escape_string($connect,trim($_POST['id']));
     //deleting the email from the database
     if($delete == 'delete'){
-        $sql = "DELETE FROM mail WHERE id=$id;";
+        $sql = "DELETE FROM newsletter WHERE id=$id;";
         $query = mysqli_query($connect,$sql);
         header("Location: ../admin.php");
         exit();
@@ -30,11 +30,11 @@ if(isset($_POST['delete'])){
     exit();
 }
 if(isset($_POST['submit'])){
-    //updating the email from the form above
+    //updating the newsletter from the form above
     $id = mysqli_real_escape_string($connect,trim($_POST['id']));
     $mail = mysqli_real_escape_string($connect,trim($_POST['mail']));
     $hashedMail = md5($mail);
-    $sql = "UPDATE mail SET mail='$mail',hashedMail='$hashedMail' WHERE id='$id';";
+    $sql = "UPDATE newsletter SET mail='$mail',hashedMail='$hashedMail' WHERE id='$id';";
     $query = mysqli_query($connect,$sql);
     header("Location: ../admin.php");
     exit();

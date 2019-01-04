@@ -6,7 +6,7 @@ if(isset($_POST['submit'])) {
     $mailFrom = mysqli_real_escape_string($connect,trim($_POST['email']));
     $empty = $_POST['hidden'];
     $hashedMail = md5($mailFrom);
-    $sql = "SELECT * FROM mail WHERE mail='$mailFrom';";
+    $sql = "SELECT * FROM newsletter WHERE mail='$mailFrom';";
     $query = mysqli_query($connect,$sql);
     $result = mysqli_fetch_assoc($query);
     $mailCheck = $result['mail'];
@@ -31,7 +31,7 @@ if(isset($_POST['submit'])) {
         exit();
     }
     //inserting the email into the database
-    $sql = "INSERT INTO mail(mail,hashedMail) VALUES ('$mailFrom','$hashedMail');";
+    $sql = "INSERT INTO newsletter(mail,hashedMail) VALUES ('$mailFrom','$hashedMail');";
     $query = mysqli_query($connect,$sql);
     $txt = "<!-- THIS EMAIL WAS BUILT AND TESTED WITH LITMUS http://litmus.com -->
 <!-- IT WAS RELEASED UNDER THE MIT LICENSE https://opensource.org/licenses/MIT -->
@@ -238,13 +238,6 @@ if(isset($_POST['submit'])) {
     $headers = "From:  walk·a·dog <walkadog@secondsection.in.rs>" . " \r\n" .
         $headers .= 'MIME-Version: 1.0' . "\r\n";
     $headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
-
-    if(mail($to, $subject, $txt, $headers)){
-        echo "success";
-    }
-
-
-    //header("Location: ../index.php?mail=success#newsletter");
 
     header("Location: ../admin.php?mail=success#newsletter");
 }else{

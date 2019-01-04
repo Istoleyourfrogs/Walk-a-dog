@@ -6,7 +6,7 @@ if(isset($_POST['submit'])) {
     $mailFrom = mysqli_real_escape_string($connect,trim($_POST['email']));
     $empty = $_POST['hidden'];
     $hashedMail = md5($mailFrom);
-    $sql = "SELECT * FROM mail WHERE mail='$mailFrom';";
+    $sql = "SELECT * FROM newsletter WHERE mail='$mailFrom';";
     $query = mysqli_query($connect,$sql);
     $result = mysqli_fetch_assoc($query);
     $mailCheck = $result['mail'];
@@ -31,7 +31,7 @@ if(isset($_POST['submit'])) {
         exit();
     }
     //inserting the email into the database
-    $sql = "INSERT INTO mail(mail,hashedMail) VALUES ('$mailFrom','$hashedMail');";
+    $sql = "INSERT INTO newsletter(mail,hashedMail) VALUES ('$mailFrom','$hashedMail');";
     $query = mysqli_query($connect,$sql);
 
     $txt = "<!-- THIS EMAIL WAS BUILT AND TESTED WITH LITMUS http://litmus.com -->

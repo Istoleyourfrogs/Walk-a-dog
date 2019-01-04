@@ -12,6 +12,7 @@ require "includes/header.inc.php";
     <!-- breadcrumb end -->
     
     <!--contact-page-->
+<form method="post" action="includes/booking.inc.php">
     <div class="contact-page page">
         <div class="container">
             <!-- HUMAN FORM SECTION -->
@@ -22,7 +23,6 @@ require "includes/header.inc.php";
                         <div class="contact-page-title">
                             <h4>Enter you information and something something something</h4>
                         </div>
-                        <form method="post" action="">
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
@@ -56,23 +56,69 @@ require "includes/header.inc.php";
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="numberOfDogs">Number of Dogs:</label>
-                                        <select id="numberOfDogs" class="form-control" name="numberOfDogs">
-                                            <option  value="0">Number of Dogs</option>
-                                            <?php
-                                                for($i=1; $i<=3; $i++){
-                                                    echo "<option id=\"{$i}dog\" value=\"$i\" name=\"numberOfDogs\">$i</option>";
-                                                }
-                                            ?>
+                                        <label for="typeWalk">Type of walk:</label>
+                                        <select id="typeWalk" name="typeWalk" class="form-control">
+                                            <option>Select the type of walk</option>
+                                            <option>One time</option>
+                                            <option>Daily</option>
+                                            <option>Weekly</option>
                                         </select>
                                     </div>
                                 </div>
                                 </div>
-                        </form>
+                            <div class="row">
+
+                                <div class="col-md-2 none" walk="date">
+                                    <div class="form-group">
+                                        <label for="numberOfDogs">Date of walk:</label>
+                                        <input type="date" name="date">
+                                    </div>
+                                </div>
+                                <div class="col-md-2 none" walk="time">
+                                    <div class="form-group">
+                                        <label for="time">Time of walk:</label>
+                                        <input type="time" name="time">
+                                    </div>
+                                </div>
+                                <div class="col-md-8 none" walk="day">
+                                    <div class="form-group">
+                                        <label>Which day: </label><br>
+                                        <input type="radio"  class="" placeholder="email">
+                                        <label>Monday</label>
+                                        <input type="radio"  class="" placeholder="email">
+                                        <label>Tuesday</label>
+                                        <input type="radio"  class="" placeholder="email">
+                                        <label>Wednesday</label>
+                                        <input type="radio"  class="" placeholder="email">
+                                        <label>Thursday</label>
+                                        <input type="radio"  class="" placeholder="email">
+                                        <label>Friday</label>
+                                        <input type="radio"  class="" placeholder="email">
+                                        <label>Saturday</label>
+                                        <input type="radio"  class="" placeholder="email">
+                                        <label>Sunday</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="numberOfDogs">Number of Dogs:</label>
+                                        <select id="numberOfDogs" class="form-control" name="numberOfDogs">
+                                            <option  value="0">Number of Dogs</option>
+                                            <?php
+                                            for($i=1; $i<=3; $i++){
+                                                echo "<option id=\"{$i}dog\" value=\"$i\" name=\"numberOfDogs\">$i</option>";
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
                     </div>
                 </div>
             </div>
             <!-- HUMAN FORM SECTION END-->
+
+
 
             <!-- DOG FORM SECTION-->
             <div class="row">
@@ -82,21 +128,6 @@ require "includes/header.inc.php";
                         <div class="contact-page-title">
                             <h4>Enter your dogs information below</h4>
                         </div>
-                        <!--
-                        <div class="row">
-                            <div class="col-sm-4 none" dog="1">
-                                <h4>First dog</h4>
-                            </div>
-                            <div class="col-sm-4 none" dog="2">
-                                <h4>Second dog</h4>
-                            </div>
-                            <div class="col-sm-4 none" dog="3">
-                                <h4>Third dog</h4>
-                            </div>
-                        </div>
-                        -->
-
-                        <form method="post" action="">
                             <div id="dog" class="row">
                                 <div class="col-md-4 none" dog="1">
                                     <h4>First dog</h4>
@@ -277,111 +308,13 @@ require "includes/header.inc.php";
                                     <hr>
                                 </div>
                             </div>
-                        </form>
                     </div>
                 </div>
-            </div>
-            <!-- DOG FORM SECTION END-->
-        </div>
-        <div class="contact-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2773233.339938879!2d-123.12537827003614!3d47.251094484829885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5485e5ffe7c3b0f9%3A0x944278686c5ff3ba!2sWashington%2C+USA!5e0!3m2!1sen!2snp!4v1519881669271" height="450"  allowfullscreen></iframe>
-        </div>
-    </div>
-
-    <!--Footer-->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-sm-12 col-xs-12">
-                    <div class="footer-widget">
-                        <h3>Bizface</h3>
-                        <div class="widget-content">
-                            <div class="text">Lorem ipsum dolor sit amet, consects adipiscing elit enean commodo ligula.</div>
-                            <address>
-                                <p><a href="#"><i class="fa fa-map-marker"></i></a> USA, America</p>
-                                <p><a href="#"><i class="fa fa-phone"></i></a>+977-9746390089</p>
-                                <p><a href="#"><i class="fa fa-envelope"></i></a> ripplethemes@gmail.com</p>
-                            </address>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-5 col-sm-6 col-xs-12">
-                    <div class="footer-widget links-widget">
-                        <h3>Explore</h3>
-                    
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6 col-sm-12">
-                            <ul>
-                                <li><a href="#">home</a></li>
-                                <li><a href="#">about</a></li>
-                                <li><a href="#">services</a></li>
-                                <li><a href="#">projects</a></li>
-                                <li><a href="#">contact</a></li>
-                                
-                            </ul>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-sm-12">
-                            <ul>
-                                <li><a href="#">News</a></li>
-                                <li><a href="#">Trade</a></li>
-                                <li><a href="#">Investment</a></li>
-                                <li><a href="#">projects</a></li>
-                                <li><a href="#">contact</a></li>
-                                
-                            </ul>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="footer-widget subscribe-widget">
-                        <h3>Newsletter</h3>
-                        <div class="widget-content">
-                            <div class="text">Lorem ipsum dolor sit amet, adipiscing </div>
-                            <div class="newsletter-form">
-                                <form>
-                                    <div class="form-group">
-                                        <input type="email" name="email" value="" placeholder="Email Address..." required>
-                                    </div>
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-primary">suscribe now</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-    </footer>
-<!--Footer Bottom-->
-<div class="footer-bottom">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-sm-6">
-                <div class="text text-left">Copyrights &copy; <a href="#">ripplethemes</a>. All Rights Reserved</div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-                <ul class="social-links text-right">
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li class="active"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                </ul>
-                <video></video>
+                <button type="submit" class="btn btn-primary btn-group-justified">Register now!</button>
             </div>
         </div>
     </div>
-</div>
-
-<!-- scroll top -->
-<a class="scroll-top" href="javascript:void(0)"><i class="fa fa-angle-up"></i></a>
-<!-- srolltop end -->
+</form>      <!-- DOG FORM SECTION END-->
 
 
 <!-- js library start -->
@@ -398,7 +331,8 @@ require "includes/header.inc.php";
 
 <script>
 $(document).ready(function () {
-    var valueSelect = $('select');
+    var valueSelect = $('#numberOfDogs');
+    var valueSelect2 = $('#typeWalk');
     var dog = $('#dog');
 //Changes the amount of dog forms based on dropdown number
     valueSelect.on('change', function () {
@@ -435,6 +369,31 @@ $(document).ready(function () {
         }
 
     });
+    valueSelect2.on('change',function () {
+        var date = $('div[walk="date"]');
+        var time = $('div[walk="time"]');
+        var day = $('div[walk="day"]');
+
+        if(valueSelect2.val() === 'One time'){
+            date.removeClass("none");
+            time.removeClass("none");
+            day.addClass("none");
+            date.removeClass("none");
+        }
+        if(valueSelect2.val() === 'Daily'){
+            date.removeClass("none");
+            time.removeClass("none");
+            day.addClass("none");
+            date.addClass("none");
+        }
+        if(valueSelect2.val() === 'Weekly'){
+            date.removeClass("none");
+            time.removeClass("none");
+            day.removeClass("none");
+            date.addClass("none");
+        }
+
+})
 
 }) ;
 </script>

@@ -8,7 +8,7 @@ if(isset($_POST['submit'])) {
         header("Location: ../admin.php?mail=error");
         exit();
     }
-    $sql = "SELECT mail,hashedMail FROM mail";
+    $sql = "SELECT mail,hashedMail FROM newsletter";
     $query = mysqli_query($connect, $sql);
 
     while ($result = mysqli_fetch_assoc($query)) {

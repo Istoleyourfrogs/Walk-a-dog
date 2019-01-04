@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 04, 2019 at 06:00 PM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 5.6.39
+-- Host: 169.254.0.2:3306
+-- Generation Time: Jan 04, 2019 at 08:50 PM
+-- Server version: 10.3.9-MariaDB
+-- PHP Version: 7.2.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `walkadog`
+-- Database: `spolnici_walkadog`
 --
 
 -- --------------------------------------------------------
@@ -35,8 +35,8 @@ CREATE TABLE `dogs` (
   `age` int(3) NOT NULL,
   `breed` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `vaccinated` tinyint(1) NOT NULL,
-  `trained` tinyint(1) DEFAULT '0',
-  `aggression` double DEFAULT '0',
+  `trained` tinyint(1) DEFAULT 0,
+  `aggression` double DEFAULT 0,
   `other` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -59,6 +59,13 @@ CREATE TABLE `newsletter` (
   `mail` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `hashedMail` varchar(60) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `newsletter`
+--
+
+INSERT INTO `newsletter` (`id`, `mail`, `hashedMail`) VALUES
+(5, 'patarcic98@gmail.com', '86f95360481b6c05e6aa777d1f3f5e48');
 
 -- --------------------------------------------------------
 
@@ -91,7 +98,7 @@ CREATE TABLE `users` (
   `email` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `address` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `phone` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `status` tinyint(1) NOT NULL DEFAULT 1,
   `code` char(10) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -111,18 +118,21 @@ INSERT INTO `users` (`user_id`, `name`, `email`, `address`, `phone`, `status`, `
 CREATE TABLE `walks` (
   `walk_id` int(11) NOT NULL,
   `user_fk` int(11) NOT NULL,
-  `appointment` datetime NOT NULL
+  `type` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `one_time_walk` datetime DEFAULT NULL,
+  `weekly_walk_day` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `daily_walk_time` time DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `walks`
 --
 
-INSERT INTO `walks` (`walk_id`, `user_fk`, `appointment`) VALUES
-(1, 1, '0000-00-00 00:00:00'),
-(2, 1, '0000-00-00 00:00:00'),
-(3, 1, '0000-00-00 00:00:00'),
-(4, 1, '2019-01-04 19:00:00');
+INSERT INTO `walks` (`walk_id`, `user_fk`, `type`, `one_time_walk`, `weekly_walk_day`, `daily_walk_time`) VALUES
+(1, 1, 'daily', '0000-00-00 00:00:00', NULL, NULL),
+(2, 1, 'daily', '0000-00-00 00:00:00', NULL, NULL),
+(3, 1, 'daily', '0000-00-00 00:00:00', NULL, NULL),
+(4, 1, 'daily', '2019-01-04 19:00:00', NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -176,7 +186,7 @@ ALTER TABLE `dogs`
 -- AUTO_INCREMENT for table `newsletter`
 --
 ALTER TABLE `newsletter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `reviews`
