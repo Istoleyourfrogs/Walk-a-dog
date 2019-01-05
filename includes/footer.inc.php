@@ -56,6 +56,7 @@ echo "
                                 <form action=\"includes/newsletter.inc.php\" method=\"post\">
                                     <div class=\"form-group\">
                                         <input type=\"hidden\" name=\"hidden\">
+                                        <input type=\"hidden\" name=\"formLocation\" value=\"footer\">
                                         <input type=\"text\" name=\"email\" placeholder=\"Email Address...\" >
                                     </div>
                                     <div>

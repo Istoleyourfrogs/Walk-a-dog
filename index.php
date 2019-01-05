@@ -562,7 +562,7 @@ require_once "includes/header.inc.php";
     </section>
     
     <!-- testimonial -->
-    <section class="testimonials section">
+    <section class="testimonials section" id="newsletter_anchor">
         <div class="container">
             <div class="sec-title text-center">
                 <h2>What our client say</h2>
@@ -636,17 +636,16 @@ require_once "includes/header.inc.php";
     <!-- testimonial end -->
 
     <!--newsletter section -->
-    <section class="bizface-price section grey-background">
+    <section id="newsletter_section"  style="background: url(images/dogBoneBackground.jpg) no-repeat center;" class="section grey-background">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 text-center">
                     <form action="includes/newsletter.inc.php" method="post">
-                        <div class="form-group">
+                        <div> <!--class="form-group"-->
                             <input type="hidden" name="hidden">
-                            <label for="email">Sign up for our newsletter:</label>
-                            <input type="text" name="email" placeholder="Email Address..." >
-                        </div>
-                        <div>
+                            <input type="hidden" name="formLocation" value="section">
+                            <label for="email" class="newsletter_label">Sign up for our newsletter!</label>
+                            <input type="text" class="formInline" name="email" placeholder="Email Address..." >
                                         <span><?php
                                             if(isset($_GET['mail'])){
                                                 $mail = $_GET['mail'];
@@ -667,9 +666,7 @@ require_once "includes/header.inc.php";
                                                 }
                                             }
                                             ?></span>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" name="submit" class="btn btn-primary">suscribe now</button>
+                            <button type="submit" name="submit" id="newsletter_button" class="btn btn-primary">subscribe now</button>
                         </div>
                     </form>
                 </div>
