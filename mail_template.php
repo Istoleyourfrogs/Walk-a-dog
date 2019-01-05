@@ -59,7 +59,7 @@
                 <tr>
                     <td align="center" valign="top" style="padding: 40px 10px 40px 10px;">
                         <a href="https://walkadog.secondsection.in.rs/index.php" target="_blank">
-                            <img alt="Logo" src="images/dog.svg" style="display: block; width: 400px; max-width: 400px; min-width: 400px;   color: #ffffff; font-size: 18px;" border="0">
+                            <img alt="Logo" src="https://walkadog.secondsection.in.rs/images/logo.svg" style="display: block; width: 400px; max-width: 400px; min-width: 400px;   color: #ffffff; font-size: 18px;" border="0">
                         </a>
                     </td>
                 </tr>

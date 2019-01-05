@@ -46,7 +46,7 @@ echo "<!DOCTYPE html>
         <div id=\"masthead\" class=\"site-header menu\">
             <div class=\"container\">
                 <div class=\"site-branding\">
-                    <a href=\"index.php\" class=\"logo\"><img src=\"images/dog.svg\" alt=\"logo\"></a>
+                    <a href=\"index.php\" class=\"logo\"><img src=\"images/logo.svg\" alt=\"logo\"></a>
 
                 </div>
                 <!-- .site-branding -->
