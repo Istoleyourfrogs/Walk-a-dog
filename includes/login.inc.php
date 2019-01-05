@@ -14,6 +14,7 @@ if(isset($_POST['submit'])){
         header("Location: ../admin.php?login=error");
         exit();
     }
+
     //checking if the fields match the admin username and password
     if(($username === 'lukaku' and $password === 'gaku') or ($username === 'linolada' and $password === 'gaspatarcic')){
 

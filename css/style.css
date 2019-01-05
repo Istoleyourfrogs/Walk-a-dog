@@ -6173,4 +6173,11 @@ a.scroll-top::before {
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
-
+form.login{
+    background: #FFA5A5;
+    margin: 100px auto;
+    border-radius: 15px;
+}
+form.login .btn:hover{
+    background-color: #FFD6C0;
+}

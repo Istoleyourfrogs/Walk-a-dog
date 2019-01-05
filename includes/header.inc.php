@@ -1,12 +1,7 @@
 <?php
 session_start();
 //displaying the logout button if the session has started
-if(isset($_SESSION['username'])){
-    $logout = "<form action=\"includes/logout.inc.php\" method=\"post\">
-                <button class=\"btn btn-primary\" type=\"submit\" name=\"submit\">Logout</button>
-                </form>";
-    $admin = "<a href=\"admin.php\">Admin</a>";
-}
+
 
 echo "<!DOCTYPE html>
 <html lang=\"en\">
@@ -67,10 +62,16 @@ echo "<!DOCTYPE html>
                                 <li><a href=\"index.php#about\">About</a> </li>
                                 <li><a href=\"index.php#pricing\">Pricing</a></li>
                                 <li><a href=\"index.php#booking\">Booking</a></li>
-                                <li><a href=\"index.php#contact\">Contact</a></li>
-                                <li>$admin</li>
-                                <li>$logout</li>
-
+                                <li><a href=\"index.php#contact\">Contact</a></li>";
+                                if(isset($_SESSION['username'])){
+    $logout = "<form action=\"includes/logout.inc.php\" method=\"post\">
+                <li><button class=\"btn btn - primary\" type=\"submit\" name=\"submit\">Logout</button></li>
+                </form>";
+                echo $logout;
+    $admin = "<li><a href=\"admin.php\">Admin</a></li>";
+                echo $admin;
+}
+echo"
                             </ul>
                             
                             

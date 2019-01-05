@@ -27,25 +27,25 @@ require "includes/header.inc.php";
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label>First Name:</label>
-                                    <input type="text" class="form-control" placeholder="First Name" name="firstName">
+                                    <input type="text" class="form-control" placeholder="First Name" name="firstName" value="a">
                                 </div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label>Last Name:</label>
-                                    <input type="text"  class="form-control" placeholder="Last Name" name="lastName">
+                                    <input type="text"  class="form-control" placeholder="Last Name" name="lastName" value="a">
                                 </div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label>Email:</label>
-                                    <input type="text" class="form-control" placeholder="email" name="email">
+                                    <input type="text" class="form-control" placeholder="email" name="email" value="a@a.com">
                                 </div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label>Address:</label>
-                                    <input type="text" class="form-control" placeholder="Address" name="address">
+                                    <input type="text" class="form-control" placeholder="Address" name="address" value="a">
                                 </div>
                             </div>
                             <div class="col-sm-4">
@@ -266,7 +266,7 @@ require "includes/header.inc.php";
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-group-justified">Register now!</button>
+                    <button type="submit" name="submit" class="btn btn-primary btn-group-justified">Register now!</button>
                 </div>
 
             </div>
@@ -383,10 +383,11 @@ require "includes/header.inc.php";
             }
 
         });
-        valueSelect.on('change', function () {
-            //$('img[alt="dog1"]').fadeIn();
 
-
+        //adds +381 when clicked on input phone
+        var phone = $('input[name="phone"]');
+        phone.focus(function () {
+            phone.val('+381');
         })
 
 
