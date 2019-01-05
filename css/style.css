@@ -6102,6 +6102,7 @@ a.scroll-top::before {
     height: 25px;
     width: 25px;
     background-color: #51e5ff;
+    border-radius: 30%;
 }
 
 /* On mouse-over, add a grey background color */

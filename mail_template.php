@@ -104,7 +104,7 @@
             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;" >
                 <!-- COPY -->
                 <tr>
-                    <td bgcolor="#ffffff" align="center" style="padding: 20px 40px 30px 40px; color: #ec368d;   font-size: 40px; font-weight: 400; line-height: 25px; border-radius: 4px 4px 4px 4px;" >
+                    <td bgcolor="#ffffff" align="center" style="padding: 20px 40px 30px 40px; color: #ec368d;   font-size: 40px; font-weight: 400; line-height: 25px; border-radius: 0px 0px 4px 4px;" >
                         <p style="margin: 0; font-size: 18px;">Thank you for signing up for our newsletter service. We are happy to have you here!</p>
                     </td>
                 </tr>
