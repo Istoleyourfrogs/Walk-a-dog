@@ -1,4 +1,5 @@
 <?php
+require "database.inc.php";
 session_start();
 //displaying the logout button if the session has started
 

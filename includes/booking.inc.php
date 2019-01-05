@@ -14,8 +14,8 @@ if(isset($_POST['submit'])){
         header("Location: ../booking.php?emptyError");
         exit();
     }
-    //checks for only letters in firstName and lastName
-    if(!preg_match("/^[a-zA-Z]*$/", $firstName) or !preg_match("/^[a-zA-Z]*$/", $lastName)) {
+    //checks for only letters in firstName and lastName or if the length is shorter than 2
+    if(!preg_match("/^[a-zA-Z]*$/", $firstName) or !preg_match("/^[a-zA-Z]*$/", $lastName) or strlen($firstName)<2 or strlen($lastName)<2) {
         header("Location: ../booking.php?nameError");
         exit();
     }
@@ -24,13 +24,13 @@ if(isset($_POST['submit'])){
         header("Location: ../booking.php?emailError");
         exit();
     }
-    //checks if the address has letters,numbers,spaces and a /
-    if(!preg_match("/^[a-zA-Z0-9\/\s]*$/", $address)){
+    //checks if the address has letters,numbers,spaces and a / or if the length is shorter than 5
+    if(!preg_match("/^[a-zA-Z0-9\/\s]*$/", $address) or strlen($address)<5){
         header("Location: ../booking.php?addressError");
         exit();
     }
-    //checks for only numbers and if it begins with +381
-    if(!preg_match("/^\+381[0-9]*$/", $phone)){
+    //checks for only numbers and if it begins with +381 or if the length is shorter than 9
+    if(!preg_match("/^\+381[0-9]*$/", $phone) or strlen($phone)<9){
         header("Location: ../booking.php?phoneError");
         exit();
     }
