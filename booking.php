@@ -159,39 +159,22 @@ require "includes/header.inc.php";
                                         <label>Breed First</label>
                                         <input type="text" class="form-control" placeholder="name first">
                                     </div>
-                                    <div class="btn-group-vertical mb-4 form-group" data-toggle="buttons">
-                                        <label class="headingDog">Vaccinated First</label><br>
-                                        <label class="btn btn-primary" for="vacYes1">YES
-                                        <input type="radio" id="vacYes1" name="vac1"><br>
-                                        </label>
-                                        <label class="btn btn-primary" for="vacNo1">NO
-                                        <input type="radio" id="vacNo1" name="vac1"><br>
-                                        </label>
-                                    </div>
-                                    <div class="btn-group-vertical mb-4 form-group" data-toggle="buttons">
-                                        <label class="headingDog">Trained First</label><br>
-                                        <label class="btn btn-primary" for="t11">Not agressive
-                                        <input type="radio" id="t11" name="trained1"><br>
-                                        </label>
-                                        <label class="btn btn-primary" for="t12">Little agressive
-                                        <input type="radio" id="t12" name="trained1"><br>
-                                        </label>
-                                        <label class="btn btn-primary" for="t13">Agressive
-                                        <input type="radio" id="t13" name="trained1">
-                                        </label>
-                                    </div>
-                                    <div class="btn-group-vertical mb-4 form-group" data-toggle="buttons">
-                                        <label class="headingDog">Agression First</label><br>
-                                        <label class="btn btn-primary" for="ag11">Not agressive
-                                        <input type="radio" id="ag11" name="agression1"><br>
-                                        </label>
-                                        <label class="btn btn-primary" for="ag12">Little agressive
-                                        <input type="radio" id="ag12" name="agression1"><br>
-                                        </label>
-                                        <label class="btn btn-primary" for="ag13">Agressive
-                                        <input type="radio" id="ag13" name="agression1">
-                                        </label>
-                                    </div>
+
+                                    <label class="container1">Vaccinated First
+                                        <input type="checkbox" id="vacinated1" class="custom-checkbox" name="vacinated1">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <br>
+                                    <label class="container1">Trained First
+                                        <input type="checkbox" id="trained1" class="custom-checkbox" name="trained1">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <br>
+                                    <label class="container1">Aggressive First
+                                        <input type="checkbox" id="aggressive1" class="custom-checkbox" name="aggressive1">
+                                        <span class="checkmark"></span>
+                                    </label>
+
                                     <div class="form-group ">
                                         <label class="headingDog">Other First</label>
                                         <textarea placeholder="Enter text here" rows="5"></textarea>
@@ -215,35 +198,20 @@ require "includes/header.inc.php";
                                     </div>
 
 
-                                    <div class="form-group ">
-                                        <label class="headingDog">Vaccinated First</label><br>
-                                        <label for="vacYes1">YES</label>
-                                        <input type="radio" id="vacYes1" name="vac1"><br>
-                                        <label for="vacNo1">NO</label>
-                                        <input type="radio" id="vacNo1" name="vac1"><br>
-                                    </div>
-
-
-
-                                    <div class="form-group ">
-                                        <label class="headingDog">Trained First</label><br>
-                                        <label for="t11">Not agressive</label>
-                                        <input type="radio" id="t11" name="trained1"><br>
-                                        <label for="t12">Little agressive</label>
-                                        <input type="radio" id="t12" name="trained1"><br>
-                                        <label for="t13">Agressive</label>
-                                        <input type="radio" id="t13" name="trained1">
-                                    </div>
-
-                                    <div class="form-group ">
-                                        <label class="headingDog">Agression First</label><br>
-                                        <label for="ag11">Not agressive</label>
-                                        <input type="radio" id="ag11" name="agression1"><br>
-                                        <label for="ag12">Little agressive</label>
-                                        <input type="radio" id="ag12" name="agression1"><br>
-                                        <label for="ag13">Agressive</label>
-                                        <input type="radio" id="ag13" name="agression1">
-                                    </div>
+                                    <label class="container1">Vaccinated First
+                                        <input type="checkbox" id="vacinated2" class="custom-checkbox" name="vacinated2">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <br>
+                                    <label class="container1">Trained First
+                                        <input type="checkbox" id="trained2" class="custom-checkbox" name="trained2">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <br>
+                                    <label class="container1">Aggressive First
+                                        <input type="checkbox" id="aggressive2" class="custom-checkbox" name="aggressive2">
+                                        <span class="checkmark"></span>
+                                    </label>
 
 
                                     <div class="form-group ">
@@ -274,35 +242,20 @@ require "includes/header.inc.php";
                                     </div>
 
 
-                                    <div class="form-group ">
-                                        <label class="headingDog">Vaccinated First</label><br>
-                                        <label for="vacYes1">YES</label>
-                                        <input type="radio" id="vacYes1" name="vac1"><br>
-                                        <label for="vacNo1">NO</label>
-                                        <input type="radio" id="vacNo1" name="vac1"><br>
-                                    </div>
-
-
-
-                                    <div class="form-group ">
-                                        <label class="headingDog">Trained First</label><br>
-                                        <label for="t11">Not agressive</label>
-                                        <input type="radio" id="t11" name="trained1"><br>
-                                        <label for="t12">Little agressive</label>
-                                        <input type="radio" id="t12" name="trained1"><br>
-                                        <label for="t13">Agressive</label>
-                                        <input type="radio" id="t13" name="trained1">
-                                    </div>
-
-                                    <div class="form-group ">
-                                        <label class="headingDog">Agression First</label><br>
-                                        <label for="ag11">Not agressive</label>
-                                        <input type="radio" id="ag11" name="agression1"><br>
-                                        <label for="ag12">Little agressive</label>
-                                        <input type="radio" id="ag12" name="agression1"><br>
-                                        <label for="ag13">Agressive</label>
-                                        <input type="radio" id="ag13" name="agression1">
-                                    </div>
+                                    <label class="container1">Vaccinated First
+                                        <input type="checkbox" id="vacinated3" class="custom-checkbox" name="vacinated3">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <br>
+                                    <label class="container1">Trained First
+                                        <input type="checkbox" id="trained3" class="custom-checkbox" name="trained3">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <br>
+                                    <label class="container1">Aggressive First
+                                        <input type="checkbox" id="aggressive3" class="custom-checkbox" name="aggressive3">
+                                        <span class="checkmark"></span>
+                                    </label>
 
 
                                     <div class="form-group ">
