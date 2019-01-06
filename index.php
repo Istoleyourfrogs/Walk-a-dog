@@ -69,58 +69,76 @@ require_once "includes/header.inc.php";
                     </div>
                     <div class="col-md-7 col-sm-12 col-xs-12">
                         <div class="bizface-about-right">
-                            <div class="col-sm-6 col-md-6 col-xs-12">
-                                <div class="bizface-about-div">
-                                    <div class="bizface-about-head">
-                                        <div class="bizface-about-icon">
-                                        <i class="fa fa-heartbeat"></i>
+                                <div class="panel-group" id="accordion">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading ">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" class="bizface-about-div">
+                                                    <div class="bizface-about-icon">
+                                                        <i class="fa fa-heartbeat"></i>
+                                                    </div>
+                                                    <span class="about-section-title">Work with heart</span>
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapse1" class="panel-collapse collapse bizface-about-content">
+                                            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                                        </div>
                                     </div>
-                                        <h5><a href="about.html">Work with heart</a></h5>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading ">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="bizface-about-div">
+                                                    <div class="bizface-about-icon">
+                                                        <i class="fa fa-cogs"></i>
+                                                    </div>
+                                                    <span class="about-section-title">Reliable Services</span>
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapse2" class="panel-collapse collapse bizface-about-content">
+                                            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                                        </div>
                                     </div>
-                                    <div class="bizface-about-content">
-                                        <p>Lorem ipsum dolor sit amet, consectetur ish dipisicing elit, sed do eiusmod tempor lorem incididunt ut labore et .</p>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading ">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="bizface-about-div">
+                                                    <div class="bizface-about-icon">
+                                                        <i class="fa fa-globe"></i>
+                                                    </div>
+                                                    <span class="about-section-title">World market</span>
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapse3" class="panel-collapse collapse bizface-about-content">
+                                            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading ">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse4" class="bizface-about-div">
+                                                    <div class="bizface-about-icon">
+                                                        <i class="fa fa-history"></i>
+                                                    </div>
+                                                    <span class="about-section-title">Great support</span>
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapse4" class="panel-collapse collapse bizface-about-content">
+                                            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                           <div class="col-sm-6 col-md-6 col-xs-12">
-                                <div class="bizface-about-div">
-                                    <div class="bizface-about-head">
-                                        <div class="bizface-about-icon">
-                                        <i class="fa fa-cogs"></i>
-                                    </div>
-                                        <h5><a href="about.html">Reliable Services</a></h5>
-                                    </div>
-                                    <div class="bizface-about-content">
-                                        <p>Lorem ipsum dolor sit amet, consectetur ish dipisicing elit, sed do eiusmod tempor lorem incididunt ut labore et .</p>
-                                    </div>
-                                </div>
-                            </div>
-                           <div class="col-sm-6 col-md-6 col-xs-12">
-                                <div class="bizface-about-div">
-                                    <div class="bizface-about-head">
-                                        <div class="bizface-about-icon">
-                                        <i class="fa fa-globe"></i>
-                                    </div>
-                                        <h5><a href="about.html">world market</a></h5>
-                                    </div>
-                                    <div class="bizface-about-content">
-                                        <p>Lorem ipsum dolor sit amet, consectetur ish dipisicing elit, sed do eiusmod tempor lorem incididunt ut labore et .</p>
-                                    </div>
-                                </div>
-                            </div>
-                           <div class="col-sm-6 col-md-6 col-xs-12">
-                                <div class="bizface-about-div">
-                                    <div class="bizface-about-head">
-                                        <div class="bizface-about-icon">
-                                        <i class="fa fa-history"></i>
-                                    </div>
-                                        <h5><a href="about.html">great support</a></h5>
-                                    </div>
-                                    <div class="bizface-about-content">
-                                        <p>Lorem ipsum dolor sit amet, consectetur ish dipisicing elit, sed do eiusmod tempor lorem incididunt ut labore et .</p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

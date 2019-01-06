@@ -1705,13 +1705,13 @@ slider-media srceen
 }
 
 .bizface-about-icon {
-    color: #FFA5A5;
+    color: #fff;
     font-size: 30px;
     width: 60px;
     height: 60px;
     display: inline-block;
     line-height: 60px;
-    background: #ffd6c0;
+    background: #ec368d;
     text-align: center;
     border: 1px solid #eee;
     box-shadow: 2px 7px 6px rgba(0, 0, 0, 0.1);
@@ -1740,6 +1740,18 @@ slider-media srceen
     padding-left: 25px;
     text-transform: uppercase;
     transition: all 0.3s ease 0s;
+}
+.about-section-title{
+    display: inline-block;
+    font-weight: 700;
+    margin: 0;
+    overflow: hidden;
+    padding-left: 25px;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+}
+about-section-panel{
+    margin: 10px;
 }
 
 
@@ -6181,3 +6193,4 @@ form.login{
 form.login .btn:hover{
     background-color: #FFD6C0;
 }
+
