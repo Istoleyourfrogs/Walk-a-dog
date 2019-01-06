@@ -1,7 +1,8 @@
 <?php
 require "database.inc.php";
+require "functions.inc.php";
 if(isset($_POST['submit'])){
-
+/***************************************************OWNER SECTION*********************************************************/
     $firstName = mysqli_real_escape_string($connect,trim($_POST['firstName']));
     $lastName = mysqli_real_escape_string($connect,trim($_POST['lastName']));
     $email = mysqli_real_escape_string($connect,trim($_POST['email']));
@@ -12,13 +13,14 @@ if(isset($_POST['submit'])){
     $time = mysqli_real_escape_string($connect,trim($_POST['time']));
     $day = mysqli_real_escape_string($connect,trim($_POST['day']));
 
+
     //checks if any of the variables above are empty
     if(empty($firstName) or empty($lastName) or empty($email) or empty($address) or empty($phone) or empty($typeOfWalk)){
         header("Location: ../booking.php?emptyError");
         exit();
     }
     //checks for only letters in firstName and lastName or if the length is shorter than 2
-    if(!preg_match("/^[a-zA-Z]*$/", $firstName) or !preg_match("/^[a-zA-Z]*$/", $lastName) or strlen($firstName)<2 or strlen($lastName)<2) {
+    if(!preg_match("/^[a-zA-Z\s]*$/", $firstName) or !preg_match("/^[a-zA-Z\s]*$/", $lastName) or strlen($firstName)<2 or strlen($lastName)<2) {
         header("Location: ../booking.php?nameError");
         exit();
     }
@@ -28,7 +30,7 @@ if(isset($_POST['submit'])){
         exit();
     }
     //checks if the address has letters,numbers,spaces and a / or if the length is shorter than 5
-    if(!preg_match("/^[a-zA-Z0-9\/\s]*$/", $address) or strlen($address)<5){
+        if(!preg_match("/^[a-zA-Z0-9\/\s]*$/", $address) or strlen($address)<5){
         header("Location: ../booking.php?addressError");
         exit();
     }
@@ -42,6 +44,7 @@ if(isset($_POST['submit'])){
         header("Location: ../booking.php?walkError");
         exit();
     }
+
     switch ($typeOfWalk){
         case "oneTime":
 
@@ -92,6 +95,76 @@ if(isset($_POST['submit'])){
             exit();
     }
 
+    //checks if there is an email already in the database
+    $sql = "SELECT email,name FROM users WHERE email='$email';";
+    $query = mysqli_query($connect,$sql);
+    if(mysqli_num_rows($query) > 0 ){
+        header("Location: ../booking.php?alreadyRegistered");
+        exit();
+    }
+/***************************************************OWNER SECTION*********************************************************/
+
+
+/***************************************************DOG SECTION*********************************************************/
+
+    $numberOfDogs = mysqli_real_escape_string($connect,trim($_POST['numberOfDogs']));
+    if(empty($numberOfDogs)){
+        header("Location: ../booking.php?noDogs");
+        exit();
+    }
+    if(!preg_match("/^(1|2|3)$",$numberOfDogs)){
+        header("Location: ../booking.php?dogNumberNotMatching");
+        exit();
+    }
+
+    //capitalize the first letter of each word for $name
+    $name = $firstName." ".$lastName;
+    $name = ucwords($name);
+    $address = ucwords($address);
+    //generates random string of character(20) sets status(free walk) to 1 and verified to 0
+    $code = generateCode();
+    mysqli_real_escape_string($connect,trim($code));
+    $status = 1;
+    $verified = 0;
+
+
+    //INSERT INTO TABLE USERS
+    $sql = "INSERT INTO users(name,email,address,phone,status,verified,code) VALUES ('$name','$email','$address','$phone',$status,$verified,'$code');";
+    $query = mysqli_query($connect,$sql);
+    //combine date and time to write to the database
+    if(!empty($date) and !empty($time)){
+        $dateTime = $date." ".$time;
+    }
+    switch($typeOfWalk){
+        case "oneTime":
+            $userID = getUserID($connect,$code);
+            $sql = "INSERT INTO walks(user_fk,type,one_time_walk) VALUES ($userID,'$typeOfWalk','$dateTime');";
+            $query = mysqli_query($connect,$sql);
+            break;
+        case "daily":
+            $userID = getUserID($connect,$code);
+            $sql = "INSERT INTO walks(user_fk,type,daily_walk_time) VALUES ($userID,'$typeOfWalk','$time');";
+            $query = mysqli_query($connect,$sql);
+            break;
+        case "weekly":
+            $userID = getUserID($connect,$code);
+            $sql = "INSERT INTO walks(user_fk,type,weekly_walk_day,weekly_walk_time) VALUES ($userID,'$typeOfWalk','$day','$time');";
+            $query = mysqli_query($connect,$sql);
+            break;
+        default:
+            header("Location: ../booking.php?oopsDatabaseError");
+            exit();
+    }
+    //SEND VERIFICATION EMAIL
+    $to = $email;
+    $subject = "VERIFY";
+    $txt = "<html>
+    Verify your request<a href=\"https://walkadog.secondsection.in.rs/includes/verification.inc.php?code=$code\">Verify</a> ";
+    $headers = "From:  walk·a·dog <walkadog@secondsection.in.rs>" . " \r\n" .
+    $headers .= 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
+    mail($to,$subject,$txt,$headers);
+
     header("Location: ../booking.php?success");
     exit();
 
@@ -100,27 +173,3 @@ if(isset($_POST['submit'])){
     exit();
 }
 
-function dayValidation($dayInput){
-    $daysOfWeek = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
-    if(in_array($dayInput,$daysOfWeek)){
-        return $dayInput;
-    }
-    return null;
-
-}
-
-function timeValidation($time){
-    if(!preg_match("/^(0{1,1}[0-9]|1{1,1}[0-9]|2{1,1}[0-3]){1,1}\:{1,1}[0-5]{1,1}[0-9]$/",$time)){
-        return null;
-    }else{
-        return $time;
-    }
-}
-
-function dateValidation($date){
-    if(!preg_match("/^2[0-9]{3}\-(0[1-9]|1[0-2])\-(0[1-9]|1[0-9]|2[0-9]|3[0-1])$/",$date)){
-        return null;
-    }else{
-        return $date;
-    }
-}

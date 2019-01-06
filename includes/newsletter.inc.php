@@ -263,7 +263,7 @@ if(isset($_POST['submit'])) {
     <a href=\"https://walkadog.secondsection.in.rs/includes/unsubscribe.inc.php?key={$result['hashedMail']}\">Unsubscribe</a>
 ";*/
     $headers = "From:  walk·a·dog <walkadog@secondsection.in.rs>" . " \r\n" .
-        $headers .= 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'MIME-Version: 1.0' . "\r\n";
     $headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
 
     mail($to, $subject, $txt, $headers);

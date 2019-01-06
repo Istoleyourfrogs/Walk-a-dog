@@ -27,31 +27,31 @@ require "includes/header.inc.php";
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label>First Name:</label>
-                                    <input type="text" class="form-control" placeholder="First Name" name="firstName" value="dasd">
+                                    <input type="text" class="form-control" placeholder="First Name" name="firstName">
                                 </div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label>Last Name:</label>
-                                    <input type="text"  class="form-control" placeholder="Last Name" name="lastName" value="asdas">
+                                    <input type="text"  class="form-control" placeholder="Last Name" name="lastName">
                                 </div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label>Email:</label>
-                                    <input type="text" class="form-control" placeholder="email" name="email" value="asdas@gmail.com">
+                                    <input type="text" class="form-control" placeholder="email" name="email">
                                 </div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label>Address:</label>
-                                    <input type="text" class="form-control" placeholder="Address" name="address" value="asdasdas">
+                                    <input type="text" class="form-control" placeholder="Address" name="address">
                                 </div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label>Phone Number:</label>
-                                    <input type="text"  class="form-control" placeholder="Phone Number" name="phone" value="+381 2342342">
+                                    <input type="text"  class="form-control" placeholder="Phone Number" name="phone">
                                 </div>
                             </div>
                             <div class="col-sm-4">

@@ -103,7 +103,8 @@ $(document).ready(function () {
 
     //adding submit button only after filling out every necessary field
     validate();
-    $('input[name="firstName"], input[name="lastName"], input[name="email"]').change(validate);
+    var inputs = $('input[name="firstName"], input[name="lastName"], input[name="email"]');
+    inputs.change(validate);
     //checks if there are any values entered in the inputs
     function validate(){
         if (($('input[name="firstName"]').val().length > 0) && ($('input[name="lastName"]').val().length > 0) && ($('input[name="email"]').val().length > 0)) {
