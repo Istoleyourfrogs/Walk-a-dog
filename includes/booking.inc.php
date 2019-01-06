@@ -30,7 +30,7 @@ if(isset($_POST['submit'])){
         exit();
     }
     //checks for only numbers and if it begins with +381 or if the length is shorter than 9
-    if(!preg_match("/^\+381[0-9]*$/", $phone) or strlen($phone)<9){
+    if(!preg_match("/^\+381\s[0-9\/-]*$/", $phone) or strlen($phone)<9){
         header("Location: ../booking.php?phoneError");
         exit();
     }
@@ -39,16 +39,55 @@ if(isset($_POST['submit'])){
         header("Location: ../booking.php?walkError");
         exit();
     }
+    switch ($typeOfWalk){
+        case "oneTime":
+            $date = mysqli_real_escape_string($connect,trim($_POST['date']));
+            $time = mysqli_real_escape_string($connect,trim($_POST['time']));
+            $day = mysqli_real_escape_string($connect,trim($_POST['day']));
+            if(empty($date) or empty($time)){
+                header("Location: ../booking.php?oneTimeEmpty");
+                exit();
+            }
+            break;
+        case "daily":
+            $date = mysqli_real_escape_string($connect,trim($_POST['date']));
+            $time = mysqli_real_escape_string($connect,trim($_POST['time']));
+            $day = mysqli_real_escape_string($connect,trim($_POST['day']));
+            if(empty($time)){
+                header("Location: ../booking.php?dailyEmpty");
+                exit();
+            }
+            if(!empty($date)){
+                header("Location: ../booking.php?dateNotEmpty");
+                exit();
+            }
+            break;
+        case "weekly":
+
+            $time = mysqli_real_escape_string($connect,trim($_POST['time']));
+            $day = mysqli_real_escape_string($connect,trim($_POST['day']));
+            getDays($day);
+
+            break;
+        default :
+            header("Location: ../booking.php?daysError");
+            exit();
+    }
 
     header("Location: ../booking.php?success");
     exit();
 
-
-
-
-
-
 }else{
     header("Location: ../booking.php?fatalError");
     exit();
+}
+
+function getDays($dayInput){
+    $daysOfWeek = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+    foreach ($daysOfWeek as $key => $value){
+        if($dayInput == $value){
+            return $dayInput;
+        }
+    }
+    //return $day;
 }

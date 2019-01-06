@@ -27,31 +27,31 @@ require "includes/header.inc.php";
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label>First Name:</label>
-                                    <input type="text" class="form-control" placeholder="First Name" name="firstName" value="a">
+                                    <input type="text" class="form-control" placeholder="First Name" name="firstName" value="dasd">
                                 </div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label>Last Name:</label>
-                                    <input type="text"  class="form-control" placeholder="Last Name" name="lastName" value="a">
+                                    <input type="text"  class="form-control" placeholder="Last Name" name="lastName" value="asdas">
                                 </div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label>Email:</label>
-                                    <input type="text" class="form-control" placeholder="email" name="email" value="a@a.com">
+                                    <input type="text" class="form-control" placeholder="email" name="email" value="asdas@gmail.com">
                                 </div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label>Address:</label>
-                                    <input type="text" class="form-control" placeholder="Address" name="address" value="a">
+                                    <input type="text" class="form-control" placeholder="Address" name="address" value="asdasdas">
                                 </div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label>Phone Number:</label>
-                                    <input type="text"  class="form-control" placeholder="Phone Number" name="phone">
+                                    <input type="text"  class="form-control" placeholder="Phone Number" name="phone" value="+381 2342342">
                                 </div>
                             </div>
                             <div class="col-sm-4">
@@ -82,6 +82,17 @@ require "includes/header.inc.php";
                             <div class="col-sm-10 none" walk="day">
                                 <div class="btn-group" data-toggle="buttons">
                                     <label>Which day: </label><br>
+                                    <?php
+                                    $daysOfWeek = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+                                    foreach ($daysOfWeek as $key => $value){
+                                        echo "
+                                        <label for=\"$value\" class=\"btn btn-primary\">$value
+                                        <input id=\"$value\" type=\"radio\" name=\"day\" value=\"$value\" class=\"\">
+                                        </label>
+                                        ";
+                                    }
+                                    ?>
+                                    <!--
                                     <label for="monday" class="btn btn-primary">Monday
                                         <input id="monday" type="radio" name="day" value="monday" class="">
                                     </label>
@@ -103,6 +114,7 @@ require "includes/header.inc.php";
                                     <label for="sunday" class="btn btn-primary">Sunday
                                         <input id="sunday" type="radio"  name="day" value="sunday">
                                     </label>
+                                    -->
                                 </div>
                             </div>
 
@@ -132,8 +144,6 @@ require "includes/header.inc.php";
                 </div>
             </div>
             <!-- HUMAN FORM SECTION END-->
-
-
 
             <!-- DOG FORM SECTION-->
             <div class="row">

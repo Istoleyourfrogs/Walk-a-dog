@@ -144,6 +144,7 @@ require "includes/header.inc.php";
 
 <script src="js/jquery-3.2.1.min.js"></script>
 <script>
+    /*
     $(document).ready(function () {
         //alert("test");
         //checking if the url has /admin.php and adds admin.css to the <head>
@@ -152,7 +153,7 @@ require "includes/header.inc.php";
         alert("test");
     }
 
-    })
+    })*/
 </script>
 </body>
 </html>

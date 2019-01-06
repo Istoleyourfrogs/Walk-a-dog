@@ -58,6 +58,7 @@ echo "<!DOCTYPE html>
                             <div class=\"close-icon\">
                                 <i class=\"fa fa-close\"></i>
                             </div>
+                            <form action=\"includes/logout.inc.php\" method=\"post\">
                             <ul>
                                 <li><a href=\"index.php#home\">Home</a></li>
                                 <li><a href=\"index.php#about\">About</a> </li>
@@ -65,16 +66,14 @@ echo "<!DOCTYPE html>
                                 <li><a href=\"index.php#booking\">Booking</a></li>
                                 <li><a href=\"index.php#contact\">Contact</a></li>";
                                 if(isset($_SESSION['username'])){
-    $logout = "<form action=\"includes/logout.inc.php\" method=\"post\">
-                <li><button class=\"btn btn - primary\" type=\"submit\" name=\"submit\">Logout</button></li>
-                </form>";
-                echo $logout;
+    $logout = "<li><button class=\"btn btn-primary\" type=\"submit\" name=\"submit\">Logout</button></li>";
     $admin = "<li><a href=\"admin.php\">Admin</a></li>";
                 echo $admin;
+                echo $logout;
 }
 echo"
                             </ul>
-                            
+                            </form>
                             
                             
                         </nav>
