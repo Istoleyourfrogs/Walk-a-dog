@@ -8,6 +8,9 @@ if(isset($_POST['submit'])){
     $address = mysqli_real_escape_string($connect,trim($_POST['address']));
     $phone = mysqli_real_escape_string($connect,trim($_POST['phone']));
     $typeOfWalk = mysqli_real_escape_string($connect,trim($_POST['typeWalk']));
+    $date = mysqli_real_escape_string($connect,trim($_POST['date']));
+    $time = mysqli_real_escape_string($connect,trim($_POST['time']));
+    $day = mysqli_real_escape_string($connect,trim($_POST['day']));
 
     //checks if any of the variables above are empty
     if(empty($firstName) or empty($lastName) or empty($email) or empty($address) or empty($phone) or empty($typeOfWalk)){
@@ -41,20 +44,42 @@ if(isset($_POST['submit'])){
     }
     switch ($typeOfWalk){
         case "oneTime":
-            $date = mysqli_real_escape_string($connect,trim($_POST['date']));
-            $time = mysqli_real_escape_string($connect,trim($_POST['time']));
-            $day = mysqli_real_escape_string($connect,trim($_POST['day']));
+
             if(empty($date) or empty($time)){
                 header("Location: ../booking.php?oneTimeEmpty");
                 exit();
             }
+            if(dateValidation($date) == null or timeValidation($time) == null){
+                header("Location: ../booking.php?dateOrTimeNotValid");
+                exit();
+            }
+            if(!empty($day)){
+                header("Location: ../booking.php?dayFatalError");
+                exit();
+            }
             break;
         case "daily":
-            $date = mysqli_real_escape_string($connect,trim($_POST['date']));
-            $time = mysqli_real_escape_string($connect,trim($_POST['time']));
-            $day = mysqli_real_escape_string($connect,trim($_POST['day']));
+
             if(empty($time)){
                 header("Location: ../booking.php?dailyEmpty");
+                exit();
+            }
+            if(timeValidation($time) == null){
+                header("Location: ../booking.php?timeFatalError");
+                exit();
+            }
+            if(!empty($date) or !empty($day)){
+                header("Location: ../booking.php?dateOrDayNotEmpty");
+                exit();
+            }
+            break;
+        case "weekly":
+            if(empty($day) or empty($time)){
+                header("Location: ../booking.php?weeklyEmpty");
+                exit();
+            }
+            if(!dayValidation($day)){
+                header("Location: ../booking.php?dayFatalError");
                 exit();
             }
             if(!empty($date)){
@@ -62,15 +87,8 @@ if(isset($_POST['submit'])){
                 exit();
             }
             break;
-        case "weekly":
-
-            $time = mysqli_real_escape_string($connect,trim($_POST['time']));
-            $day = mysqli_real_escape_string($connect,trim($_POST['day']));
-            getDays($day);
-
-            break;
         default :
-            header("Location: ../booking.php?daysError");
+            header("Location: ../booking.php?daysNotGoodError");
             exit();
     }
 
@@ -82,12 +100,27 @@ if(isset($_POST['submit'])){
     exit();
 }
 
-function getDays($dayInput){
+function dayValidation($dayInput){
     $daysOfWeek = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
-    foreach ($daysOfWeek as $key => $value){
-        if($dayInput == $value){
-            return $dayInput;
-        }
+    if(in_array($dayInput,$daysOfWeek)){
+        return $dayInput;
     }
-    //return $day;
+    return null;
+
+}
+
+function timeValidation($time){
+    if(!preg_match("/^(0{1,1}[0-9]|1{1,1}[0-9]|2{1,1}[0-3]){1,1}\:{1,1}[0-5]{1,1}[0-9]$/",$time)){
+        return null;
+    }else{
+        return $time;
+    }
+}
+
+function dateValidation($date){
+    if(!preg_match("/^2[0-9]{3}\-(0[1-9]|1[0-2])\-(0[1-9]|1[0-9]|2[0-9]|3[0-1])$/",$date)){
+        return null;
+    }else{
+        return $date;
+    }
 }
