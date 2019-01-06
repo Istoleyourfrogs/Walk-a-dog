@@ -30,67 +30,64 @@ if(isset($_POST['submit'])){
         exit();
     }
     //checks if the address has letters,numbers,spaces and a / or if the length is shorter than 5
-        if(!preg_match("/^[a-zA-Z0-9\/\s]*$/", $address) or strlen($address)<5){
-        header("Location: ../booking.php?addressError");
-        exit();
-    }
+    validation("/^[a-zA-Z0-9\/\s]*$/",$address,5,"addressError");
     //checks for only numbers and if it begins with +381 or if the length is shorter than 9
-    if(!preg_match("/^\+381\s[0-9\/-]*$/", $phone) or strlen($phone)<9){
-        header("Location: ../booking.php?phoneError");
-        exit();
-    }
+    validation("/^\+381\s[0-9\/-]*$/",$phone,9,"phoneError");
     //checks if the walks are /oneTime|daily|weekly/
-    if(!preg_match("/^(oneTime|daily|weekly)$/",$typeOfWalk)){
-        header("Location: ../booking.php?walkError");
-        exit();
-    }
+    validation("/^(oneTime|daily|weekly)$/",$typeOfWalk,0,"walkError");
 
+    //depended on the type of walk checks for error in the appropriate fields
     switch ($typeOfWalk){
         case "oneTime":
-
+            //checks if date and time are empty
             if(empty($date) or empty($time)){
                 header("Location: ../booking.php?oneTimeEmpty");
                 exit();
             }
-            if(dateValidation($date) == null or timeValidation($time) == null){
+            //checks if the format of date and time is valid
+            if(!dateValidation($date) or !timeValidation($time)){
                 header("Location: ../booking.php?dateOrTimeNotValid");
                 exit();
             }
+            //if the day is not empty display fatal Error
             if(!empty($day)){
                 header("Location: ../booking.php?dayFatalError");
                 exit();
             }
             break;
-        case "daily":
 
+        case "daily":
+            //checks if the time is empty
             if(empty($time)){
                 header("Location: ../booking.php?dailyEmpty");
                 exit();
             }
-            if(timeValidation($time) == null){
-                header("Location: ../booking.php?timeFatalError");
-                exit();
-            }
+            //validates the time based on the format xx:xx
+            validation("/^(0[0-9]|1[0-9]|2[0-3])\:[0-5][0-9]$/",$time,0,"timeFatalError");
+            //if either date or day are not empty display Error
             if(!empty($date) or !empty($day)){
                 header("Location: ../booking.php?dateOrDayNotEmpty");
                 exit();
             }
             break;
+
         case "weekly":
+            //checks if the day or time are empty
             if(empty($day) or empty($time)){
                 header("Location: ../booking.php?weeklyEmpty");
                 exit();
             }
-            if(!dayValidation($day)){
-                header("Location: ../booking.php?dayFatalError");
-                exit();
-            }
+            //validates the date based on the format xxxx-xx-xx
+            validation("/^2[0-9]{3}\-(0[1-9]|1[0-2])\-(0[1-9]|1[0-9]|2[0-9]|3[0-1])$/",$date,0,"dateFatalError");
+            //checks if the date is not empty and displays Error
             if(!empty($date)){
                 header("Location: ../booking.php?dateNotEmpty");
                 exit();
             }
             break;
+
         default :
+            //if none of the above cases were executed redirect with an Error
             header("Location: ../booking.php?daysNotGoodError");
             exit();
     }
@@ -112,18 +109,21 @@ if(isset($_POST['submit'])){
         header("Location: ../booking.php?noDogs");
         exit();
     }
-    if(!preg_match("/^(1|2|3)$",$numberOfDogs)){
+    if(!preg_match("/^(1|2|3)$/",$numberOfDogs)){
         header("Location: ../booking.php?dogNumberNotMatching");
         exit();
     }
+    /****************************************************************/
+    /************************CONTINUE HERE PLS***********************/
+    /****************************************************************/
 
     //capitalize the first letter of each word for $name
     $name = $firstName." ".$lastName;
-    $name = ucwords($name);
-    $address = ucwords($address);
+    $name = ucwords(strtolower($name));
+    $address = ucwords(strtolower($address));
     //generates random string of character(20) sets status(free walk) to 1 and verified to 0
     $code = generateCode();
-    mysqli_real_escape_string($connect,trim($code));
+    $code = mysqli_real_escape_string($connect,trim($code));
     $status = 1;
     $verified = 0;
 
@@ -131,25 +131,23 @@ if(isset($_POST['submit'])){
     //INSERT INTO TABLE USERS
     $sql = "INSERT INTO users(name,email,address,phone,status,verified,code) VALUES ('$name','$email','$address','$phone',$status,$verified,'$code');";
     $query = mysqli_query($connect,$sql);
+
     //combine date and time to write to the database
     if(!empty($date) and !empty($time)){
         $dateTime = $date." ".$time;
     }
+    //gets the user_id from the database
+    $userID = getUserID($connect,$code);
+    //depended on the $typeOfWalk inserts the correct data into the database
     switch($typeOfWalk){
         case "oneTime":
-            $userID = getUserID($connect,$code);
-            $sql = "INSERT INTO walks(user_fk,type,one_time_walk) VALUES ($userID,'$typeOfWalk','$dateTime');";
-            $query = mysqli_query($connect,$sql);
+            typeOfWalkSQL($connect,"user_fk,type,one_time_walk","$userID,'$typeOfWalk','$dateTime'");
             break;
         case "daily":
-            $userID = getUserID($connect,$code);
-            $sql = "INSERT INTO walks(user_fk,type,daily_walk_time) VALUES ($userID,'$typeOfWalk','$time');";
-            $query = mysqli_query($connect,$sql);
+            typeOfWalkSQL($connect,"user_fk,type,daily_walk_time","$userID,'$typeOfWalk','$time'");
             break;
         case "weekly":
-            $userID = getUserID($connect,$code);
-            $sql = "INSERT INTO walks(user_fk,type,weekly_walk_day,weekly_walk_time) VALUES ($userID,'$typeOfWalk','$day','$time');";
-            $query = mysqli_query($connect,$sql);
+            typeOfWalkSQL($connect,"user_fk,type,weekly_walk_day,weekly_walk_time","$userID,'$typeOfWalk','$day','$time'");
             break;
         default:
             header("Location: ../booking.php?oopsDatabaseError");

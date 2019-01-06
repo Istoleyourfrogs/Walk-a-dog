@@ -1,59 +1,27 @@
 <?php
 require "database.inc.php";
+require "functions.inc.php";
 
 if(isset($_POST['submit'])) {
     //setting all variables from the newsletter form
     $mailFrom = mysqli_real_escape_string($connect,trim($_POST['email']));
     $empty = $_POST['hidden'];
     $hashedMail = md5($mailFrom);
+    //getting the if the is a same mail from the database
     $sql = "SELECT * FROM newsletter WHERE mail='$mailFrom';";
     $query = mysqli_query($connect,$sql);
     $result = mysqli_fetch_assoc($query);
     $mailCheck = $result['mail'];
+
     $location = $_POST['formLocation'];
+
     if($location=='section'){
-        //if the hidden input is not empty display error
-        if (!empty($empty)) {
-            header("Location: ../index.php?mail=fatalError#newsletter_anchor");
-            exit();
-        }
-        //if the input is empty display error
-        if (empty($mailFrom)) {
-            header("Location: ../index.php?mail=error#newsletter_anchor");
-            exit();
-        }
-        //if there is a mail in the database return back with an error
-        if ($mailCheck == $mailFrom) {
-            header("Location: ../index.php?mail=same#newsletter_anchor");
-            exit();
-        }
-        //validating an email
-        if (!filter_var($mailFrom, FILTER_VALIDATE_EMAIL)) {
-            header("Location: ../index.php?mail=mail#newsletter_anchor");
-            exit();
-        }
+        $locationPoint = "newsletter_anchor";
+        mailValidation($empty,$mailFrom,$mailCheck,$locationPoint);
     }
     elseif ($location=='footer') {
-        //if the hidden input is not empty display error
-        if (!empty($empty)) {
-            header("Location: ../index.php?mail=fatalError#newsletter");
-            exit();
-        }
-        //if the input is empty display error
-        if (empty($mailFrom)) {
-            header("Location: ../index.php?mail=error#newsletter");
-            exit();
-        }
-        //if there is a mail in the database return back with an error
-        if ($mailCheck == $mailFrom) {
-            header("Location: ../index.php?mail=same#newsletter");
-            exit();
-        }
-        //validating an email
-        if (!filter_var($mailFrom, FILTER_VALIDATE_EMAIL)) {
-            header("Location: ../index.php?mail=mail#newsletter");
-            exit();
-        }
+        $locationPoint = "newsletter";
+        mailValidation($empty,$mailFrom,$mailCheck,$locationPoint);
     }
     //inserting the email into the database
     $sql = "INSERT INTO newsletter(mail,hashedMail) VALUES ('$mailFrom','$hashedMail');";
@@ -70,12 +38,12 @@ if(isset($_POST['submit'])) {
     <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />
-    <link rel=\"stylesheet\" href=\"css/style.css\">
+    <!--<link rel=\"stylesheet\" href=\"css/style.css\">-->
     <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Kalam:400,700\">
     <style type=\"text/css\">
 
         /* CLIENT-SPECIFIC STYLES */
-        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: 'Kalam', cursive }
         table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
         img { -ms-interpolation-mode: bicubic; }
 
@@ -121,7 +89,7 @@ if(isset($_POST['submit'])) {
                 <tr>
                     <td align=\"center\" valign=\"top\" style=\"padding: 40px 10px 40px 10px;\">
                         <a href=\"https://walkadog.secondsection.in.rs/index.php\" target=\"_blank\">
-                            <img alt=\"Logo\" src=\"https://walkadog.secondsection.in.rs/images/dog.svg\" style=\"display: block; width: 400px; max-width: 400px; min-width: 400px;   color: #ffffff; font-size: 18px;\" border=\"0\">
+                            <img alt=\"Logo\" src=\"https://walkadog.secondsection.in.rs/images/logo.svg\" style=\"display: block; width: 400px; max-width: 400px; min-width: 400px;   color: #ffffff; font-size: 18px;\" border=\"0\">
                         </a>
                     </td>
                 </tr>
@@ -166,7 +134,7 @@ if(isset($_POST['submit'])) {
             <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"max-width: 600px;\" >
                 <!-- COPY -->
                 <tr>
-                    <td bgcolor=\"#ffffff\" align=\"center\" style=\"padding: 20px 40px 30px 40px; color: #ec368d;   font-size: 40px; font-weight: 400; line-height: 25px; border-radius: 4px 4px 4px 4px;\" >
+                    <td bgcolor=\"#ffffff\" align=\"center\" style=\"padding: 20px 40px 30px 40px; color: #ec368d;   font-size: 40px; font-weight: 400; line-height: 25px; border-radius: 0px 0px 4px 4px;\" >
                         <p style=\"margin: 0; font-size: 18px;\">Thank you for signing up for our newsletter service. We are happy to have you here!</p>
                     </td>
                 </tr>
@@ -195,19 +163,19 @@ if(isset($_POST['submit'])) {
                         <p style=\"margin: 0;\">If that doesn't work, copy and paste the following link in your browser:</p>
                     </td>
                 </tr>
-                 COPY
+                <!-- COPY
                 <tr>
                     <td bgcolor=\"#ffffff\" align=\"left\" style=\"padding: 20px 30px 20px 30px; color: #666666;   font-size: 18px; font-weight: 400; line-height: 25px;\" >
                         <p style=\"margin: 0;\"><a href=\"http://litmus.com\" target=\"_blank\" style=\"color: #FFA73B;\">XXX.XXXXXXX.XXX/XXXXXXXXXXXXX</a></p>
                     </td>
                 </tr>
-                 COPY
+                <!-- COPY
                 <tr>
                     <td bgcolor=\"#ffffff\" align=\"left\" style=\"padding: 0px 30px 20px 30px; color: #666666;   font-size: 18px; font-weight: 400; line-height: 25px;\" >
                         <p style=\"margin: 0;\">If you have any questions, just reply to this email—we're always happy to help out.</p>
                     </td>
                 </tr>
-                COPY
+                <!-- COPY
                 <tr>
                     <td bgcolor=\"#ffffff\" align=\"left\" style=\"padding: 0px 30px 40px 30px; border-radius: 0px 0px 4px 4px; color: #666666;   font-size: 18px; font-weight: 400; line-height: 25px;\" >
                         <p style=\"margin: 0;\">Cheers,<br>The Ceej Team</p>
@@ -237,7 +205,7 @@ if(isset($_POST['submit'])) {
                         <p style=\"margin: 0; font-size: 30px; font-weight: 700;\"><a href=\"https://walkadog.secondsection.in.rs/index.php#contact\" target=\"_blank\" style=\"color: #ffffff;\">We&rsquo;re here, ready to talk</a></p>
                         <br>
                         <!-- UNSUBSCRIBE -->
-                        <p style=\"margin: 0; color: #ffffff; font-size:16px\">if these emails get annoying, please feel free to <a href=\"https://walkadog.secondsection.in.rs/includes/unsubscribe.inc.php?key={$hashedMail}\" target=\"_blank\" style=\"color: #ffffff; font-weight: 700;\">unsubscribe</a>.</p>
+                        <p style=\"margin: 0; color: #ffffff; font-size:16px\">if these emails get annoying, please feel free to <a href=\"https://walkadog.secondsection.in.rs/includes/unsubscribe.inc.php?key=$hashedMail\" target=\"_blank\" style=\"color: #ffffff; font-weight: 700;\">unsubscribe</a>.</p>
                     </td>
 
                 </tr>
@@ -255,22 +223,16 @@ if(isset($_POST['submit'])) {
 </body>
 </html>
 ";
-
     $subject = "Newsletter";
     $to = $mailFrom;
-    /*$txt = "<html>
-    <h1>Thank you for subscribing</h1>
-    <a href=\"https://walkadog.secondsection.in.rs/includes/unsubscribe.inc.php?key={$result['hashedMail']}\">Unsubscribe</a>
-";*/
     $headers = "From:  walk·a·dog <walkadog@secondsection.in.rs>" . " \r\n" .
     $headers .= 'MIME-Version: 1.0' . "\r\n";
     $headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
-
     mail($to, $subject, $txt, $headers);
-
-
 
     header("Location: ../index.php?mail=success#newsletter");
 }else{
+
     header("Location: ../index.php?mail=fatalError#newsletter");
+
 }

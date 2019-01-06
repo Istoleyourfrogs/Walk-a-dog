@@ -8,12 +8,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="css/style.css">
+    <!--<link rel="stylesheet" href="css/style.css">-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kalam:400,700">
     <style type="text/css">
 
         /* CLIENT-SPECIFIC STYLES */
-        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: 'Kalam', cursive }
         table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
         img { -ms-interpolation-mode: bicubic; }
 
@@ -175,7 +175,7 @@
                         <p style="margin: 0; font-size: 30px; font-weight: 700;"><a href="https://walkadog.secondsection.in.rs/index.php#contact" target="_blank" style="color: #ffffff;">We&rsquo;re here, ready to talk</a></p>
                         <br>
                         <!-- UNSUBSCRIBE -->
-                        <p style="margin: 0; color: #ffffff; font-size:16px">if these emails get annoying, please feel free to <a href="http://litmus.com" target="_blank" style="color: #ffffff; font-weight: 700;">unsubscribe</a>.</p>
+                        <p style="margin: 0; color: #ffffff; font-size:16px">if these emails get annoying, please feel free to <a href="https://walkadog.secondesction.in.rs/includes/unsubscribe.inc.php?key=$hashedMail" target="_blank" style="color: #ffffff; font-weight: 700;">unsubscribe</a>.</p>
                     </td>
 
                 </tr>

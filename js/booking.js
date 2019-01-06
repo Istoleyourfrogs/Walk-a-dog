@@ -1,9 +1,9 @@
 $(document).ready(function () {
-    var valueSelect = $('#numberOfDogs');
-    var valueSelect2 = $('#typeWalk');
-    var dog = $('#dog');
 
-    //dog picturs
+    var valueSelectDogs = $('#numberOfDogs');
+    var valueSelectWalk = $('#typeWalk');
+
+    //dog pictures
     var dogPic1 = $('img[alt="dog1"]');
     var dogPic2 = $('img[alt="dog2"]');
     var dogPic3 = $('img[alt="dog3"]');
@@ -11,7 +11,7 @@ $(document).ready(function () {
     dogPic2.hide();
     dogPic3.hide();
 
-    //dog form segments
+    //dog number segments
     var dog1 = $('div[dog="1"]');
     var dog2 = $('div[dog="2"]');
     var dog3 = $('div[dog="3"]');
@@ -19,80 +19,23 @@ $(document).ready(function () {
     dog2.hide();
     dog3.hide();
 
-//Changes the amount of dog forms based on dropdown number
-    valueSelect.on('change', function () {
+    //walk type segment
+    var date = $('div[walk="date"]');
+    var time = $('div[walk="time"]');
+    var day = $('div[walk="day"]');
+
+    //pricing redirection
+    dogCount();
+    walkType();
 
 
-        if(valueSelect.val() === '0'){
-            dog1.fadeOut('slow');
-            dog2.fadeOut('slow');
-            dog3.fadeOut('slow');
-            dogPic1.fadeTo('slow',0);
-            dogPic2.fadeTo('slow',0);
-            dogPic3.fadeTo('slow',0);
-        }
-
-        if(valueSelect.val() === '1'){
-            dog1.fadeTo('slow',1);
-            dog2.fadeTo('slow',0);
-            dog3.fadeTo('slow',0);
-            dogPic1.fadeTo('slow',1);
-            dogPic2.fadeTo('slow',0);
-            dogPic3.fadeTo('slow',0);
-
-        }
-        if(valueSelect.val() === '2'){
-            dog1.fadeTo('slow',1);
-            dog2.fadeTo('slow',1);
-            dog3.fadeTo('slow',0);
-            dogPic1.fadeTo('slow',1);
-            dogPic2.fadeTo('slow',1);
-            dogPic3.fadeTo('slow',0);
-        }
-        if(valueSelect.val() === '3'){
-            dog1.fadeTo('slow',1);
-            dog2.fadeTo('slow',1);
-            dog3.fadeTo('slow',1);
-            dogPic1.fadeTo('slow',1);
-            dogPic2.fadeTo('slow',1);
-            dogPic3.fadeTo('slow',1);
-        }
-
+    //Changes the amount of dog forms based on dropdown number
+    valueSelectDogs.on('change', function () {
+        dogCount();
     });
 
-    valueSelect2.on('change',function () {
-        var date = $('div[walk="date"]');
-        var time = $('div[walk="time"]');
-        var day = $('div[walk="day"]');
-
-
-        if(valueSelect2.val() === ''){
-            date.addClass("none");
-            time.addClass("none");
-            day.addClass("none");
-            date.addClass("none");
-
-        }
-        if(valueSelect2.val() === 'oneTime'){
-            date.removeClass("none");
-            time.removeClass("none");
-            day.addClass("none");
-            date.removeClass("none");
-        }
-        if(valueSelect2.val() === 'daily'){
-            date.removeClass("none");
-            time.removeClass("none");
-            day.addClass("none");
-            date.addClass("none");
-        }
-        if(valueSelect2.val() === 'weekly'){
-            date.removeClass("none");
-            time.removeClass("none");
-            day.removeClass("none");
-            date.addClass("none");
-
-        }
-
+    valueSelectWalk.on('change',function () {
+        walkType();
     });
 
     //adds +381 when clicked on input phone
@@ -112,6 +55,70 @@ $(document).ready(function () {
         }
         else {
             $('button[name="submit"]').hide();
+
+        }
+    }
+    function dogCount() {
+        if(valueSelectDogs.val() === '0'){
+            dog1.fadeOut('slow');
+            dog2.fadeOut('slow');
+            dog3.fadeOut('slow');
+            dogPic1.fadeTo('slow',0);
+            dogPic2.fadeTo('slow',0);
+            dogPic3.fadeTo('slow',0);
+        }
+        if(valueSelectDogs.val() === '1'){
+            dog1.fadeTo('slow',1);
+            dog2.fadeTo('slow',0);
+            dog3.fadeTo('slow',0);
+            dogPic1.fadeTo('slow',1);
+            dogPic2.fadeTo('slow',0);
+            dogPic3.fadeTo('slow',0);
+
+        }
+        if(valueSelectDogs.val() === '2'){
+            dog1.fadeTo('slow',1);
+            dog2.fadeTo('slow',1);
+            dog3.fadeTo('slow',0);
+            dogPic1.fadeTo('slow',1);
+            dogPic2.fadeTo('slow',1);
+            dogPic3.fadeTo('slow',0);
+        }
+        if(valueSelectDogs.val() === '3'){
+            dog1.fadeTo('slow',1);
+            dog2.fadeTo('slow',1);
+            dog3.fadeTo('slow',1);
+            dogPic1.fadeTo('slow',1);
+            dogPic2.fadeTo('slow',1);
+            dogPic3.fadeTo('slow',1);
+        }
+        
+    }
+    function walkType() {
+        if(valueSelectWalk.val() === ''){
+            date.addClass("none");
+            time.addClass("none");
+            day.addClass("none");
+            date.addClass("none");
+
+        }
+        if(valueSelectWalk.val() === 'oneTime'){
+            date.removeClass("none");
+            time.removeClass("none");
+            day.addClass("none");
+            date.removeClass("none");
+        }
+        if(valueSelectWalk.val() === 'daily'){
+            date.removeClass("none");
+            time.removeClass("none");
+            day.addClass("none");
+            date.addClass("none");
+        }
+        if(valueSelectWalk.val() === 'weekly'){
+            date.removeClass("none");
+            time.removeClass("none");
+            day.removeClass("none");
+            date.addClass("none");
 
         }
     }

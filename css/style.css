@@ -6193,4 +6193,7 @@ form.login{
 form.login .btn:hover{
     background-color: #FFD6C0;
 }
+html {
+    overflow-y: scroll;
+}
 
