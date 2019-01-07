@@ -51,19 +51,19 @@ require_once "includes/header.inc.php";
     </div>
 
     <!--bizface-about-->
-    <section id="about" class="bizface-about section"  >
-        <div class="container" >
+    <section id="about" class="bizface-about section">
+        <div class="container">
             <div class="row">
                 <div class="sec-title">
                     <h2>about us</h2>
                 </div>
                 <div class="about-inner">
                     <div class="col-md-5 col-sm-12 col-xs-12">
-                        <div class="video" style="background-image:url(images/dogs/1.jpg);">
+                        <div class="video" style="background-image:url(images/video/1.jpg);">
                             <div class="video-overlay"></div>
                             <h2>watch video</h2>
                             <div class="playbtn">
-                                <a class="video-popup" href="https://www.youtube.com/watch?v=UXxY1ffr3ZE"><span></span></a>
+                                <a class="video-popup" href="https://www.youtube.com/watch?v=FZQPhrdKjow"><span></span></a>
                             </div>
                         </div>
                     </div>
@@ -75,9 +75,9 @@ require_once "includes/header.inc.php";
                                             <h4 class="panel-title">
                                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" class="bizface-about-div">
                                                     <div class="bizface-about-icon">
-                                                        <i class="fa fa-users"></i>
+                                                        <i class="fa fa-heartbeat"></i>
                                                     </div>
-                                                    <span class="about-section-title">Who are the people behind <span class="walkadog"><img src="images/logo.svg" alt="logo"></span></span>
+                                                    <span class="about-section-title">Work with heart</span>
                                                 </a>
                                             </h4>
                                         </div>
@@ -92,9 +92,9 @@ require_once "includes/header.inc.php";
                                             <h4 class="panel-title">
                                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="bizface-about-div">
                                                     <div class="bizface-about-icon">
-                                                        <i class="fa fa-lightbulb-o"></i>
+                                                        <i class="fa fa-cogs"></i>
                                                     </div>
-                                                    <span class="about-section-title">What is the idea behind <span class="walkadog"><img src="images/logo.svg" alt="logo"></span></span>
+                                                    <span class="about-section-title">Reliable Services</span>
                                                 </a>
                                             </h4>
                                         </div>
@@ -109,9 +109,9 @@ require_once "includes/header.inc.php";
                                             <h4 class="panel-title">
                                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="bizface-about-div">
                                                     <div class="bizface-about-icon">
-                                                        <i class="fa fa-dog"></i>
+                                                        <i class="fa fa-globe"></i>
                                                     </div>
-                                                    <span class="about-section-title">Why is  <span class="walkadog"><img src="images/logo.svg" alt="logo"></span> so important to us?</span>
+                                                    <span class="about-section-title">World market</span>
                                                 </a>
                                             </h4>
                                         </div>
@@ -126,9 +126,9 @@ require_once "includes/header.inc.php";
                                             <h4 class="panel-title">
                                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse4" class="bizface-about-div">
                                                     <div class="bizface-about-icon">
-                                                        <i class="fa fa-heartbeat"></i>
+                                                        <i class="fa fa-history"></i>
                                                     </div>
-                                                    <span class="about-section-title">Why should  <span class="walkadog"><img src="images/logo.svg" alt="logo"></span> be important to you?</span>
+                                                    <span class="about-section-title">Great support</span>
                                                 </a>
                                             </h4>
                                         </div>

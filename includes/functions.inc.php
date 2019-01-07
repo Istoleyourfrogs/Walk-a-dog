@@ -73,6 +73,62 @@ function mailValidation($empty,$mailFrom,$mailCheck,$location){
         exit();
     }
 }
-function sendMail(){
+function dogValidation($connect,$dogName,$dogYear,$dogMonth,$dogBreed,$dogVaccinated,$dogTrained,$dogAggression,$dogOther){
 
+    if(empty($dogName) or (empty($dogYear) and empty($dogMonth))){
+        header("Location: ../booking.php?emptyNameOrAge");
+        exit();
+    }
+    if(!preg_match("/^[a-zA-Z0-9\/\s]*$/",$dogName)){
+        header("Location: ../booking.php?notValidName");
+        exit();
+    }
+    if(!preg_match("/^(1[0-9]{0,1}|2[0-9]{0,1}|[0-9]{1})$/",$dogYear)){
+        header("Location: ../booking.php?YearNotGood");
+        exit();
+    }
+    if(!preg_match("/^([0-9]{1}|1[0-1]{1})$/",$dogMonth)){
+        header("Location: ../booking.php?MonthNotGood");
+        exit();
+    }
+    $sql = "SELECT breed FROM breeds WHERE breed='$dogBreed';";
+    $query = mysqli_query($connect,$sql);
+    if($row = mysqli_num_rows($query) < 1){
+        header("Location: ../booking.php?BreedError");
+        exit();
+    }
+    if($dogVaccinated != 0 or $dogVaccinated != 1){
+        header("Location: ../booking.php?VaccinatedError");
+        exit();
+    }
+    if($dogTrained != 0 or $dogTrained != 1){
+        header("Location: ../booking.php?TrainedError");
+        exit();
+    }
+    if($dogAggression != 0 or $dogTrained != 1){
+        header("Location: ../booking.php?TrainedError");
+        exit();
+    }
+    if(!preg_match("/^[a-zA-Z\.!?,\-\(\)]*$/",$dogOther)){
+        header("Location: ../booking.php?OtherSectionError");
+        exit();
+    }
+    return  $dogName;
 }
+/*
+function dogNumberValidaton($connect,$numberOfDogs){
+    switch($numberOfDogs){
+        case "1":
+            $dogNameFirst = mysqli_real_escape_string($connect,trim($_POST['dogNameOne']));
+            $dogYearFirst = mysqli_real_escape_string($connect,trim($_POST['dogYearOne']));
+            $dogMonthFirst  = mysqli_real_escape_string($connect,trim($_POST['dogMonthOne']));
+            $dogBreedFirst = mysqli_real_escape_string($connect,trim($_POST['dogBreedOne']));
+            $dogVaccinatedFirst = mysqli_real_escape_string($connect,trim($_POST['dogVaccinatedOne']));
+            $dogTrainedFirst = mysqli_real_escape_string($connect,trim($_POST['dogTrainedOne']));
+            $dogAggressionFirst = mysqli_real_escape_string($connect,trim($_POST['dogAggressionOne']));
+            $dogOtherFirst = mysqli_real_escape_string($connect,trim($_POST['dogOtherOne']));
+            dogValidation($connect,$dogNameFirst,$dogYearFirst,$dogMonthFirst,$dogBreedFirst,$dogVaccinatedFirst,$dogTrainedFirst,$dogAggressionFirst,$dogOtherFirst);
+            $sql=
+
+    }
+}*/

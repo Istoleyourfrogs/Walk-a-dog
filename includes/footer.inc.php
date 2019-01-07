@@ -105,7 +105,7 @@ echo "
                     <ul class=\"social-links text-right\">
                         <li><a href=\"#\"><i class=\"fa fa-facebook\"></i></a></li>
                         <li class=\"active\"><a href=\"#\"><i class=\"fa fa-twitter\"></i></a></li>
-                        <li><a href=\"https://www.youtube.com/channel/UCuj4wzw9FlD5nL3nf_DEb3A\"><i class=\"fa fa-youtube\"></i></a></li>
+                        <li><a href=\"#\"><i class=\"fa fa-youtube\"></i></a></li>
                         <li><a href=\"#\"><i class=\"fa fa-instagram\"></i></a></li>
                     </ul>
                 </div>
