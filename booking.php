@@ -27,38 +27,38 @@ require "includes/header.inc.php";
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label>First Name:</label>
-                                    <input type="text" class="form-control" placeholder="First Name" name="firstName" value="namefirst">
+                                    <input type="text" class="form-control" placeholder="First Name" name="firstName">
                                 </div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label>Last Name:</label>
-                                    <input type="text"  class="form-control" placeholder="Last Name" name="lastName" value="namesecond">
+                                    <input type="text"  class="form-control" placeholder="Last Name" name="lastName">
                                 </div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label>Email:</label>
-                                    <input type="text" class="form-control" placeholder="email" name="email" value="email@mail.com">
+                                    <input type="text" class="form-control" placeholder="email" name="email">
                                 </div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label>Address:</label>
-                                    <input type="text" class="form-control" placeholder="Address" name="address" value="address 123">
+                                    <input type="text" class="form-control" placeholder="Address" name="address">
                                 </div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label>Phone Number:</label>
-                                    <input type="text"  class="form-control" placeholder="Phone Number" name="phone" value="+381 234234234">
+                                    <input type="text"  class="form-control" placeholder="Phone Number" name="phone">
                                 </div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label for="typeWalk">Type of walk:</label>
                                     <select id="typeWalk" name="typeWalk" class="form-control">
-                                        <option value="daily">Select the type of walk</option>
+                                        <option value="">Select the type of walk</option>
                                         <option value="oneTime">One time</option>
                                         <option value="daily">Daily</option>
                                         <option value="weekly">Weekly</option>
@@ -76,7 +76,7 @@ require "includes/header.inc.php";
                             <div class="col-sm-2 none" walk="time">
                                 <div class="form-group">
                                     <label for="time">Time of walk:</label>
-                                    <input id="time" class="form-control" type="time" name="time" value="12:00">
+                                    <input id="time" class="form-control" type="time" name="time">
                                 </div>
                             </div>
                             <div class="col-sm-10 none" walk="day">
@@ -124,7 +124,7 @@ require "includes/header.inc.php";
                                 <div class="form-group">
                                     <label for="numberOfDogs">Number of Dogs:</label>
                                     <select id="numberOfDogs" class="form-control" name="numberOfDogs">
-                                        <option  value="1">Number of Dogs</option>
+                                        <option  value="0">Number of Dogs</option>
                                         <?php
                                         for($i=1; $i<=3; $i++){
                                             echo "<option id=\"{$i}dog\" value=\"$i\" name=\"numberOfDogs\">$i</option>";
@@ -158,53 +158,45 @@ require "includes/header.inc.php";
                                 <h4>First dog</h4>
                                 <hr>
                                 <div class="form-group ">
-                                    <label>Name</label>
-                                    <input type="text" class="form-control" placeholder="name first" name="dogNameOne">
-                                </div>
-                                <div class="form-group">
-                                    <label>Age</label>
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                    <input type="text" class="form-check-inline" placeholder="years" name="dogYearOne">
-                                        </div>
-                                        <div class="col-sm-6">
-                                    <input type="text" class="form-check-inline" placeholder="months" name="dogMonthOne">
-                                        </div>
-                                    </div>
+                                    <label>Name First</label>
+                                    <input type="text" class="form-control" placeholder="name first">
                                 </div>
                                 <div class="form-group ">
-                                    <label>Breed</label>
+                                    <label>Age First</label>
+                                    <input type="text" class="form-control" placeholder="name first">
+                                </div>
+                                <div class="form-group ">
+                                    <label>Breed First</label>
                                     <!--<input type="text" class="form-control" placeholder="name first">-->
-                                    <select name="dogBreedOne">
-                                        <option value="">Select the dog breed</option>
+                                    <select>
                                         <?php
                                         $sql = "SELECT breed FROM breeds;";
                                         $query = mysqli_query($connect,$sql);
                                         while($result = mysqli_fetch_assoc($query)){
-                                            echo "<option value=\"{$result['breed']}\">{$result['breed']}</option>";
+                                            echo "<option>{$result['breed']}</option>";
                                         }
                                         ?>
                                     </select>
                                 </div>
 
-                                <label class="container1">Vaccinated
-                                    <input type="checkbox" id="vacinated1" class="custom-checkbox" name="dogVaccinatedOne" value="1">
+                                <label class="container1">Vaccinated First
+                                    <input type="checkbox" id="vacinated1" class="custom-checkbox" name="vacinated1">
                                     <span class="checkmark"></span>
                                 </label>
                                 <br>
-                                <label class="container1">Trained
-                                    <input type="checkbox" id="trained1" class="custom-checkbox" name="dogTrainedOne" value="1">
+                                <label class="container1">Trained First
+                                    <input type="checkbox" id="trained1" class="custom-checkbox" name="trained1">
                                     <span class="checkmark"></span>
                                 </label>
                                 <br>
-                                <label class="container1">Aggressive
-                                    <input type="checkbox" id="aggressive1" class="custom-checkbox" name="dogAggressionOne" value="1">
+                                <label class="container1">Aggressive First
+                                    <input type="checkbox" id="aggressive1" class="custom-checkbox" name="aggressive1">
                                     <span class="checkmark"></span>
                                 </label>
 
                                 <div class="form-group ">
-                                    <label class="headingDog">Other</label>
-                                    <textarea placeholder="Enter text here" rows="5" name="dogOtherOne"></textarea>
+                                    <label class="headingDog">Other First</label>
+                                    <textarea placeholder="Enter text here" rows="5"></textarea>
                                 </div>
                                 <hr>
                             </div>
@@ -252,7 +244,7 @@ require "includes/header.inc.php";
 
                                 <div class="form-group ">
                                     <label class="headingDog">Other First</label>
-                                    <textarea placeholder="Enter text here" rows="5" name=""></textarea>
+                                    <textarea placeholder="Enter text here" rows="5"></textarea>
                                 </div>
                                 <hr>
                             </div>

@@ -1,16 +1,25 @@
 <?php
-date_default_timezone_set('Europe/Belgrade');
 if(isset($_POST['submit'])) {
-    $time =$_POST['time'];
+    $time = timeValidation($_POST['time']);
     //$time = $_POST['time'];
-    $date = $_POST['date'];
+    $date = dateValidation($_POST['date']);
     echo $time."<br>";
     echo $date;
 }
-echo phpinfo();
-echo $date = date('Y-m-d')."<br>";
-echo $time = date("h:i");
-
+function timeValidation($time){
+    if(!preg_match("/^(0{1,1}[0-9]|1{1,1}[0-9]|2{1,1}[0-3]){1,1}\:{1,1}[0-5]{1,1}[0-9]$/",$time)){
+        return null;
+    }else{
+        return $time;
+    }
+}
+function dateValidation($date){
+    if(!preg_match("/^2[0-9]{3}\-(0[1-9]|1[0-2])\-(0[1-9]|1[0-9]|2[0-9]|3[0-1])$/",$date)){
+        return null;
+    }else{
+        return $date;
+    }
+}
 ?>
 <form action="testing.php" method="post">
     <input type="text" name="date" value="">

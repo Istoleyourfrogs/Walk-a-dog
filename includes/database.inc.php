@@ -10,5 +10,13 @@ $database= "localhost";
 $user="root";
 $password="";
 $dbname="spolnici_walkadog";
+<<<<<<< HEAD
+<<<<<<< Updated upstream
 
 $connect = mysqli_connect($database,$user,$password,$dbname);
+=======
+*/
+//$connect = mysqli_connect($database,$user,$password,$dbname);
+>>>>>>> Stashed changes
+
+

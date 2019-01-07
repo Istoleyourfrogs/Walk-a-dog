@@ -14,7 +14,6 @@ if(isset($_POST['submit'])){
     $day = mysqli_real_escape_string($connect,trim($_POST['day']));
 
 
-
     //checks if any of the variables above are empty
     if(empty($firstName) or empty($lastName) or empty($email) or empty($address) or empty($phone) or empty($typeOfWalk)){
         header("Location: ../booking.php?emptyError");
@@ -100,7 +99,7 @@ if(isset($_POST['submit'])){
         header("Location: ../booking.php?alreadyRegistered");
         exit();
     }
-/***************************************************OWNER SECTION*******************************************************/
+/***************************************************OWNER SECTION*********************************************************/
 
 
 /***************************************************DOG SECTION*********************************************************/
@@ -114,71 +113,14 @@ if(isset($_POST['submit'])){
         header("Location: ../booking.php?dogNumberNotMatching");
         exit();
     }
-
-    $dogNameFirst = mysqli_real_escape_string($connect,trim($_POST['dogNameOne']));
-    $dogYearFirst = mysqli_real_escape_string($connect,trim($_POST['dogYearOne']));
-    $dogMonthFirst  = mysqli_real_escape_string($connect,trim($_POST['dogMonthOne']));
-    $dogBreedFirst = mysqli_real_escape_string($connect,trim($_POST['dogBreedOne']));
-    $dogVaccinatedFirst = mysqli_real_escape_string($connect,trim($_POST['dogVaccinatedOne']));
-    $dogTrainedFirst = mysqli_real_escape_string($connect,trim($_POST['dogTrainedOne']));
-    $dogAggressionFirst = mysqli_real_escape_string($connect,trim($_POST['dogAggressionOne']));
-    $dogOtherFirst = mysqli_real_escape_string($connect,trim($_POST['dogOtherOne']));
-    dogValidation($connect,$dogNameFirst,$dogYearFirst,$dogMonthFirst,$dogBreedFirst,$dogVaccinatedFirst,$dogTrainedFirst,$dogAggressionFirst,$dogOtherFirst);
-    if(empty($dogNameFirst) or (empty($dogYearFirst) and empty($dogMonthFirst))){
-        header("Location: ../booking.php?emptyNameOrAge");
-        exit();
-    }
-    if(!preg_match("/^[a-zA-Z0-9\/\s]*$/",$dogNameFirst)){
-        header("Location: ../booking.php?notValidName");
-        exit();
-    }
-    if(!preg_match("/^(1[0-9]{0,1}|2[0-9]{0,1}|[0-9]{1})$/",$dogYearFirst)){
-        header("Location: ../booking.php?YearNotGood");
-        exit();
-    }
-    if(!preg_match("/^([0-9]{1}|1[0-1]{1})$/",$dogMonthFirst)){
-        header("Location: ../booking.php?MonthNotGood");
-        exit();
-    }
-    if($dogVaccinatedFirst != 0 or $dogVaccinatedFirst != 1){
-        header("Location: ../booking.php?VaccinatedError");
-        exit();
-    }
-    if($dogTrainedFirst != 0 or $dogTrainedFirst != 1){
-        header("Location: ../booking.php?TrainedError");
-        exit();
-    }
-    if($dogAggressionFirst != 0 or $dogTrainedFirst != 1){
-        header("Location: ../booking.php?TrainedError");
-        exit();
-    }
-    if(!preg_match("/^[a-zA-Z\.!?,\-\(\)]*$/",$dogOtherFirst)){
-        header("Location: ../booking.php?OtherSectionError");
-        exit();
-    }
-
-
-    echo "  $dogNameFirst<br>
-            $dogYearFirst<br>
-            $dogMonthFirst<br>
-            $dogBreedFirst<br>
-            $dogVaccinatedFirst<br>
-            $dogTrainedFirst<br>
-            $dogAggressionFirst<br>
-            $dogOtherFirst<br>
-";
     /****************************************************************/
     /************************CONTINUE HERE PLS***********************/
     /****************************************************************/
 
-/***************************************************DOG SECTION*********************************************************/
-exit();
     //capitalize the first letter of each word for $name
     $name = $firstName." ".$lastName;
     $name = ucwords(strtolower($name));
     $address = ucwords(strtolower($address));
-    //replaces the - and / in the phone number with an empty string
-    $phone = str_replace(array('/','-'),"",$phone);
     //generates random string of character(20) sets status(free walk) to 1 and verified to 0
     $code = generateCode();
     $code = mysqli_real_escape_string($connect,trim($code));
