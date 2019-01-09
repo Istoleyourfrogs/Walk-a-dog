@@ -440,7 +440,7 @@ require_once "includes/header.inc.php";
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label for="typeOfWalk">Type of walk:</label>
-                                        <select id="typeOfWalk" name="typeOfWalk" class="form-control">
+                                        <select id="typeOfWalk" name="typeOfWalk">
                                             <option value="">Select the type of walk</option>
                                             <option value="oneTime">One time</option>
                                             <option value="daily">Daily</option>
@@ -482,7 +482,7 @@ require_once "includes/header.inc.php";
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label for="numberOfDogs">Number of Dogs:</label>
-                                        <select id="numberOfDogs" class="form-control" name="numberOfDogs">
+                                        <select id="numberOfDogs"  name="numberOfDogs">
                                             <option  value="">Number of Dogs</option>
                                             <?php
                                             for($i=1; $i<=3; $i++){
@@ -709,7 +709,7 @@ require_once "includes/header.inc.php";
                         </div>
                         <div class="form-group">
                             <label for="ContactMessage">Your message</label>
-                            <textarea class="form-control focus-input" rows="5" id="ContactMessage" placeholder="Enter your message"></textarea>
+                            <textarea class="form-control textarea" rows="5" id="ContactMessage" placeholder="Enter your message"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
