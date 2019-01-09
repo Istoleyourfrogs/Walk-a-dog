@@ -12,8 +12,8 @@ require_once "includes/header.inc.php";
                     <div class="carousel-caption caption-right">
                         <div class="content">
                             <h2>Need a walk?</h2>
-                            <p>walk-a-dog can help you with that</p>
-                            <a  href="service.html" class="btn btn-primary inverse">Register now!</a>
+                            <p>walk-a-dog can help you with that!</p>
+                            <a  href="index.php#booking" class="btn btn-primary inverse">Register now!</a>
                         </div>
                     </div>
                 </div>
@@ -23,10 +23,9 @@ require_once "includes/header.inc.php";
                 <div class="slider-content">
                     <div class="carousel-caption caption-left">
                         <div class="content">
-
                             <h2>Something cool</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>tempor incididunt ut labore adipiscing</p>
-                            <a  href="service.html" class="btn btn-primary inverse">Contact us</a>
+                            <a  href="index.php#" class="btn btn-primary inverse">Contact us</a>
                         </div>
                     </div>
                 </div>
@@ -40,9 +39,9 @@ require_once "includes/header.inc.php";
                 <div class="slider-content">
                     <div class="carousel-caption caption-right">
                         <div class="content">
-                            <h2>awesome corporate bizface</h2>
+                            <h2>Even more awesome</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>tempor incididunt ut labore adipiscing</p>
-                            <a  href="service.html" class="btn btn-primary inverse">View services</a>
+                            <a  href="index.php#" class="btn btn-primary inverse">View services</a>
                         </div>
                     </div>
                 </div>
@@ -182,7 +181,7 @@ require_once "includes/header.inc.php";
                                 <a href="#" class="btn btn-primary">WALK A DOG FOR FREE</a>
                             </div>
                             <div class="price-content-list">
-                                <ul>
+                                <ul class="price-content-footer">
                                     <li>(Every next separate walk costs 10$)</li>
                                 </ul>
                             </div>
@@ -218,7 +217,7 @@ require_once "includes/header.inc.php";
                                 <a href="#" class="btn btn-primary">WALK A DOG DAILY</a>
                             </div>
                             <div class="price-content-list">
-                                <ul>
+                                <ul class="price-content-footer">
                                     <li>Let us do what we do best - every day!</li>
                                 </ul>
                             </div>
@@ -249,7 +248,7 @@ require_once "includes/header.inc.php";
                                 <a href="#" class="btn btn-primary">WALK A DOG WEEKLY</a>
                             </div>
                             <div class="price-content-list">
-                                <ul>
+                                <ul class="price-content-footer">
                                     <li>We will walk your dog once a week!</li>
                                 </ul>
                             </div>
@@ -334,43 +333,47 @@ require_once "includes/header.inc.php";
     <!-- testimonial end -->
     <!--newsletter section -->
     <section id="newsletter_section"  style="background: url(images/dogBoneBackground.jpg) no-repeat center;" class="section grey-background">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                    <form action="includes/newsletter.inc.php" method="post">
-                        <div> <!--class="form-group"-->
+        <form action="includes/newsletter.inc.php" method="post">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-lg-3 text-center">
                             <input type="hidden" name="hidden">
                             <input type="hidden" name="formLocation" value="section">
                             <label for="email" class="newsletter_label">Sign up for our newsletter!</label>
-                            <input type="text" class="formInline" name="email" placeholder="Email Address..." >
-                                <span>
+                    </div>
+                    <div class="col-sm-6 col-xs- col-sm-offset-2 col-md-6 col-md-offset-2 col-lg-6 col-lg-offset-0 text-center">
+                            <input type="text" class="form-control" name="email" placeholder="Email Address..." >
+                    </div>
+                    <div class="col-sm-2 col-md-2 col-lg-3 text-center pt-3 pt-md-0 pt-lg-0 pt-sm-3 ">
+                    <button type="submit" name="submit" id="newsletter_button" class="btn btn-primary" >subscribe now</button>
+                    </div>
+                    <div class="col-sm-12 text-center">
+                    <span class="newsletter-error">
                                 <?php
-                                    if(isset($_GET['mail'])){
-                                        $mail = $_GET['mail'];
-                                        if($mail == 'error'){
-                                            echo "Error! Please fill in the field!";
-                                        }
-                                        if($mail == 'mail'){
-                                            echo "Please enter a valid email!";
-                                        }
-                                        if($mail == 'fatalError'){
-                                            echo "Oops something went wrong. Please try again!";
-                                        }
-                                        if($mail == 'success'){
-                                            echo "Thank you for sigin up to our newsletter";
-                                        }
-                                        if($mail == 'same'){
-                                            echo "You are already subscribed";
-                                        }
+                                if(isset($_GET['mail'])){
+                                    $mail = $_GET['mail'];
+                                    if($mail == 'error'){
+                                        echo "Error! Please fill in the field!";
                                     }
+                                    if($mail == 'mail'){
+                                        echo "Please enter a valid email!";
+                                    }
+                                    if($mail == 'fatalError'){
+                                        echo "Oops something went wrong. Please try again!";
+                                    }
+                                    if($mail == 'success'){
+                                        echo "Thank you for sigin up to our newsletter";
+                                    }
+                                    if($mail == 'same'){
+                                        echo "You are already subscribed";
+                                    }
+                                }
                                 ?>
                                 </span>
-                            <button type="submit" name="submit" id="newsletter_button" class="btn btn-primary" >subscribe now</button>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
-        </div>
+        </form>
     </section>
     <!-- newsletter end -->
      <!-- Start Team -->
@@ -706,7 +709,7 @@ require_once "includes/header.inc.php";
                         </div>
                         <div class="form-group">
                             <label for="ContactMessage">Your message</label>
-                            <textarea class="form-control" rows="5" id="ContactMessage" placeholder="Enter your message"></textarea>
+                            <textarea class="form-control focus-input" rows="5" id="ContactMessage" placeholder="Enter your message"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>

@@ -37,7 +37,7 @@ session_start();
 
 <body>
     <!--header start-->
-    <header class="main-header">
+    <header class="main-header" id="home">
 
         <!-- Start Navigation -->
         <div id="masthead" class="site-header menu">
@@ -61,7 +61,7 @@ session_start();
                             </div>
                             <form action="includes/logout.inc.php" method="post">
                             <ul>
-                                <li><a href="index.php">Home</a></li>
+                                <li><a href="index.php#home">Home</a></li>
                                 <li><a href="index.php#about">About</a> </li>
                                 <li><a href="index.php#pricing">Pricing</a></li>
                                 <li><a href="index.php#booking">Booking</a></li>

@@ -80,7 +80,7 @@ body {
     font-weight: 400;
     font-size: 15px;
     line-height: 1.7;
-    color: #353535;
+    color: #EC368D;
     background: #ffd6c0;
     position: relative;
     letter-spacing: 0.5px;
@@ -477,7 +477,10 @@ footer .newsletter-form .form-group button[type="submit"],
     text-transform: uppercase;
     font-size: 32px;
     position: relative;
-    color:#ec368d;
+    /*color:#ec368d;*/
+    background: linear-gradient(#EC368D, #51E5FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     padding-bottom: 10px;
     margin-bottom: 30px;
 }
@@ -992,7 +995,7 @@ main-navigation
 }
 
 #main-navigation ul li a {
-    color: #440381;
+    color: #EC368D;
     display: block;
     font-size: 14px;
     font-weight: 600;
@@ -1001,6 +1004,9 @@ main-navigation
     z-index: 99;
     text-transform: uppercase;
     letter-spacing: 0.6px;
+}
+#main-navigation ul li:hover a {
+    color: #FFA5A5;
 }
 
 #main-navigation ul ul a,
@@ -1267,7 +1273,7 @@ responsive-nav
         text-align: left;
     }
     #main-navigation ul ul li a {
-        color: #440381;
+        color: #EC368D;
         width: 100%;
         padding: 10px 20px;
     }
@@ -2979,6 +2985,8 @@ about-section-panel{
 */
 .bizface-price{
     padding-bottom: 50px;
+    color: #FFA5A5;
+
 }
 .price-content {
     display: inline-block;
@@ -2991,6 +2999,7 @@ about-section-panel{
     -ms-transition: all ease-in-out .4s;
     -moz-transition: all ease-in-out .4s;
     -o-transition: all ease-in-out .4s;
+    border-radius: 20px;
 }
 
 .price-content:hover {
@@ -3010,10 +3019,16 @@ about-section-panel{
     color: #fff;
     font-weight: 600;
     text-transform: uppercase;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
 }
 
 .price-content .price-content-cost {
     padding: 30px 0;
+}
+.newsletter-error{
+    font-weight: 700;
+    font-size: 18px;
 }
 
 .price-content .price-content-cost-inner {
@@ -3043,7 +3058,7 @@ about-section-panel{
     font-size: 26px;
     line-height: 1;
     align-self: flex-start;
-    color: #2e3243;
+    color: #51E5FF;
 }
 
 .price-content .price-content-cost-inner span.amount {
@@ -3055,7 +3070,7 @@ about-section-panel{
 }
 
 .price-content .price-content-cost-inner span.cent {
-    color: #2e3243;
+    color: #51E5FF;
     align-self: flex-end;
     font-size: 18px;
     line-height: 1;
@@ -3077,6 +3092,9 @@ about-section-panel{
 
 .price-content .price-btn {
     margin: 30px 0;
+}
+.price-content-footer{
+    color: #51E5FF;
 }
 
 .price-content.premium-price .price-content-header {
@@ -6224,7 +6242,31 @@ form.login{
 form.login .btn:hover{
     background-color: #FFD6C0;
 }
-html {
-    overflow-y: scroll;
+#contact *::placeholder{
+    color: #FFA5A5;
 }
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.focus-input:focus {
+    border-color: #FFD6C0;
+    box-shadow: 0 1px 1px rgba(255, 165, 165, 0.8) inset, 0 0 8px rgba(255, 214, 192, 0.7);
+    outline: 0 none;
+}
+
+
+
+
 
