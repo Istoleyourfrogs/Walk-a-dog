@@ -51,19 +51,19 @@ require_once "includes/header.inc.php";
     </div>
 
     <!--bizface-about-->
-    <section id="about" class="bizface-about section">
-        <div class="container">
+    <section id="about" class="bizface-about section"  >
+        <div class="container" >
             <div class="row">
                 <div class="sec-title">
                     <h2>about us</h2>
                 </div>
                 <div class="about-inner">
                     <div class="col-md-5 col-sm-12 col-xs-12">
-                        <div class="video" style="background-image:url(images/video/1.jpg);">
+                        <div class="video" style="background-image:url(images/dogs/1.jpg);">
                             <div class="video-overlay"></div>
                             <h2>watch video</h2>
                             <div class="playbtn">
-                                <a class="video-popup" href="https://www.youtube.com/watch?v=FZQPhrdKjow"><span></span></a>
+                                <a class="video-popup" href="https://www.youtube.com/watch?v=UXxY1ffr3ZE"><span></span></a>
                             </div>
                         </div>
                     </div>
@@ -75,9 +75,9 @@ require_once "includes/header.inc.php";
                                             <h4 class="panel-title">
                                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" class="bizface-about-div">
                                                     <div class="bizface-about-icon">
-                                                        <i class="fa fa-heartbeat"></i>
+                                                        <i class="fa fa-users"></i>
                                                     </div>
-                                                    <span class="about-section-title">Work with heart</span>
+                                                    <span class="about-section-title">Who are the people behind <span class="walkadog"><img src="images/logo.svg" alt="logo"></span></span>
                                                 </a>
                                             </h4>
                                         </div>
@@ -92,9 +92,9 @@ require_once "includes/header.inc.php";
                                             <h4 class="panel-title">
                                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="bizface-about-div">
                                                     <div class="bizface-about-icon">
-                                                        <i class="fa fa-cogs"></i>
+                                                        <i class="fa fa-lightbulb-o"></i>
                                                     </div>
-                                                    <span class="about-section-title">Reliable Services</span>
+                                                    <span class="about-section-title">What is the idea behind <span class="walkadog"><img src="images/logo.svg" alt="logo"></span></span>
                                                 </a>
                                             </h4>
                                         </div>
@@ -109,9 +109,9 @@ require_once "includes/header.inc.php";
                                             <h4 class="panel-title">
                                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="bizface-about-div">
                                                     <div class="bizface-about-icon">
-                                                        <i class="fa fa-globe"></i>
+                                                        <i class="fa fa-dog"></i>
                                                     </div>
-                                                    <span class="about-section-title">World market</span>
+                                                    <span class="about-section-title">Why is  <span class="walkadog"><img src="images/logo.svg" alt="logo"></span> so important to us?</span>
                                                 </a>
                                             </h4>
                                         </div>
@@ -126,9 +126,9 @@ require_once "includes/header.inc.php";
                                             <h4 class="panel-title">
                                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse4" class="bizface-about-div">
                                                     <div class="bizface-about-icon">
-                                                        <i class="fa fa-history"></i>
+                                                        <i class="fa fa-heartbeat"></i>
                                                     </div>
-                                                    <span class="about-section-title">Great support</span>
+                                                    <span class="about-section-title">Why should  <span class="walkadog"><img src="images/logo.svg" alt="logo"></span> be important to you?</span>
                                                 </a>
                                             </h4>
                                         </div>
@@ -146,323 +146,6 @@ require_once "includes/header.inc.php";
         </div>
     </section>
     <!-- about end -->
-
-    <!-- service start -->
-    <section class="bizface-service-area section grey-background">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="sec-title">
-                        <h2>Services</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod Praesent interdum.</p>
-                    </div>
-                </div>
-                <div class="service-inner">
-                    <div class="col-md-4 col-sm-6 col-xs-12 ">
-                        <div class="bizface-service-div">
-                            <div class="bizface-service-icon">
-                                <a href="#"><i class="fa fa-briefcase"></i></a>
-                            </div>
-                            <div class="bizface-service-content">
-                                <h5><a href="service.html">Busine consulting</a></h5>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod Praesent interdum.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 ">
-                        <div class="bizface-service-div">
-                            <div class="bizface-service-icon">
-                                <a href="#"><i class="fa fa-money"></i></a>
-                            </div>
-                            <div class="bizface-service-content">
-                                <h5><a href="service.html">Investment plan</a></h5>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod Praesent interdum.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 ">
-                        <div class="bizface-service-div">
-                            <div class="bizface-service-icon">
-                                <a href="#"><i class="fa fa-edit"></i></a>
-                            </div>
-                            <div class="bizface-service-content">
-                                <h5><a href="service.html">Creative idea</a></h5>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod Praesent interdum.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 ">
-                        <div class="bizface-service-div">
-                            <div class="bizface-service-icon">
-                                <a href="#"><i class="fa fa-retweet"></i></a>
-                            </div>
-                            <div class="bizface-service-content">
-                                <h5><a href="service.html">Advance analytics</a></h5>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod Praesent interdum.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 ">
-                        <div class="bizface-service-div">
-                            <div class="bizface-service-icon">
-                                <a href="#"><i class="fa fa-clock-o"></i></a>
-                            </div>
-                            <div class="bizface-service-content">
-                                <h5><a href="service.html">time sensitive</a></h5>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod Praesent interdum.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 ">
-                        <div class="bizface-service-div">
-                            <div class="bizface-service-icon">
-                                <a href="#"><i class="fa fa-globe"></i></a>
-                            </div>
-                            <div class="bizface-service-content">
-                                <h5><a href="service.html">world marketing</a></h5>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod Praesent interdum.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Project Area Start -->
-    <div class="bizface-projects section">
-        <div class="container">
-          <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="sec-title">
-                        <h2>Our Projects</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod Praesent interdum.</p>
-                    </div>
-                </div>
-            </div>
-           <div class="row">
-               <div class="col-md-12">
-                   <div class="project-menu">
-                       <ul>
-                           <li class="filter" data-filter="all">All</li>
-                           <li class="filter" data-filter=".web-design">Web Design</li>
-                           <li class="filter" data-filter=".graphics-design">Graphics Design</li>
-                           <li class="filter" data-filter=".android-apps-development">Android apps Development</li>
-                           <li class="filter" data-filter=".animation">Animation</li>
-                           <li class="filter" data-filter=".java">Java</li>
-                       </ul>
-                   </div>
-               </div>
-           </div>
-            <div class="row">
-                <div id="project-wrapper">
-                    <div class="col-md-4 col-sm-6 mix web-design java">
-                        <div class="single-project-item">
-                            <div class="project-overlay"></div>
-                            <div class="project-image">
-                                <img src="images/gallery/1.jpg" alt="">
-                            </div>
-                            <div class="project-link">
-                                <a class="project-priview" href="images/gallery/1.jpg"><i class="fa fa-search"></i><span class="btn-shape"></span></a>
-                                <a href="#"><i class="fa fa-link"></i><span class="btn-shape"></span></a>
-                            </div>
-                            <div class="project-text">
-                                Web Design, Java
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 mix animation android-apps-developmen">
-                        <div class="single-project-item">
-                            <div class="project-overlay"></div>
-                            <div class="project-image">
-                                <img src="images/gallery/2.jpg" alt="">
-                            </div>
-                            <div class="project-link">
-                                <a class="project-priview" href="images/gallery/2.jpg"><i class="fa fa-search"></i><span class="btn-shape"></span></a>
-                                <a href="#"><i class="fa fa-link"></i><span class="btn-shape"></span></a>
-                            </div>
-                            <div class="project-text">
-                                Graphics Design, Animation
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 mix animation web-design">
-                        <div class="single-project-item">
-                            <div class="project-overlay"></div>
-                            <div class="project-image">
-                                <img src="images/gallery/3.jpg" alt="">
-                            </div>
-                            <div class="project-link">
-                                <a class="project-priview" href="images/gallery/3.jpg"><i class="fa fa-search"></i><span class="btn-shape"></span></a>
-                                <a href="#"><i class="fa fa-link"></i><span class="btn-shape"></span></a>
-                            </div>
-                            <div class="project-text">
-                                Andriod Development, Web Design
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 mix web-design android-apps-development">
-                        <div class="single-project-item">
-                            <div class="project-overlay"></div>
-                            <div class="project-image">
-                                <img src="images/gallery/4.jpg" alt="">
-                            </div>
-                            <div class="project-link">
-                                <a class="project-priview" href="images/gallery/4.jpg"><i class="fa fa-search"></i><span class="btn-shape"></span></a>
-                                <a href="#"><i class="fa fa-link"></i><span class="btn-shape"></span></a>
-                            </div>
-                            <div class="project-text">
-                                Andriod Development, Web Design
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 mix graphics-design web-design">
-                        <div class="single-project-item">
-                            <div class="project-overlay"></div>
-                            <div class="project-image">
-                                <img src="images/gallery/5.jpg" alt="">
-                            </div>
-                            <div class="project-link">
-                                <a class="project-priview" href="images/gallery/5.jpg"><i class="fa fa-search"></i><span class="btn-shape"></span></a>
-                                <a href="#"><i class="fa fa-link"></i><span class="btn-shape"></span></a>
-                            </div>
-                            <div class="project-text">
-                                Web Design, Java
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 mix web-design android-apps-development">
-                        <div class="single-project-item">
-                            <div class="project-overlay"></div>
-                            <div class="project-image">
-                                <img src="images/gallery/6.jpg" alt="">
-                            </div>
-                            <div class="project-link">
-                                <a class="project-priview" href="images/gallery/6.jpg"><i class="fa fa-search"></i><span class="btn-shape"></span></a>
-                                <a href="#"><i class="fa fa-link"></i><span class="btn-shape"></span></a>
-                            </div>
-                            <div class="project-text">
-                                Web Design, Java
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Project Area End -->
-
-    <!--bizface-counter-->
-    <section class="bizface-counter section" style="background-image:url(images/background/counter.jpg);">
-        <div class="bizface-overlay"></div>
-        <div class="container ">
-            <div class="row clearfix ">
-                <!--Column-->
-                <div class="col-md-3 col-sm-6 ">
-                    <div class="counter-area ">
-                        <div class="icon-counter ">
-                            <i class="fa fa-briefcase "></i>
-                        </div>
-                        <h2 class="counter ">132</h2>
-                        <h3>Business</h3>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6 ">
-                    <div class="counter-area ">
-                        <div class="icon-counter ">
-                            <i class="fa fa-heartbeat "></i>
-                        </div>
-                        <h2 class="counter ">2486</h2>
-                        <h3>Happy customers</h3>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6 ">
-                    <div class="counter-area ">
-                        <div class="icon-counter ">
-                            <i class="fa fa-code "></i>
-                        </div>
-                        <h2 class="counter ">147</h2>
-                        <h3>Project completed</h3>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6 ">
-                    <div class="counter-area ">
-                        <div class="icon-counter ">
-                            <i class="fa fa-trophy "></i>
-                        </div>
-                        <h2 class="counter ">78</h2>
-                        <h3>Award winning</h3>
-                    </div>
-                </div>        
-            </div>
-        </div>
-    </section>
-    <!-- counter end -->
-
-    <!--bizface-news-->
-    <section class="news-section section">
-        <div class="container">
-            <div class="sec-title">
-                <h2>News update</h2>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod Praesent interdum.</p>
-            </div>
-            <div class="news-inner">
-                <div class="news-carousel owl-carousel owl-theme">
-                    <div class="news-item">
-                        <div class="news-item-inner">
-                            <figure><a href="blog-detail.html"><img src="images/news/1.jpg" alt=""></a></figure>
-                            <div class="news-item-content">
-                                <div class="news-date">
-                                    <span><i class="fa fa-calendar"></i>17 Dec, 2017</span>
-                                    <span><i class="fa fa-user"></i>Admin</span>
-                                </div>
-                                <h5><a href="blog-detail.html">Vitae elementum curabitur vitae nunc.</a></h5>
-                                <p>Sed vulputate elementum aliquam Nunc vel efficitur ante. Ut gravida nulla id ornare sodales.</p>
-                                <div class="news-btn clearfix">
-                                    <a href="blog-detail.html" class="btn btn-primary">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="news-item">
-                        <div class="news-item-inner">
-                            <figure><a href="blog-detail.html"><img src="images/news/2.jpg" alt=""></a></figure>
-                            <div class="news-item-content">
-                                <div class="news-date">
-                                    <span><i class="fa fa-calendar"></i>17 Dec, 2017</span>
-                                    <span><i class="fa fa-user"></i>Admin</span>
-                                </div>
-                                <h5><a href="blog-detail.html">Vitae elementum curabitur vitae nunc.</a></h5>
-                                <p>Sed vulputate elementum aliquam Nunc vel efficitur ante. Ut gravida nulla id ornare sodales.</p>
-                                <div class="news-btn clearfix">
-                                    <a href="blog-detail.html" class="btn btn-primary">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="news-item">
-                        <div class="news-item-inner">
-                            <figure><a href="blog-detail.html"><img src="images/news/3.jpg" alt=""></a></figure>
-                            <div class="news-item-content">
-                                <div class="news-date">
-                                    <span><i class="fa fa-calendar"></i>17 Dec, 2017</span>
-                                    <span><i class="fa fa-user"></i>Admin</span>
-                                </div>
-                                <h5><a href="blog-detail.html">Vitae elementum curabitur vitae nunc.</a></h5>
-                                <p>Sed vulputate elementum aliquam Nunc vel efficitur ante. Ut gravida nulla id ornare sodales.</p>
-                                <div class="news-btn clearfix">
-                                    <a href="blog-detail.html" class="btn btn-primary">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- bizface-price-start -->
     <section class="bizface-price section grey-background">
