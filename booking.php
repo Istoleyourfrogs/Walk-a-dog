@@ -18,7 +18,6 @@ require "includes/header.inc.php";
             <!-- HUMAN FORM SECTION -->
             <div class="row">
                 <div class="contact-page-inner">
-
                     <div class="col-sm-12 contact-right-form">
                         <div class="contact-page-title">
                             <h4>Enter you information and something something something</h4>
@@ -27,38 +26,38 @@ require "includes/header.inc.php";
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label>First Name:</label>
-                                    <input type="text" class="form-control" placeholder="First Name" name="firstName" value="namefirst">
+                                    <input type="text" class="form-control" placeholder="First Name" name="firstName">
                                 </div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label>Last Name:</label>
-                                    <input type="text"  class="form-control" placeholder="Last Name" name="lastName" value="namesecond">
+                                    <input type="text"  class="form-control" placeholder="Last Name" name="lastName">
                                 </div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label>Email:</label>
-                                    <input type="text" class="form-control" placeholder="email" name="email" value="email@mail.com">
+                                    <input type="text" class="form-control" placeholder="email" name="email">
                                 </div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label>Address:</label>
-                                    <input type="text" class="form-control" placeholder="Address" name="address" value="address 123">
+                                    <input type="text" class="form-control" placeholder="Address" name="address">
                                 </div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label>Phone Number:</label>
-                                    <input type="text"  class="form-control" placeholder="Phone Number" name="phone" value="+381 234234234">
+                                    <input type="text"  class="form-control" placeholder="Phone Number" name="phone">
                                 </div>
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group">
-                                    <label for="typeWalk">Type of walk:</label>
-                                    <select id="typeWalk" name="typeWalk" class="form-control">
-                                        <option value="daily">Select the type of walk</option>
+                                    <label for="typeOfWalk">Type of walk:</label>
+                                    <select id="typeOfWalk" name="typeOfWalk" class="form-control">
+                                        <option value="">Select the type of walk</option>
                                         <option value="oneTime">One time</option>
                                         <option value="daily">Daily</option>
                                         <option value="weekly">Weekly</option>
@@ -76,13 +75,14 @@ require "includes/header.inc.php";
                             <div class="col-sm-2 none" walk="time">
                                 <div class="form-group">
                                     <label for="time">Time of walk:</label>
-                                    <input id="time" class="form-control" type="time" name="time" value="12:00">
+                                    <input id="time" class="form-control" type="time" name="time">
                                 </div>
                             </div>
                             <div class="col-sm-10 none" walk="day">
                                 <div class="btn-group" data-toggle="buttons">
                                     <label>Which day: </label><br>
                                     <?php
+
                                     $daysOfWeek = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
                                     foreach ($daysOfWeek as $key => $value){
                                         echo "
@@ -91,6 +91,7 @@ require "includes/header.inc.php";
                                         </label>
                                         ";
                                     }
+
                                     ?>
                                     <!--
                                     <label for="monday" class="btn btn-primary">Monday
@@ -117,15 +118,15 @@ require "includes/header.inc.php";
                                     -->
                                 </div>
                             </div>
-
                         </div>
                         <div class="row">
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label for="numberOfDogs">Number of Dogs:</label>
                                     <select id="numberOfDogs" class="form-control" name="numberOfDogs">
-                                        <option  value="1">Number of Dogs</option>
+                                        <option  value="">Number of Dogs</option>
                                         <?php
+                                        $numbers = ["","One","Two","Three"];
                                         for($i=1; $i<=3; $i++){
                                             echo "<option id=\"{$i}dog\" value=\"$i\" name=\"numberOfDogs\">$i</option>";
                                         }
@@ -153,6 +154,7 @@ require "includes/header.inc.php";
                         <div class="contact-page-title">
                             <h4>Enter your dogs information below</h4>
                         </div>
+                        <!-- FIRST DOG -->
                         <div id="dog" class="row">
                             <div class="col-sm-4" dog="1">
                                 <h4>First dog</h4>
@@ -208,102 +210,118 @@ require "includes/header.inc.php";
                                 </div>
                                 <hr>
                             </div>
-                            <div class="col-sm-4" dog="2">
-                                <h4>Second dog</h4>
-                                <hr>
-                                <div class="form-group ">
-                                    <label>Name First</label>
-                                    <input type="text" class="form-control" placeholder="name first">
-                                </div>
-                                <div class="form-group ">
-                                    <label>Age First</label>
-                                    <input type="text" class="form-control" placeholder="name first">
-                                </div>
-                                <div class="form-group ">
-                                    <label>Breed First</label>
-                                    <!--<input type="text" class="form-control" placeholder="name first">-->
-                                    <select>
-                                        <?php
-                                        $sql = "SELECT breed FROM breeds;";
-                                        $query = mysqli_query($connect,$sql);
-                                        while($result = mysqli_fetch_assoc($query)){
-                                            echo "<option>{$result['breed']}</option>";
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
+                            <!-- SECOND DOG -->
+                            <div id="dog" class="row">
+                                <div class="col-sm-4" dog="2">
+                                    <h4>First dog</h4>
+                                    <hr>
+                                    <div class="form-group ">
+                                        <label>Name</label>
+                                        <input type="text" class="form-control" placeholder="name first" name="dogNameTwo">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Age</label>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-check-inline" placeholder="years" name="dogYearTwo">
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-check-inline" placeholder="months" name="dogMonthTwo">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label>Breed</label>
+                                        <!--<input type="text" class="form-control" placeholder="name first">-->
+                                        <select name="dogBreedTwo">
+                                            <option value="">Select the dog breed</option>
+                                            <?php
+                                            $sql = "SELECT breed FROM breeds;";
+                                            $query = mysqli_query($connect,$sql);
+                                            while($result = mysqli_fetch_assoc($query)){
+                                                echo "<option value=\"{$result['breed']}\">{$result['breed']}</option>";
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
 
+                                    <label class="container1">Vaccinated
+                                        <input type="checkbox" id="vacinated1" class="custom-checkbox" name="dogVaccinatedTwo" value="1">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <br>
+                                    <label class="container1">Trained
+                                        <input type="checkbox" id="trained1" class="custom-checkbox" name="dogTrainedTwo" value="1">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <br>
+                                    <label class="container1">Aggressive
+                                        <input type="checkbox" id="aggressive1" class="custom-checkbox" name="dogAggressionTwo" value="1">
+                                        <span class="checkmark"></span>
+                                    </label>
 
-                                <label class="container1">Vaccinated First
-                                    <input type="checkbox" id="vacinated2" class="custom-checkbox" name="vacinated2">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <br>
-                                <label class="container1">Trained First
-                                    <input type="checkbox" id="trained2" class="custom-checkbox" name="trained2">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <br>
-                                <label class="container1">Aggressive First
-                                    <input type="checkbox" id="aggressive2" class="custom-checkbox" name="aggressive2">
-                                    <span class="checkmark"></span>
-                                </label>
-
-
-                                <div class="form-group ">
-                                    <label class="headingDog">Other First</label>
-                                    <textarea placeholder="Enter text here" rows="5" name=""></textarea>
+                                    <div class="form-group ">
+                                        <label class="headingDog">Other</label>
+                                        <textarea placeholder="Enter text here" rows="5" name="dogOtherTwo"></textarea>
+                                    </div>
+                                    <hr>
                                 </div>
-                                <hr>
-                            </div>
+                                <!-- THIRD DOG -->
+                                <div id="dog" class="row">
+                                    <div class="col-sm-4" dog="3">
+                                        <h4>First dog</h4>
+                                        <hr>
+                                        <div class="form-group ">
+                                            <label>Name</label>
+                                            <input type="text" class="form-control" placeholder="name first" name="dogNameThree">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Age</label>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-check-inline" placeholder="years" name="dogYearThree">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-check-inline" placeholder="months" name="dogMonthThree">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label>Breed</label>
+                                            <!--<input type="text" class="form-control" placeholder="name first">-->
+                                            <select name="dogBreedThree">
+                                                <option value="">Select the dog breed</option>
+                                                <?php
+                                                $sql = "SELECT breed FROM breeds;";
+                                                $query = mysqli_query($connect,$sql);
+                                                while($result = mysqli_fetch_assoc($query)){
+                                                    echo "<option value=\"{$result['breed']}\">{$result['breed']}</option>";
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
 
-                            <div class="col-sm-4" dog="3">
-                                <h4>Third dog</h4>
-                                <hr>
-                                <div class="form-group ">
-                                    <label>Name First</label>
-                                    <input type="text" class="form-control" placeholder="name first">
-                                </div>
+                                        <label class="container1">Vaccinated
+                                            <input type="checkbox" id="vacinated1" class="custom-checkbox" name="dogVaccinatedThree" value="1">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <br>
+                                        <label class="container1">Trained
+                                            <input type="checkbox" id="trained1" class="custom-checkbox" name="dogTrainedThree" value="1">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <br>
+                                        <label class="container1">Aggressive
+                                            <input type="checkbox" id="aggressive1" class="custom-checkbox" name="dogAggressionThree" value="1">
+                                            <span class="checkmark"></span>
+                                        </label>
 
-                                <div class="form-group ">
-                                    <label>Age First</label>
-                                    <input type="text" class="form-control" placeholder="name first">
-                                </div>
-                                <div class="form-group ">
-                                    <label>Breed First</label>
-                                    <!--<input type="text" class="form-control" placeholder="name first">-->
-                                    <select>
-                                        <?php
-                                        $sql = "SELECT breed FROM breeds;";
-                                        $query = mysqli_query($connect,$sql);
-                                        while($result = mysqli_fetch_assoc($query)){
-                                            echo "<option>{$result['breed']}</option>";
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-                                <label class="container1">Vaccinated First
-                                    <input type="checkbox" id="vacinated3" class="custom-checkbox" name="vacinated3">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <br>
-                                <label class="container1">Trained First
-                                    <input type="checkbox" id="trained3" class="custom-checkbox" name="trained3">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <br>
-                                <label class="container1">Aggressive First
-                                    <input type="checkbox" id="aggressive3" class="custom-checkbox" name="aggressive3">
-                                    <span class="checkmark"></span>
-                                </label>
-
-
-                                <div class="form-group ">
-                                    <label class="headingDog">Other First</label>
-                                    <textarea placeholder="Enter text here" rows="5"></textarea>
-                                </div>
-                                <hr>
-                            </div>
+                                        <div class="form-group ">
+                                            <label class="headingDog">Other</label>
+                                            <textarea placeholder="Enter text here" rows="5" name="dogOtherThree"></textarea>
+                                        </div>
+                                        <hr>
+                                    </div>
                         </div>
                     </div>
                     <button type="submit" name="submit" class="btn btn-primary btn-group-justified">Register now!</button>

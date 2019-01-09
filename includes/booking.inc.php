@@ -3,18 +3,11 @@ require "database.inc.php";
 require "functions.inc.php";
 if(isset($_POST['submit'])){
 /***************************************************OWNER SECTION*********************************************************/
-    $firstName = mysqli_real_escape_string($connect,trim($_POST['firstName']));
-    $lastName = mysqli_real_escape_string($connect,trim($_POST['lastName']));
-    $email = mysqli_real_escape_string($connect,trim($_POST['email']));
-    $address = mysqli_real_escape_string($connect,trim($_POST['address']));
-    $phone = mysqli_real_escape_string($connect,trim($_POST['phone']));
-    $typeOfWalk = mysqli_real_escape_string($connect,trim($_POST['typeWalk']));
-    $date = mysqli_real_escape_string($connect,trim($_POST['date']));
-    $time = mysqli_real_escape_string($connect,trim($_POST['time']));
-    $day = mysqli_real_escape_string($connect,trim($_POST['day']));
 
 
-
+    foreach($_POST as $key => $value) {
+        ${$key} = mysqli_real_escape_string($connect,trim($value));
+    }
     //checks if any of the variables above are empty
     if(empty($firstName) or empty($lastName) or empty($email) or empty($address) or empty($phone) or empty($typeOfWalk)){
         header("Location: ../booking.php?emptyError");
@@ -78,8 +71,10 @@ if(isset($_POST['submit'])){
                 header("Location: ../booking.php?weeklyEmpty");
                 exit();
             }
-            //validates the date based on the format xxxx-xx-xx
-            validation("/^2[0-9]{3}\-(0[1-9]|1[0-2])\-(0[1-9]|1[0-9]|2[0-9]|3[0-1])$/",$date,0,"dateFatalError");
+            //validates the time based on the format xx:xx
+            validation("/^(0[0-9]|1[0-9]|2[0-3])\:[0-5][0-9]$/",$time,0,"timeFatalError");
+            //validates the day
+            dayValidation($day);
             //checks if the date is not empty and displays Error
             if(!empty($date)){
                 header("Location: ../booking.php?dateNotEmpty");
@@ -100,12 +95,11 @@ if(isset($_POST['submit'])){
         header("Location: ../booking.php?alreadyRegistered");
         exit();
     }
-/***************************************************OWNER SECTION*******************************************************/
+    /***************************************************OWNER SECTION*******************************************************/
 
 
-/***************************************************DOG SECTION*********************************************************/
+    /***************************************************DOG SECTION*********************************************************/
 
-    $numberOfDogs = mysqli_real_escape_string($connect,trim($_POST['numberOfDogs']));
     if(empty($numberOfDogs)){
         header("Location: ../booking.php?noDogs");
         exit();
@@ -114,68 +108,24 @@ if(isset($_POST['submit'])){
         header("Location: ../booking.php?dogNumberNotMatching");
         exit();
     }
+    $dogNumber = ["One","Two","Three"];
+    for($i=0; $i<$numberOfDogs; $i++){
+        dogValidation(
+            $connect,
+            ${"dogName".$dogNumber[$i]},
+            ${"dogYear".$dogNumber[$i]},
+            ${"dogMonth".$dogNumber[$i]},
+            ${"dogBreed".$dogNumber[$i]},
+            ${"dogVaccinated".$dogNumber[$i]},
+            ${"dogTrained".$dogNumber[$i]},
+            ${"dogAggression".$dogNumber[$i]},
+            ${"dogOther".$dogNumber[$i]}
+        );
+    }
+    /***************************************************\/DOG SECTION\/*********************************************************/
 
-    $dogNameFirst = mysqli_real_escape_string($connect,trim($_POST['dogNameOne']));
-    $dogYearFirst = mysqli_real_escape_string($connect,trim($_POST['dogYearOne']));
-    $dogMonthFirst  = mysqli_real_escape_string($connect,trim($_POST['dogMonthOne']));
-    $dogBreedFirst = mysqli_real_escape_string($connect,trim($_POST['dogBreedOne']));
-    $dogVaccinatedFirst = mysqli_real_escape_string($connect,trim($_POST['dogVaccinatedOne']));
-    $dogTrainedFirst = mysqli_real_escape_string($connect,trim($_POST['dogTrainedOne']));
-    $dogAggressionFirst = mysqli_real_escape_string($connect,trim($_POST['dogAggressionOne']));
-    $dogOtherFirst = mysqli_real_escape_string($connect,trim($_POST['dogOtherOne']));
-    dogValidation($connect,$dogNameFirst,$dogYearFirst,$dogMonthFirst,$dogBreedFirst,$dogVaccinatedFirst,$dogTrainedFirst,$dogAggressionFirst,$dogOtherFirst);
-    if(empty($dogNameFirst) or (empty($dogYearFirst) and empty($dogMonthFirst))){
-        header("Location: ../booking.php?emptyNameOrAge");
-        exit();
-    }
-    if(!preg_match("/^[a-zA-Z0-9\/\s]*$/",$dogNameFirst)){
-        header("Location: ../booking.php?notValidName");
-        exit();
-    }
-    if(!preg_match("/^(1[0-9]{0,1}|2[0-9]{0,1}|[0-9]{1})$/",$dogYearFirst)){
-        header("Location: ../booking.php?YearNotGood");
-        exit();
-    }
-    if(!preg_match("/^([0-9]{1}|1[0-1]{1})$/",$dogMonthFirst)){
-        header("Location: ../booking.php?MonthNotGood");
-        exit();
-    }
-    if($dogVaccinatedFirst != 0 or $dogVaccinatedFirst != 1){
-        header("Location: ../booking.php?VaccinatedError");
-        exit();
-    }
-    if($dogTrainedFirst != 0 or $dogTrainedFirst != 1){
-        header("Location: ../booking.php?TrainedError");
-        exit();
-    }
-    if($dogAggressionFirst != 0 or $dogTrainedFirst != 1){
-        header("Location: ../booking.php?TrainedError");
-        exit();
-    }
-    if(!preg_match("/^[a-zA-Z\.!?,\-\(\)]*$/",$dogOtherFirst)){
-        header("Location: ../booking.php?OtherSectionError");
-        exit();
-    }
-
-
-    echo "  $dogNameFirst<br>
-            $dogYearFirst<br>
-            $dogMonthFirst<br>
-            $dogBreedFirst<br>
-            $dogVaccinatedFirst<br>
-            $dogTrainedFirst<br>
-            $dogAggressionFirst<br>
-            $dogOtherFirst<br>
-";
-    /****************************************************************/
-    /************************CONTINUE HERE PLS***********************/
-    /****************************************************************/
-
-/***************************************************DOG SECTION*********************************************************/
-exit();
     //capitalize the first letter of each word for $name
-    $name = $firstName." ".$lastName;
-    $name = ucwords(strtolower($name));
+    $name = ucwords(strtolower($firstName." ".$lastName));
     $address = ucwords(strtolower($address));
     //replaces the - and / in the phone number with an empty string
     $phone = str_replace(array('/','-'),"",$phone);
@@ -196,6 +146,23 @@ exit();
     }
     //gets the user_id from the database
     $userID = getUserID($connect,$code);
+
+    switch ($numberOfDogs){
+        case "1":
+            dogSQL($connect,"$userID,'$dogNameOne',$dogAgeOne,'$dogBreedOne',$dogVaccinatedOne,$dogTrainedOne,$dogAggressionOne,'$dogOtherOne'");
+            break;
+        case "2":
+            dogSQL($connect,"$userID,'$dogNameOne','$dogAgeOne','$dogBreedOne','$dogVaccinatedOne','$dogTrainedOne','$dogAggressionOne','$dogOtherOne'");
+            dogSQL($connect,"$userID,'$dogNameTwo','$dogAgeTwo','$dogBreedTwo','$dogVaccinatedTwo','$dogTrainedTwo','$dogAggressionTwo','$dogOtherTwo'");
+            break;
+        case "3":
+            dogSQL($connect,"$userID,'$dogNameOne','$dogAgeOne','$dogBreedOne','$dogVaccinatedOne','$dogTrainedOne','$dogAggressionOne','$dogOtherOne'");
+            dogSQL($connect,"$userID,'$dogNameTwo','$dogAgeTwo','$dogBreedTwo','$dogVaccinatedTwo','$dogTrainedTwo','$dogAggressionTwo','$dogOtherTwo'");
+            dogSQL($connect,"$userID,'$dogNameThree','$dogAgeThree','$dogBreedThree','$dogVaccinatedThree','$dogTrainedThree','$dogAggressionThree','$dogOtherThree'");
+            break;
+        default:
+
+    }
     //depended on the $typeOfWalk inserts the correct data into the database
     switch($typeOfWalk){
         case "oneTime":
@@ -228,4 +195,3 @@ exit();
     header("Location: ../booking.php?fatalError");
     exit();
 }
-
