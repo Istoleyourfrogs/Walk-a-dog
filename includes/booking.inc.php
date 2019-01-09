@@ -13,11 +13,10 @@ if(isset($_POST['submit'])){
         header("Location: ../index.php?error=empty#booking");
         exit();
     }
+
     //checks for only letters in firstName and lastName or if the length is shorter than 2
-    if(!preg_match("/^[a-zA-Z\s]*$/", $firstName) or !preg_match("/^[a-zA-Z\s]*$/", $lastName) or strlen($firstName)<2 or strlen($lastName)<2) {
-        header("Location: ../index.php?error=notValid#booking");
-        exit();
-    }
+    validation("/^[a-zA-Z\s]*$/",$lastName,2,"error=notValid#booking");
+    validation("/^[a-zA-Z\s]*$/",$firstName,2,"error=notValid#booking");
     //checks if the email has a valid format
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         header("Location: ../index.php?error=notValid#booking");
@@ -39,10 +38,12 @@ if(isset($_POST['submit'])){
                 exit();
             }
             //checks if the format of date and time is valid
-            if(!dateValidation($date) or !timeValidation($time)){
+            /*if(!dateValidation($date) or !timeValidation($time)){
                 header("Location: ../index.php?error=notValid#booking");
                 exit();
-            }
+            }*/
+            validation("/^2[0-9]{3}\-(0[1-9]|1[0-2])\-(0[1-9]|1[0-9]|2[0-9]|3[0-1])$/",$date,0,"error=notValid#booking");
+            validation("/^(0[0-9]|1[0-9]|2[0-3])\:[0-5][0-9]$/",$time,0,"error=notValid#booking");
             //if the day is not empty display fatal Error
             if(!empty($day)){
                 header("Location: ../index.php?error=fatal#booking");
@@ -104,10 +105,11 @@ if(isset($_POST['submit'])){
         header("Location: ../index.php?error=empty#booking");
         exit();
     }
-    if(!preg_match("/^(1|2|3)$/",$numberOfDogs)){
+    /*if(!preg_match("/^(1|2|3)$/",$numberOfDogs)){
         header("Location: ../index.php?error=fatal#booking");
         exit();
-    }
+    }*/
+    validation("/^(1|2|3)$/",$numberOfDogs,0,"error=fatal#booking");
     $dogNumber = ["One","Two","Three"];
     for($i=0; $i<$numberOfDogs; $i++){
         dogValidation(
@@ -147,7 +149,21 @@ if(isset($_POST['submit'])){
 
     //gets the user_id from the database
     $userID = getUserID($connect,$code);
-
+    /*for($i=0; $i<$numberOfDogs; $i++){
+        dogValidation(
+            $connect,
+            ${"dogName".$dogNumber[$i]},
+            ${"dogYear".$dogNumber[$i]},
+            ${"dogMonth".$dogNumber[$i]},
+            ${"dogBreed".$dogNumber[$i]},
+            ${"dogVaccinated".$dogNumber[$i]},
+            ${"dogTrained".$dogNumber[$i]},
+            ${"dogAggression".$dogNumber[$i]},
+            ${"dogOther".$dogNumber[$i]}
+        );
+        ${"dogAge".$dogNumber[$i]} = ${"dogYear".$dogNumber[$i]} * 12 +  ${"dogMonth".$dogNumber[$i]};
+    }*/
+    //will do it like this!
     switch ($numberOfDogs){
         case "1":
             dogSQL($connect,"$userID,'$dogNameOne','$dogAgeOne','$dogBreedOne',$dogVaccinatedOne,$dogTrainedOne,$dogAggressionOne,'$dogOtherOne'");

@@ -464,7 +464,8 @@ require_once "includes/header.inc.php";
                                 </div>
                                 <div class="col-sm-10 none" walk="day">
                                     <div class="btn-group" data-toggle="buttons">
-                                        <label>Which day: </label><br>
+                                        <label>Which day: </label>
+                                        <br>
                                         <?php
                                         $daysOfWeek = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
                                         foreach ($daysOfWeek as $key => $value){

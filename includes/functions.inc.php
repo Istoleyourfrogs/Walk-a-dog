@@ -3,10 +3,10 @@ require "database.inc.php";
 //checks if the Input has a day in the week
 function dayValidation($dayInput){
     $daysOfWeek = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
-    if(in_array($dayInput,$daysOfWeek)){
-        return $dayInput;
+    if(!in_array($dayInput,$daysOfWeek)){
+        header("Location: ../index.php?error=fatal#booking");
+        exit();
     }
-    return null;
 }
 //validates the time
 function timeValidation($time){
@@ -42,8 +42,8 @@ function getUserID($connect,$code){
 
 }
 //validates variables
-function validation($regex,$checkVaraible,$maxLength,$error){
-    if(!preg_match($regex, $checkVaraible) or strlen($checkVaraible)<$maxLength){
+function validation($regex,$checkVaraible,$minLength,$error){
+    if(!preg_match($regex, $checkVaraible) or strlen($checkVaraible)<$minLength){
         header("Location: ../index.php?$error");
         exit();
     }
