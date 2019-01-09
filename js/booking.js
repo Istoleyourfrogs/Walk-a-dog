@@ -46,10 +46,10 @@ $(document).ready(function () {
 
     //adding submit button only after filling out every necessary field
     //validate();
-    var inputs = $('input[name="firstName"], input[name="lastName"], input[name="email"]');
-    inputs.change(validate);
+    //var inputs = $('input[name="firstName"], input[name="lastName"], input[name="email"]');
+    //inputs.change(validate);
     //checks if there are any values entered in the inputs
-    function validate(){
+    /*function validate(){
         if (($('input[name="firstName"]').val().length > 0) && ($('input[name="lastName"]').val().length > 0) && ($('input[name="email"]').val().length > 0)) {
             $('button[name="submit"]').fadeTo('slow',1);
         }
@@ -57,9 +57,9 @@ $(document).ready(function () {
             $('button[name="submit"]').hide();
 
         }
-    }
+    }*/
     function dogCount() {
-        if(valueSelectDogs.val() === '0'){
+        if(valueSelectDogs.val() === ''){
             dog1.fadeOut('slow');
             dog2.fadeOut('slow');
             dog3.fadeOut('slow');

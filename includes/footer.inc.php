@@ -129,6 +129,7 @@ echo "
     <script  src=js/wow.js></script>
     <script  src=\"js/script.js\"></script>
     <script src=\"js/scroll.js\"></script>
+    <script src=\"js/booking.js\"></script>
 
     <!-- js library end -->
     

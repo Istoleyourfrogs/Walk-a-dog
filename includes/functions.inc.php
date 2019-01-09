@@ -44,7 +44,7 @@ function getUserID($connect,$code){
 //validates variables
 function validation($regex,$checkVaraible,$maxLength,$error){
     if(!preg_match($regex, $checkVaraible) or strlen($checkVaraible)<$maxLength){
-        header("Location: ../booking.php?$error");
+        header("Location: ../index.php?$error");
         exit();
     }
 }
@@ -83,22 +83,22 @@ function mailValidation($empty,$mailFrom,$mailCheck,$location){
 function dogValidation($connect,$dogName,$dogYear,$dogMonth,$dogBreed,$dogVaccinated,$dogTrained,$dogAggression,$dogOther){
     //checks if dogs name is empty or if both of the age inputs are empty
     if(empty($dogName) or (empty($dogYear) and empty($dogMonth))){
-        header("Location: ../booking.php?emptyNameOrAge");
+        header("Location: ../index.php?error=empty#booking");
         exit();
     }
     //checks for only letter in the dogs name
     if(!preg_match("/^[a-zA-Z\s]*$/",$dogName)){
-        header("Location: ../booking.php?notValidName");
+        header("Location: ../index.php?error=notValid#booking");
         exit();
     }
     //checks the dogs age in years (format from 1-29)
     if(!preg_match("/^(1[0-9]{0,1}|2[0-9]{0,1}|[0-9]{1})?$/",$dogYear)){
-        header("Location: ../booking.php?YearNotGood");
+        header("Location: ../index.php?error=notValid#booking");
         exit();
     }
     //checks the dogs age in months (format from 1-11)
     if(!preg_match("/^[0-9]{0,3}?$/",$dogMonth)){
-        header("Location: ../booking.php?MonthNotGood");
+        header("Location: ../index.php?error=notValid#booking");
         exit();
     }
 
@@ -106,26 +106,26 @@ function dogValidation($connect,$dogName,$dogYear,$dogMonth,$dogBreed,$dogVaccin
     $query = mysqli_query($connect,$sql);
     //checks if the breed is valid by getting it from the database
     if($row = mysqli_num_rows($query) == 0){
-        header("Location: ../booking.php?BreedError");
+        header("Location: ../index.php?error=fatalError#booking");
         exit();
     }
     //checks if the value of vaccinated is either none or 1
     if($dogVaccinated != '' and $dogVaccinated != '1'){
-        header("Location: ../booking.php?VaccinatedError");
+        header("Location: ../index.php?error=fatalError#booking");
         exit();
     }
     //checks if the value of trained is either none or 1
     if($dogTrained != '' and $dogTrained != '1'){
-        header("Location: ../booking.php?TrainedError");
+        header("Location: ../index.php?error=fatalError#booking");
         exit();
     }
     //checks if the value of aggression is either none or 1
     if($dogAggression != '' and $dogAggression != '1'){
-        header("Location: ../booking.php?TrainedError");
+        header("Location: ../index.php?error=fatalError#booking");
         exit();
     }
     if(!preg_match("/^[a-zA-Z0-9\.!?,\-\(\):_\s]*$/",$dogOther)){
-        header("Location: ../booking.php?OtherSectionError");
+        header("Location: ../index.php?error=notValid#booking");
         exit();
     }
     //echo $dogName." ".$dogYear." ".$dogMonth." ".$dogBreed." ".$dogVaccinated." ".$dogTrained." ".$dogAggression." ".$dogOther."<br>";
@@ -143,17 +143,4 @@ function checkBoxValue($value){
     }else
         $value = 0;
         return $value;
-}
-
-function displayTXTList($fileName) {
-    if(file_exists($fileName)) {
-        $file = fopen($fileName,'r');
-        while(!feof($file)) {
-            $name = fgets($file);
-            echo('<tr><td align="center">'.$name.'</td></tr>');
-        }
-        fclose($file);
-    } else {
-        echo('<tr><td align="center">placeholder</td></tr>');
-    }
 }

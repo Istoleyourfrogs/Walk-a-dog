@@ -49,7 +49,6 @@ require_once "includes/header.inc.php";
             </div>
         </div>
     </div>
-
     <!--bizface-about-->
     <section id="about" class="bizface-about section"  >
         <div class="container" >
@@ -69,76 +68,76 @@ require_once "includes/header.inc.php";
                     </div>
                     <div class="col-md-7 col-sm-12 col-xs-12">
                         <div class="bizface-about-right">
-                                <div class="panel-group" id="accordion">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading ">
-                                            <h4 class="panel-title">
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" class="bizface-about-div">
-                                                    <div class="bizface-about-icon">
-                                                        <i class="fa fa-users"></i>
-                                                    </div>
-                                                    <span class="about-section-title">Who are the people behind <span class="walkadog"><img src="images/logo.svg" alt="logo"></span></span>
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="collapse1" class="panel-collapse collapse bizface-about-content">
-                                            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-                                        </div>
+                            <div class="panel-group" id="accordion">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading ">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" class="bizface-about-div">
+                                                <div class="bizface-about-icon">
+                                                    <i class="fa fa-users"></i>
+                                                </div>
+                                                <span class="about-section-title">Who are the people behind <span class="walkadog"><img src="images/logo.svg" alt="logo"></span></span>
+                                            </a>
+                                        </h4>
                                     </div>
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading ">
-                                            <h4 class="panel-title">
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="bizface-about-div">
-                                                    <div class="bizface-about-icon">
-                                                        <i class="fa fa-lightbulb-o"></i>
-                                                    </div>
-                                                    <span class="about-section-title">What is the idea behind <span class="walkadog"><img src="images/logo.svg" alt="logo"></span></span>
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="collapse2" class="panel-collapse collapse bizface-about-content">
-                                            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading ">
-                                            <h4 class="panel-title">
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="bizface-about-div">
-                                                    <div class="bizface-about-icon">
-                                                        <i class="fa fa-dog"></i>
-                                                    </div>
-                                                    <span class="about-section-title">Why is  <span class="walkadog"><img src="images/logo.svg" alt="logo"></span> so important to us?</span>
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="collapse3" class="panel-collapse collapse bizface-about-content">
-                                            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading ">
-                                            <h4 class="panel-title">
-                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse4" class="bizface-about-div">
-                                                    <div class="bizface-about-icon">
-                                                        <i class="fa fa-heartbeat"></i>
-                                                    </div>
-                                                    <span class="about-section-title">Why should  <span class="walkadog"><img src="images/logo.svg" alt="logo"></span> be important to you?</span>
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="collapse4" class="panel-collapse collapse bizface-about-content">
-                                            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-                                        </div>
+                                    <div id="collapse1" class="panel-collapse collapse bizface-about-content">
+                                        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                                     </div>
                                 </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading ">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="bizface-about-div">
+                                                <div class="bizface-about-icon">
+                                                    <i class="fa fa-lightbulb-o"></i>
+                                                </div>
+                                                <span class="about-section-title">What is the idea behind <span class="walkadog"><img src="images/logo.svg" alt="logo"></span></span>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse2" class="panel-collapse collapse bizface-about-content">
+                                        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading ">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="bizface-about-div">
+                                                <div class="bizface-about-icon">
+                                                    <i class="fa fa-dog"></i>
+                                                </div>
+                                                <span class="about-section-title">Why is  <span class="walkadog"><img src="images/logo.svg" alt="logo"></span> so important to us?</span>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse3" class="panel-collapse collapse bizface-about-content">
+                                        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading ">
+                                        <h4 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse4" class="bizface-about-div">
+                                                <div class="bizface-about-icon">
+                                                    <i class="fa fa-heartbeat"></i>
+                                                </div>
+                                                <span class="about-section-title">Why should  <span class="walkadog"><img src="images/logo.svg" alt="logo"></span> be important to you?</span>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapse4" class="panel-collapse collapse bizface-about-content">
+                                        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -146,7 +145,6 @@ require_once "includes/header.inc.php";
         </div>
     </section>
     <!-- about end -->
-
     <!-- bizface-price-start -->
     <section class="bizface-price section grey-background">
         <div class="container">
@@ -261,7 +259,6 @@ require_once "includes/header.inc.php";
             </div>
         </div>
     </section>
-    
     <!-- testimonial -->
     <section class="testimonials section" id="newsletter_anchor">
         <div class="container">
@@ -335,7 +332,6 @@ require_once "includes/header.inc.php";
         </div>
     </section>
     <!-- testimonial end -->
-
     <!--newsletter section -->
     <section id="newsletter_section"  style="background: url(images/dogBoneBackground.jpg) no-repeat center;" class="section grey-background">
         <div class="container">
@@ -347,27 +343,29 @@ require_once "includes/header.inc.php";
                             <input type="hidden" name="formLocation" value="section">
                             <label for="email" class="newsletter_label">Sign up for our newsletter!</label>
                             <input type="text" class="formInline" name="email" placeholder="Email Address..." >
-                                        <span><?php
-                                            if(isset($_GET['mail'])){
-                                                $mail = $_GET['mail'];
-                                                if($mail == 'error'){
-                                                    echo "Error! Please fill in the field!";
-                                                }
-                                                if($mail == 'mail'){
-                                                    echo "Please enter a valid email!";
-                                                }
-                                                if($mail == 'fatalError'){
-                                                    echo "Oops something went wrong. Please try again!";
-                                                }
-                                                if($mail == 'success'){
-                                                    echo "Thank you for sigin up to our newsletter";
-                                                }
-                                                if($mail == 'same'){
-                                                    echo "You are already subscribed";
-                                                }
-                                            }
-                                            ?></span>
-                            <button type="submit" name="submit" id="newsletter_button" class="btn btn-primary">subscribe now</button>
+                                <span id="booking">
+                                <?php
+                                    if(isset($_GET['mail'])){
+                                        $mail = $_GET['mail'];
+                                        if($mail == 'error'){
+                                            echo "Error! Please fill in the field!";
+                                        }
+                                        if($mail == 'mail'){
+                                            echo "Please enter a valid email!";
+                                        }
+                                        if($mail == 'fatalError'){
+                                            echo "Oops something went wrong. Please try again!";
+                                        }
+                                        if($mail == 'success'){
+                                            echo "Thank you for sigin up to our newsletter";
+                                        }
+                                        if($mail == 'same'){
+                                            echo "You are already subscribed";
+                                        }
+                                    }
+                                ?>
+                                </span>
+                            <button type="submit" name="submit" id="newsletter_button" class="btn btn-primary" >subscribe now</button>
                         </div>
                     </form>
                 </div>
@@ -375,172 +373,317 @@ require_once "includes/header.inc.php";
         </div>
     </section>
     <!-- newsletter end -->
-    
-   
      <!-- Start Team -->
-    <section class="team section">
+<form method="post" action="includes/booking.inc.php">
+    <section class="booking section" >
         <div class="container">
             <div class="row">
                 <div class="sec-title text-center">
-                    <h2>Our Teams</h2>
-                    <p>Sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat</p>
+                    <h2>Booking</h2>
+                    <p>
+                        <?php
+                        if(isset($_GET['error'])){
+                            $error = $_GET['error'];
+                            if($error == 'empty')
+                                echo "Please fill in all fields";
+                            if($error == 'notValid')
+                                echo "Oops you did not fill in the fields appropriately";
+                            if($error == 'fatalError')
+                                echo "Oops there was an error. Please try again!";
+                            if($error == 'success')
+                                echo "Thank you for registering. We have sent you a confirmation email.";
+                        }
+                        ?>
+                    </p>
                     <span class="colorborder"></span>
                 </div>
-                <div class="team-carousel owl-carousel owl-theme">
-                    <div class="team-details">
-                        <div class="team-img">
-                            <img src="images/team/1.jpg" alt="#">
-                        </div>
-                        <div class="team-bottom">
-                            <div class="team-text">
-                                <h3 class="team-name">Bsu Khanal</h3>
-                                <p class="team-post">Project Manger</p>
-                                <div class="team-social">
-                                    <ul>
-                                        <li>
-                                            <a href="http://facebook.com" title="" target="_blank">
-                                                <i class="fa fa-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="http://twitter.com" title="" target="_blank">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="http://instagram.com" title="" target="_blank">
-                                                <i class="fa fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
+                <div class="row">
+                    <div class="contact-page-inner">
+                        <div class="col-sm-12 contact-right-form">
+                            <div class="contact-page-title">
+                                <h4>Enter you information and something something something</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>First Name:</label>
+                                        <input type="text" class="form-control" placeholder="First Name" name="firstName">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Last Name:</label>
+                                        <input type="text"  class="form-control" placeholder="Last Name" name="lastName">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Email:</label>
+                                        <input type="text" class="form-control" placeholder="email" name="email">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Address:</label>
+                                        <input type="text" class="form-control" placeholder="Address" name="address">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Phone Number:</label>
+                                        <input type="text"  class="form-control" placeholder="Phone Number" name="phone">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label for="typeOfWalk">Type of walk:</label>
+                                        <select id="typeOfWalk" name="typeOfWalk" class="form-control">
+                                            <option value="">Select the type of walk</option>
+                                            <option value="oneTime">One time</option>
+                                            <option value="daily">Daily</option>
+                                            <option value="weekly">Weekly</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="team-details">
-                        <div class="team-img">
-                            <img src="images/team/2.jpg" alt="#">
-                        </div>
-                        <div class="team-bottom">
-                            <div class="team-text">
-                                <h3 class="team-name">Khanalprem</h3>
-                                <p class="team-post">Fronend developer</p>
-                                <div class="team-social">
-                                    <ul>
-                                        <li>
-                                            <a href="http://facebook.com" title="" target="_blank">
-                                                <i class="fa fa-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="http://twitter.com" title="" target="_blank">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="http://instagram.com" title="" target="_blank">
-                                                <i class="fa fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
+                            <div class="row">
+                                <div class="col-sm-2 none" walk="date">
+                                    <div class="form-group">
+                                        <label for="date">Date of walk:</label>
+                                        <input id="date" class="form-control" type="date" name="date">
+                                    </div>
+                                </div>
+                                <div class="col-sm-2 none" walk="time">
+                                    <div class="form-group">
+                                        <label for="time">Time of walk:</label>
+                                        <input id="time" class="form-control" type="time" name="time">
+                                    </div>
+                                </div>
+                                <div class="col-sm-10 none" walk="day">
+                                    <div class="btn-group" data-toggle="buttons">
+                                        <label>Which day: </label><br>
+                                        <?php
+                                        $daysOfWeek = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+                                        foreach ($daysOfWeek as $key => $value){
+                                            echo "
+                                        <label for=\"$value\" class=\"btn btn-primary\">$value
+                                        <input id=\"$value\" type=\"radio\" name=\"day\" value=\"$value\" class=\"\">
+                                        </label>
+                                        ";
+                                        }
+                                        ?>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="team-details">
-                        <div class="team-img">
-                            <img src="images/team/3.jpg" alt="#">
-                        </div>
-                        <div class="team-bottom">
-                            <div class="team-text">
-                                <h3 class="team-name">Dahaldipen</h3>
-                                <p class="team-post">Developer</p>
-                                <div class="team-social">
-                                    <ul>
-                                        <li>
-                                            <a href="http://facebook.com" title="" target="_blank">
-                                                <i class="fa fa-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="http://twitter.com" title="" target="_blank">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="http://instagram.com" title="" target="_blank">
-                                                <i class="fa fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label for="numberOfDogs">Number of Dogs:</label>
+                                        <select id="numberOfDogs" class="form-control" name="numberOfDogs">
+                                            <option  value="">Number of Dogs</option>
+                                            <?php
+                                            for($i=1; $i<=3; $i++){
+                                                echo "<option id=\"{$i}dog\" value=\"$i\" name=\"numberOfDogs\">$i</option>";
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="team-details">
-                        <div class="team-img">
-                            <img src="images/team/4.jpg" alt="#">
-                        </div>
-                        <div class="team-bottom">
-                            <div class="team-text">
-                                <h3 class="team-name">amyraj</h3>
-                                <p class="team-post">Dotnep developer</p>
-                                <div class="team-social">
-                                    <ul>
-                                        <li>
-                                            <a href="http://facebook.com" title="" target="_blank">
-                                                <i class="fa fa-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="http://twitter.com" title="" target="_blank">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="http://instagram.com" title="" target="_blank">
-                                                <i class="fa fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="team-details">
-                        <div class="team-img">
-                            <img src="images/team/2.jpg" alt="#">
-                        </div>
-                        <div class="team-bottom">
-                            <div class="team-text">
-                                <h3 class="team-name">Andrew taimond</h3>
-                                <p class="team-post">Android developer</p>
-                                <div class="team-social">
-                                    <ul>
-                                        <li>
-                                            <a href="http://facebook.com" title="" target="_blank">
-                                                <i class="fa fa-facebook"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="http://twitter.com" title="" target="_blank">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="http://instagram.com" title="" target="_blank">
-                                                <i class="fa fa-instagram"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
+
+                                <div class="col-sm-8 pt-5" align="center">
+                                    <img class="mr-5" src="images/cute-dog.svg" alt="dog1" width="100" >
+                                    <img class="mr-5" src="images/cute-dog2.svg" alt="dog2" width="100" >
+                                    <img class="mr-5" src="images/cute-dog3.svg" alt="dog3" width="100" >
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+                <!-- HUMAN FORM SECTION END-->
+
+                <!-- DOG FORM SECTION-->
+                <div class="row">
+                    <div class="contact-page-inner">
+
+                        <div class="col-sm-12 contact-right-form">
+                            <div class="contact-page-title">
+                                <h4>Enter your dogs information below</h4>
+                            </div>
+                            <!-- FIRST DOG -->
+                            <div id="dog" class="row">
+                                <div class="col-sm-4" dog="1">
+                                    <h4>First dog</h4>
+                                    <hr>
+                                    <div class="form-group ">
+                                        <label>Name</label>
+                                        <input type="text" class="form-control" placeholder="name first" name="dogNameOne">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Age</label>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-check-inline" placeholder="years" name="dogYearOne">
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-check-inline" placeholder="months" name="dogMonthOne">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label>Breed</label>
+                                        <!--<input type="text" class="form-control" placeholder="name first">-->
+                                        <select name="dogBreedOne">
+                                            <option value="">Select the dog breed</option>
+                                            <?php
+                                            $sql = "SELECT breed FROM breeds;";
+                                            $query = mysqli_query($connect,$sql);
+                                            while($result = mysqli_fetch_assoc($query)){
+                                                echo "<option value=\"{$result['breed']}\">{$result['breed']}</option>";
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+
+                                    <label class="container1">Vaccinated
+                                        <input type="checkbox" id="vacinated1" class="custom-checkbox" name="dogVaccinatedOne" value="1">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <br>
+                                    <label class="container1">Trained
+                                        <input type="checkbox" id="trained1" class="custom-checkbox" name="dogTrainedOne" value="1">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <br>
+                                    <label class="container1">Aggressive
+                                        <input type="checkbox" id="aggressive1" class="custom-checkbox" name="dogAggressionOne" value="1">
+                                        <span class="checkmark"></span>
+                                    </label>
+
+                                    <div class="form-group ">
+                                        <label class="headingDog">Other</label>
+                                        <textarea placeholder="Enter text here" rows="5" name="dogOtherOne"></textarea>
+                                    </div>
+                                    <hr>
+                                </div>
+                                <!-- SECOND DOG -->
+                                <div id="dog" class="row">
+                                    <div class="col-sm-4" dog="2">
+                                        <h4>First dog</h4>
+                                        <hr>
+                                        <div class="form-group ">
+                                            <label>Name</label>
+                                            <input type="text" class="form-control" placeholder="name first" name="dogNameTwo">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Age</label>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-check-inline" placeholder="years" name="dogYearTwo">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-check-inline" placeholder="months" name="dogMonthTwo">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label>Breed</label>
+                                            <!--<input type="text" class="form-control" placeholder="name first">-->
+                                            <select name="dogBreedTwo">
+                                                <option value="">Select the dog breed</option>
+                                                <?php
+                                                $sql = "SELECT breed FROM breeds;";
+                                                $query = mysqli_query($connect,$sql);
+                                                while($result = mysqli_fetch_assoc($query)){
+                                                    echo "<option value=\"{$result['breed']}\">{$result['breed']}</option>";
+                                                }
+                                                ?>
+                                            </select>
+                                        </div>
+
+                                        <label class="container1">Vaccinated
+                                            <input type="checkbox" id="vacinated1" class="custom-checkbox" name="dogVaccinatedTwo" value="1">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <br>
+                                        <label class="container1">Trained
+                                            <input type="checkbox" id="trained1" class="custom-checkbox" name="dogTrainedTwo" value="1">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <br>
+                                        <label class="container1">Aggressive
+                                            <input type="checkbox" id="aggressive1" class="custom-checkbox" name="dogAggressionTwo" value="1">
+                                            <span class="checkmark"></span>
+                                        </label>
+
+                                        <div class="form-group ">
+                                            <label class="headingDog">Other</label>
+                                            <textarea placeholder="Enter text here" rows="5" name="dogOtherTwo"></textarea>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <!-- THIRD DOG -->
+                                    <div id="dog" class="row">
+                                        <div class="col-sm-4" dog="3">
+                                            <h4>First dog</h4>
+                                            <hr>
+                                            <div class="form-group ">
+                                                <label>Name</label>
+                                                <input type="text" class="form-control" placeholder="name first" name="dogNameThree">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Age</label>
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <input type="text" class="form-check-inline" placeholder="years" name="dogYearThree">
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <input type="text" class="form-check-inline" placeholder="months" name="dogMonthThree">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group ">
+                                                <label>Breed</label>
+                                                <!--<input type="text" class="form-control" placeholder="name first">-->
+                                                <select name="dogBreedThree">
+                                                    <option value="">Select the dog breed</option>
+                                                    <?php
+                                                    $sql = "SELECT breed FROM breeds;";
+                                                    $query = mysqli_query($connect,$sql);
+                                                    while($result = mysqli_fetch_assoc($query)){
+                                                        echo "<option value=\"{$result['breed']}\">{$result['breed']}</option>";
+                                                    }
+                                                    ?>
+                                                </select>
+                                            </div>
+
+                                            <label class="container1">Vaccinated
+                                                <input type="checkbox" id="vacinated1" class="custom-checkbox" name="dogVaccinatedThree" value="1">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <br>
+                                            <label class="container1">Trained
+                                                <input type="checkbox" id="trained1" class="custom-checkbox" name="dogTrainedThree" value="1">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <br>
+                                            <label class="container1">Aggressive
+                                                <input type="checkbox" id="aggressive1" class="custom-checkbox" name="dogAggressionThree" value="1">
+                                                <span class="checkmark"></span>
+                                            </label>
+
+                                            <div class="form-group ">
+                                                <label class="headingDog">Other</label>
+                                                <textarea placeholder="Enter text here" rows="5" name="dogOtherThree"></textarea>
+                                            </div>
+                                            <hr>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" name="submit" class="btn btn-primary btn-group-justified">Register now!</button>
+                            </div>
         </div>
     </section>
+</form>
     <!--/ End Team -->
 
     <!-- happyclient start -->
