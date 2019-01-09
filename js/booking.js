@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     var valueSelectDogs = $('#numberOfDogs');
-    var valueSelectWalk = $('#typeWalk');
+    var valueSelectWalk = $('#typeOfWalk');
 
     //dog pictures
     var dogPic1 = $('img[alt="dog1"]');
@@ -45,7 +45,7 @@ $(document).ready(function () {
     });
 
     //adding submit button only after filling out every necessary field
-    validate();
+    //validate();
     var inputs = $('input[name="firstName"], input[name="lastName"], input[name="email"]');
     inputs.change(validate);
     //checks if there are any values entered in the inputs
