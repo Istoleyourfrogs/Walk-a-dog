@@ -132,7 +132,7 @@ require_once "includes/header.inc.php";
                                         </h4>
                                     </div>
                                     <div id="collapse4" class="panel-collapse collapse bizface-about-content">
-                                        <div class="panel-body" >Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                                             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                                             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                                     </div>
@@ -146,7 +146,7 @@ require_once "includes/header.inc.php";
     </section>
     <!-- about end -->
     <!-- bizface-price-start -->
-    <section class="bizface-price section grey-background" id="pricing">
+    <section class="bizface-price section grey-background">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
@@ -343,7 +343,7 @@ require_once "includes/header.inc.php";
                             <input type="hidden" name="formLocation" value="section">
                             <label for="email" class="newsletter_label">Sign up for our newsletter!</label>
                             <input type="text" class="formInline" name="email" placeholder="Email Address..." >
-                                <span >
+                                <span id="booking">
                                 <?php
                                     if(isset($_GET['mail'])){
                                         $mail = $_GET['mail'];
@@ -375,7 +375,7 @@ require_once "includes/header.inc.php";
     <!-- newsletter end -->
      <!-- Start Team -->
 <form method="post" action="includes/booking.inc.php">
-    <section class="booking section" id="booking" >
+    <section class="booking section" >
         <div class="container">
             <div class="row">
                 <div class="sec-title text-center">
@@ -685,45 +685,43 @@ require_once "includes/header.inc.php";
     </section>
 </form>
     <!--/ End Team -->
-
     <!-- happyclient start -->
-   <section class="clients section grey-background">
-    <div class="container">
-        <div class="sec-title text-center">
-            <h2>Contact us</h2>
-            <p>Need information or have a question for us? We are here to help!</p>
-            <span class="colorborder"></span>
-        </div>
-        <div class="row">
-            <div class="col-md-6 col-sm-12 col-xs-12">
-                <form method="post" action="includes/contact.inc.php">
-                    <div class="form-group">
-                        <label for="ContactName">Name</label>
-                        <input type="text" class="form-control" id="ContactName" placeholder="Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="ContactEmail">Email address</label>
-                        <input type="email" class="form-control" id="ContactEmail" aria-describedby="emailHelp" placeholder="Enter email">
-                    </div>
-                    <div class="form-group">
-                        <label for="ContactMessage">Your message</label>
-                        <textarea class="form-control" rows="5" id="ContactMessage" placeholder="Enter your message"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+    <section class="clients section grey-background">
+        <div class="container">
+            <div class="sec-title text-center">
+                <h2>Contact us</h2>
+                <p>Need information or have a question for us? We are here to help!</p>
+                <span class="colorborder"></span>
             </div>
-            <div class="col-md-6 col-sm-12 col-xs-12" >
-                <div style="width: 100%" class="googlemaps">
-                        <iframe width="100%" height="500" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=46.094617, 19.662093&amp;q=Marka%20Ore%C5%A1kovi%C4%8Ba%2016%2C%20Subotica%2C%20Serbia+(walk%C2%B7a%C2%B7dog)&amp;ie=UTF8&amp;t=k&amp;z=16&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+            <div class="row">
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <form method="post" action="includes/contact.inc.php">
+                        <div class="form-group">
+                            <label for="ContactName">Name</label>
+                            <input type="text" class="form-control" id="ContactName" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="ContactEmail">Email address</label>
+                            <input type="email" class="form-control" id="ContactEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="ContactMessage">Your message</label>
+                            <textarea class="form-control" rows="5" id="ContactMessage" placeholder="Enter your message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12 pt-5">
+                    <div style="width: 100%" class="googlemaps">
+                        <iframe width="100%" height="500" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=46.094617, 19.662093&amp;q=Marka%20Ore%C5%A1kovi%C4%8Ba%2016%2C%20Subotica%2C%20Serbia+(walk%C2%B7a%C2%B7dog)&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
                             <a href="https://www.maps.ie/map-my-route/">Plot a route map</a>
                         </iframe>
+                    </div>
+                    <br />
                 </div>
-                <br />
             </div>
         </div>
-
-    </div>
-</section>
+    </section>
     <!-- happyclient end -->
 
 
