@@ -132,7 +132,7 @@ require_once "includes/header.inc.php";
                                         </h4>
                                     </div>
                                     <div id="collapse4" class="panel-collapse collapse bizface-about-content">
-                                        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                        <div class="panel-body" >Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                                             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                                             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
                                     </div>
@@ -146,7 +146,7 @@ require_once "includes/header.inc.php";
     </section>
     <!-- about end -->
     <!-- bizface-price-start -->
-    <section class="bizface-price section grey-background">
+    <section class="bizface-price section grey-background" id="pricing">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
@@ -343,7 +343,7 @@ require_once "includes/header.inc.php";
                             <input type="hidden" name="formLocation" value="section">
                             <label for="email" class="newsletter_label">Sign up for our newsletter!</label>
                             <input type="text" class="formInline" name="email" placeholder="Email Address..." >
-                                <span id="booking">
+                                <span >
                                 <?php
                                     if(isset($_GET['mail'])){
                                         $mail = $_GET['mail'];
@@ -375,7 +375,7 @@ require_once "includes/header.inc.php";
     <!-- newsletter end -->
      <!-- Start Team -->
 <form method="post" action="includes/booking.inc.php">
-    <section class="booking section" >
+    <section class="booking section" id="booking" >
         <div class="container">
             <div class="row">
                 <div class="sec-title text-center">
