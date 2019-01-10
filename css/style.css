@@ -3714,7 +3714,7 @@ footer .footer-widget {
 footer h3 {
     font-size: 18px;
     font-weight: 500;
-    text-transform: capitalize;
+    text-transform: none;
     margin-bottom: 30px;
     color: #ffffff;
     position: relative;
@@ -3893,7 +3893,8 @@ footer .newsletter-form .form-group button:hover[type="submit"] {
     padding: 13px 5px;
     line-height: 24px;
     text-align: center;
-    background-color: #440381;
+    /*background: linear-gradient(#51e5ff, #ec368d );*/
+    background-color: #ec368d;
     color: #ffffff;
     width: 100%;
     float: left;
