@@ -92,7 +92,7 @@ $(document).ready(function () {
             dogPic2.fadeTo('slow',1);
             dogPic3.fadeTo('slow',1);
         }
-        
+
     }
     function walkType() {
         if(valueSelectWalk.val() === ''){
@@ -122,6 +122,7 @@ $(document).ready(function () {
 
         }
     }
+
 
 
 

@@ -13,7 +13,6 @@ if(isset($_POST['submit'])){
         header("Location: ../index.php?error=empty#booking");
         exit();
     }
-
     //checks for only letters in firstName and lastName or if the length is shorter than 2
     validation("/^[a-zA-Z\s]*$/",$lastName,2,"error=notValid#booking");
     validation("/^[a-zA-Z\s]*$/",$firstName,2,"error=notValid#booking");
@@ -143,8 +142,9 @@ if(isset($_POST['submit'])){
 
     //INSERT INTO TABLE USERS
     $sql = "INSERT INTO users(name,email,address,phone,status,verified,code) VALUES ('$name','$email','$address','$phone',$status,$verified,'$code');";
-    if($query = mysqli_query($connect,$sql)){
-        echo "success user";
+    if(!$query = mysqli_query($connect,$sql)){
+        header("Location: index.php?error=fatal#booking");
+        exit();
     }
 
     //gets the user_id from the database
@@ -166,7 +166,7 @@ if(isset($_POST['submit'])){
     //will do it like this!
     switch ($numberOfDogs){
         case "1":
-            dogSQL($connect,"$userID,'$dogNameOne','$dogAgeOne','$dogBreedOne',$dogVaccinatedOne,$dogTrainedOne,$dogAggressionOne,'$dogOtherOne'");
+            dogSQL($connect,"$userID,'$dogNameOne',$dogAgeOne,'$dogBreedOne',$dogVaccinatedOne,$dogTrainedOne,$dogAggressionOne,'$dogOtherOne'");
             break;
         case "2":
             dogSQL($connect,"$userID,'$dogNameOne','$dogAgeOne','$dogBreedOne','$dogVaccinatedOne','$dogTrainedOne','$dogAggressionOne','$dogOtherOne'");

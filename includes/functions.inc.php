@@ -55,7 +55,11 @@ function typeOfWalkSQL($connect,$tableContent,$tableValues){
 
 function dogSQL($connect,$tableValues){
     $sql = "INSERT INTO dogs(owner_fk,name,age,breed,vaccinated,trained,aggression,other) VALUES (".$tableValues.");";
-    $query = mysqli_query($connect,$sql);
+    if(!$query = mysqli_query($connect,$sql)){
+        header("Location: ../index.php?notWorking#booking");
+        exit();
+    }
+
 }
 
 function mailValidation($empty,$mailFrom,$mailCheck,$location){

@@ -3022,6 +3022,9 @@ about-section-panel{
     font-weight: 700;
     font-size: 18px;
 }
+.contact-error{
+    font-weight: 600;
+}
 
 .price-content .price-content-cost-inner {
     display: -webkit-box;

@@ -702,17 +702,32 @@ require_once "includes/header.inc.php";
                     <form method="post" action="includes/contact.inc.php">
                         <div class="form-group">
                             <label for="ContactName">Name</label>
-                            <input type="text" class="form-control" id="ContactName" placeholder="Name">
+                            <input type="text" class="form-control" id="ContactName" placeholder="Name" name="name">
                         </div>
                         <div class="form-group">
                             <label for="ContactEmail">Email address</label>
-                            <input type="email" class="form-control" id="ContactEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                            <input type="email" class="form-control" id="ContactEmail" aria-describedby="emailHelp" placeholder="Enter email" name="email">
                         </div>
                         <div class="form-group">
                             <label for="ContactMessage">Your message</label>
-                            <textarea class="form-control textarea" rows="5" id="ContactMessage" placeholder="Enter your message"></textarea>
+                            <textarea class="form-control textarea" rows="5" id="ContactMessage" placeholder="Enter your message" name="message"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+                        <span class="contact-error">
+                            <?php
+                            if(isset($_GET['contactError'])){
+                                $contactError = $_GET['contactError'];
+                                if($contactError == 'empty')
+                                    echo "Please fill in all fields";
+                                if($contactError == 'notValid')
+                                    echo "Oops you did not fill in the fields appropriately";
+                                if($contactError == 'fatal')
+                                    echo "Oops there was an error. Please try again!";
+                                if($contactError == 'success')
+                                    echo "Your message was sent! We will contact you soon!";
+                            }
+                            ?>
+                        </span>
                     </form>
                 </div>
                 <div class="col-md-6 col-sm-12 col-xs-12 pt-5">
@@ -721,7 +736,7 @@ require_once "includes/header.inc.php";
                             <a href="https://www.maps.ie/map-my-route/">Plot a route map</a>
                         </iframe>
                     </div>
-                    <br />
+                    <br>
                 </div>
             </div>
         </div>
