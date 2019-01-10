@@ -4,9 +4,9 @@ echo "
     <footer>
         <div class=\"container\">
             <div class=\"row\">
-                <div class=\"col-md-4 col-sm-12 col-xs-12\">
+                <div class=\"  col-xs-12 col-sm-8 col-md-4 col-lg-4\">
                     <div class=\"footer-widget\">
-                        <h3>Bizface</h3>
+                        <h3>walk·a·dog</h3>
                         <div class=\"widget-content\">
                             <div class=\"text\">Lorem ipsum dolor sit amet, consects adipiscing elit enean commodo ligula.</div>
                             <address>
@@ -18,36 +18,19 @@ echo "
                     </div>
                 </div>
 
-                <div class=\"col-md-5 col-sm-6 col-xs-12\">
+                <div class=\" col-xs-12  col-sm-4 col-md-3 col-lg-3\">
                     <div class=\"footer-widget links-widget\">
                         <h3>Explore</h3>
-                    
-                    <div class=\"row\">
-                        <div class=\"col-md-6 col-sm-6 col-sm-12\">
                             <ul>
-                                <li><a href=\"#\">home</a></li>
-                                <li><a href=\"#\">about</a></li>
-                                <li><a href=\"#\">services</a></li>
-                                <li><a href=\"#\">projects</a></li>
-                                <li><a href=\"#\">contact</a></li>
-                                
-                            </ul>
-                        </div>
-                        <div class=\"col-md-6 col-sm-6 col-sm-12\">
-                            <ul>
-                                <li><a href=\"#\">News</a></li>
-                                <li><a href=\"#\">Trade</a></li>
-                                <li><a href=\"#\">Investment</a></li>
-                                <li><a href=\"#\">projects</a></li>
-                                <li><a href=\"#\">contact</a></li>
-                                
-                            </ul>
-                        </div>
-                    </div>
+                                <li><a href=\"#home\">home</a></li>
+                                <li><a href=\"#about\">about</a></li>
+                                <li><a href=\"#pricing\">pricing</a></li>
+                                <li><a href=\"#booking\">booking</a></li>
+                                <li><a href=\"#contact\">contact</a></li> 
                     </div>
                 </div>
 
-                <div class=\"col-md-3 col-sm-6 col-xs-12\" id=\"newsletter\">
+                <div class=\"pt-xs-0  col-xs-12 pt-sm-3 col-sm-12 col-md-5 col-lg-5\" id=\"newsletter\">
                     <div class=\"footer-widget subscribe-widget\">
                         <h3>Newsletter</h3>
                         <div class=\"widget-content\">
@@ -99,14 +82,14 @@ echo "
         <div class=\"container\">
             <div class=\"row\">
                 <div class=\"col-md-6 col-sm-6\">
-                    <div class=\"text text-left\">Copyrights &copy; <a href=\"#\">ripplethemes</a>. All Rights Reserved</div>
+                    <div class=\"text text-left\">Copyrights &copy; <a href=\"#\">Linolada</a>. All Rights Reserved</div>
                 </div>
                 <div class=\"col-md-6 col-sm-6\">
                     <ul class=\"social-links text-right\">
-                        <li><a href=\"#\"><i class=\"fa fa-facebook\"></i></a></li>
-                        <li class=\"active\"><a href=\"#\"><i class=\"fa fa-twitter\"></i></a></li>
-                        <li><a href=\"https://www.youtube.com/channel/UCuj4wzw9FlD5nL3nf_DEb3A\"><i class=\"fa fa-youtube\"></i></a></li>
-                        <li><a href=\"#\"><i class=\"fa fa-instagram\"></i></a></li>
+                        <li><a href=\"#\"><i class=\"fab fa-facebook\"></i></a></li>
+                        <li><a href=\"#\"><i class=\"fab fa-twitter\"></i></a></li>
+                        <li><a target='_blank' href=\"https://www.youtube.com/channel/UCuj4wzw9FlD5nL3nf_DEb3A\"><i class=\"fab fa-youtube\"></i></a></li>
+                        <li><a href=\"#\"><i class=\"fab fa-instagram\"></i></a></li>
                     </ul>
                 </div>
             </div>
