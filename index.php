@@ -144,6 +144,24 @@ require_once "includes/header.inc.php";
         </div>
     </section>
     <!-- about end -->
+    <!--quote section -->
+    <section id="newsletter_section"  style="background: url(images/dogBone.png) no-repeat center #51e5ff;" class="section grey-background">
+        <form action="includes/newsletter.inc.php" method="post">
+            <div class="container">
+                <div class="row">
+                   <blockquote cite="http://www.vetstreet.com/our-pet-experts/your-dog-why-exercise-is-important" class="quote-card">
+                       <p>Preventing them from their genetically programmed activity level can build frustration, which may exhibit itself in the form of hyperactivity, barking, digging, tail chasing, and home destruction.
+                       Boredom has also been associated with behavioral problems in some dogs.
+                       </p>
+                       <cite cite="http://www.vetstreet.com/our-pet-experts/">
+                           Pet Expert at Vetstreet Inc
+                       </cite>
+                   </blockquote>
+                </div>
+            </div>
+        </form>
+    </section>
+    <!-- quote end -->
     <!-- bizface-price-start -->
     <section class="bizface-price section grey-background" id="pricing">
         <div class="container">
@@ -258,6 +276,7 @@ require_once "includes/header.inc.php";
             </div>
         </div>
     </section>
+    <!---price end-->
     <!-- testimonial -->
     <section class="testimonials section" id="newsletter_anchor">
         <div class="container">
@@ -332,7 +351,7 @@ require_once "includes/header.inc.php";
     </section>
     <!-- testimonial end -->
     <!--newsletter section -->
-    <section id="newsletter_section"  style="background: url(images/dogBoneBackground.jpg) no-repeat center;" class="section grey-background">
+    <section id="newsletter_section"  style="background: url(images/dogBone.png) no-repeat center #51e5ff;" class="section grey-background">
         <form action="includes/newsletter.inc.php" method="post">
             <div class="container">
                 <div class="row">
@@ -565,14 +584,14 @@ require_once "includes/header.inc.php";
 
                                     <div class="form-group ">
                                         <label class="headingDog">Other</label>
-                                        <textarea placeholder="Enter text here" rows="5" name="dogOtherOne"></textarea>
+                                        <textarea class="form-control textarea" placeholder="Enter text here" rows="5" name="dogOtherOne"></textarea>
                                     </div>
                                     <hr>
                                 </div>
                                 <!-- SECOND DOG -->
                                 <div id="dog" class="row">
                                     <div class="col-sm-4" dog="2">
-                                        <h4>First dog</h4>
+                                        <h4>Second dog</h4>
                                         <hr>
                                         <div class="form-group ">
                                             <label>Name</label>
@@ -621,14 +640,14 @@ require_once "includes/header.inc.php";
 
                                         <div class="form-group ">
                                             <label class="headingDog">Other</label>
-                                            <textarea placeholder="Enter text here" rows="5" name="dogOtherTwo"></textarea>
+                                            <textarea class="form-control textarea" placeholder="Enter text here" rows="5" name="dogOtherTwo"></textarea>
                                         </div>
                                         <hr>
                                     </div>
                                     <!-- THIRD DOG -->
                                     <div id="dog" class="row">
                                         <div class="col-sm-4" dog="3">
-                                            <h4>First dog</h4>
+                                            <h4>Third dog</h4>
                                             <hr>
                                             <div class="form-group ">
                                                 <label>Name</label>
@@ -677,7 +696,7 @@ require_once "includes/header.inc.php";
 
                                             <div class="form-group ">
                                                 <label class="headingDog">Other</label>
-                                                <textarea placeholder="Enter text here" rows="5" name="dogOtherThree"></textarea>
+                                                <textarea class="form-control textarea" placeholder="Enter text here" rows="5" name="dogOtherThree"></textarea>
                                             </div>
                                             <hr>
                                         </div>
