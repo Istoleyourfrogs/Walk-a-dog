@@ -14,7 +14,7 @@ if(isset($_POST['submit'])) {
     while ($result = mysqli_fetch_assoc($query)) {
 
         $txt = $_POST['txt'];
-        $txt .= "<a href=\"https://walkadog.secondsection.in.rs/includes/unsubscribe.inc.php?key={$result['hashedMail']}\">Unsubscribe</a>";
+        $txt .= "<a href=\"https://walkadog.secondsection.in.rs/unsubscribe.inc.php?key={$result['hashedMail']}\">Unsubscribe</a>";
         $subject = $_POST['subject'];
         $to = $result['mail'];
         /*$txt = "<html>

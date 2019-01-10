@@ -3,12 +3,12 @@
 session_start();
 if(isset($_POST['submit'])){
     //gets the username and password from the admin form
-    $username = trim($_POST['username']);
-    $password = trim($_POST['password']);
-    //checking if the fields are empty
-    if(empty($username) or empty($password)){
-        header("Location: ../admin.php?login=empty");
-        exit();
+    foreach ($_POST as $key => $value){
+        ${$key} = trim($value);
+        if(empty(${$key})){
+            header("Location: ../admin.php?login=empty");
+            exit();
+        }
     }
     if(!preg_match("/^[a-zA-Z0-9]*$/", $username) or !preg_match("/^[a-zA-Z0-9]*$/", $password)){
         header("Location: ../admin.php?login=error");

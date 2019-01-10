@@ -3512,7 +3512,7 @@ about-section-panel{
 
 .bizface-errorpage strong {
     display: block;
-    font-size: 145px;
+    font-size: 90px;
     line-height: 100px;
     color: #51E5FF;
     font-weight: bold;
@@ -3527,6 +3527,10 @@ about-section-panel{
     color: #FFA5A5;
     margin: 0;
     font-weight: 300;
+}
+.bizface-errorpage p {
+    font-size: 20px;
+    font-weight: 500;
 }
 
 .bizface-errorpage em {
@@ -3812,7 +3816,7 @@ footer .subscribe-widget .form-group input[type="email"] {
     line-height: 24px;
     padding: 9px 16px;
     height: 42px;
-    color: #222222;
+    color: #FFA5A5;
     outline: none;
     font-size: 13px;
     background-color: #ffffff;
@@ -6252,6 +6256,12 @@ form.login .btn:hover{
 
     color: rgba(255,165,165,0.7);
 }
+footer *::placeholder{
+    color: rgba(255,165,165,0.7);
+}
+footer input{
+    color: #FFA5A5;
+}
 
 textarea:focus,
 input[type="text"]:focus,
@@ -6276,6 +6286,5 @@ input[type="color"]:focus,
 .form-group select{
     border-radius: 5px;
 }
-
 
 

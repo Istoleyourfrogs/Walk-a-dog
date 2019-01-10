@@ -99,18 +99,16 @@ if(isset($_POST['submit'])){
 
 
     /***************************************************DOG SECTION*********************************************************/
-
+    //checks if $numberOfDogs is empty
     if(empty($numberOfDogs)){
         header("Location: ../index.php?error=empty#booking");
         exit();
     }
-    /*if(!preg_match("/^(1|2|3)$/",$numberOfDogs)){
-        header("Location: ../index.php?error=fatal#booking");
-        exit();
-    }*/
+    //checks if the value of $numberOfDogs is either 1, 2 or 3
     validation("/^(1|2|3)$/",$numberOfDogs,0,"error=fatal#booking");
-    $dogNumber = ["One","Two","Three"];
+    $numberOfDogs = (int)$numberOfDogs;
     for($i=0; $i<$numberOfDogs; $i++){
+        $dogNumber = ["One","Two","Three"];
         dogValidation(
             $connect,
             ${"dogName".$dogNumber[$i]},
@@ -122,7 +120,15 @@ if(isset($_POST['submit'])){
             ${"dogAggression".$dogNumber[$i]},
             ${"dogOther".$dogNumber[$i]}
         );
+        //combines year and month into age for the dog
         ${"dogAge".$dogNumber[$i]} = ${"dogYear".$dogNumber[$i]} * 12 +  ${"dogMonth".$dogNumber[$i]};
+        //converts every first letter of a word to uppercase
+        ${"dogName".$dogNumber[$i]} = ucwords(strtolower(${"dogName".$dogNumber[$i]}));
+        //casts strings as to so it can be read in database
+        ${"dogVaccinated".$dogNumber[$i]} = (int)${"dogVaccinated".$dogNumber[$i]};
+        ${"dogTrained".$dogNumber[$i]} = (int)${"dogTrained".$dogNumber[$i]};
+        ${"dogAggression".$dogNumber[$i]} = (int)${"dogAggression".$dogNumber[$i]};
+
     }
     /***************************************************\/DOG SECTION\/*********************************************************/
     //capitalize the first letter of each word for $name
@@ -149,33 +155,19 @@ if(isset($_POST['submit'])){
 
     //gets the user_id from the database
     $userID = getUserID($connect,$code);
-    /*for($i=0; $i<$numberOfDogs; $i++){
-        dogValidation(
-            $connect,
-            ${"dogName".$dogNumber[$i]},
-            ${"dogYear".$dogNumber[$i]},
-            ${"dogMonth".$dogNumber[$i]},
-            ${"dogBreed".$dogNumber[$i]},
-            ${"dogVaccinated".$dogNumber[$i]},
-            ${"dogTrained".$dogNumber[$i]},
-            ${"dogAggression".$dogNumber[$i]},
-            ${"dogOther".$dogNumber[$i]}
-        );
-        ${"dogAge".$dogNumber[$i]} = ${"dogYear".$dogNumber[$i]} * 12 +  ${"dogMonth".$dogNumber[$i]};
-    }*/
-    //will do it like this!
+    //enters the dogs information in the database(loops based on the number of dogs);
     switch ($numberOfDogs){
         case "1":
             dogSQL($connect,"$userID,'$dogNameOne',$dogAgeOne,'$dogBreedOne',$dogVaccinatedOne,$dogTrainedOne,$dogAggressionOne,'$dogOtherOne'");
             break;
         case "2":
-            dogSQL($connect,"$userID,'$dogNameOne','$dogAgeOne','$dogBreedOne','$dogVaccinatedOne','$dogTrainedOne','$dogAggressionOne','$dogOtherOne'");
-            dogSQL($connect,"$userID,'$dogNameTwo','$dogAgeTwo','$dogBreedTwo','$dogVaccinatedTwo','$dogTrainedTwo','$dogAggressionTwo','$dogOtherTwo'");
+            dogSQL($connect,"$userID,'$dogNameOne',$dogAgeOne,'$dogBreedOne',$dogVaccinatedOne,$dogTrainedOne,$dogAggressionOne,'$dogOtherOne'");
+            dogSQL($connect,"$userID,'$dogNameTwo',$dogAgeTwo,'$dogBreedTwo',$dogVaccinatedTwo,$dogTrainedTwo,$dogAggressionTwo,'$dogOtherTwo'");
             break;
         case "3":
-            dogSQL($connect,"$userID,'$dogNameOne','$dogAgeOne','$dogBreedOne','$dogVaccinatedOne','$dogTrainedOne','$dogAggressionOne','$dogOtherOne'");
-            dogSQL($connect,"$userID,'$dogNameTwo','$dogAgeTwo','$dogBreedTwo','$dogVaccinatedTwo','$dogTrainedTwo','$dogAggressionTwo','$dogOtherTwo'");
-            dogSQL($connect,"$userID,'$dogNameThree','$dogAgeThree','$dogBreedThree','$dogVaccinatedThree','$dogTrainedThree','$dogAggressionThree','$dogOtherThree'");
+            dogSQL($connect,"$userID,'$dogNameOne',$dogAgeOne,'$dogBreedOne',$dogVaccinatedOne,$dogTrainedOne,$dogAggressionOne,'$dogOtherOne'");
+            dogSQL($connect,"$userID,'$dogNameTwo',$dogAgeTwo,'$dogBreedTwo',$dogVaccinatedTwo,$dogTrainedTwo,$dogAggressionTwo,'$dogOtherTwo'");
+            dogSQL($connect,"$userID,'$dogNameThree',$dogAgeThree,'$dogBreedThree',$dogVaccinatedThree,$dogTrainedThree,$dogAggressionThree,'$dogOtherThree'");
             break;
         default:
 
@@ -204,11 +196,12 @@ if(isset($_POST['submit'])){
     $headers .= 'MIME-Version: 1.0' . "\r\n";
     $headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
     mail($to,$subject,$txt,$headers);
-
+    //if everything was done successfully redirects with message success
     header("Location: ../index.php?error=success#booking");
     exit();
 
 }else{
+    //if the form has not been sent from the booking form
     header("Location: ../index.php?error=fatal#booking");
     exit();
 }

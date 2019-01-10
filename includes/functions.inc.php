@@ -8,22 +8,6 @@ function dayValidation($dayInput){
         exit();
     }
 }
-//validates the time
-function timeValidation($time){
-    if(!preg_match("/^(0[0-9]|1[0-9]|2[0-3])\:[0-5][0-9]$/",$time)){
-        return null;
-    }else{
-        return $time;
-    }
-}
-//validates the date
-function dateValidation($date){
-    if(!preg_match("/^2[0-9]{3}\-(0[1-9]|1[0-2])\-(0[1-9]|1[0-9]|2[0-9]|3[0-1])$/",$date)){
-        return null;
-    }else{
-        return $date;
-    }
-}
 //generates a random string of 20 characters
 function generateCode(){
     $keyLength = 20;
@@ -48,20 +32,17 @@ function validation($regex,$checkVaraible,$minLength,$error){
         exit();
     }
 }
+//inserts the walk into the database
 function typeOfWalkSQL($connect,$tableContent,$tableValues){
     $sql = "INSERT INTO walks(".$tableContent.") VALUES (".$tableValues.");";
     $query = mysqli_query($connect,$sql);
 }
-
+//inserts the dog into the database
 function dogSQL($connect,$tableValues){
     $sql = "INSERT INTO dogs(owner_fk,name,age,breed,vaccinated,trained,aggression,other) VALUES (".$tableValues.");";
-    if(!$query = mysqli_query($connect,$sql)){
-        header("Location: ../index.php?notWorking#booking");
-        exit();
-    }
-
+    $query = mysqli_query($connect,$sql);
 }
-
+//validates mail for the newsletter
 function mailValidation($empty,$mailFrom,$mailCheck,$location){
     //if the hidden input is not empty display error
     if (!empty($empty)) {
@@ -84,6 +65,7 @@ function mailValidation($empty,$mailFrom,$mailCheck,$location){
         exit();
     }
 }
+//validates the dog variables
 function dogValidation($connect,$dogName,$dogYear,$dogMonth,$dogBreed,$dogVaccinated,$dogTrained,$dogAggression,$dogOther){
     //checks if dogs name is empty or if both of the age inputs are empty
     if(empty($dogName) or (empty($dogYear) and empty($dogMonth))){
@@ -135,11 +117,13 @@ function dogValidation($connect,$dogName,$dogYear,$dogMonth,$dogBreed,$dogVaccin
     //echo $dogName." ".$dogYear." ".$dogMonth." ".$dogBreed." ".$dogVaccinated." ".$dogTrained." ".$dogAggression." ".$dogOther."<br>";
 
 }
+//calculates the dog age by combining the Year and Month
 function ageCalculator($dogYear,$dogMonth){
     $dogYear *= 12;
     $dogAge = $dogYear + $dogMonth;
     return $dogAge;
 }
+//checks the value of the inputs if they are 1 or 0
 function checkBoxValue($value){
     if($value == 1){
         $value = 1;

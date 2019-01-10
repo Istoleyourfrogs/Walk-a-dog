@@ -31,7 +31,7 @@ if(isset($_POST['submit'])) {
 
 
     $txt = $mailTemplate;
-    $txt .= "<a href=\"https://walkadog.secondsection.in.rs/includes/unsubscribe.inc.php?key=$hashedMail\" target=\"_blank\" style=\"color: #ffffff; font-weight: 700;\">unsubscribe</a>";
+    $txt .= "<a href=\"https://walkadog.secondsection.in.rs/unsubscribe.inc.php?key=$hashedMail\" target=\"_blank\" style=\"color: #ffffff; font-weight: 700;\">unsubscribe</a>";
     $txt .= $mailTemplate2;
     $subject = "Newsletter";
     $to = $mailFrom;
