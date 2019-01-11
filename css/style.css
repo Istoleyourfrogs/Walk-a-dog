@@ -6405,3 +6405,6 @@ input[type="color"]:focus,
         right: -25px;
     }
 }
+.fw-600{
+    font-weight: 600;
+}

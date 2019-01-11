@@ -4,7 +4,6 @@ require "includes/database.inc.php";
 ?>
 
     <div class="clearfix"></div>
-
     <div class="banner-slider">
         <div class="main-slider owl-carousel owl-theme">
             <div class="slider-items" style="background-image:url(images/caroselDog1.jpg);">
@@ -330,8 +329,8 @@ require "includes/database.inc.php";
                     <div class="col-sm-12 text-center">
                     <span class="newsletter-error">
                                 <?php
-                                if(isset($_GET['mail'])){
-                                    $mail = $_GET['mail'];
+                                if(isset($_GET['mailnewsletter_anchor'])){
+                                    $mail = $_GET['mailnewsletter_anchor'];
                                     if($mail == 'error'){
                                         echo "Error! Please fill in the field!";
                                     }
