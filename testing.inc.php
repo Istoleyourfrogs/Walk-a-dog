@@ -34,7 +34,7 @@ if(isset($_POST['submit'])) {
     }
     //inserts the comment in the database
     $userID = getUserID($connect,$result['verification_code']);
-    $sql = "INSERT INTO reviews(code_fk,comment) VALUES ('$userID','$comment');";
+    $sql = "INSERT INTO reviews(code_fk,comment) VALUES ('$code','$comment');";
     $query = mysqli_query($connect,$sql);
 
     header("Location: testing.php?success");

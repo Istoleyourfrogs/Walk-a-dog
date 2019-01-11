@@ -1,5 +1,6 @@
 <?php
 require_once "includes/header.inc.php";
+require "includes/database.inc.php";
 ?>
 
     <div class="clearfix"></div>
@@ -284,6 +285,23 @@ require_once "includes/header.inc.php";
                 <span class="colorborder"></span>
             </div>
             <div class="testimonial-carousel owl-carousel owl-theme">
+                <?php
+                    //SELECT name,comment FROM reviews join users on code_fk = review_code;
+                    $sql = "SELECT name,comment FROM reviews join users on code_fk = review_code;";
+                    $query = mysqli_query($connect,$sql);
+                    while($result = mysqli_fetch_assoc($query)){
+                        echo "
+                            <div class=\"item\">
+                                <div class=\"single-testimonials\">
+                                <p>“ ".$result['comment']." ”</p>
+                                <div class=\"author-content\">
+                                    <h3> ".$result['name']."</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        ";
+                    }        
+                ?>
                 <div class="item">
                     <div class="single-testimonials">
                         <p>“ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed. ”</p>
