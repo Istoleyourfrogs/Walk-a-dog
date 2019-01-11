@@ -24,7 +24,7 @@ if(isset($_POST['submit'])){
     //checks if the address has letters,numbers,spaces and a / or if the length is shorter than 5
     validation("/^[a-zA-Z0-9\/\s]*$/",$address,5,"error=notValid#booking");
     //checks for only numbers and if it begins with +381 or if the length is shorter than 9
-    validation("/^\+381\s[0-9\/-]*$/",$phone,9,"error=notValid#booking");
+    validation("/^\+381\s[0-9\/\-\s]*$/",$phone,9,"error=notValid#booking");
     //checks if the walks are /oneTime|daily|weekly/
     validation("/^(oneTime|daily|weekly)$/",$typeOfWalk,0,"error=notValid#booking");
 
@@ -141,20 +141,36 @@ if(isset($_POST['submit'])){
     $code = mysqli_real_escape_string($connect,trim($code));
     $status = 1;
     $verified = 0;
+    $hashedEmail = md5($email);
     //combine date and time to write to the database
     if(!empty($date) and !empty($time)){
         $dateTime = $date." ".$time;
     }
 
     //INSERT INTO TABLE USERS
-    $sql = "INSERT INTO users(name,email,address,phone,status,verified,code) VALUES ('$name','$email','$address','$phone',$status,$verified,'$code');";
+    $sql = "INSERT INTO users(name,email,hashed_email,address,phone,status,verified,code) VALUES ('$name','$email','$hashedEmail','$address','$phone',$status,$verified,'$code');";
     if(!$query = mysqli_query($connect,$sql)){
         header("Location: index.php?error=fatal#booking");
         exit();
     }
-
     //gets the user_id from the database
     $userID = getUserID($connect,$code);
+    //inserts dogs into the database based on the number of them
+    for($i=0; $i<$numberOfDogs; $i++){
+        $dogNumber = ["One","Two","Three"];
+        dogSQL(
+            $connect,
+            "$userID,
+            '${"dogName".$dogNumber[$i]}',
+            ${"dogAge".$dogNumber[$i]},
+            '${"dogBreed".$dogNumber[$i]}',
+            ${"dogVaccinated".$dogNumber[$i]},
+            ${"dogTrained".$dogNumber[$i]},
+            ${"dogAggression".$dogNumber[$i]},
+            '${"dogOther".$dogNumber[$i]}'"
+        );
+    }
+    /*
     //enters the dogs information in the database(loops based on the number of dogs);
     switch ($numberOfDogs){
         case "1":
@@ -172,6 +188,7 @@ if(isset($_POST['submit'])){
         default:
 
     }
+    */
     //depended on the $typeOfWalk inserts the correct data into the database
     switch($typeOfWalk){
         case "oneTime":
