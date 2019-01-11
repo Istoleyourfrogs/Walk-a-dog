@@ -145,8 +145,7 @@ require_once "includes/header.inc.php";
     </section>
     <!-- about end -->
     <!--quote section -->
-    <section id="newsletter_section"  style="background: url(images/dogBone.png) no-repeat center #51e5ff;" class="section grey-background">
-        <form action="includes/newsletter.inc.php" method="post">
+    <section  style="background: url(images/dogBone.png) no-repeat center #51e5ff;" class="section grey-background">
             <div class="container">
                 <div class="row">
                    <blockquote cite="http://www.vetstreet.com/our-pet-experts/your-dog-why-exercise-is-important" class="quote-card">
@@ -159,7 +158,6 @@ require_once "includes/header.inc.php";
                    </blockquote>
                 </div>
             </div>
-        </form>
     </section>
     <!-- quote end -->
     <!-- bizface-price-start -->
@@ -361,7 +359,7 @@ require_once "includes/header.inc.php";
                             <label for="email" class="newsletter_label">Sign up for our newsletter!</label>
                     </div>
                     <div class="col-sm-6 col-xs- col-sm-offset-2 col-md-6 col-md-offset-2 col-lg-6 col-lg-offset-0 text-center">
-                            <input type="text" class="form-control" name="email" placeholder="Email Address..." >
+                            <input type="text" class="form-control colored_input" name="email" placeholder="Email Address..." >
                     </div>
                     <div class="col-sm-2 col-md-2 col-lg-3 text-center pt-3 pt-md-0 pt-lg-0 pt-sm-3 ">
                     <button type="submit" name="submit" id="newsletter_button" class="btn btn-primary" >subscribe now</button>

@@ -428,6 +428,9 @@ footer .newsletter-form .form-group button[type="submit"],
     color:#fff;
 
 }
+.colored_input{
+    color:#ec368d;
+}
 
 @media screen and (max-width: 1024px){
     .section{
@@ -6250,10 +6253,15 @@ form.login .btn:hover{
 #booking select:first-child{
     color: rgba(255,165,165,0.7);
 }
+#booking *:not(.btn-primary) {
+    color:#ec368d;
+}
+
 #contact *::placeholder{
 
     color: rgba(255,165,165,0.7);
 }
+
 footer *::placeholder{
     color: rgba(255,165,165,0.7);
 }
