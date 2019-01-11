@@ -2267,10 +2267,11 @@ about-section-panel{
 }
 
 .single-testimonials {
-    padding: 0 30px 30px 30px;
+    padding: 30px;
     display: inline-block;
     text-align: center;
     background-position: center;
+    background-color:#fff;
 }
 
 .single-testimonials p {
@@ -2533,6 +2534,15 @@ about-section-panel{
 .bizface-review {
     margin-top: 50px;
 }
+#review_button{
+    background-color: #ec368d;
+    font-size: 14px;
+}
+#review_button:hover{
+    background-color: #ffa5a5;
+    color:#fff;
+}
+
 
 .bizface-comment
 {
@@ -3981,6 +3991,9 @@ a.scroll-top {
 
 a.scroll-top::before {
     font-size: 25px;
+}
+.scroll-top i:after{
+    content: " ‏‏‎";
 }
 .none{
     display: none;

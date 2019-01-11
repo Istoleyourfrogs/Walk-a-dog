@@ -279,70 +279,55 @@ require_once "includes/header.inc.php";
     <section class="testimonials section" id="newsletter_anchor">
         <div class="container">
             <div class="sec-title text-center">
-                <h2>What our client say</h2>
-                <p>Sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat</p>
+                <h2>Costumer reviews</h2>
+                <p>Don't take it from us, see what our clients have to say!</p>
                 <span class="colorborder"></span>
             </div>
             <div class="testimonial-carousel owl-carousel owl-theme">
                 <div class="item">
                     <div class="single-testimonials">
-                        <div class="testi-img">
-                            <img src="images/users/1.jpg" alt="Awesome Image" />
-                        </div>
                         <p>“ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed. ”</p>
                         <div class="author-content">
                             <h3>Bsu Khanal</h3>
-                            <p>Marketing Agency Ltd.</p>
                         </div>
                     </div>
                 </div>
                 <div class="item">
                     <div class="single-testimonials">
-                        <div class="testi-img">
-                            <img src="images/users/2.jpg" alt="Awesome Image" />
-                        </div>
                         <p>“ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed. ”</p>
                         <div class="author-content">
                             <h3>Khanalprem</h3>
-                            <p>Ligentech Pvt.</p>
                         </div>
                     </div>
                 </div>
                 <div class="item">
                     <div class="single-testimonials">
-                        <div class="testi-img">
-                            <img src="images/users/1.jpg" alt="Awesome Image" />
-                        </div>
                         <p>“ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed. ”</p>
                         <div class="author-content">
                             <h3>Dahal Dipen</h3>
-                            <p>pbwebdesign Pvt.</p>
                         </div>
                     </div>
                 </div>
                 <div class="item">
                     <div class="single-testimonials">
-                        <div class="testi-img">
-                            <img src="images/users/2.jpg" alt="Awesome Image" />
-                        </div>
                         <p>“ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed. ”</p>
                         <div class="author-content">
                             <h3>Khanalramesh</h3>
-                            <p>Templatesell Pvt.</p>
                         </div>
                     </div>
                 </div>
                 <div class="item">
                     <div class="single-testimonials">
-                        <div class="testi-img">
-                            <img src="images/users/1.jpg" alt="Awesome Image" />
-                        </div>
                         <p>“ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed. ”</p>
                         <div class="author-content">
                             <h3>Abrik biyond</h3>
-                            <p>Marketing Agency Ltd.</p>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-lg-12 text-center">
+                    <button type="submit" name="review" id="review_button" class="btn btn-primary" ><a href="review.php">Leave a review!</a></button>
                 </div>
             </div>
         </div>
@@ -749,7 +734,7 @@ require_once "includes/header.inc.php";
                 </div>
                 <div class="col-md-6 col-sm-12 col-xs-12 pt-5">
                     <div style="width: 100%" class="googlemaps">
-                        <iframe width="100%" height="500" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=46.094617, 19.662093&amp;q=Marka%20Ore%C5%A1kovi%C4%8Ba%2016%2C%20Subotica%2C%20Serbia+(walk%C2%B7a%C2%B7dog)&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                        <iframe width="100%" height="500" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=46.099577, 19.664705&amp;q=Trg%20Slobode%201%2C%20Subotica%2C%20Serbia+(walk%C2%B7a%C2%B7dog)&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
                             <a href="https://www.maps.ie/map-my-route/">Plot a route map</a>
                         </iframe>
                     </div>
