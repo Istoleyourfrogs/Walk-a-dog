@@ -556,7 +556,7 @@ footer .newsletter-form .form-group button[type="submit"],
 
 .bizface-breadcrumb .bizface-breadcrumb-title h1 {
     font-size: 32px;
-    color: #440381;
+    color: #EC368D;
     margin-top: 0;
     text-transform: uppercase;
     margin-bottom: 10px;;
@@ -2542,6 +2542,19 @@ about-section-panel{
     background-color: #ffa5a5;
     color:#fff;
 }
+.reviewLabel{
+    text-transform: uppercase;
+    font-size:24px;
+}
+.reviewLabelComment{
+    font-size:18px;
+}
+#reviewCode{
+    font-size:30px;
+    width:205px;
+    margin: 0 auto;
+}
+
 
 
 .bizface-comment
@@ -3522,6 +3535,18 @@ about-section-panel{
     text-align: center;
     margin: 30px auto;
 }
+.bizface-reviewpage{
+    padding: 50px 30px 58px 30px;
+    margin: 0 auto;
+    max-width: 700px;
+    width: 100%;
+    background-color: #fff;
+    border: 10px solid #FFA5A5;
+    border-radius:20px;
+    text-align: center;
+    margin: 30px auto;
+
+}
 
 .bizface-errorpage strong {
     display: block;
@@ -3568,6 +3593,13 @@ about-section-panel{
         border-radius: 0;
         margin: 25px auto;
         padding: 15px;
+    }
+    .bizface-reviewpage{
+        width: 100%;
+        margin: 25px auto;
+        padding: 15px;
+        border: 10px solid #FFA5A5;
+    border-radius:20px;
     }
     .bizface-errorpage em {
         line-height: none;
