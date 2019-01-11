@@ -2272,6 +2272,8 @@ about-section-panel{
     text-align: center;
     background-position: center;
     background-color:#fff;
+    width:350px;
+    max-height: 300px;
 }
 
 .single-testimonials p {
@@ -2554,7 +2556,9 @@ about-section-panel{
     width:205px;
     margin: 0 auto;
 }
-
+#reviewMessage::placeholder{
+    color:#FFA5A5;
+}
 
 
 .bizface-comment

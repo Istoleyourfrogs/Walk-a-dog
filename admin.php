@@ -13,6 +13,7 @@ require "includes/header.inc.php";
                 if($_GET['login'] == 'success')
                     $success = $_GET['login'];
             }
+/***************************************NEWSLETTER**************************************************/
             echo "
                 <div class=\"container\">
                     <div class=\"row mt-5\">
@@ -39,13 +40,12 @@ require "includes/header.inc.php";
             echo "
                         </div>
                     </div>
-                    <div class=\"col-sm-10 col-sm-offset-1 table-scroll\">
+                    <div class=\"col-sm-6 col-sm-offset-3 table-scroll\">
                     <table class=\"table table-striped table-danger\">
                         <thead class=\"thead-light\">
                             <tr>
                                 <th>#</th>
                                 <th>email</th>
-                                <th>hashed-email</th>
                                 <th>update/delete</th>
                             <tr>
                         </thead>
@@ -58,7 +58,6 @@ require "includes/header.inc.php";
                     <tr>
                         <td>{$result['id']}</td>
                         <td>{$result['mail']}</td>
-                        <td>{$result['hashedMail']}</td>
                         <td><form method=\"post\" action=\"includes/editMail.inc.php\"><input type=\"hidden\" name=\"id\" value=\"{$result['id']}\"><button type=\"submit\" name=\"update\" value=\"update\" class=\"btn btn-primary\">UPDATE</button><button onclick=\"return confirm('Are you sure you wish to delete this item?');\"  type=\"submit\" name=\"delete\" value=\"delete\" class=\"btn btn-primary ml-3\">DELETE</button></form></td>
                     </tr>
                 ";
@@ -67,7 +66,7 @@ require "includes/header.inc.php";
                     </tbody>
                     </table>
                     </div>
-            <div class=\"col-sm-5 col-sm-offset-1 mt-5\">
+            <div class=\"col-sm-5 col-sm-offset-3 mt-5\">
                 <form action=\"includes/adminNewsletter.inc.php\" method=\"post\">
                                         <div class=\"form-group\">
                                             <input type=\"hidden\" name=\"hidden\">
@@ -106,6 +105,58 @@ require "includes/header.inc.php";
                                     </div>
                                    
                                     </div>   
+                                    ";
+/***************************************NEWSLETTER**************************************************/
+
+/******************************************REVIEWS**************************************************/
+            $sql = "SELECT review_id, code_fk, comment FROM reviews WHERE verified=0;";
+            $query = mysqli_query($connect,$sql);
+                                    echo "
+                <div class=\"container\">
+                    <div class=\"row mt-5\">
+                        <div class=\"col-sm-12\">
+                            <h1 class=\"text-center\">REVIEWS</h1>
+                        </div>
+                        <div class=\"col-sm-6 col-sm-offset-3 mb-5\">
+                        </div>
+                    </div>
+                    <div class=\"col-sm-10 col-sm-offset-1 table-scroll\">
+                    <table class=\"table table-striped table-danger\">
+                        <thead class=\"thead-light\">
+                            <tr>
+                                <th>#</th>
+                                <th>code</th>
+                                <th>comment</th>
+                                <th>approve</th>
+                            <tr>
+                        </thead>
+                        <tbody>
+                        ";
+            /*displays every emial from table mail
+            inside is a form where you can delete or update the email*/
+            while($result = mysqli_fetch_assoc($query)) {
+                echo "
+                    <tr>
+                        <td>{$result['review_id']}</td>
+                        <td>{$result['code_fk']}</td>
+                        <td>{$result['comment']}</td>
+                        <td><form method=\"post\" action=\"includes/approve.inc.php\">
+                            <button type=\"submit\" name=\"approve\" value=\"{$result['review_id']}\" class=\"btn btn-primary\">VERIFY</button>
+                            <button onclick=\"return confirm('Are you sure you wish to delete this item?');\"  type=\"submit\" name=\"delete\" value=\"{$result['review_id']}\" class=\"btn btn-primary ml-3\">DELETE</button></form>
+                        </td>
+                    </tr>
+                ";
+            }
+            echo "  
+                    </tbody>
+                    </table>
+                    </div>
+            <div class=\"col-sm-5 col-sm-offset-1 mt-5\">
+                                    </div>
+                                    <div class=\"col-sm-12\">
+                                    <hr>
+                                </div>
+                            </div>   
                                     ";
 
         //if the admin is not logged in it will display a login form

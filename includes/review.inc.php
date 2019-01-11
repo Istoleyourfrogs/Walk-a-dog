@@ -12,7 +12,7 @@ if(isset($_POST['submit'])) {
         header("Location: ../review.php?error=badFormat");
         eixt();
     }
-    if(!preg_match("/^[a-zA-Z0-9\.!?,@#:&%+$*:_\-\(\)\s]*$/",$comment)){
+    if(!preg_match("/^[a-zA-Z0-9\.!?,@#:&%+$*:_\-\(\)\s]*$/",$comment) or strlen($comment) > 100){
         header("Location: ../review.php?error=badFormat");
         eixt();
     }

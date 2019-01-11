@@ -195,7 +195,7 @@ require "includes/database.inc.php";
                                 </ul>
                             </div>
                             <div class="price-btn">
-                                <a href="#" class="btn btn-primary">WALK A DOG FOR FREE</a>
+                                <a href="#booking" id="oneTimeWalk" class="btn btn-primary">WALK A DOG FOR FREE</a>
                             </div>
                             <div class="price-content-list">
                                 <ul class="price-content-footer">
@@ -231,7 +231,7 @@ require "includes/database.inc.php";
                                 </ul>
                             </div>
                             <div class="price-btn">
-                                <a href="#" class="btn btn-primary">WALK A DOG DAILY</a>
+                                <a href="#booking" id="dailyWalk" class="btn btn-primary">WALK A DOG DAILY</a>
                             </div>
                             <div class="price-content-list">
                                 <ul class="price-content-footer">
@@ -262,7 +262,7 @@ require "includes/database.inc.php";
                                 </ul>
                             </div>
                             <div class="price-btn">
-                                <a href="#" class="btn btn-primary">WALK A DOG WEEKLY</a>
+                                <a href="#booking" id="weeklyWalk" class="btn btn-primary">WALK A DOG WEEKLY</a>
                             </div>
                             <div class="price-content-list">
                                 <ul class="price-content-footer">
@@ -287,7 +287,7 @@ require "includes/database.inc.php";
             <div class="testimonial-carousel owl-carousel owl-theme">
                 <?php
                     //SELECT name,comment FROM reviews join users on code_fk = review_code;
-                    $sql = "SELECT name,comment FROM reviews join users on code_fk = review_code;";
+                    $sql = "SELECT name,comment FROM reviews join users on code_fk = review_code WHERE reviews.verified = 1;";
                     $query = mysqli_query($connect,$sql);
                     while($result = mysqli_fetch_assoc($query)){
                         echo "
@@ -302,46 +302,6 @@ require "includes/database.inc.php";
                         ";
                     }        
                 ?>
-                <div class="item">
-                    <div class="single-testimonials">
-                        <p>“ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed. ”</p>
-                        <div class="author-content">
-                            <h3>Bsu Khanal</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="single-testimonials">
-                        <p>“ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed. ”</p>
-                        <div class="author-content">
-                            <h3>Khanalprem</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="single-testimonials">
-                        <p>“ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed. ”</p>
-                        <div class="author-content">
-                            <h3>Dahal Dipen</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="single-testimonials">
-                        <p>“ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed. ”</p>
-                        <div class="author-content">
-                            <h3>Khanalramesh</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="single-testimonials">
-                        <p>“ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed. ”</p>
-                        <div class="author-content">
-                            <h3>Abrik biyond</h3>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="row">
                 <div class="col-md-12 col-lg-12 text-center">

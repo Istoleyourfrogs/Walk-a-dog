@@ -10,11 +10,13 @@ $(document).ready(function () {
     dogPic1.hide();
     dogPic2.hide();
     dogPic3.hide();
-    //
+
+    //Button and heading for dog section
     var RegisterButton = $('.booking_register');
     var EnterDogInfo = $('.enter_dog_info');
     RegisterButton.hide();
     EnterDogInfo.hide();
+
     //dog number segments
     var dog1 = $('div[dog="1"]');
     var dog2 = $('div[dog="2"]');
@@ -28,6 +30,20 @@ $(document).ready(function () {
     var time = $('div[walk="time"]');
     var day = $('div[walk="day"]');
 
+    //pricing redirection
+    $("#oneTimeWalk").click(function(){
+        $("#typeOfWalk").val("oneTime");
+        walkType();
+    });
+    $("#dailyWalk").click(function(){
+        $("#typeOfWalk").val("daily");
+        walkType();
+    });
+    $("#weeklyWalk").click(function(){
+        $("#typeOfWalk").val("weekly");
+        walkType();
+    });
+    
     //pricing redirection
     dogCount();
     walkType();

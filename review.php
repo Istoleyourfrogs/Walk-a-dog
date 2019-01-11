@@ -29,7 +29,7 @@ require "includes/functions.inc.php";
                     </div>
                  	<div class="form-group">
                         <label for="reviewMessage" class="reviewLabelComment">Your comment</label>
-                        <textarea class="form-control textarea" rows="5" id="reviewMessage" placeholder="Enter your comment" name="comment"></textarea>
+                        <textarea class="form-control textarea" rows="5" id="reviewMessage" placeholder="Enter your comment" name="comment" maxlength="100"></textarea>
                     </div>
 					<button type="submit" class="btn btn-primary" name="submit">Send</button>
 					<?php
