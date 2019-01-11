@@ -10,11 +10,3 @@
 <?php
 	echo $rand = rand(1111111111,9999999999);
 ?>
-<?php
-/*
-if(isset($_POST['submit'])){
-	$submit = mysqli_real_escape_string($connect,trim($_POST['']))
-	if(empty($submit)){
-
-	}
-}
