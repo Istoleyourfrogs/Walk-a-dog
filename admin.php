@@ -8,15 +8,7 @@ require "includes/header.inc.php";
             $sql = "SELECT * FROM newsletter";
             $query = mysqli_query($connect,$sql);
             //error checking for the newsletter form
-            if(isset($_GET['mail'])){
-                $mail = $_GET['mail'];
-            }
-            if($mail == 'success'){
-                $mailSuccess = "<span class=\"text-center\">Newsletter sent successfully</span>";
-            }
-            if($mail == 'error'){
-                $mailSuccess = "<span class=\"text-center\">There was an error! Please try again</span>";
-            }
+
             if(isset($_GET['login'])){
                 if($_GET['login'] == 'success')
                     $success = $_GET['login'];
@@ -34,8 +26,17 @@ require "includes/header.inc.php";
                                 <label>Message</label>
                                 <textarea name=\"txt\"></textarea>
                                 <button class=\"btn btn-primary btn-group-justified\" type=\"submit\" name=\"submit\">Send</button>
-                            </form>
-                            $mailSuccess
+                            </form>";
+                             if(isset($_GET['mail'])){
+                $mail = $_GET['mail'];
+                if($mail == 'success'){
+                    $mailSuccess = "<span class=\"text-center\">Newsletter sent successfully</span>";
+                }
+                if($mail == 'error'){
+                    $mailSuccess = "<span class=\"text-center\">There was an error! Please try again</span>";
+                }
+            }
+            echo "
                         </div>
                     </div>
                     <div class=\"col-sm-10 col-sm-offset-1 table-scroll\">

@@ -5,11 +5,12 @@ if(isset($_POST['submit'])){
     //gets the username and password from the admin form
     foreach ($_POST as $key => $value){
         ${$key} = trim($value);
-        if(empty(${$key})){
+
+    }
+    if(empty($username) or empty($password)){
             header("Location: ../admin.php?login=empty");
             exit();
         }
-    }
     if(!preg_match("/^[a-zA-Z0-9]*$/", $username) or !preg_match("/^[a-zA-Z0-9]*$/", $password)){
         header("Location: ../admin.php?login=error");
         exit();
