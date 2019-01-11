@@ -30,10 +30,10 @@ require "includes/header.inc.php";
                              if(isset($_GET['mail'])){
                 $mail = $_GET['mail'];
                 if($mail == 'success'){
-                    $mailSuccess = "<span class=\"text-center\">Newsletter sent successfully</span>";
+                    echo "<span class=\"text-center\">Newsletter sent successfully</span>";
                 }
                 if($mail == 'error'){
-                    $mailSuccess = "<span class=\"text-center\">There was an error! Please try again</span>";
+                    echo "<span class=\"text-center\">There was an error! Please try again</span>";
                 }
             }
             echo "

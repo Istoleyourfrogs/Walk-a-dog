@@ -6,6 +6,7 @@ if(isset($_POST['submit'])) {
     $mailFrom = mysqli_real_escape_string($connect,trim($_POST['email']));
     $empty = $_POST['hidden'];
     $hashedMail = md5($mailFrom);
+    //gets the email from the database if there is any
     $sql = "SELECT * FROM newsletter WHERE mail='$mailFrom';";
     $query = mysqli_query($connect,$sql);
     $result = mysqli_fetch_assoc($query);

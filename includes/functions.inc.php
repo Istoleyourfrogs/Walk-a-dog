@@ -17,7 +17,7 @@ function generateCode(){
 }
 //gets the user_id from the table users
 function getUserID($connect,$code){
-    $sql = "SELECT user_id FROM users WHERE code='$code';";
+    $sql = "SELECT user_id FROM users WHERE verification_code='$code';";
     $query = mysqli_query($connect,$sql);
     if($row = mysqli_fetch_assoc($query)){
         $userID = $row['user_id'];
@@ -110,8 +110,8 @@ function dogValidation($connect,$dogName,$dogYear,$dogMonth,$dogBreed,$dogVaccin
         header("Location: ../index.php?error=fatalError#booking");
         exit();
     }
-    if(!preg_match("/^[a-zA-Z0-9\.!?,\-\(\):_\s]*$/",$dogOther)){
-        header("Location: ../index.php?error=notValid#booking");
+    if(!preg_match("/^[a-zA-Z0-9\.!?,@#:&%+$*:_\-\(\)\s]*$/",$dogOther)){
+        header("Location: ../index.php?error=other#booking");
         exit();
     }
     //echo $dogName." ".$dogYear." ".$dogMonth." ".$dogBreed." ".$dogVaccinated." ".$dogTrained." ".$dogAggression." ".$dogOther."<br>";

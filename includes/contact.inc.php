@@ -25,7 +25,7 @@ if(isset($_POST['submit'])) {
     $subject = "walk·a·dog contact";
     $to = "walkadog@secondsection.in.rs";
     $headers = "From:  $email <$email>";
-    //if the mail was not redirects the user with a fatal error
+    //if the mail was not sent redirects the user with a fatal error
     if (!mail($to, $subject, $txt, $headers)){
     header("Location: ../index.php?contactError=fatal#contact");
     exit();

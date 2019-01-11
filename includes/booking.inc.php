@@ -137,8 +137,8 @@ if(isset($_POST['submit'])){
     //replaces the - and / in the phone number with an empty string
     $phone = str_replace(array('/','-'),"",$phone);
     //generates random string of character(20) sets status(free walk) to 1 and verified to 0
-    $code = generateCode();
-    $code = mysqli_real_escape_string($connect,trim($code));
+    $verificationCode = generateCode();
+    $reviewCode = rand(1111111111,9999999999);
     $status = 1;
     $verified = 0;
     $hashedEmail = md5($email);
@@ -148,13 +148,13 @@ if(isset($_POST['submit'])){
     }
 
     //INSERT INTO TABLE USERS
-    $sql = "INSERT INTO users(name,email,hashed_email,address,phone,status,verified,code) VALUES ('$name','$email','$hashedEmail','$address','$phone',$status,$verified,'$code');";
+    $sql = "INSERT INTO users(name,email,hashed_email,address,phone,status,verified,review_code,verification_code) VALUES ('$name','$email','$hashedEmail','$address','$phone',$status,$verified,'$reviewCode','$verificationCode');";
     if(!$query = mysqli_query($connect,$sql)){
         header("Location: index.php?error=fatal#booking");
         exit();
     }
     //gets the user_id from the database
-    $userID = getUserID($connect,$code);
+    $userID = getUserID($connect,$verificationCode);
     //inserts dogs into the database based on the number of them
     for($i=0; $i<$numberOfDogs; $i++){
         $dogNumber = ["One","Two","Three"];
