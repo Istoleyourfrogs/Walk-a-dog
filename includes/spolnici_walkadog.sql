@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 169.254.0.2:3306
--- Generation Time: Jan 10, 2019 at 07:24 PM
--- Server version: 10.3.9-MariaDB
--- PHP Version: 7.2.7
+-- Host: 127.0.0.1
+-- Generation Time: Jan 11, 2019 at 12:48 PM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 5.6.39
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -265,9 +265,9 @@ CREATE TABLE `dogs` (
   `name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `age` int(3) NOT NULL,
   `breed` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `vaccinated` tinyint(1) DEFAULT 0,
-  `trained` tinyint(1) DEFAULT 0,
-  `aggression` tinyint(1) DEFAULT 0,
+  `vaccinated` tinyint(1) DEFAULT '0',
+  `trained` tinyint(1) DEFAULT '0',
+  `aggression` tinyint(1) DEFAULT '0',
   `other` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -290,12 +290,17 @@ INSERT INTO `dogs` (`dog_id`, `owner_fk`, `name`, `age`, `breed`, `vaccinated`, 
 (17, 45, 'sfasf', 13, 'Siberian Husky\r\n', 0, 0, 0, ''),
 (18, 46, 'Vnjgh', 68, 'Lagotto Romagnolo\r\n', 1, 1, 0, 'Ggbvcgh'),
 (19, 47, 'Hektor', 22, 'German Shepherd Dog\r', 1, 1, 0, 'Good boi. Likes to play!'),
-(21, 54, 'Gara', 48, 'Australian Kelpie', 1, 1, 1, 'e dje ste'),
-(22, 62, 'asfasdasd', 14, 'Irish Terrier', 1, 1, 1, 'asdasdasdas'),
-(23, 63, 'ASFASFS', 14, 'Mutt', 1, 1, 1, 'asd'),
 (24, 66, 'First', 52, 'Dogo Argentino', 0, 0, 0, ''),
 (25, 66, 'Second', 26, 'Dalmatian', 0, 0, 0, ''),
-(26, 66, 'Third', 39, 'Clumber Spaniel', 0, 0, 0, '');
+(26, 66, 'Third', 39, 'Clumber Spaniel', 0, 0, 0, ''),
+(27, 67, 'Dogic', 14, 'Canaan Dog', 1, 1, 0, 'sdfsdfsdgd'),
+(28, 68, 'Doggo', 27, 'Clumber Spaniel', 1, 1, 0, 'qweqwe'),
+(29, 68, 'Doogoo', 53, 'Clumber Spaniel', 0, 0, 1, ''),
+(30, 68, 'Dogoooo', 27, 'Greater Swiss Mounta', 0, 0, 0, 'dfgdfg'),
+(31, 70, 'Dogi', 2, 'Caucasian Shepherd D', 1, 1, 0, 'kjkjkljkkjkj'),
+(32, 71, 'Asdas', 26, 'Irish Wolfhound', 1, 0, 0, 'asd'),
+(33, 71, 'Dasda', 12, 'Cocker Spaniel', 0, 0, 1, ''),
+(34, 76, 'Asdasd', 27, 'Italian Greyhound', 1, 1, 1, 'sadas');
 
 -- --------------------------------------------------------
 
@@ -314,9 +319,10 @@ CREATE TABLE `newsletter` (
 --
 
 INSERT INTO `newsletter` (`id`, `mail`, `hashedMail`) VALUES
-(19, 'patarcic98@gmail.com', '86f95360481b6c05e6aa777d1f3f5e48'),
 (20, 'vullgaryt@gmail.com', '391275bdbb13f8f17bc55b6427976955'),
-(21, 'miloslalic201@gmail.com', '79ead70d90f01168f0de3f779da0dff5');
+(21, 'miloslalic201@gmail.com', '79ead70d90f01168f0de3f779da0dff5'),
+(22, 'gjdhgjfhg@sadas.com', 'f07504f5e0b07bf63c3df00c1caad355'),
+(24, 'patarcic98@gmail.com', '86f95360481b6c05e6aa777d1f3f5e48');
 
 -- --------------------------------------------------------
 
@@ -335,7 +341,21 @@ CREATE TABLE `reviews` (
 --
 
 INSERT INTO `reviews` (`review_id`, `code_fk`, `comment`) VALUES
-(1, '1234567890', 'Very good walks my dog is very pleased with ur services. He gives 10 paws out of 20');
+(1, '1234567890', 'Very good walks my dog is very pleased with ur services. He gives 10 paws out of 20'),
+(2, '1', 'testing'),
+(3, '1', 'asdasdasd'),
+(4, '1', ''),
+(5, '74', 'sadsadas'),
+(6, '76', 'testing123'),
+(7, '76', 'asdasd'),
+(8, '76', 'asdasd'),
+(9, '76', 'asdasdasdasfsaf'),
+(10, '1', 'dasdasd'),
+(11, '1', 'dasdasd'),
+(12, '1', 'asdasd'),
+(13, '1', 'asdasd'),
+(14, '1', 'asdasdasd'),
+(15, '76', 'sadasd');
 
 -- --------------------------------------------------------
 
@@ -347,45 +367,41 @@ CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
   `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `hashed_email` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
   `address` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `phone` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT 1,
-  `verified` tinyint(1) NOT NULL DEFAULT 0,
-  `code` char(20) COLLATE utf8_unicode_ci NOT NULL
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `verified` tinyint(1) NOT NULL DEFAULT '0',
+  `review_code` char(20) COLLATE utf8_unicode_ci NOT NULL,
+  `verification_code` char(20) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `name`, `email`, `address`, `phone`, `status`, `verified`, `code`) VALUES
-(1, 'Gaspatarcic Linolada', 'walkadog@secondsection.in.rs', 'Liloladaland 21', '0621653523', 1, 0, '1234567890'),
-(18, 'Asdasd Dsadasd', 'dsad@gmail.com', 'Asdasd', '+381 312312', 1, 0, 'n527,;ex)%q.^*co@i8f'),
-(41, 'Namefirst Namesecond', 'asdasd@mail.com', 'Address 123', '+381 234234234', 1, 0, 'c*r_d^ium,q)sa2hnj;k'),
-(42, 'Namefirst Namesecond', 'emafsfsfil@mail.com', 'Address 123', '+381 234234234', 1, 0, '10e;bpfo39v]mwnkg4jq'),
-(43, 'Namefirst Namesecond', 'ema2323il@mail.com', 'Address 123', '+381 234234234', 1, 0, 'z;059v1_x]ad!y*se2)g'),
-(44, 'Namefirst Namesecond', 'email@mail.com', 'Address 123', '+381 234234234', 1, 0, '9187(w_[vze4lkna5fy3'),
-(45, 'Namefirst Namesecond', 'emailafasfasf@mail.com', 'Address 123', '+381 234234234', 1, 0, 'aeu[^9cd.x,iot54h_s('),
-(46, 'Sgg Ghnv', 'Hbbb@gmail.com', 'To Hnbvv', '+381 3566', 1, 0, 'xbp[e2rt;o1g*a.8jd46'),
-(47, 'Luka Patarcic', 'patarcic98@gmail.com', 'Alberta Sentdjerdjia 7', '+381 621653523', 1, 1, '_(mguk2])79*iqzrld^0'),
-(49, 'Testing For Real', 'plswokr123@gmail.com', 'Adressing 12', '+381 5458456452', 1, 0, '0(@mtkyf)*8_^759pj;v'),
-(50, 'Asdasd Sadasdas', 'dasdasd@asda.com', 'Asdasdasd', '+381 34534534', 1, 0, ',6wz^a5ejg[o2vlrx81.'),
-(51, 'Adsdas Dasdasd', 'asdasd@asdac.com', 'Sadasdasd', '+381 54435345345', 1, 0, ')kxrg*0q.vz3an]^(mbd'),
-(52, 'Adsdas Dasdasd', 'asdasdasdas@asdac.com', 'Sadasdasd', '+381 54435345345', 1, 0, 'gl3@_*,.n2];czh75peb'),
-(53, 'Adsdas Dasdasd', 'asdasdaasdassdas@asdac.com', 'Sadasdasd', '+381 54435345345', 1, 0, '(8f[ey,.2zo6jl^dn5_x'),
-(54, 'Milos Jovanic Zaki', 'milosjovaniczaki@gmail.com', 'Jorgovanska 1b', '+381 53252342', 1, 1, 'pqikv4tn1]3x.76j[mc;'),
-(55, 'Working Form', 'plswork123@gmail.com', 'Working Adress 12', '+381 621653523', 1, 0, 'g1]zh@[xw(p_652ynf;b'),
-(56, 'Wdawd Asfajfhjgh', 'dsghfgnjdfnvj@dfuh.com', 'Dfhgujdfhguh', '+381 4984564564', 1, 0, '0;yn_,ebl@]273!s.fkz'),
-(57, 'Asdasd Asdas', 'dasdasdaf@aasd.com', 'Asfasf', '+381 4324234', 1, 0, 'y7toqhcgiz8b49n)[eas'),
-(58, 'Asdas Dasdas', 'dasdasd@asfasf.com', 'Asgiajigfji', '+381 565645', 1, 0, 'za7j2x;s9o.hyv,c3@4m'),
-(59, 'Asdasdas Dasdasdasd', 'sadasd@asdas.com', 'Sdggsdgsd', '+381 454645', 1, 0, '^p50)na9o6328gewf![h'),
-(60, 'Sadasdasfasfasf Fsasfasgasgasgasg', 'adasdasdsad@asd.com', 'Fasfasgasga', '+381 565464534', 1, 0, '.3d[c6le(mat7y^bh9nj'),
-(61, 'Asfasfasgas Gasgasgasgas', 'gasfasfas@asdasd.com', 'Gsdjughsdugh', '+381 4654553', 1, 0, '^5w3x.d9vn4@0uzi[s!a'),
-(62, 'Asfasfas Fasfasfa', 'sfasfasfa@asdas.com', 'Dgsdghusdhg', '+381 435345', 1, 0, '@7b;3c,fr!h(qd^609.s'),
-(63, 'Asdasd Asdasd', 'asdasdasd@asdasd.com', 'Safasfasf', '+381 56456456456', 1, 0, '63vay@]r.q;[tsg2j)75'),
-(64, 'Asdasd Asdasdasfasf', 'asfasgwgwweg@agm.com', 'Asdasdas', '+381 48464564654', 1, 0, 'f682i,5gm(z9b!j7k.y^'),
-(65, 'Asdasdasf Asfasfasfg', 'agasgasg@gaf.com', 'Gdshguhgushdg', '+381 465454564', 1, 0, '8,qb^vxc)w92tk@luo]*'),
-(66, 'Asdasfa Sfasgasg', 'asgasfasd@sadas.com', 'Dgsdgsdg', '+381 546456546', 1, 0, '[h*r720qcj(p8k.z!alw');
+INSERT INTO `users` (`user_id`, `name`, `email`, `hashed_email`, `address`, `phone`, `status`, `verified`, `review_code`, `verification_code`) VALUES
+(1, 'Gaspatarcic Linolada', 'walkadog@secondsection.in.rs', '', 'Liloladaland 21', '0621653523', 1, 0, '1234567890', ''),
+(18, 'Asdasd Dsadasd', 'dsad@gmail.com', '', 'Asdasd', '+381 312312', 1, 0, 'n527,;ex)%q.^*co@i8f', ''),
+(41, 'Namefirst Namesecond', 'asdasd@mail.com', '', 'Address 123', '+381 234234234', 1, 0, 'c*r_d^ium,q)sa2hnj;k', ''),
+(42, 'Namefirst Namesecond', 'emafsfsfil@mail.com', '', 'Address 123', '+381 234234234', 1, 0, '10e;bpfo39v]mwnkg4jq', ''),
+(43, 'Namefirst Namesecond', 'ema2323il@mail.com', '', 'Address 123', '+381 234234234', 1, 0, 'z;059v1_x]ad!y*se2)g', ''),
+(44, 'Namefirst Namesecond', 'email@mail.com', '', 'Address 123', '+381 234234234', 1, 0, '9187(w_[vze4lkna5fy3', ''),
+(45, 'Namefirst Namesecond', 'emailafasfasf@mail.com', '', 'Address 123', '+381 234234234', 1, 0, 'aeu[^9cd.x,iot54h_s(', ''),
+(46, 'Sgg Ghnv', 'Hbbb@gmail.com', '', 'To Hnbvv', '+381 3566', 1, 0, 'xbp[e2rt;o1g*a.8jd46', ''),
+(47, 'Luka Patarcic', 'patarcic98@gmail.com', '', 'Alberta Sentdjerdjia 7', '+381 621653523', 1, 1, '_(mguk2])79*iqzrld^0', ''),
+(65, 'Asdasdasf Asfasfasfg', 'agasgasg@gaf.com', '', 'Gdshguhgushdg', '+381 465454564', 1, 0, '8,qb^vxc)w92tk@luo]*', ''),
+(66, 'Asdasfa Sfasgasg', 'asgasfasd@sadas.com', '', 'Dgsdgsdg', '+381 546456546', 1, 0, '[h*r720qcj(p8k.z!alw', ''),
+(67, 'Testic Gasparic', 'aushfyg@sdac.com', '', 'Adresica', '+381 54541324564', 1, 0, '!mpk5[d2;rqxt*a84gb,', ''),
+(68, 'Three Dogggos', 'tgjnjfvb@gdfg.com', '', 'Ashdjhgjh 4', '+381 245784521', 1, 0, 'z94x(dj)@]qyr872_upl', ''),
+(69, 'New Sistem', 'working224@gmail.com', '32cc0a7692ddabaf1c6cdedace0d2929', 'Adressing', '+381 24574534241', 1, 0, 'h][3m,2e9q)s1yg_fk@x', ''),
+(70, 'Testing Final', 'hjdhjsdhgj@gsg.com', 'd8cd3a31c4d3611659b9e16104ed24aa', 'Asfhjsahfjh', '+381 245454521', 1, 0, '9z(c^5dg!t]rme,p7.hs', ''),
+(71, 'Hjhjhjhsdjh Dfsjdkgjksdjg', 'ggjsdgk@asdasd.com', '202dbdec5116a99ed0ba05abd377e56b', 'Sdgjkdsj 94', '+381 5454546 2', 1, 0, '_2^zs!)[c13vlgy6mr]d', ''),
+(72, 'Gdsjghjsdgh Hjghjshjghsj', 'dhgjsdhgjh@gaghjas.com', '4a7f5495cd9a7857d442951381854074', 'Gjhsdjghj 4', '+381 455454', 1, 0, '1115700161', '7r9i(eq56okfw,l@0^3j'),
+(73, 'Bem Ti Misec', 'fhgdfhu@asd.com', '12fc290dcb51b6526d0ef927430d0ae7', 'Gjhdsjgh 4', '+381 5645456', 1, 0, '1167730690', 'bh(j.;)mku!q@*1t]x3y'),
+(74, 'Asdasd Asfasfsa', 'fsafasf@sadas.com', '0a97cc79a56f326c7029feff8468ecba', 'Asfasfasf 9', '+381 545456', 1, 0, '1112844549', '[gz;a0@jh^_4r9*yf,(2'),
+(75, 'Hdhughdfjghj Hdffjkghjkdfhgjhdjhg', 'jksdhjgkhsj@gmail.com', 'ace18a6bea25ea48689dd57915b06f2a', 'Asfgjdsgsdjg', '+381 64564545', 1, 0, '1174180906', '2tn9]z1vs5l!;ck,6fg_'),
+(76, 'Safjkjsajfkajsf Jgiajisajf', 'dasdas4@sadas.com', '37d521fd15da4a833fe24f42c539e51e', 'Asfasf', '+381 45454231', 1, 0, '1353619172', '[^61p!b4mx])lh0ncquo');
 
 -- --------------------------------------------------------
 
@@ -419,21 +435,13 @@ INSERT INTO `walks` (`walk_id`, `user_fk`, `type`, `one_time_walk`, `weekly_walk
 (24, 45, 'daily', NULL, NULL, NULL, '12:00:00'),
 (25, 46, 'oneTime', '2019-01-17 12:00:00', NULL, NULL, NULL),
 (26, 47, 'oneTime', '2019-01-24 15:00:00', NULL, NULL, NULL),
-(28, 49, 'daily', NULL, NULL, NULL, '13:00:00'),
-(29, 50, 'oneTime', '2019-01-15 14:01:00', NULL, NULL, NULL),
-(30, 51, 'daily', NULL, NULL, NULL, '01:00:00'),
-(31, 52, 'daily', NULL, NULL, NULL, '01:00:00'),
-(32, 53, 'daily', NULL, NULL, NULL, '01:00:00'),
-(33, 54, 'weekly', NULL, 'Saturday', '10:10:00', NULL),
-(34, 55, 'oneTime', '2019-01-18 01:00:00', NULL, NULL, NULL),
-(35, 56, 'daily', NULL, NULL, NULL, '01:00:00'),
-(36, 57, 'oneTime', '2019-01-23 01:00:00', NULL, NULL, NULL),
-(37, 61, 'daily', NULL, NULL, NULL, '01:00:00'),
-(38, 62, 'daily', NULL, NULL, NULL, '01:00:00'),
-(39, 63, 'daily', NULL, NULL, NULL, '03:00:00'),
-(40, 64, 'weekly', NULL, 'Monday', '00:00:00', NULL),
 (41, 65, 'daily', NULL, NULL, NULL, '01:00:00'),
-(42, 66, 'oneTime', '2019-01-24 02:00:00', NULL, NULL, NULL);
+(42, 66, 'oneTime', '2019-01-24 02:00:00', NULL, NULL, NULL),
+(43, 67, 'daily', NULL, NULL, NULL, '01:00:00'),
+(44, 68, 'weekly', NULL, 'Thursday', '01:01:00', NULL),
+(45, 70, 'oneTime', '2019-01-17 02:00:00', NULL, NULL, NULL),
+(46, 71, 'oneTime', '2019-01-25 01:00:00', NULL, NULL, NULL),
+(47, 76, 'oneTime', '2019-01-16 01:00:00', NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -470,7 +478,7 @@ ALTER TABLE `reviews`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`user_id`),
-  ADD UNIQUE KEY `code` (`code`);
+  ADD UNIQUE KEY `code` (`review_code`);
 
 --
 -- Indexes for table `walks`
@@ -493,31 +501,31 @@ ALTER TABLE `breeds`
 -- AUTO_INCREMENT for table `dogs`
 --
 ALTER TABLE `dogs`
-  MODIFY `dog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `dog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `newsletter`
 --
 ALTER TABLE `newsletter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT for table `walks`
 --
 ALTER TABLE `walks`
-  MODIFY `walk_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `walk_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- Constraints for dumped tables
