@@ -147,12 +147,13 @@ require "includes/header.inc.php";
             while($result = mysqli_fetch_assoc($query)) {
                 echo"
                     <tr>
-                        <td>{$result['review_id']}</td>
-                        <td>{$result['code_fk']}</td>
-                        <td>{$result['comment']}</td>
-                        <td>
+                        <td class=\"col-sm-1\">{$result['review_id']}</td>
+                        <td class=\"col-sm-2\">{$result['code_fk']}</td>
+                        <td class=\"col-sm-5\">{$result['comment']}</td>
+                        <td class=\"col-sm-4\">
                             <form method=\"post\" action=\"includes/approve.inc.php\">
-                                <button type=\"submit\" name=\"approve\" value=\"{$result['review_id']}\" class=\"btn btn-primary\">VERIFY</button>
+                                <button onclick=\"return confirm('Are you sure you wish to verify this item?');\" 
+                                type=\"submit\" name=\"approve\" value=\"{$result['review_id']}\" class=\"btn btn-primary\">VERIFY</button>
                                 <button onclick=\"return confirm('Are you sure you wish to delete this item?');\"  
                                 type=\"submit\" name=\"delete\" value=\"{$result['review_id']}\" class=\"btn btn-primary ml-3\">DELETE</button>
                             </form>
@@ -173,38 +174,36 @@ require "includes/header.inc.php";
         //if the admin is not logged in it will display a login form
     }else{
         ?>
-        echo "<div class="container">
-    <div class="row">
-        <div class="col-sm-4 col-sm-offset-4">
-            <form class="login-form login"  method="post" action="includes/login.inc.php">
-                <input  class="form-control mb-10"  type="text" name="username" placeholder="Username">
-                <input class="form-group form-control" type="password" name="password" placeholder="password">
-                <button class="btn btn-primary btn-group-justified" type="submit" name="submit">Login</button>";
-        <?php
-        //error checking for the admin form
-        if(isset($_GET['login'])){
-            if($_GET['login'] === 'empty'){
-                echo "<div class=\"text-center text-light\">Please fill in all fields</div>";
-            }
-            if($_GET['login'] === 'error'){
-                echo "<div class=\"text-center text-light\">Wrong information</div>";
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 col-sm-offset-4">
+                    <form class="login-form login"  method="post" action="includes/login.inc.php">
+                        <input  class="form-control mb-10"  type="text" name="username" placeholder="Username">
+                        <input class="form-group form-control" type="password" name="password" placeholder="password">
+                        <button class="btn btn-primary btn-group-justified" type="submit" name="submit">Login</button>
+                        <?php
+                        //error checking for the admin form
+                        if(isset($_GET['login'])){
+                            if($_GET['login'] === 'empty'){
+                                echo "<div class=\"text-center text-light\">Please fill in all fields</div>";
+                            }
+                            if($_GET['login'] === 'error'){
+                                echo "<div class=\"text-center text-light\">Wrong information</div>";
 
-            }
-            if($_GET['login'] === 'fatalError'){
-                echo "<div class=\"text-center text-light\">Oops something went wrong</div>";
+                            }
+                            if($_GET['login'] === 'fatalError'){
+                                echo "<div class=\"text-center text-light\">Oops something went wrong</div>";
 
-            }
+                            }
 
+                        }
         }
-    }
-        ?>
-
-       </form>
-        </div>
+                        ?>
+                    </form>
+                </div>
+            </div>
+        <div>
     </div>
-    <div>
-    
-</div>
 </div>
 
 <script src="js/jquery-3.2.1.min.js"></script>
