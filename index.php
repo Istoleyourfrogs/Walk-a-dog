@@ -480,14 +480,14 @@ require_once "includes/header.inc.php";
                                     </div>
                                 </div>
                                 <div class="col-sm-10 none" walk="day">
-                                    <div class="btn-group" data-toggle="buttons">
+                                    <div class="btn-group" id="weekly_walk" data-toggle="buttons">
                                         <label>Which day: </label>
                                         <br>
                                         <?php
                                         $daysOfWeek = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
                                         foreach ($daysOfWeek as $key => $value){
                                             echo "
-                                        <label for=\"$value\" class=\"btn btn-primary\">$value
+                                        <label for=\"$value\" class=\"btn btn-primary day_button\">$value
                                         <input id=\"$value\" type=\"radio\" name=\"day\" value=\"$value\" class=\"\">
                                         </label>
                                         ";
@@ -527,7 +527,7 @@ require_once "includes/header.inc.php";
                     <div class="contact-page-inner">
 
                         <div class="col-sm-12 contact-right-form">
-                            <div class="contact-page-title">
+                            <div class="contact-page-title enter_dog_info">
                                 <h4>Enter your dogs information below</h4>
                             </div>
                             <!-- FIRST DOG -->
@@ -537,16 +537,16 @@ require_once "includes/header.inc.php";
                                     <hr>
                                     <div class="form-group ">
                                         <label>Name</label>
-                                        <input type="text" class="form-control" placeholder="name first" name="dogNameOne">
+                                        <input type="text" class="form-control" placeholder="Name" name="dogNameOne">
                                     </div>
                                     <div class="form-group">
                                         <label>Age</label>
                                         <div class="row">
                                             <div class="col-sm-6">
-                                                <input type="text" class="form-check-inline" placeholder="years" name="dogYearOne">
+                                                <input type="text" class="form-check-inline" placeholder="Years" name="dogYearOne">
                                             </div>
                                             <div class="col-sm-6">
-                                                <input type="text" class="form-check-inline" placeholder="months" name="dogMonthOne">
+                                                <input type="text" class="form-check-inline" placeholder="Months" name="dogMonthOne">
                                             </div>
                                         </div>
                                     </div>
@@ -593,16 +593,16 @@ require_once "includes/header.inc.php";
                                         <hr>
                                         <div class="form-group ">
                                             <label>Name</label>
-                                            <input type="text" class="form-control" placeholder="name first" name="dogNameTwo">
+                                            <input type="text" class="form-control" placeholder="Name" name="dogNameTwo">
                                         </div>
                                         <div class="form-group">
                                             <label>Age</label>
                                             <div class="row">
                                                 <div class="col-sm-6">
-                                                    <input type="text" class="form-check-inline" placeholder="years" name="dogYearTwo">
+                                                    <input type="text" class="form-check-inline" placeholder="Years" name="dogYearTwo">
                                                 </div>
                                                 <div class="col-sm-6">
-                                                    <input type="text" class="form-check-inline" placeholder="months" name="dogMonthTwo">
+                                                    <input type="text" class="form-check-inline" placeholder="Months" name="dogMonthTwo">
                                                 </div>
                                             </div>
                                         </div>
@@ -649,16 +649,16 @@ require_once "includes/header.inc.php";
                                             <hr>
                                             <div class="form-group ">
                                                 <label>Name</label>
-                                                <input type="text" class="form-control" placeholder="name first" name="dogNameThree">
+                                                <input type="text" class="form-control" placeholder="Name" name="dogNameThree">
                                             </div>
                                             <div class="form-group">
                                                 <label>Age</label>
                                                 <div class="row">
                                                     <div class="col-sm-6">
-                                                        <input type="text" class="form-check-inline" placeholder="years" name="dogYearThree">
+                                                        <input type="text" class="form-check-inline" placeholder="Years" name="dogYearThree">
                                                     </div>
                                                     <div class="col-sm-6">
-                                                        <input type="text" class="form-check-inline" placeholder="months" name="dogMonthThree">
+                                                        <input type="text" class="form-check-inline" placeholder="Months" name="dogMonthThree">
                                                     </div>
                                                 </div>
                                             </div>
@@ -700,7 +700,7 @@ require_once "includes/header.inc.php";
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit" name="submit" class="btn btn-primary btn-group-justified">Register now!</button>
+                                <button type="submit" name="submit" class="btn btn-primary btn-group-justified booking_register">Register now!</button>
                             </div>
         </div>
     </section>

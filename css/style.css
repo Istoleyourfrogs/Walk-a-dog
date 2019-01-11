@@ -6256,6 +6256,18 @@ form.login .btn:hover{
 #booking *:not(.btn-primary) {
     color:#ec368d;
 }
+#weekly_walk * .active{
+    color:black;
+}
+.btn-primary.active, .btn-primary:active:focus, .open>.dropdown-toggle.btn-primary{
+    background-color: #FFA5A5;
+}
+.btn-primary.active.focus, .btn-primary:active:focus, .open>.dropdown-toggle.btn-primary{
+    background-color: #FFA5A5;
+    border-color:#FFA5A5;
+    outline:none;
+}
+
 
 #contact *::placeholder{
 

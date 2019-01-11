@@ -10,7 +10,11 @@ $(document).ready(function () {
     dogPic1.hide();
     dogPic2.hide();
     dogPic3.hide();
-
+    //
+    var RegisterButton = $('.booking_register');
+    var EnterDogInfo = $('.enter_dog_info');
+    RegisterButton.hide();
+    EnterDogInfo.hide();
     //dog number segments
     var dog1 = $('div[dog="1"]');
     var dog2 = $('div[dog="2"]');
@@ -66,6 +70,8 @@ $(document).ready(function () {
             dogPic1.fadeTo('slow',0);
             dogPic2.fadeTo('slow',0);
             dogPic3.fadeTo('slow',0);
+            RegisterButton.fadeOut('slow');
+            EnterDogInfo.fadeOut('slow');
         }
         if(valueSelectDogs.val() === '1'){
             dog1.fadeTo('slow',1);
@@ -74,7 +80,8 @@ $(document).ready(function () {
             dogPic1.fadeTo('slow',1);
             dogPic2.fadeTo('slow',0);
             dogPic3.fadeTo('slow',0);
-
+            RegisterButton.fadeTo('slow',1);
+            EnterDogInfo.fadeTo('slow',1);
         }
         if(valueSelectDogs.val() === '2'){
             dog1.fadeTo('slow',1);
@@ -83,6 +90,8 @@ $(document).ready(function () {
             dogPic1.fadeTo('slow',1);
             dogPic2.fadeTo('slow',1);
             dogPic3.fadeTo('slow',0);
+            RegisterButton.fadeTo('slow',1);
+            EnterDogInfo.fadeTo('slow',1);
         }
         if(valueSelectDogs.val() === '3'){
             dog1.fadeTo('slow',1);
@@ -91,6 +100,8 @@ $(document).ready(function () {
             dogPic1.fadeTo('slow',1);
             dogPic2.fadeTo('slow',1);
             dogPic3.fadeTo('slow',1);
+            RegisterButton.fadeTo('slow',1);
+            EnterDogInfo.fadeTo('slow',1);
         }
 
     }
