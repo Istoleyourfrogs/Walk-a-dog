@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 11, 2019 at 05:58 PM
+-- Generation Time: Jan 11, 2019 at 10:05 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 5.6.39
 
@@ -21,6 +21,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `spolnici_walkadog`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `username` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `username`, `password`) VALUES
+(1, 'linolada', '$2y$10$kNDOnrTWWIVMF.SuBfQinu/zWnxyi4f9DaWkpPbd2IuqtlrSTXjpG'),
+(3, '', '$2y$10$5rwUbVAj8XYWDaZa4uX59.g/DoogtAlPVn1EQYTL3oVHqZvDVggti');
 
 -- --------------------------------------------------------
 
@@ -279,7 +299,15 @@ INSERT INTO `dogs` (`dog_id`, `owner_fk`, `name`, `age`, `breed`, `vaccinated`, 
 (1, 1, 'Hektor', 21, 'German Shepherd', 1, 1, 0, 'he likes to play'),
 (34, 76, 'Asdasd', 27, 'Italian Greyhound', 1, 1, 1, 'sadas'),
 (35, 77, 'Doggo', 14, 'Chow Chow', 1, 1, 0, 'asdasdas'),
-(36, 77, 'Dogie', 53, 'Cairn Terrier', 0, 1, 1, 'asdasd');
+(36, 77, 'Dogie', 53, 'Cairn Terrier', 0, 1, 1, 'asdasd'),
+(37, 79, 'Asdasd', 27, 'Cockapoo', 1, 1, 0, 'asdasd'),
+(38, 80, 'Asdasd', 27, 'Clumber Spaniel', 1, 1, 0, ''),
+(39, 80, 'Asfasfa', 53, 'Kerry Blue Terrier', 0, 0, 1, 'sasd'),
+(40, 80, 'Asfasfasf', 14, 'Miniature Schnauzer', 1, 0, 0, 'asdasd'),
+(41, 81, 'Asdasdas', 14, 'Irish Water Spaniel', 1, 0, 0, ''),
+(42, 81, 'Fasfasfasf', 40, 'Cockapoo', 0, 0, 1, 'asdasdasd'),
+(43, 82, 'Asdasdasd', 27, 'Bull Terrier', 1, 1, 0, 'sadasdasd'),
+(44, 83, 'Minime', 64, 'Norwich Terrier', 1, 1, 0, 'good dog');
 
 -- --------------------------------------------------------
 
@@ -301,7 +329,8 @@ INSERT INTO `newsletter` (`id`, `mail`, `hashedMail`) VALUES
 (20, 'vullgaryt@gmail.com', '391275bdbb13f8f17bc55b6427976955'),
 (21, 'miloslalic201@gmail.com', '79ead70d90f01168f0de3f779da0dff5'),
 (22, 'gjdhgjfhg@sadas.com', 'f07504f5e0b07bf63c3df00c1caad355'),
-(24, 'patarcic98@gmail.com', '86f95360481b6c05e6aa777d1f3f5e48');
+(24, 'patarcic98@gmail.com', '86f95360481b6c05e6aa777d1f3f5e48'),
+(25, 'testing123@gmail.com', 'd8d19ceab0b10bb04f8b4c2fe991a1b9');
 
 -- --------------------------------------------------------
 
@@ -323,7 +352,7 @@ CREATE TABLE `reviews` (
 INSERT INTO `reviews` (`review_id`, `code_fk`, `comment`, `verified`) VALUES
 (1, '1234567890', 'Very good walks my dog is very pleased with ur services. He gives 10 paws out of 20', 1),
 (24, '1353619172', 'asdasdsad', 0),
-(28, '1338027348', 'Very cool backend Lukaku also nice frontend Gaspaku', 1);
+(28, '1338027348', 'Very cool backend Lukaku also nice frontend Gaspaku', 0);
 
 -- --------------------------------------------------------
 
@@ -355,7 +384,13 @@ INSERT INTO `users` (`user_id`, `name`, `email`, `hashed_email`, `address`, `pho
 (74, 'Asdasd Asfasfsa', 'fsafasf@sadas.com', '0a97cc79a56f326c7029feff8468ecba', 'Asfasfasf 9', '+381 545456', 1, 0, '1112844549', '[gz;a0@jh^_4r9*yf,(2'),
 (75, 'Hdhughdfjghj Hdffjkghjkdfhgjhdjhg', 'jksdhjgkhsj@gmail.com', 'ace18a6bea25ea48689dd57915b06f2a', 'Asfgjdsgsdjg', '+381 64564545', 1, 0, '1174180906', '2tn9]z1vs5l!;ck,6fg_'),
 (76, 'Safjkjsajfkajsf Jgiajisajf', 'dasdas4@sadas.com', '37d521fd15da4a833fe24f42c539e51e', 'Asfasf', '+381 45454231', 1, 0, '1353619172', '[^61p!b4mx])lh0ncquo'),
-(77, 'Stefan Gasparic', 'stefi@gmail.com', '503fbc8269a97b104457a0ca9eb0e4b5', 'Somewhere 12', '+381 65153515', 1, 0, '1338027348', 'k7]_i1b(@dgm*;rf29qt');
+(77, 'Stefan Gasparic', 'stefi@gmail.com', '503fbc8269a97b104457a0ca9eb0e4b5', 'Somewhere 12', '+381 65153515', 1, 0, '1338027348', 'k7]_i1b(@dgm*;rf29qt'),
+(78, 'test', 'email', 'hashedEmail', 'address', 'phone', 0, 0, 'reviewCode', 'verificationCode'),
+(79, 'Asdasd Asdasfasf', 'asfasfasfasfas@asdasda.com', 'bb6cd26fb3d9dde4dd82d562001af2d9', 'Fasfasfasdas', '+381 23423423423', 1, 0, '1229404611', '6(vkwa*jme2tsy[.^,5_'),
+(80, 'Safasfas Fasdasdasd', 'asdasdasd@sadasd.com', 'b6c558f98012fb9517171262425286bb', 'Saasdasda 5', '+381 4545423123', 1, 0, '1232561294', ']yu4ntl;638*wbsmfgo7'),
+(81, 'Dfgdfgjdfkjgkdfj Sdjkfjsdkjfklj', 'asdasdjkjasd@asdjasjd.com', '813375caf9e177d4fcac1ac83e100f7b', 'Gjsdhgjshdjghjsd 3', '+381 454412424', 0, 0, '1359969032', '2of.!m@]_xd1s*ln9)cy'),
+(82, 'Testing Again', 'likelol@gmail.com', '71bfa16f7e67ecf886ebf76f5bdbda7d', 'Asdasfasf', '+381 454212315', 0, 0, '1381016626', 'l2945ubodnh.rwsci@7a'),
+(83, 'Baze Podataka', 'memere@gmail.com', '353455d7838b55e8bac3fb431a3c8bd2', 'Localhost 121', '+381 4544512424', 0, 0, '1163314983', 'ialct_6v8xp1orek;w4f');
 
 -- --------------------------------------------------------
 
@@ -383,11 +418,22 @@ INSERT INTO `walks` (`walk_id`, `user_fk`, `type`, `one_time_walk`, `weekly_walk
 (3, 1, 'daily', '0000-00-00 00:00:00', NULL, NULL, NULL),
 (4, 1, 'daily', '2019-01-04 19:00:00', NULL, NULL, NULL),
 (47, 76, 'oneTime', '2019-01-16 01:00:00', NULL, NULL, NULL),
-(48, 77, 'daily', NULL, NULL, NULL, '01:00:00');
+(48, 77, 'daily', NULL, NULL, NULL, '01:00:00'),
+(49, 79, 'oneTime', '2019-01-23 01:00:00', NULL, NULL, NULL),
+(50, 80, 'weekly', NULL, 'Tuesday', '01:00:00', NULL),
+(51, 81, 'oneTime', '2019-01-23 02:00:00', NULL, NULL, NULL),
+(52, 82, 'oneTime', '2019-01-17 01:00:00', NULL, NULL, NULL),
+(53, 83, 'daily', NULL, NULL, NULL, '01:00:00');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `breeds`
@@ -434,6 +480,12 @@ ALTER TABLE `walks`
 --
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `breeds`
 --
 ALTER TABLE `breeds`
@@ -443,13 +495,13 @@ ALTER TABLE `breeds`
 -- AUTO_INCREMENT for table `dogs`
 --
 ALTER TABLE `dogs`
-  MODIFY `dog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `dog_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `newsletter`
 --
 ALTER TABLE `newsletter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `reviews`
@@ -461,13 +513,13 @@ ALTER TABLE `reviews`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- AUTO_INCREMENT for table `walks`
 --
 ALTER TABLE `walks`
-  MODIFY `walk_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `walk_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- Constraints for dumped tables
