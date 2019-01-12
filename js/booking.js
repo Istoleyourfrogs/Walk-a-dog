@@ -64,6 +64,18 @@ $(document).ready(function () {
         phone.val('+381 ');
     });
 
+    phone.keydown(function (event) {
+        if(phone.val() > 5) {
+
+            var key = event.charCode || event.keyCode || event.which;
+            if (key === 8 || key === 46) {
+                event.preventDefault();
+                return false;
+            }
+        }
+
+    });
+
     //adding submit button only after filling out every necessary field
     //validate();
     //var inputs = $('input[name="firstName"], input[name="lastName"], input[name="email"]');

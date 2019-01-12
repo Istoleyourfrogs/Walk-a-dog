@@ -395,31 +395,31 @@ if(isset($_GET['error'])){
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label>First Name:</label>
-                                        <input type="text" class="form-control" placeholder="First Name" name="firstName" value="<?php if(isset($firstName)) echo $firstName ?>">
+                                        <input type="text" class="form-control" placeholder="First Name" name="firstName" required maxlength="25">
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label>Last Name:</label>
-                                        <input type="text"  class="form-control" placeholder="Last Name" name="lastName">
+                                        <input type="text"  class="form-control" placeholder="Last Name" name="lastName" required maxlength="25">
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label>Email:</label>
-                                        <input type="text" class="form-control" placeholder="email" name="email">
+                                        <input type="email" class="form-control" placeholder="email" name="email" required maxlength="30">
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label>Address:</label>
-                                        <input type="text" class="form-control" placeholder="Address" name="address">
+                                        <input type="text" class="form-control" placeholder="Address" required name="address" maxlength="50">
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label>Phone Number:</label>
-                                        <input type="text"  class="form-control" placeholder="Phone Number" name="phone">
+                                        <input type="text"  class="form-control" placeholder="Phone Number" required name="phone" maxlength="20">
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
@@ -438,13 +438,13 @@ if(isset($_GET['error'])){
                                 <div class="col-sm-2 none" walk="date">
                                     <div class="form-group">
                                         <label for="date">Date of walk:</label>
-                                        <input id="date" class="form-control" type="date" name="date">
+                                        <input id="date" class="form-control" type="date" name="date" min="<?php echo date("Y-m-d") ?>">
                                     </div>
                                 </div>
                                 <div class="col-sm-2 none" walk="time">
                                     <div class="form-group">
                                         <label for="time">Time of walk:</label>
-                                        <input id="time" class="form-control" type="time" name="time">
+                                        <input id="time" class="form-control" type="time" name="time" min="09:00:00" max="16:00:00">
                                     </div>
                                 </div>
                                 <div class="col-sm-10 none" walk="day">
