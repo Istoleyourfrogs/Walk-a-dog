@@ -1,6 +1,8 @@
 <?php
-require_once "includes/header.inc.php";
-require "includes/database.inc.php";
+require "includes/header.inc.php";
+if(isset($_GET['error'])){
+    include "includes/booking.inc.php";
+}
 ?>
 
     <div class="clearfix"></div>
@@ -126,7 +128,11 @@ require "includes/database.inc.php";
                                                 <div class="bizface-about-icon">
                                                     <i class="fa fa-heartbeat"></i>
                                                 </div>
-                                                <span class="about-section-title">Why should  <span class="walkadog"><img src="images/logo.svg" alt="logo"></span> be important to you?</span>
+                                                <span class="about-section-title">
+                                                    Why should
+                                                    <span class="walkadog"><img src="images/logo.svg" alt="logo"></span>
+                                                    be important to you?
+                                                </span>
                                             </a>
                                         </h4>
                                     </div>
@@ -389,7 +395,7 @@ require "includes/database.inc.php";
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label>First Name:</label>
-                                        <input type="text" class="form-control" placeholder="First Name" name="firstName">
+                                        <input type="text" class="form-control" placeholder="First Name" name="firstName" value="<?php if(isset($firstName)) echo $firstName ?>">
                                     </div>
                                 </div>
                                 <div class="col-sm-4">

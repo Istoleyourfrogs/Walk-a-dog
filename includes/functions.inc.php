@@ -117,3 +117,11 @@ function generateCode(){
     $randomString = substr(str_shuffle($string), 0,$keyLength);
     return $randomString;
 }
+//checks the value of SELECT boolean statements if they are 1 gives value of YES if they are 0 gives value of NO
+function checkSQLBoolean($var){
+    if($var)
+        return $var = "YES";
+    else
+        return $var = "NO";
+
+}

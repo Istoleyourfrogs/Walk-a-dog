@@ -1,5 +1,5 @@
 <?php
-require "database.inc.php";
+require "../database.inc.php";
 
 if(isset($_POST['submit'])) {
     //setting all variables from the newsletter form

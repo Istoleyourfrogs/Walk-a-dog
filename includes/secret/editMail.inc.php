@@ -1,5 +1,5 @@
 <?php
-require "database.inc.php";
+require "../database.inc.php";
 //if the form has been submitted by the update button
 if(isset($_POST['update'])){
     //enterer and a new email adress

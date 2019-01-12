@@ -39,7 +39,7 @@
                                 <div class="form-group">
                                     <input type="hidden" name="hidden">
                                     <input type="hidden" name="formLocation" value="footer">
-                                    <input type="text" name="email" placeholder="Email Address..." >
+                                    <input type="email" name="email" placeholder="Email Address..." required>
                                 </div>
                                 <div>
                                     <div class="pb-3 fw-600">
