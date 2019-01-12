@@ -17,6 +17,8 @@ if(isset($_POST['update'])){
             <input type=\"text\" name=\"phone\" value=\"{$result['phone']}\"><br>  
             <label>Address</label>           
             <input type=\"text\" name=\"address\" value=\"{$result['address']}\"><br>
+            <label>Free walk</label>
+            <input type=\"checkbox\" name=\"status\" value=\"1\"> 
             <button type=\"submit\" name=\"submit\">Update</button>";
     exit();
 }
@@ -34,7 +36,7 @@ elseif (isset($_POST['delete'])){
     foreach ($_POST as $key => $value){
         ${$key} = mysqli_real_escape_string ($connect,trim($value));
     }
-    $sql = "UPDATE users SET name = '$name',email = '$email',phone = '$phone',address = '$address' WHERE user_id = $id;";
+    $sql = "UPDATE users SET name = '$name',email = '$email',phone = '$phone',address = '$address',status = $status WHERE user_id = $id;";
     $query = mysqli_query($connect,$sql);
     header("Location: ../../admin.php?error=update");
     exit();

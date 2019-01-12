@@ -110,7 +110,7 @@ session_start();
                     if(isset($_GET['code'])){
                         $code = $_GET['code'];
                         //depending on the query display the appropriate message
-                        $sql = "UPDATE users SET verified=1 WHERE verificationCode='$code';";
+                        $sql = "UPDATE users SET verified=1 WHERE verification_code='$code';";
                         $query = mysqli_query($connect,$sql);
                         if(!$query){
                             echo "

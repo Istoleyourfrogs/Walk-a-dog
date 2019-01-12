@@ -174,10 +174,9 @@ require "includes/functions.inc.php";
             </div>
         <?php
     /******************************************REVIEWS**************************************************/
-        $sql = "SELECT user_id,u.name,email,phone,address,COUNT(dog_id) as 'Number of Dogs' FROM users u
+        $sql = "SELECT DISTINCT user_id,u.name,email,phone,address,status FROM users u
                 JOIN dogs on user_id = owner_fk
                 WHERE u.verified=1
-                GROUP BY user_id,name,email,phone,address;
         ";
         $query = mysqli_query($connect,$sql);
         ?>
@@ -200,7 +199,7 @@ require "includes/functions.inc.php";
                     <th>email</th>
                     <th>phone</th>
                     <th>address</th>
-                    <th># dogs</th>
+                    <th>free walk</th>
                     <th>update</th>
                 <tr>
                 </thead>
@@ -208,13 +207,17 @@ require "includes/functions.inc.php";
                 <?php
                 //displays every email from table mail inside is a form where you can delete or update the email
                 while($result = mysqli_fetch_assoc($query)) {
+                    if($result['status'] == 1)
+                        $result['status'] = "<i class=\"fa fa-close\"></i>";
+                    else  $result['status'] = "<i class=\"fa fa-check\"></i>";
+
                     echo " <tr>
                             <td>{$result['user_id']}</td>
                             <td>{$result['name']}</td>
                             <td>{$result['email']}</td>
                             <td>{$result['phone']}</td>
                             <td>{$result['address']}</td>
-                            <td>{$result['Number of Dogs']}</td>
+                            <td>{$result['status']}</td>
                             <td>
                                 <form method=\"post\" action=\"includes/secret/editUser.inc.php\">
                                     <input type=\"hidden\" name=\"id\" value=\"{$result['user_id']}\">
@@ -279,7 +282,7 @@ require "includes/functions.inc.php";
                             <td>{$result['type']}</td>
                             <td>{$result['weekly_walk_day']} {$result['weekly_walk_time']} {$result['daily_walk_time']} {$result['one_time_walk']}</td>
                             <td>
-                                <form method=\"post\" action=\"includes/secret/editUser.inc.php\">
+                                <form method=\"post\" action=\"includes/secret/editWalk.inc.php\">
                                     <input type=\"hidden\" name=\"id\" value=\"{$result['user_id']}\">
                                     <button type=\"submit\" name=\"update\" value=\"update\" class=\"btn btn-primary\">UPDATE</button>
                                     <button onclick=\"return confirm ('Are you sure you wish to delete this item?');\"  
