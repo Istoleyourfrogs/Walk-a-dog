@@ -23,7 +23,7 @@ require "includes/functions.inc.php";
         <div class="container">
             <div class="bizface-reviewpage">
                  <form method="post" action="includes/review.inc.php">
-                 	<div class="form-group">
+                     <div class="form-group">
                         <label for="reviewCode" class="reviewLabel">Review Code</label>
                         <input type="text" class="form-control textarea input-lg" id="reviewCode" maxlength="10" size="10" name="code">
                     </div>
@@ -32,26 +32,29 @@ require "includes/functions.inc.php";
                         <textarea class="form-control textarea" rows="5" id="reviewMessage" placeholder="Enter your comment" name="comment" maxlength="100"></textarea>
                     </div>
 					<button type="submit" class="btn btn-primary" name="submit">Send</button>
-					<?php
-						if(isset($_GET['error'])){
-							$error = $_GET['error'];
-							if($error == 'badFormat'){
-								echo "bad format";
-							}
-							if($error == 'notInDatabase'){
-								echo "not in database";
-							}
-							if($error == 'codeUsed'){
-								echo "code used";
-							}
-							if($error == 'success'){
-								echo "success";
-							}
-							if($error == 'fatal'){
-								echo "Oops something went wrong!";
-							}
-						}
-					?>
+                     <br><br>
+                     <span class="newsletter-error">
+                        <?php
+                            if(isset($_GET['error'])){
+                                $error = $_GET['error'];
+                                if($error == 'badFormat'){
+                                    echo "Please fill the form correctly!";
+                                }
+                                if($error == 'notInDatabase'){
+                                    echo "The code you entered isn't valid!";
+                                }
+                                if($error == 'codeUsed'){
+                                    echo "The given code has already been redeemed!";
+                                }
+                                if($error == 'success'){
+                                    echo "Success! Thank you for your review!";
+                                }
+                                if($error == 'fatal'){
+                                    echo "Oops something went wrong!";
+                                }
+                            }
+                        ?>
+                     </span>
             	</form>
             </div>
         </div>
