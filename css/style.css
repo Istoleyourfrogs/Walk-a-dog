@@ -1247,11 +1247,10 @@ responsive-nav
         transition: all ease 0.5s;
         -webkit-transition: all ease 0.5s;
         -ms-transition: all ease 0.5s;
-        background: #222;
         z-index: 999;
     }
     .main-navigation ul{
-        background-color: #440381;
+        background-color: #ec368d;;
     }
     body.menu-active .header-nav-search .main-navigation {
         left: 0;
