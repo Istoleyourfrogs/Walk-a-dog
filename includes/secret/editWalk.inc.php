@@ -4,7 +4,7 @@ if(isset($_POST['update'])){
     $id = $_POST['id'];
     ?>
         <form action="editWalk.inc.php" method="post">
-            <input type="hidden" name="id" value="$id"> 
+            <input type="hidden" name="id" value="<?=$id?>">
             <label>Type</label>
             <select name="walk">
             <option value="oneTime">One Time</option>

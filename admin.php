@@ -352,7 +352,7 @@ require "includes/functions.inc.php";
                             <td>$aggression</td>
                             <td class=\"col-sm-2\">{$result['other']}</td>
                             <td class=\"col-sm-3\">
-                                <form method=\"post\" action=\"includes/secret/editUser.inc.php\">
+                                <form method=\"post\" action=\"includes/secret/editDog.inc.php\">
                                     <input type=\"hidden\" name=\"id\" value=\"{$result['id']}\">
                                     <button type=\"submit\" name=\"update\" value=\"update\" class=\"btn btn-primary\">UPDATE</button>
                                     <button onclick=\"return confirm ('Are you sure you wish to delete this item?');\"  

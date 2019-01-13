@@ -36,6 +36,7 @@ elseif (isset($_POST['delete'])){
     foreach ($_POST as $key => $value){
         ${$key} = mysqli_real_escape_string ($connect,trim($value));
     }
+    $status = (int)$status;
     $sql = "UPDATE users SET name = '$name',email = '$email',phone = '$phone',address = '$address',status = $status WHERE user_id = $id;";
     $query = mysqli_query($connect,$sql);
     header("Location: ../../admin.php?error=update");
