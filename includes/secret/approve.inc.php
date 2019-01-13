@@ -6,10 +6,10 @@ if(isset($_POST['approve'])){
 	$sql = "UPDATE reviews SET verified=1 WHERE review_id='$reviewID';";
 	$query = mysqli_query($connect,$sql);
 	if(!$query){
-		header("Location: ../../admin.php?error");
+		header("Location: ../../admin.php?error=error");
 		exit();
 	}
-	header("Location: ../../admin.php?success");
+	header("Location: ../../admin.php?error=success");
 	exit();
 
 }
@@ -19,11 +19,13 @@ elseif(isset($_POST['delete'])){
 	$sql = "DELETE FROM reviews WHERE review_id='$reviewID';";
 	$query = mysqli_query($connect,$sql);
 	if(!$query){
-		header("Location: ../../admin.php?error");
+		header("Location: ../../admin.php?error=error");
 		exit();
 	}
-	header("Location: ../../admin.php?success");
+	header("Location: ../../admin.php?error=success");
 	exit();
 }else{
-	header("Location: ../../admin.php?fatalError");
+
+	header("Location: ../../index.php");
+	exit();
 }

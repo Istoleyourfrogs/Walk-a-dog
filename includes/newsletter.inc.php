@@ -40,11 +40,11 @@ if(isset($_POST['submit'])) {
     $headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
     mail($to, $subject, $txt, $headers);
 
-    header("Location: ../index.php?mail=success#newsletter");
+    header("Location: ../index.php?mailnewsletter=success#newsletter");
     exit();
 }else{
 
-    header("Location: ../index.php?mail=fatalError#newsletter");
+    header("Location: ../index.php?mailnewsletter=fatal#newsletter");
     exit();
 
 }

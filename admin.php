@@ -8,12 +8,6 @@ require "includes/functions.inc.php";
             //gets all the emails from the table mail
             $sql = "SELECT id,mail FROM newsletter";
             $query = mysqli_query($connect,$sql);
-            //error checking for the newsletter form
-
-            if(isset($_GET['login'])){
-                if($_GET['login'] == 'success')
-                    $success = $_GET['login'];
-            }
 
 /***************************************NEWSLETTER**************************************************/
 ?>
@@ -27,6 +21,15 @@ require "includes/functions.inc.php";
         <button class="btn btn-primary" id="btnCustomers">Customers</button>
         <button class="btn btn-primary" id="btnWalks">Walks</button>
         <button class="btn btn-primary" id="btnDogs">Dogs</button>
+    </div>
+    <div class="text-center fw-600">
+        <?php
+        if(isset($_GET['error'])){
+            $error = $_GET['error'];
+            if($error == 'error') echo "Something went wrong! Try again.";
+            if($error == 'success') echo "Your action was completed successfully";
+        }
+        ?>
     </div>
     <div class="container" id="newsletter">
         <div class="row mt-5">
@@ -89,32 +92,7 @@ require "includes/functions.inc.php";
             <div class="col-sm-5 col-sm-offset-3 mt-5">
                 <form action="includes/secret/adminNewsletter.inc.php" method="post">
                     <div class="form-group">
-                        <input type="hidden" name="hidden">
                         <input type="text" name="email" placeholder="Email Address..." >
-                    </div>
-                    <div>
-                        <span>
-                            <?php
-                                if(isset($_GET['mail'])){
-                                    $mail = $_GET['mail'];
-                                    if($mail == 'error'){
-                                        echo "Error! Please fill in the field!";
-                                    }
-                                    if($mail == 'mail'){
-                                        echo "Please enter a valid email!";
-                                    }
-                                    if($mail == 'fatalError'){
-                                        echo "Oops something went wrong. Please try again!";
-                                    }
-                                    if($mail == 'success'){
-                                        echo "Thank you for sigin up to our newsletter";
-                                    }
-                                    if($mail == 'same'){
-                                        echo "You are already subscribed";
-                                    }
-                                }
-                                ?>
-                            </span>
                     </div>
                     <div class="form-group">
                         <button type="submit" name="submit" class="btn btn-primary">Submit</button>
@@ -129,7 +107,7 @@ require "includes/functions.inc.php";
 /***************************************NEWSLETTER**************************************************/
 
 /******************************************REVIEWS**************************************************/
-            $sql = "SELECT review_id, code_fk, comment,reviews.verified FROM reviews;";
+            $sql = "SELECT review_id, name, comment,reviews.verified FROM reviews JOIN users ON code_fk = review_code;";
             $query = mysqli_query($connect,$sql);
         ?>
 
@@ -146,7 +124,7 @@ require "includes/functions.inc.php";
                     <thead class="thead-light">
                         <tr>
                             <th>#</th>
-                            <th>code</th>
+                            <th>name</th>
                             <th>comment</th>
                             <th>verified</th>
                             <th>approve</th>
@@ -160,7 +138,7 @@ require "includes/functions.inc.php";
                 echo"
                     <tr>
                         <td class=\"col-sm-1\">{$result['review_id']}</td>
-                        <td class=\"col-sm-2\">{$result['code_fk']}</td>
+                        <td class=\"col-sm-2\">{$result['name']}</td>
                         <td class=\"col-sm-5\">{$result['comment']}</td>
                         <td>$verified</td>
                         <td class=\"col-sm-4\">
@@ -394,7 +372,7 @@ require "includes/functions.inc.php";
     <div class="container" id="review-code">
         <div class="row mt-5">
             <div class="col-sm-12 pb-5">
-                <h1 class="text-center">Reveiw Code</h1>
+                <h1 class="text-center">Review Code</h1>
             </div>
             <div class="col-sm-6 mb-5">
                 <form method="post" action="includes/secret/sendReviewCode.php">
@@ -462,7 +440,7 @@ require "includes/functions.inc.php";
                                 echo "<div class=\"text-center text-light\">Wrong information</div>";
 
                             }
-                            if($_GET['login'] === 'fatalError'){
+                            if($_GET['login'] === 'fatal'){
                                 echo "<div class=\"text-center text-light\">Oops something went wrong</div>";
 
                             }

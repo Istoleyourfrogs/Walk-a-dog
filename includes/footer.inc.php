@@ -55,10 +55,10 @@
                                                 echo "Oops something went wrong. Please try again!";
                                             }
                                             if($mail == 'success'){
-                                                echo "Thank you for sigin up to our newsletter";
+                                                echo "Thank you for signing up for our newsletter";
                                             }
                                             if($mail == 'same'){
-                                                echo "You are already subscribed";
+                                                echo "You are already subscribed!";
                                             }
                                         }
                                     ?>

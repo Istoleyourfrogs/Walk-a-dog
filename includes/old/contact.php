@@ -11,7 +11,7 @@ require_once "includes/header.inc.php";
         </div>
         <div class="row">
             <div class="col-md-6 col-sm-12 col-xs-12">
-                <form method="post" action="includes/contact.inc.php">
+                <form method="post" action="../contact.inc.php">
                     <div class="form-group">
                         <label for="ContactName">Name</label>
                         <input type="text" class="form-control" id="ContactName" placeholder="Name">

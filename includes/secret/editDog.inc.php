@@ -55,10 +55,10 @@ if(isset($_POST['update'])){
     $sql = "DELETE FROM dogs WHERE owner_fk = $id";
     $query = mysqli_query ($connect,$sql);
     if(!$query){
-        header ("Location: ../../admin.php?error=dogDeleteError");
+        header ("Location: ../../admin.php?error=error");
         exit();
     }
-    header ("Location: ../../admin.php?error=dogDeleted");
+    header ("Location: ../../admin.php?error=success");
     exit();
 
 }elseif(isset($_POST['submit'])){
@@ -72,10 +72,10 @@ if(isset($_POST['update'])){
     $sql = "UPDATE dogs SET name = '$name',age = $age, breed='$breed',vaccinated = $vaccinated,trained = $trained, aggression = $aggression, other = '$other' WHERE owner_fk = $id;";
     $query = mysqli_query ($connect,$sql);
     if(!$query){
-        header ("Location: ../../admin.php?error=dogUpdateError");
+        header ("Location: ../../admin.php?error=error");
         exit();
     }
-    header ("Location: ../../admin.php?error=dogUpdated");
+    header ("Location: ../../admin.php?error=success");
     exit();
 }else{
     header("Location: ../../index.php");

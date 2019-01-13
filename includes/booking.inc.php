@@ -22,26 +22,26 @@ if(isset($_POST['submit'])){
         exit();
     }
     //checks if the address has letters,numbers,spaces and a / or if the length is shorter than 5
-    validation("/^[a-zA-Z0-9\/\s]*$/",$address,5,"error=adress#booking");
+    validation("/^[a-zA-Z0-9\/\s]*$/",$address,5,"error=notValid#booking");
     //checks for only numbers and if it begins with +381 or if the length is shorter than 9
-    validation("/^\+381\s[0-9\/\-\s]*$/",$phone,9,"error=phone#booking");
+    validation("/^\+381\s[0-9\/\-\s]*$/",$phone,9,"error=notValid#booking");
     //checks if the walks are /oneTime|daily|weekly/
-    validation("/^(oneTime|daily|weekly)$/",$typeOfWalk,0,"error=typeOfWalk#booking");
+    validation("/^(oneTime|daily|weekly)$/",$typeOfWalk,0,"error=fatal#booking");
 
     //depended on the type of walk checks for error in the appropriate fields
     switch ($typeOfWalk){
         case "oneTime":
             //checks if date and time are empty
             if(empty($date) or empty($time)){
-                header("Location: ../index.php?error=EmptyTypeOrDate#booking");
+                header("Location: ../index.php?error=empty#booking");
                 exit();
             }
             //checks if the format of date and time is valid
-            validation("/^2[0-9]{3}\-(0[1-9]|1[0-2])\-(0[1-9]|1[0-9]|2[0-9]|3[0-1])$/",$date,0,"error=date#booking");
-            validation("/^(0[0-9]|1[0-9]|2[0-3])\:[0-5][0-9]$/",$time,0,"error=time#booking");
+            validation("/^2[0-9]{3}\-(0[1-9]|1[0-2])\-(0[1-9]|1[0-9]|2[0-9]|3[0-1])$/",$date,0,"error=notValid#booking");
+            validation("/^(0[0-9]|1[0-9]|2[0-3])\:[0-5][0-9]$/",$time,0,"error=notValid#booking");
             //if the day is not empty display fatal Error
             if(!empty($day)){
-                header("Location: ../index.php?error=DayForOneTimeWalk#booking");
+                header("Location: ../index.php?error=fatal#booking");
                 exit();
             }
             break;
@@ -49,14 +49,14 @@ if(isset($_POST['submit'])){
         case "daily":
             //checks if the time is empty
             if(empty($time)){
-                header("Location: ../index.php?error=EmptyTimeDaily#booking");
+                header("Location: ../index.php?error=empty#booking");
                 exit();
             }
             //validates the time based on the format xx:xx
-            validation("/^(0[0-9]|1[0-9]|2[0-3])\:[0-5][0-9]$/",$time,0,"error=timeNotValid#booking");
+            validation("/^(0[0-9]|1[0-9]|2[0-3])\:[0-5][0-9]$/",$time,0,"error=notValid#booking");
             //if either date or day are not empty display Error
             if(!empty($date) or !empty($day)){
-                header("Location: ../index.php?error=DateAndDayNotEmptyDailyWalk#booking");
+                header("Location: ../index.php?error=fatal#booking");
                 exit();
             }
             break;
@@ -64,23 +64,23 @@ if(isset($_POST['submit'])){
         case "weekly":
             //checks if the day or time are empty
             if(empty($day) or empty($time)){
-                header("Location: ../index.php?error=WeeklyEmpty#booking");
+                header("Location: ../index.php?error=empty#booking");
                 exit();
             }
             //validates the time based on the format xx:xx
-            validation("/^(0[0-9]|1[0-9]|2[0-3])\:[0-5][0-9]$/",$time,0,"error=time#booking");
+            validation("/^(0[0-9]|1[0-9]|2[0-3])\:[0-5][0-9]$/",$time,0,"error=notValid#booking");
             //validates the day
             dayValidation($day);
             //checks if the date is not empty and displays Error
             if(!empty($date)){
-                header("Location: ../index.php?error=WeeklyDateNotEmpty#booking");
+                header("Location: ../index.php?error=fatal#booking");
                 exit();
             }
             break;
 
         default :
             //if none of the above cases were executed redirect with an Error
-            header("Location: ../index.php?error=TypeOfWalkFatal#booking");
+            header("Location: ../index.php?error=fatal#booking");
             exit();
     }
 
@@ -97,11 +97,11 @@ if(isset($_POST['submit'])){
     /***************************************************DOG SECTION*********************************************************/
     //checks if $numberOfDogs is empty
     if(empty($numberOfDogs)){
-        header("Location: ../index.php?error=NumberOfDogsEmpty#booking");
+        header("Location: ../index.php?error=empty#booking");
         exit();
     }
     //checks if the value of $numberOfDogs is either 1, 2 or 3
-    validation("/^(1|2|3)$/",$numberOfDogs,0,"error=NumberOfDogsNotGood#booking");
+    validation("/^(1|2|3)$/",$numberOfDogs,0,"error=fatal#booking");
     $numberOfDogs = (int)$numberOfDogs;
     for($i=0; $i<$numberOfDogs; $i++){
         $dogNumber = ["One","Two","Three"];
@@ -146,7 +146,7 @@ if(isset($_POST['submit'])){
     $sql = "INSERT INTO users(name,email,hashed_email,address,phone,status,verified,review_code,verification_code) 
             VALUES ('$name','$email','$hashedEmail','$address','$phone',0,0,'$reviewCode','$verificationCode');";
     if(!$query = mysqli_query($connect,$sql)){
-        header("Location: index.php?error=NotSQL-ed#booking");
+        header("Location: index.php?error=fatal#booking");
         exit();
     }
     //gets the user_id from the database
@@ -184,7 +184,7 @@ if(isset($_POST['submit'])){
             );
             break;
         default:
-            header("Location: ../index.php?oopsDatabaseError");
+            header("Location: ../index.php?error=fatal#booking");
             exit();
     }
     //SEND VERIFICATION EMAIL

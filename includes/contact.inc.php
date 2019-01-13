@@ -5,10 +5,11 @@ if(isset($_POST['submit'])) {
     //enters values of form variables and checks if they are empty
     foreach ($_POST as $key => $value) {
         ${$key} = mysqli_real_escape_string($connect, trim($value));
-        if (empty(${$key})) {
-            header("Location: ../index.php?contactError=empty#contact");
-            exit();
-        }
+    }
+    //checks if fields are empty
+    if (empty($name) or empty($email) or empty($message)) {
+        header("Location: ../index.php?contactError=empty#contact");
+        exit();
     }
     //validates the name
     validation("/^[a-zA-Z\s]*$/", $name, 2, "contactError=notValid#contact");
@@ -18,7 +19,7 @@ if(isset($_POST['submit'])) {
         exit();
     }
     //validates the message
-    validation("/^[a-zA-Z0-9\.!?,\-\(\):_\s]*$/", $message, 2, "error=notValid#contact");
+    validation("/^[a-zA-Z0-9\.!?,@#:&%+$*:_'\-\(\)\s]*$/", $message, 2, "error=notValid#contact");
     //sends the email to our e-mail address
     $txt = "$name said: ";
     $txt .= $message;

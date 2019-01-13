@@ -5,7 +5,7 @@ if(isset($_POST['submit'])) {
     $subject =mysqli_real_escape_string ($connect,trim($_POST['subject']));
 
     if(empty($comment) or empty($subject)){
-        header("Location: ../../admin.php?mail=error");
+        header("Location: ../../admin.php?error=error");
         exit();
     }
     $sql = "SELECT mail,hashedMail FROM newsletter";
@@ -28,7 +28,7 @@ if(isset($_POST['submit'])) {
         $headers = '';
 
     }
-    header("Location: ../../admin.php?mail=success");
+    header("Location: ../../admin.php?error=success");
     exit();
 
 }else{

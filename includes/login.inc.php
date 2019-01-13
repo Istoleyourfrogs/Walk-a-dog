@@ -35,6 +35,6 @@ if(isset($_POST['submit'])){
         exit();
     }
 }else{
-    header("Location ../admin.php?login=fatalError");
+    header("Location ../admin.php?login=fatal");
     exit();
 }

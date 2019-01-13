@@ -5,7 +5,7 @@ incl
 
 <div class="clearfix"></div>
 <!-- breadcrumb start -->
-<section class="bizface-breadcrumb" style="background: url(images/dogBoneBackground.jpg) no-repeat center;">
+<section class="bizface-breadcrumb" style="background: url(../../images/dogBoneBackground.jpg) no-repeat center;">
     <div class="bizface-breadcrumb-title">
         <h1>Booking</h1>
     </div>
@@ -13,7 +13,7 @@ incl
 <!-- breadcrumb end -->
 
 <!--contact-page-->
-<form method="post" action="includes/booking.inc.php">
+<form method="post" action="../booking.inc.php">
     <div class="contact-page page">
         <div class="container">
             <!-- HUMAN FORM SECTION -->
@@ -137,9 +137,9 @@ incl
                             </div>
 
                             <div class="col-sm-8 pt-5" align="center">
-                                <img class="mr-5" src="images/cute-dog.svg" alt="dog1" width="100" >
-                                <img class="mr-5" src="images/cute-dog2.svg" alt="dog2" width="100" >
-                                <img class="mr-5" src="images/cute-dog3.svg" alt="dog3" width="100" >
+                                <img class="mr-5" src="../../images/cute-dog.svg" alt="dog1" width="100" >
+                                <img class="mr-5" src="../../images/cute-dog2.svg" alt="dog2" width="100" >
+                                <img class="mr-5" src="../../images/cute-dog3.svg" alt="dog3" width="100" >
                             </div>
                         </div>
                     </div>
@@ -334,17 +334,17 @@ incl
 </form>      <!-- DOG FORM SECTION END-->
 
 <!-- js library start -->
-<script  src="js/jquery-3.2.1.min.js"></script>
-<script  src="js/bootstrap.min.js"></script>
-<script  src="js/owl.carousel.min.js"></script>
-<script  src=js/jquery.mixitup.min.js></script>
-<script  src="js/jquery.magnific-popup.min.js"></script>
-<script  src="js/waypoints.min.js"></script>
-<script  src="js/jquery.counterup.min.js"></script>
-<script  src=js/wow.js></script>
-<script  src="js/script.js"></script>
-<script src="includes/old/scroll.js"></script>
-<script src="js/booking.js"></script>
+<script  src="../../js/jquery-3.2.1.min.js"></script>
+<script  src="../../js/bootstrap.min.js"></script>
+<script  src="../../js/owl.carousel.min.js"></script>
+<script  src=../../js/jquery.mixitup.min.js></script>
+<script  src="../../js/jquery.magnific-popup.min.js"></script>
+<script  src="../../js/waypoints.min.js"></script>
+<script  src="../../js/jquery.counterup.min.js"></script>
+<script  src=../../js/wow.js></script>
+<script  src="../../js/script.js"></script>
+<script src="scroll.js"></script>
+<script src="../../js/booking.js"></script>
 
 <!-- js library end -->
 

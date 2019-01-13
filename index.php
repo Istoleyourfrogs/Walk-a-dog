@@ -353,7 +353,7 @@ require "includes/header.inc.php";
                             if($mail == 'mail'){
                                 echo "Please enter a valid email!";
                             }
-                            if($mail == 'fatalError'){
+                            if($mail == 'fatal'){
                                 echo "Oops something went wrong. Please try again!";
                             }
                             if($mail == 'success'){
@@ -388,10 +388,12 @@ require "includes/header.inc.php";
                                 echo "Please fill in all fields";
                             if($error == 'notValid')
                                 echo "Oops you did not fill in the fields appropriately";
-                            if($error == 'fatalError')
+                            if($error == 'fatal')
                                 echo "Oops there was an error. Please try again!";
                             if($error == 'success')
                                 echo "Thank you for registering. We have sent you a confirmation email.";
+                            if($error == 'registered')
+                                echo "That email address is already registered.";
                         }
                         ?>
                     </p>
@@ -701,11 +703,11 @@ require "includes/header.inc.php";
                     <form method="post" action="includes/contact.inc.php">
                         <div class="form-group">
                             <label for="ContactName">Name</label>
-                            <input type="text" class="form-control" id="ContactName" placeholder="Name" name="name">
+                            <input type="text" class="form-control" id="ContactName" placeholder="Name" name="name" required>
                         </div>
                         <div class="form-group">
                             <label for="ContactEmail">Email address</label>
-                            <input type="email" class="form-control" id="ContactEmail" aria-describedby="emailHelp" placeholder="Enter email" name="email">
+                            <input type="email" class="form-control" id="ContactEmail" aria-describedby="emailHelp" placeholder="Enter email" name="email" required>
                         </div>
                         <div class="form-group">
                             <label for="ContactMessage">Your message</label>

@@ -1,7 +1,7 @@
 <?php
 require "includes/header.inc.php";
 ?>
-<form method="post" action="includes/booking.inc.php">
+<form method="post" action="../booking.inc.php">
     <section class="booking section" id="booking">
         <div class="container">
             <div class="row">
@@ -121,9 +121,9 @@ require "includes/header.inc.php";
                             </div>
 
                             <div class="col-sm-8 pt-5" align="center">
-                                <img class="mr-5" src="images/cute-dog.svg" alt="dog1" width="100" >
-                                <img class="mr-5" src="images/cute-dog2.svg" alt="dog2" width="100" >
-                                <img class="mr-5" src="images/cute-dog3.svg" alt="dog3" width="100" >
+                                <img class="mr-5" src="../../images/cute-dog.svg" alt="dog1" width="100" >
+                                <img class="mr-5" src="../../images/cute-dog2.svg" alt="dog2" width="100" >
+                                <img class="mr-5" src="../../images/cute-dog3.svg" alt="dog3" width="100" >
                             </div>
                         </div>
                     </div>

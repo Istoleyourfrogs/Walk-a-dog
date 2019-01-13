@@ -11,7 +11,7 @@ function validation($regex,$checkVaraible,$minLength,$error){
 function mailValidation($empty,$mailFrom,$mailCheck,$location){
     //if the hidden input is not empty display error
     if (!empty($empty)) {
-        header("Location: ../index.php?mail$location=fatalError#$location");
+        header("Location: ../index.php?mail$location=fatal#$location");
         exit();
     }
     //if the input is empty display error
@@ -57,25 +57,25 @@ function dogValidation($connect,$dogName,$dogYear,$dogMonth,$dogBreed,$dogVaccin
     $query = mysqli_query($connect,$sql);
     //checks if the breed is valid by getting it from the database
     if($row = mysqli_num_rows($query) == 0){
-        header("Location: ../index.php?error=fatalError#booking");
+        header("Location: ../index.php?error=fatal#booking");
         exit();
     }
     //checks if the value of vaccinated is either none or 1
     if($dogVaccinated != '' and $dogVaccinated != '1'){
-        header("Location: ../index.php?error=fatalError#booking");
+        header("Location: ../index.php?error=fatal#booking");
         exit();
     }
     //checks if the value of trained is either none or 1
     if($dogTrained != '' and $dogTrained != '1'){
-        header("Location: ../index.php?error=fatalError#booking");
+        header("Location: ../index.php?error=fatal#booking");
         exit();
     }
     //checks if the value of aggression is either none or 1
     if($dogAggression != '' and $dogAggression != '1'){
-        header("Location: ../index.php?error=fatalError#booking");
+        header("Location: ../index.php?error=fatal#booking");
         exit();
     }
-    if(!preg_match("/^[a-zA-Z0-9\.!?,@#:&%+$*:_\-\(\)\s]*$/",$dogOther)){
+    if(!preg_match("/^[a-zA-Z0-9\.!?,@#:&%+$*:_'\-\(\)\s]*$/",$dogOther)){
         header("Location: ../index.php?error=other#booking");
         exit();
     }

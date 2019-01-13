@@ -28,10 +28,10 @@ elseif (isset($_POST['delete'])){
     $sql = "DELETE FROM users WHERE user_id = '$userID';";
     $query = mysqli_query ($connect,$sql);
     if(!$query){
-        header ("Location: ../../admin.php?error=fail#customers");
+        header ("Location: ../../admin.php?error=error");
         exit();
     }
-    header ("Location: ../../admin.php?error=success#customers");
+    header ("Location: ../../admin.php?error=success");
     exit();
 }elseif(isset($_POST['submit'])){
     //inserts the new information into the database
@@ -41,7 +41,7 @@ elseif (isset($_POST['delete'])){
     $status = (int)$status;
     $sql = "UPDATE users SET name = '$name',email = '$email',phone = '$phone',address = '$address',status = $status WHERE user_id = $id;";
     $query = mysqli_query($connect,$sql);
-    header("Location: ../../admin.php?error=update");
+    header("Location: ../../admin.php?error=success");
     exit();
 
 }else{

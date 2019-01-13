@@ -12,10 +12,10 @@ if(isset($_POST['submit'])) {
     $headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
     //sending reveiw code to the emial that was filed out in the admin panel
     if(!mail($to, $subject, $txt, $headers)){
-        header ("Location: ../../admin.php?reviewCode=error");
+        header ("Location: ../../admin.php?error=error");
         exit();
     }
-    header ("Location: ../../admin.php?reviewCode=success");
+    header ("Location: ../../admin.php?error=success");
     exit();
 }else{
     header ("Location: ../../index.php");

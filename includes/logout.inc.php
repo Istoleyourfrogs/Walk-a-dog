@@ -7,6 +7,6 @@ if(isset($_POST['submit'])){
     header("Location: ../admin.php");
     exit();
 }else{
-    header("Location: ../admin.php?error");
+    header("Location: ../index.php");
     exit();
 }

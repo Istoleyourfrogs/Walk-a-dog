@@ -38,10 +38,10 @@ if(isset($_POST['update'])){
     $sql = "DELETE FROM walks WHERE user_fk = $id;";
     $query = mysqli_query ($connect,$sql);
     if(!$query){
-        header ("Location: ../../admin.php?error=deleteError");
+        header ("Location: ../../admin.php?error=error");
         exit();
     }
-    header ("Location: ../../admin.php?error=deleted");
+    header ("Location: ../../admin.php?error=success");
     exit();
 
 } elseif (isset($_POST['submit'])){
@@ -61,16 +61,16 @@ if(isset($_POST['update'])){
             $sql = "UPDATE walks SET walks.type = '$walk',weekly_walk_day = '$day',weekly_walk_time = '$weeklyTime',one_time_walk = NULL,daily_walk_time = NULL WHERE user_fk = $id;";
         break;
         default:
-            header ("Location: ../../admin.php?error=fatal");
+            header ("Location: ../../admin.php?error=error");
             exit();
     }
 
     $query = mysqli_query ($connect,$sql);
     if(!$query){
-        header ("Location: ../../admin.php?error=updateFail");
+        header ("Location: ../../admin.php?error=error");
         exit();
     }
-    header ("Location: ../../admin.php?error=updated");
+    header ("Location: ../../admin.php?error=success");
     exit();
 }else{
     header ("Location: ../../index.php");
