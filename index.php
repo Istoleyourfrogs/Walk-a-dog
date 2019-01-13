@@ -1,14 +1,12 @@
 <?php
 require "includes/header.inc.php";
-if(isset($_GET['error'])){
-    include "includes/booking.inc.php";
-}
 ?>
-
+    <!-- Carousel Start -->
     <div class="clearfix"></div>
     <div class="banner-slider">
         <div class="main-slider owl-carousel owl-theme">
-            <div class="slider-items" style="background-image:url(images/caroselDog1.jpg);">
+            <!-- FIRST SLIDE START -->
+            <div class="slider-items" style="background-image:url(images/carouselDog1.jpg);">
                 <div class="slider-overlay"></div>
                 <div class="slider-content">
                     <div class="carousel-caption caption-right">
@@ -20,38 +18,44 @@ if(isset($_GET['error'])){
                     </div>
                 </div>
             </div>
-            <div class="slider-items" style="background-image:url(images/caroselDog2.jpg);">
+            <!-- FIRST SLIDE END -->
+
+            <!-- SECOND SLIDE START -->
+            <div class="slider-items" style="background-image:url(images/carouselDog2.jpg);">
                 <div class="slider-overlay"></div>
                 <div class="slider-content">
                     <div class="carousel-caption caption-left">
                         <div class="content">
-                            <h2>Something cool</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>tempor incididunt ut labore adipiscing</p>
-                            <a  href="index.php#" class="btn btn-primary inverse">Contact us</a>
+                            <h2>Have a question?</h2>
+                            <p>Send us an email or call us we are available 24/7</p>
+                            <a  href="index.php#contact" class="btn btn-primary inverse">Contact us</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="slider-items" style="background-image:url(images/slider/3.jpg);">
+            <!-- SECOND SLIDE END -->
+
+            <!-- THIRD SLIDE START -->
+            <div class="slider-items" style="background-image:url(images/carouselDog3.jpg);">
                 <div class="slider-overlay">
-                    <video class="video-fluid" autoplay loop muted>
-                        <source src="promo%20video/Dog%20Walking%20On%20Grass.mp4" type="video/mp4" />
-                    </video>
                 </div>
                 <div class="slider-content">
                     <div class="carousel-caption caption-right">
                         <div class="content">
-                            <h2>Even more awesome</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>tempor incididunt ut labore adipiscing</p>
-                            <a  href="index.php#" class="btn btn-primary inverse">View services</a>
+                            <h2>Customer reviews</h2>
+                            <p>Don't take it from us see what our customers have to say</p>
+                            <a  href="index.php#review" class="btn btn-primary inverse">View reviews</a>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- THIRD SLIDE END -->
         </div>
     </div>
-    <!--bizface-about-->
-    <section id="about" class="bizface-about section"  >
+    <!-- carousel end -->
+
+    <!-- about start-->
+    <section id="about" class="about section"  >
         <div class="container" >
             <div class="row">
                 <div class="sec-title">
@@ -68,20 +72,20 @@ if(isset($_GET['error'])){
                         </div>
                     </div>
                     <div class="col-md-7 col-sm-12 col-xs-12">
-                        <div class="bizface-about-right">
+                        <div class="about-right">
                             <div class="panel-group" id="accordion">
                                 <div class="panel panel-default">
                                     <div class="panel-heading ">
                                         <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" class="bizface-about-div">
-                                                <div class="bizface-about-icon">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" class="about-div">
+                                                <div class="about-icon">
                                                     <i class="fa fa-users"></i>
                                                 </div>
                                                 <span class="about-section-title">Who are the people behind <span class="walkadog"><img src="images/logo.svg" alt="logo"></span></span>
                                             </a>
                                         </h4>
                                     </div>
-                                    <div id="collapse1" class="panel-collapse collapse bizface-about-content">
+                                    <div id="collapse1" class="panel-collapse collapse about-content">
                                         <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                                             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                                             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
@@ -90,15 +94,15 @@ if(isset($_GET['error'])){
                                 <div class="panel panel-default">
                                     <div class="panel-heading ">
                                         <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="bizface-about-div">
-                                                <div class="bizface-about-icon">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="about-div">
+                                                <div class="about-icon">
                                                     <i class="fa fa-lightbulb-o"></i>
                                                 </div>
                                                 <span class="about-section-title">What is the idea behind <span class="walkadog"><img src="images/logo.svg" alt="logo"></span></span>
                                             </a>
                                         </h4>
                                     </div>
-                                    <div id="collapse2" class="panel-collapse collapse bizface-about-content">
+                                    <div id="collapse2" class="panel-collapse collapse about-content">
                                         <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                                             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                                             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
@@ -107,15 +111,15 @@ if(isset($_GET['error'])){
                                 <div class="panel panel-default">
                                     <div class="panel-heading ">
                                         <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="bizface-about-div">
-                                                <div class="bizface-about-icon">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="about-div">
+                                                <div class="about-icon">
                                                     <i class="fa fa-dog"></i>
                                                 </div>
                                                 <span class="about-section-title">Why is  <span class="walkadog"><img src="images/logo.svg" alt="logo"></span> so important to us?</span>
                                             </a>
                                         </h4>
                                     </div>
-                                    <div id="collapse3" class="panel-collapse collapse bizface-about-content">
+                                    <div id="collapse3" class="panel-collapse collapse about-content">
                                         <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                                             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                                             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
@@ -124,8 +128,8 @@ if(isset($_GET['error'])){
                                 <div class="panel panel-default">
                                     <div class="panel-heading ">
                                         <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse4" class="bizface-about-div">
-                                                <div class="bizface-about-icon">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse4" class="about-div">
+                                                <div class="about-icon">
                                                     <i class="fa fa-heartbeat"></i>
                                                 </div>
                                                 <span class="about-section-title">
@@ -136,7 +140,7 @@ if(isset($_GET['error'])){
                                             </a>
                                         </h4>
                                     </div>
-                                    <div id="collapse4" class="panel-collapse collapse bizface-about-content">
+                                    <div id="collapse4" class="panel-collapse collapse about-content">
                                         <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                                             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                                             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
@@ -150,6 +154,7 @@ if(isset($_GET['error'])){
         </div>
     </section>
     <!-- about end -->
+
     <!--quote section -->
     <section  style="background: url(images/dogBone.png) no-repeat center #51e5ff;" class="section grey-background">
             <div class="container">
@@ -166,18 +171,18 @@ if(isset($_GET['error'])){
             </div>
     </section>
     <!-- quote end -->
-    <!-- bizface-price-start -->
-    <section class="bizface-price section grey-background" id="pricing">
+
+    <!-- pricing start -->
+    <section class="price section grey-background" id="pricing">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="sec-title">
                         <h2>Our price</h2>
-                        <!--lmao <p>You can't put a price on your dog's health, but we can!</p>-->
-                        <p>Let us help you choose what's best for your dog!</p>
+                        <p class="fw-600">Let us help you choose what's best for your dog!</p>
                     </div>
                 </div>
-                <div class="bizface-price-inner">
+                <div class="price-inner">
                     <div class="col-sm-6 col-md-4">
                         <div class="price-content">
                             <div class="price-content-header">
@@ -280,19 +285,22 @@ if(isset($_GET['error'])){
             </div>
         </div>
     </section>
-    <!---price end-->
-    <!-- testimonial -->
-    <section class="testimonials section" id="newsletter_anchor">
+    <!---pricing end-->
+
+    <!-- customer reviews start -->
+    <section class="testimonials section" id="review">
         <div class="container">
             <div class="sec-title text-center">
                 <h2>Costumer reviews</h2>
-                <p>Don't take it from us, see what our clients have to say!</p>
+                <p class="fw-600">Don't take it from us, see what our clients have to say!</p>
                 <span class="colorborder"></span>
             </div>
             <div class="testimonial-carousel owl-carousel owl-theme">
                 <?php
-                    //SELECT name,comment FROM reviews join users on code_fk = review_code;
-                    $sql = "SELECT name,comment FROM reviews join users on code_fk = review_code WHERE reviews.verified = 1;";
+                    //gets all the comments and the name if they are verified by the admin
+                    $sql = "SELECT name,comment FROM reviews 
+                            JOIN users on code_fk = review_code 
+                            WHERE reviews.verified = 1;";
                     $query = mysqli_query($connect,$sql);
                     while($result = mysqli_fetch_assoc($query)){
                         echo "
@@ -315,9 +323,10 @@ if(isset($_GET['error'])){
             </div>
         </div>
     </section>
-    <!-- testimonial end -->
-    <!--newsletter section -->
-    <section id="newsletter_section"  style="background: url(images/dogBone.png) no-repeat center #51e5ff;" class="section grey-background">
+    <!-- customer reviews end -->
+
+    <!--newsletter start -->
+    <section id="newsletter_anchor"  style="background: url(images/dogBone.png) no-repeat center #51e5ff;" class="section grey-background">
         <form action="includes/newsletter.inc.php" method="post">
             <div class="container">
                 <div class="row">
@@ -327,41 +336,43 @@ if(isset($_GET['error'])){
                             <label for="email" class="newsletter_label">Sign up for our newsletter!</label>
                     </div>
                     <div class="col-sm-6 col-xs- col-sm-offset-2 col-md-6 col-md-offset-2 col-lg-6 col-lg-offset-0 text-center">
-                            <input type="text" class="form-control colored_input" name="email" placeholder="Email Address..." >
+                            <input type="email" class="form-control colored_input" name="email" placeholder="Email Address..." required>
                     </div>
                     <div class="col-sm-2 col-md-2 col-lg-3 text-center pt-3 pt-md-0 pt-lg-0 pt-sm-3 ">
                     <button type="submit" name="submit" id="newsletter_button" class="btn btn-primary" >subscribe now</button>
                     </div>
                     <div class="col-sm-12 text-center">
-                    <span class="newsletter-error">
-                                <?php
-                                if(isset($_GET['mailnewsletter_anchor'])){
-                                    $mail = $_GET['mailnewsletter_anchor'];
-                                    if($mail == 'error'){
-                                        echo "Error! Please fill in the field!";
-                                    }
-                                    if($mail == 'mail'){
-                                        echo "Please enter a valid email!";
-                                    }
-                                    if($mail == 'fatalError'){
-                                        echo "Oops something went wrong. Please try again!";
-                                    }
-                                    if($mail == 'success'){
-                                        echo "Thank you for sigin up to our newsletter";
-                                    }
-                                    if($mail == 'same'){
-                                        echo "You are already subscribed";
-                                    }
-                                }
-                                ?>
-                                </span>
+                        <span class="newsletter-error">
+                        <?php
+                        //error displaying for the anchor newsletter
+                        if(isset($_GET['mailnewsletter_anchor'])){
+                            $mail = $_GET['mailnewsletter_anchor'];
+                            if($mail == 'error'){
+                                echo "Error! Please fill in the field!";
+                            }
+                            if($mail == 'mail'){
+                                echo "Please enter a valid email!";
+                            }
+                            if($mail == 'fatalError'){
+                                echo "Oops something went wrong. Please try again!";
+                            }
+                            if($mail == 'success'){
+                                echo "Thank you for sigin up to our newsletter";
+                            }
+                            if($mail == 'same'){
+                                echo "You are already subscribed";
+                            }
+                        }
+                        ?>
+                        </span>
                     </div>
                 </div>
             </div>
         </form>
     </section>
     <!-- newsletter end -->
-     <!-- Start Team -->
+
+    <!-- booking start -->
 <form method="post" action="includes/booking.inc.php">
     <section class="booking section" id="booking">
         <div class="container">
@@ -370,6 +381,7 @@ if(isset($_GET['error'])){
                     <h2>Booking</h2>
                     <p>
                         <?php
+                        //error displaying for the booking form
                         if(isset($_GET['error'])){
                             $error = $_GET['error'];
                             if($error == 'empty')
@@ -385,47 +397,48 @@ if(isset($_GET['error'])){
                     </p>
                     <span class="colorborder"></span>
                 </div>
+            </div>
                 <div class="row">
                     <div class="contact-page-inner">
                         <div class="col-sm-12 contact-right-form">
                             <div class="contact-page-title">
-                                <h4>Enter you information and something something something</h4>
+                                <h4>Enter you information down below! Every filed  with * is required</h4>
                             </div>
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        <label>First Name:</label>
+                                        <label>*First Name:</label>
                                         <input type="text" class="form-control" placeholder="First Name" name="firstName" required maxlength="25">
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        <label>Last Name:</label>
+                                        <label>*Last Name:</label>
                                         <input type="text"  class="form-control" placeholder="Last Name" name="lastName" required maxlength="25">
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        <label>Email:</label>
+                                        <label>*Email:</label>
                                         <input type="email" class="form-control" placeholder="email" name="email" required maxlength="30">
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        <label>Address:</label>
+                                        <label>*Address:</label>
                                         <input type="text" class="form-control" placeholder="Address" required name="address" maxlength="50">
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        <label>Phone Number:</label>
+                                        <label>*Phone Number:</label>
                                         <input type="text"  class="form-control" placeholder="Phone Number" required name="phone" maxlength="20">
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        <label for="typeOfWalk">Type of walk:</label>
-                                        <select id="typeOfWalk" name="typeOfWalk">
+                                        <label for="typeOfWalk">*Type of walk:</label>
+                                        <select id="typeOfWalk" name="typeOfWalk" required>
                                             <option value="">Select the type of walk</option>
                                             <option value="oneTime">One time</option>
                                             <option value="daily">Daily</option>
@@ -437,19 +450,19 @@ if(isset($_GET['error'])){
                             <div class="row">
                                 <div class="col-sm-2 none" walk="date">
                                     <div class="form-group">
-                                        <label for="date">Date of walk:</label>
+                                        <label for="date">*Date of walk:</label>
                                         <input id="date" class="form-control" type="date" name="date" min="<?php echo date("Y-m-d") ?>">
                                     </div>
                                 </div>
                                 <div class="col-sm-2 none" walk="time">
                                     <div class="form-group">
-                                        <label for="time">Time of walk:</label>
+                                        <label for="time">*Time of walk:</label>
                                         <input id="time" class="form-control" type="time" name="time" min="09:00:00" max="16:00:00">
                                     </div>
                                 </div>
                                 <div class="col-sm-10 none" walk="day">
                                     <div class="btn-group" id="weekly_walk" data-toggle="buttons">
-                                        <label>Which day: </label>
+                                        <label>*Which day: </label>
                                         <br>
                                         <?php
                                         $daysOfWeek = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
@@ -467,7 +480,7 @@ if(isset($_GET['error'])){
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        <label for="numberOfDogs">Number of Dogs:</label>
+                                        <label for="numberOfDogs">*Number of Dogs:</label>
                                         <select id="numberOfDogs"  name="numberOfDogs">
                                             <option  value="">Number of Dogs</option>
                                             <?php
@@ -490,7 +503,7 @@ if(isset($_GET['error'])){
                 </div>
                 <!-- HUMAN FORM SECTION END-->
 
-                <!-- DOG FORM SECTION-->
+                <!-- DOG FORM SECTION START -->
                 <div class="row">
                     <div class="contact-page-inner">
 
@@ -504,11 +517,11 @@ if(isset($_GET['error'])){
                                     <h4>First dog</h4>
                                     <hr>
                                     <div class="form-group ">
-                                        <label>Name</label>
+                                        <label>*Name</label>
                                         <input type="text" class="form-control" placeholder="Name" name="dogNameOne">
                                     </div>
                                     <div class="form-group">
-                                        <label>Age</label>
+                                        <label>*Age</label>
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <input type="text" class="form-check-inline" placeholder="Years" name="dogYearOne">
@@ -519,8 +532,7 @@ if(isset($_GET['error'])){
                                         </div>
                                     </div>
                                     <div class="form-group ">
-                                        <label>Breed</label>
-                                        <!--<input type="text" class="form-control" placeholder="name first">-->
+                                        <label>*Breed</label>
                                         <select name="dogBreedOne">
                                             <option value="">Select the dog breed</option>
                                             <?php
@@ -560,11 +572,11 @@ if(isset($_GET['error'])){
                                         <h4>Second dog</h4>
                                         <hr>
                                         <div class="form-group ">
-                                            <label>Name</label>
+                                            <label>*Name</label>
                                             <input type="text" class="form-control" placeholder="Name" name="dogNameTwo">
                                         </div>
                                         <div class="form-group">
-                                            <label>Age</label>
+                                            <label>*Age</label>
                                             <div class="row">
                                                 <div class="col-sm-6">
                                                     <input type="text" class="form-check-inline" placeholder="Years" name="dogYearTwo">
@@ -575,7 +587,7 @@ if(isset($_GET['error'])){
                                             </div>
                                         </div>
                                         <div class="form-group ">
-                                            <label>Breed</label>
+                                            <label>*Breed</label>
                                             <!--<input type="text" class="form-control" placeholder="name first">-->
                                             <select name="dogBreedTwo">
                                                 <option value="">Select the dog breed</option>
@@ -616,11 +628,11 @@ if(isset($_GET['error'])){
                                             <h4>Third dog</h4>
                                             <hr>
                                             <div class="form-group ">
-                                                <label>Name</label>
+                                                <label>*Name</label>
                                                 <input type="text" class="form-control" placeholder="Name" name="dogNameThree">
                                             </div>
                                             <div class="form-group">
-                                                <label>Age</label>
+                                                <label>*Age</label>
                                                 <div class="row">
                                                     <div class="col-sm-6">
                                                         <input type="text" class="form-check-inline" placeholder="Years" name="dogYearThree">
@@ -631,7 +643,7 @@ if(isset($_GET['error'])){
                                                 </div>
                                             </div>
                                             <div class="form-group ">
-                                                <label>Breed</label>
+                                                <label>*Breed</label>
                                                 <!--<input type="text" class="form-control" placeholder="name first">-->
                                                 <select name="dogBreedThree">
                                                     <option value="">Select the dog breed</option>
@@ -670,16 +682,22 @@ if(isset($_GET['error'])){
                                 </div>
                                 <button type="submit" name="submit" class="btn btn-primary btn-group-justified booking_register">Register now!</button>
                             </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- DOG FORM SECTION END -->
+            </div>
         </div>
     </section>
 </form>
-    <!--/ End Team -->
-    <!-- happyclient start -->
+    <!-- booking end -->
+
+    <!-- contact start -->
     <section class="clients section grey-background" id="contact">
         <div class="container">
             <div class="sec-title text-center">
                 <h2>Contact us</h2>
-                <p>Need information or have a question for us? We are here to help!</p>
+                <p class="fw-600">Need information or have a question for us? We are here to help!</p>
                 <span class="colorborder"></span>
             </div>
             <div class="row">
@@ -718,7 +736,6 @@ if(isset($_GET['error'])){
                 <div class="col-md-6 col-sm-12 col-xs-12 pt-5">
                     <div style="width: 100%" class="googlemaps">
                         <iframe width="100%" height="500" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=46.099577, 19.664705&amp;q=Trg%20Slobode%201%2C%20Subotica%2C%20Serbia+(walk%C2%B7a%C2%B7dog)&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
-                            <a href="https://www.maps.ie/map-my-route/">Plot a route map</a>
                         </iframe>
                     </div>
                     <br>
@@ -726,8 +743,7 @@ if(isset($_GET['error'])){
             </div>
         </div>
     </section>
-    <!-- happyclient end -->
-
+    <!-- contact end -->
 
 <?php
 require_once "includes/footer.inc.php";

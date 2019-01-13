@@ -9,9 +9,9 @@ require "includes/functions.inc.php";
 
 <div class="clearfix"></div>
 <!-- breadcrumb start -->
-<section class="bizface-breadcrumb" style="background: url(images/dogBoneBackground.jpg) no-repeat center;">
-    <div class="bizface-breadcrumb-overlay"></div>
-    <div class="bizface-breadcrumb-title">
+<section class="breadcrumb" style="background: url(images/dogBoneBackground.jpg) no-repeat center;">
+    <div class="breadcrumb-overlay"></div>
+    <div class="breadcrumb-title">
         <h1>Your review</h1>
     </div>
 </section>
@@ -21,7 +21,7 @@ require "includes/functions.inc.php";
 <div class="page error404-page">
     <div class="error-page">
         <div class="container">
-            <div class="bizface-reviewpage">
+            <div class="reviewpage">
                  <form method="post" action="includes/review.inc.php">
                      <div class="form-group">
                         <label for="reviewCode" class="reviewLabel">Review Code</label>

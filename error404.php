@@ -7,9 +7,9 @@ require "includes/header.inc.php";
 
 <div class="clearfix"></div>
 <!-- breadcrumb start -->
-<section class="bizface-breadcrumb" style="background: url(images/dogBoneBackground.jpg) no-repeat center;">
-    <div class="bizface-breadcrumb-overlay"></div>
-    <div class="bizface-breadcrumb-title">
+<section class="breadcrumb" style="background: url(images/dogBoneBackground.jpg) no-repeat center;">
+    <div class="breadcrumb-overlay"></div>
+    <div class="breadcrumb-title">
         <h1>404 page</h1>
     </div>
 </section>
@@ -19,7 +19,7 @@ require "includes/header.inc.php";
 <div class="page error404-page">
     <div class="error-page">
         <div class="container">
-            <div class="bizface-errorpage">
+            <div class="errorpage">
                 <strong>404 </strong> <br />
                 <b>Oops... Page Not Found!</b> <em>Sorry the Page Could not be Found here.</em>
                 <p>Try using the button below to go to main page of the site</p>

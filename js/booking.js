@@ -3,7 +3,7 @@ $(document).ready(function () {
     var valueSelectDogs = $('#numberOfDogs');
     var valueSelectWalk = $('#typeOfWalk');
 
-    //dog pictures
+    //dog pictures in booking form
     var dogPic1 = $('img[alt="dog1"]');
     var dogPic2 = $('img[alt="dog2"]');
     var dogPic3 = $('img[alt="dog3"]');
@@ -30,17 +30,17 @@ $(document).ready(function () {
     var time = $('div[walk="time"]');
     var day = $('div[walk="day"]');
 
-    //pricing redirection
+    //redirection from pricing to booking form with the value selected
     $("#oneTimeWalk").click(function(){
-        $("#typeOfWalk").val("oneTime");
+        valueSelectWalk.val("oneTime");
         walkType();
     });
     $("#dailyWalk").click(function(){
-        $("#typeOfWalk").val("daily");
+        valueSelectWalk.val("daily");
         walkType();
     });
     $("#weeklyWalk").click(function(){
-        $("#typeOfWalk").val("weekly");
+        valueSelectWalk.val("weekly");
         walkType();
     });
     
@@ -146,6 +146,7 @@ $(document).ready(function () {
             time.removeClass("none");
             day.addClass("none");
             date.removeClass("none");
+
         }
         if(valueSelectWalk.val() === 'daily'){
             date.removeClass("none");

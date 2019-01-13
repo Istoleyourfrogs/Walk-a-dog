@@ -9,32 +9,25 @@ session_start();
 
 <!--head start-->
 <head>
-    <!--meta tag start-->
+    <!--meta tag start -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="title" content="walk·a·dog">
-    <meta name="keywords" content="dogs, walking dogs, service for walking dogs">
+    <meta name="keywords" content="dogs, walking dogs, service for walking dogs,dog walking,walking dogs,dogs,dog services">
     <meta name="description" content="service for walking your dog">
     <meta name="author" content="Linolada">
     <meta name="copyright" content="Linolada">
-    <meta name="robots" content="index,follow">
-    
+    <meta name="robots" content="index,no follow">
+    <!-- meta tag end -->
 
-    <!--title-->
     <title>walk·a·dog</title>
-    <!--title end-->
-
-    <!-- faveicon start   -->
     <link rel="icon" href="images/favicon.png" type="image/x-icon">
-
-    <!-- stylesheet start -->
     <link href="https://fonts.googleapis.com/css?family=Kalam:400,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 </head>
 <!--head end-->
-
 <body>
     <!--header start-->
     <header class="main-header" id="home">
@@ -44,11 +37,8 @@ session_start();
             <div class="container">
                 <div class="site-branding">
                     <a href="index.php" class="logo"><img src="images/logo.svg" alt="logo"></a>
-
                 </div>
-                <!-- .site-branding -->
                 <div class="header-nav-search">
-
                     <div class="toggle-button">
                         <span></span>
                         <span></span>
@@ -77,8 +67,6 @@ session_start();
                                 ?>
                             </ul>
                             </form>
-                            
-                            
                         </nav>
                     </div>
                 </div>

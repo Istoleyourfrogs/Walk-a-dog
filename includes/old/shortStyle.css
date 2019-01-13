@@ -1,4 +1,45 @@
-/******************importing other css files******************/
+/*
+Table Of Contents
+00) import style
+01) common style
+02) title style
+03) breadcrumb
+04) header-top-bar
+05) header-search
+06) main-navigation
+07) responsive nav
+08) slider
+09) bizface-video
+10) bizface-about
+11) services
+12) bizface-projects
+13) testimonial
+14) bizface-news
+15) bizface-blogpage
+16) bizface-blogpage-details
+17) bizface-comment
+18) bizface-page-siderbar
+19) bizface-team
+20) bizface-price
+21) bizface-counter
+22 bizface-callus
+23) happy-clients
+24) bizface-contact-page
+25) bizface-errorpage
+26) bizface-login
+27) pagination
+28) footer
+29) bizface-footer-bottom
+30) bizface-scroll-top
+ ===============================================*/
+
+
+/***
+====================================================================
+    import style
+====================================================================
+***/
+
 @import url('bootstrap.min.css');
 @import url('font-awesome.min.css');
 @import url('owl.carousel.min.css');
@@ -6,8 +47,18 @@
 @import url('animate.css');
 
 
+/***
+====================================================================
+    common style
+====================================================================
+***/
 
-/******************setting style for HTML elements******************/
+/*
+blue: #51E5FF
+purple:#440381
+beigh:#FFA5A5
+ */
+
 * {
     padding: 0;
     margin: 0;
@@ -66,20 +117,20 @@ em {
 }
 
 h1,
- h2,
- h3,
- h4,
- h5,
- h6 {
-     position: relative;
-     font-weight: 600;
-     margin: 0px;
-     background: none;
-     line-height: 1.3;
-     font-family: 'Kalam', cursive;
-     color: #ec368d;
-     text-transform: uppercase;
- }
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    font-weight: 600;
+    margin: 0px;
+    background: none;
+    line-height: 1.3;
+    font-family: 'Kalam', cursive;
+    color: #ec368d;
+    text-transform: uppercase;
+}
 
 ul li a {
     display: inline-block;
@@ -90,7 +141,7 @@ ul li a {
 }
 
 
-/****************** Input Style ******************/
+/*3.2 Input Style */
 
 input[type=text],
 input[type=email],
@@ -108,12 +159,12 @@ select {
     position: relative;
 }
 input, input:before, input:after {
-      -webkit-user-select: initial;
-      -khtml-user-select: initial;
-      -moz-user-select: initial;
-      -ms-user-select: initial;
-      user-select: initial;
-     }
+    -webkit-user-select: initial;
+    -khtml-user-select: initial;
+    -moz-user-select: initial;
+    -ms-user-select: initial;
+    user-select: initial;
+}
 
 
 textarea {
@@ -186,6 +237,37 @@ textarea:-moz-placeholder {
     clear: both;
 }
 
+.pdl0 {
+    padding-left: 0 !important;
+}
+
+.pdr0 {
+    padding-right: 0 !important;
+}
+
+.pdt0 {
+    padding-top: 0 !important;
+}
+
+.pdb0 {
+    padding-bottom: 0 !important;
+}
+
+.mrt0 {
+    margin-top: 0 !important;
+}
+
+.mrb0 {
+    margin-bottom: 0 !important;
+}
+
+.mrl0 {
+    margin-left: 0
+}
+
+.mrr0 {
+    margin-right: 0;
+}
 
 .btn:hover,
 .btn:focus,
@@ -220,16 +302,17 @@ textarea:-moz-placeholder {
 .clearfix:before,
 .clearfix:after {
     content: " ";
-    /****************** 1 ******************/
+    /* 1 */
     display: table;
-    /****************** 2 ******************/
+    /* 2 */
 }
 
 .clearfix:after {
     clear: both;
 }
 
-/****************** Remove Chrome Input Field's Unwanted Yellow Background Color ******************/
+
+/* Remove Chrome Input Field's Unwanted Yellow Background Color */
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -253,7 +336,7 @@ ul li {
 
 .main-header .top-left .social-links a,
 .main-slider.owl-theme .owl-nav [class*=owl-],
-.about-icon,
+.bizface-about-icon,
 .project-link a,
 .single-testimonials .testi-img,
 .news-carousel.owl-theme .owl-nav [class*=owl-],
@@ -275,7 +358,7 @@ a.scroll-top {
 
 .main-header .top-left .social-links a i,
 .main-slider.owl-theme .owl-nav [class*=owl-] i,
-.about-icon i,
+.bizface-about-icon i,
 .project-link a i,
 .single-testimonials .testi-img img,
 .news-carousel.owl-theme .owl-nav [class*=owl-] i,
@@ -290,7 +373,7 @@ a.scroll-top i {
     -o-transform: rotate(-45deg);
 }
 
-.service-div,
+.bizface-service-div,
 .news-item-content,
 .price-content,
 .single-testimonials,
@@ -307,7 +390,7 @@ a.scroll-top i {
 
 .top-search .input-group,
 .project-menu ul li,
-.comment .comment-thumb img,
+.bizface-comment .comment-thumb img,
 .sidebar .sidebar-widget,
 nav.pagination a,
 nav.pagination span.current,
@@ -359,9 +442,17 @@ footer .newsletter-form .form-group button[type="submit"],
 .grey-background {
     background-color: #FAFAFD;
 }
+/*
+.bone-background {
+    background: url("images/dogBoneBackground.jpg") no-repeat center;
+}*/
 
 
-/******************title style******************/
+/***
+====================================================================
+    title style
+====================================================================
+***/
 
 .sec-title {
     max-width: 600px;
@@ -382,6 +473,7 @@ footer .newsletter-form .form-group button[type="submit"],
     text-transform: uppercase;
     font-size: 32px;
     position: relative;
+    /*color:#ec368d;*/
     background: linear-gradient(#EC368D, #51E5FF);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -432,8 +524,70 @@ footer .newsletter-form .form-group button[type="submit"],
 }
 
 
+/***
+====================================================================
+    breadcrumb
+====================================================================
+***/
 
-/******************header-top-bar******************/
+.bizface-breadcrumb {
+    padding: 20px 15px;
+    position: relative;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+}
+
+.bizface-breadcrumb .bizface-breadcrumb-title {
+    display: block;
+    position: relative;
+    text-align: center;
+}
+
+.bizface-breadcrumb .bizface-breadcrumb-title h1 {
+    font-size: 32px;
+    color: #EC368D;
+    margin-top: 0;
+    text-transform: uppercase;
+    margin-bottom: 10px;;
+    font-weight: 700;
+}
+
+.bizface-breadcrumb .bizface-breadcrumb-title p {
+    margin-bottom: 0;
+}
+
+.bizface-breadcrumb .bizface-breadcrumb-title p a {
+    font-size: 15px;
+    color: #fff;
+    display: inline-block;
+}
+
+.bizface-breadcrumb .bizface-breadcrumb-title p a:first-child::after {
+    content: "\f101";
+    font-family: 'FontAwesome';
+    font-size: 15px;
+    color: #ffffff;
+    padding: 0 10px;
+    display: inline-block;
+}
+
+.bizface-breadcrumb-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*background-color: rgba(68, 3, 129, 0.9);*/
+}
+
+
+/*
+====================================================================
+   header-top-bar
+====================================================================
+*/
 
 .main-header .header-top-bar {
     position: relative;
@@ -537,7 +691,11 @@ footer .newsletter-form .form-group button[type="submit"],
 }
 
 
-/******************main-menu media screen******************/
+/*
+====================================================================
+    main-menu media screen
+====================================================================
+*/
 
 @media only screen and (max-width: 1023px) {
     .main-header .header-top-bar .top-left {
@@ -576,7 +734,163 @@ footer .newsletter-form .form-group button[type="submit"],
         text-align: center;
     }
 }
-/******************main-navigation******************/
+
+
+/*=============================
+header-search
+=============================*/
+
+.header-search {
+    float: right;
+    padding: 30px 0;
+    margin-left: 20px;
+    cursor: pointer;
+    color: #FFA5A5;
+}
+
+.header-search .search-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    filter: alpha(opacity=0);
+    -ms-filter: "alpha(opacity=0)";
+    -webkit-opacity: 0;
+    -khtml-opacity: 0;
+    -moz-opacity: 0;
+    -ms-opacity: 0;
+    -o-opacity: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    background: rgba(0, 0, 0, .9);
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    -webkit-transform: scale(.2, .2);
+    -moz-transform: scale(.2, .2);
+    -ms-transform: scale(.2, .2);
+    -o-transform: scale(.2, .2);
+    -webkit-transition: all .3s cubic-bezier(.4, 0, 1, 1);
+    -khtml-transition: all .3s cubic-bezier(.4, 0, 1, 1);
+    -moz-transition: all .3s cubic-bezier(.4, 0, 1, 1);
+    -ms-transition: all .3s cubic-bezier(.4, 0, 1, 1);
+    -o-transition: all .3s cubic-bezier(.4, 0, 1, 1);
+    transition: all .3s cubic-bezier(.4, 0, 1, 1);
+}
+
+.header-search .search-popup.active .search-overlay {
+    filter: alpha(opacity=100);
+    -ms-filter: "alpha(opacity=100)";
+    -webkit-opacity: 1;
+    -khtml-opacity: 1;
+    -moz-opacity: 1;
+    -ms-opacity: 1;
+    -o-opacity: 1;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+}
+
+.header-search form.form-wrapper {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: scale(.2, .2);
+    -moz-transform: scale(.2, .2);
+    -ms-transform: scale(.2, .2);
+    -o-transform: scale(.2, .2);
+    -webkit-transition: all .3s cubic-bezier(.4, 0, 1, 1);
+    -khtml-transition: all .3s cubic-bezier(.4, 0, 1, 1);
+    -moz-transition: all .3s cubic-bezier(.4, 0, 1, 1);
+    -ms-transition: all .3s cubic-bezier(.4, 0, 1, 1);
+    -o-transition: all .3s cubic-bezier(.4, 0, 1, 1);
+    transition: all .3s cubic-bezier(.4, 0, 1, 1);
+    position: absolute;
+    z-index: 999999;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.header-search .search-popup.active form.form-wrapper {
+    -webkit-opacity: 1;
+    -khtml-opacity: 1;
+    -moz-opacity: 1;
+    -ms-opacity: 1;
+    -o-opacity: 1;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+}
+
+.form-wrapper input[type="text"] {
+    width: 96%;
+    height: 45px;
+    margin: 0 2%;
+    border: 1px solid #FFA5A5;
+    padding: 0 20px;
+    background: transparent;
+    text-transform: capitalize;
+    color: #ffffff;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+
+.header-search .form-wrapper input[type="text"]::-webkit-input-placeholder {
+    color: #ffffff;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+
+.header-search .form-wrapper input[type="submit"] {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 45px;
+    background: #FFA5A5;
+    color: #fff;
+    text-shadow: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 0 30px 30px 0;
+    -webkit-border-radius: 0 30px 30px 0;
+    -ms-border-radius: 0 30px 30px 0;
+    -moz-border-radius: 0 30px 30px 0;
+    -o-border-radius: 0 30px 30px 0;
+    padding: 0 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all ease 0.3s;
+    -webkit-transition: all ease 0.3s;
+    -ms-transition: all ease 0.3s;
+}
+
+.header-search .form-wrapper input[type="submit"]:hover {
+    background: #51E5FF;
+}
+
+
+/*=============================
+main-navigation
+=============================*/
 
 .site-branding a.logo {
     float: left;
@@ -710,6 +1024,11 @@ footer .newsletter-form .form-group button[type="submit"],
     border: none;
 }
 
+#main-navigation ul ul li:last-child ul a {
+    border-bottom: 1px solid rgba(202, 206, 210, 0.33);
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.18) inset;
+}
+
 #main-navigation ul li.menu-item-has-children > a{
     padding-right: 30px;
 }
@@ -718,6 +1037,10 @@ footer .newsletter-form .form-group button[type="submit"],
 #main-navigation li.current-menu-item > a,
 #main-navigation li:hover > a {
     color: #EC368D;
+}
+
+#main-navigation ul li.menu-item-has-children.current-menu-item > a::after{
+    border-top-color: #ffb426;
 }
 
 #main-navigation li.menu-item-has-children:hover > a:after{
@@ -760,7 +1083,9 @@ footer .newsletter-form .form-group button[type="submit"],
 }
 
 
-/******************responsive-nav******************/
+/*==========================
+responsive-nav
+==========================*/
 
 .toggle-button {
     width: 34px;
@@ -822,8 +1147,10 @@ footer .newsletter-form .form-group button[type="submit"],
     animation: fadeInDown 1s both 0.2s;
 }
 
-/******************main-navigation media screen******************/
 
+/*==========================
+    main-navigation media screen
+==========================*/
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
     #main-navigation ul li:hover > ul {
         display:block !important;
@@ -999,17 +1326,20 @@ footer .newsletter-form .form-group button[type="submit"],
     }
 }
 
-/******************banner-slider******************/
 
+
+/*==========================
+banner-slider
+==========================*/
 .main-slider{
     overflow: hidden;
 }
 .slider-items {
-  position: relative;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  min-height: 600px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 600px;
 }
 
 .slider-overlay {
@@ -1127,8 +1457,9 @@ footer .newsletter-form .form-group button[type="submit"],
     animation-delay: 0.1s;
 }
 
-/******************slider-media srceen******************/
-
+/*==========================
+slider-media srceen
+==========================*/
 @media only screen and (max-width: 991px) {
     .slider-items  .carousel-caption {
         padding: 0 60px;
@@ -1182,20 +1513,26 @@ footer .newsletter-form .form-group button[type="submit"],
     .slider-items .carousel-caption.caption-center,
     .slider-items .carousel-caption.caption-left,
     .slider-items .carousel-caption.caption-right{
-    left: 0;
-    right: 0;
-    margin:0 auto;
-    text-align: center;
-}
+        left: 0;
+        right: 0;
+        margin:0 auto;
+        text-align: center;
+    }
 
 }
 
 @media only screen and (max-width: 480px) {
-     .slider-itemes, .slider-items .slider-content {
+    .slider-itemes, .slider-items .slider-content {
         min-height: 300px;
     }
 }
-/****************** video ******************/
+
+/*
+====================================================================
+    bizface-video
+====================================================================
+*/
+
 .video {
     background-position: center;
     background-repeat: no-repeat;
@@ -1204,6 +1541,7 @@ footer .newsletter-form .form-group button[type="submit"],
     position: relative;
     min-height: 350px
 }
+
 
 .video h2 {
     text-align: center;
@@ -1335,120 +1673,28 @@ footer .newsletter-form .form-group button[type="submit"],
 }
 
 
-.home-video {
-    overflow: hidden;
-    max-height: 400px;
-    position: relative;
-}
-
-#video-shot {
-    min-height: 100%;
-    max-width: 100%;
-}
-
-.video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(255, 165, 165, 0.6);
-}
-
-.video-overlay-content {
-    position: absolute;
-    top: 50%;
-    color: #ffffff;
-    left: 0;
-    right: 0;
-    transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    text-align: center;
-    padding: 15px;
-}
-
-.video-overlay-content p {
-    margin: 30px 0;
-    font-size: 18px;
-    font-style: italic;
-
-}
-
-.video-overlay-call {
-    margin-bottom: 20px;
-}
-
-.video-overlay-call span {
-    font-size: 30px;
-    margin-right: 15px;
-    display: inline-block;
-    text-transform: capitalize;
-}
-
-.video-overlay-call span:last-child {
-    margin-right: 0;
-}
-
-.video-overlay-content h2 {
-    font-size: 30px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #ffffff;
-}
-
-.video-overlay-content .btn.btn-primary {
-    background-color: #FFA5A5;
-    border-color: #FFA5A5;
-}
-
-@media only screen and ( max-width:767px) {
-    .home-video {
-        overflow: hidden;
-        max-height: 400px;
-        min-height: 400px;
-        position: relative;
-    }
-}
-
-@media only screen and ( max-width:480px) {
-    .video-overlay-content h2,
-    .video-overlay-call span {
-        font-size: 24px;
-    }
-}
-
-@media only screen and ( max-width:380px) {
-    .video-overlay-content p {
-        display: none;
-    }
-    .video-overlay-call {
-        margin-top: 20px;
-    }
-}
-
-/******************about-section******************/
-
-.about-div {
+/*
+=================================
+    bizface-about
+=================================
+*/
+.bizface-about-div {
     margin-bottom: 50px;
 }
 
-.about-right .col-md-6:nth-child(3) .about-div,
-.about-right .col-md-6:nth-child(4) .about-div {
+.bizface-about-right .col-md-6:nth-child(3) .bizface-about-div,
+.bizface-about-right .col-md-6:nth-child(4) .bizface-about-div {
     margin-bottom: 0;
 }
 
-.about-head {
+.bizface-about-head {
     display: block;
     margin-bottom: 25px;
     float: left;
     width: 100%;
 }
 
-.about-icon {
+.bizface-about-icon {
     color: #fff;
     font-size: 30px;
     width: 60px;
@@ -1471,12 +1717,12 @@ footer .newsletter-form .form-group button[type="submit"],
     transition: all 0.5s ease-out;
 }
 
-.about-div:hover .about-icon {
+.bizface-about-div:hover .bizface-about-icon {
     background-color: #FFA5A5;
     color: #ffffff;
 }
 
-.about-head h5 {
+.bizface-about-head h5 {
     display: inline-block;
     font-weight: 700;
     margin: 0;
@@ -1498,14 +1744,14 @@ footer .newsletter-form .form-group button[type="submit"],
 .about-section-title:hover{
     color:#ffa5a5;
     transition: all 0.3s ease 0s;
-    text-shadow: 0 0 2px #fff;
+    text-shadow: 0 0 2px #fff; /* horizontal-offset vertical-offset 'blur' colour */
     -moz-text-shadow: 0 0 2px #fff;
     -webkit-text-shadow: 0 0 2px #fff;
 }
 .walkadog > img{
     color:#ffa5a5;
     transition: all 0.3s ease 0s;
-    text-shadow: 0 0 2px #fff;
+    text-shadow: 0 0 2px #fff; /* horizontal-offset vertical-offset 'blur' colour */
     -moz-text-shadow: 0 0 2px #fff;
     -webkit-text-shadow: 0 0 2px #fff;
     width: 130px;
@@ -1514,6 +1760,9 @@ footer .newsletter-form .form-group button[type="submit"],
     color:#ffa5a5;
     width: 135px;
 }
+/*style="background-image:url(images/dogBoneBackground.svg); background-position: center;);"*/
+/*style="background-color: #fff; border-radius:10px"*/
+
 
 about-section-panel{
     margin: 10px;
@@ -1528,10 +1777,14 @@ about-section-panel{
 .row-about:after{clear:both}
 
 
-/******************about media screen******************/
+/***
+====================================================================
+    bizface-about media screen
+====================================================================
+***/
 
 @media only screen and ( max-width: 991px) {
-    .about-banner {
+    .bizface-about-banner {
         margin-top: 0;
     }
     .video{
@@ -1540,235 +1793,425 @@ about-section-panel{
 }
 
 @media only screen and ( max-width: 768px) {
-    .about-right {
+    .bizface-about-right {
         text-align: center;
     }
-    .about-div {
+    .bizface-about-div {
         margin-bottom: 80px;
     }
-    .about-content{
+    .bizface-about-content{
         margin-top:15px;
         display: inline-block;
         width: 100%;
     }
-    .about-right .col-md-6:nth-child(3) .about-div {
+    .bizface-about-right .col-md-6:nth-child(3) .bizface-about-div {
         margin-bottom: 0;
     }
-    .about-right .col-md-6:nth-child(4) .about-div {
+    .bizface-about-right .col-md-6:nth-child(4) .bizface-about-div {
         margin-bottom: 0;
     }
 }
 @media only screen and ( max-width: 767px) {
-    .about-right .col-md-6:nth-child(3) .about-div {
+    .bizface-about-right .col-md-6:nth-child(3) .bizface-about-div {
         margin-bottom: 80px;
     }
 }
-/******************breadcumb******************/
 
-.breadcrumb {
-    padding: 20px 15px;
-    position: relative;
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-attachment: fixed;
-    text-align: center;
+
+/*
+=================================
+    bizface-Service
+=================================
+*/
+
+.bizface-service-area.section {
+    padding-bottom: 70px;
 }
 
-.breadcrumb .breadcrumb-title {
+.bizface-service-div {
+    text-align: center;
+    background-color: #fff;
+    -webkit-transition: all 0.45s ease-in-out;
+    -moz-transition: all 0.45s ease-in-out;
+    -o-transition: all 0.45s ease-in-out;
+    -ms-transition: all 0.45s ease-in-out;
+    transition: all 0.45s ease-in-out;
+    margin-bottom: 30px;
+    padding: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.bizface-service-div::after {
+    background-color: #51E5FF;
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    -moz-transform: scaleY(0);
+    -webkit-transform: scaleY(0);
+    -o-transform: scaleY(0);
+    -ms-transform: scaleY(0);
+    transform: scaleY(0);
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    z-index: -1;
+}
+
+.bizface-service-div:hover:after {
+    -moz-transform: scaleY(1);
+    -webkit-transform: scaleY(1);
+    -o-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    transform: scaleY(1);
+    opacity: 1;
+}
+
+.bizface-service-icon {
+    float: left;
+    width: 100%;
+    position: relative;
+    color: #FFA5A5;
+}
+
+.bizface-service-icon a i {
+    float: left;
+    width: 100%;
+    line-height: 40px;
+    font-size: 50px;
+    -webkit-transition: all 0.45s ease-in-out;
+    -moz-transition: all 0.45s ease-in-out;
+    -o-transition: all 0.45s ease-in-out;
+    -ms-transition: all 0.45s ease-in-out;
+    transition: all 0.45s ease-in-out;
+}
+
+.bizface-service-content h5 {
+    float: left;
+    width: 100%;
+    margin: 25px 0 40px 0;
+    position: relative;
+}
+
+.bizface-service-content h5::after {
+    content: "";
+    width: 50px;
+    height: 2px;
+    background-color: #51E5FF;
+    position: absolute;
     display: block;
-    position: relative;
-    text-align: center;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: -20px;
 }
 
-.breadcrumb .breadcrumb-title h1 {
-    font-size: 32px;
-    color: #EC368D;
-    margin-top: 0;
+.bizface-service-content h5 a {
     text-transform: uppercase;
-    margin-bottom: 10px;;
-    font-weight: 700;
+    font-weight: 600;
+    -webkit-transition: all 0.45s ease-in-out;
+    -moz-transition: all 0.45s ease-in-out;
+    -o-transition: all 0.45s ease-in-out;
+    -ms-transition: all 0.45s ease-in-out;
+    transition: all 0.45s ease-in-out;
 }
 
-.breadcrumb .breadcrumb-title p {
-    margin-bottom: 0;
-}
-
-.breadcrumb .breadcrumb-title p a {
-    font-size: 15px;
-    color: #fff;
+.bizface-service-content p {
+    margin: 0 auto;
     display: inline-block;
+    -webkit-transition: all 0.45s ease-in-out;
+    -moz-transition: all 0.45s ease-in-out;
+    -o-transition: all 0.45s ease-in-out;
+    -ms-transition: all 0.45s ease-in-out;
+    transition: all 0.45s ease-in-out;
 }
 
-.breadcrumb .breadcrumb-title p a:first-child::after {
-    content: "\f101";
-    font-family: 'FontAwesome';
-    font-size: 15px;
+.bizface-service-div:hover .bizface-service-content a,
+.bizface-service-div:hover .bizface-service-content p,
+.bizface-service-div:hover .bizface-service-icon a i {
     color: #ffffff;
-    padding: 0 10px;
-    display: inline-block;
 }
 
-.breadcrumb-overlay {
+.bizface-service-div:hover .bizface-service-content h5::after {
+    background-color: #ffffff;
+}
+
+
+/*
+====================================================================
+    bizface-service media screen
+====================================================================
+*/
+
+@media only screen and ( max-width:767px) {
+    .service-inner {
+        float: left;
+    }
+    .service-inner .col-sm-6 {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media only screen and ( max-width:580px) {
+    .service-inner .col-sm-6 {
+        width: 100%;
+        float: none;
+    }
+}
+
+
+/*
+====================================================================
+   bizface- projects
+====================================================================
+*/
+
+.bizface-projects.section {
+    padding-bottom: 60px;
+    position: relative;
+}
+
+.single-project-item {
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.single-project-item {}
+
+.project-overlay {
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    /******************background-color: rgba(68, 3, 129, 0.9);******************/
+    -moz-transform: scaleY(0);
+    -webkit-transform: scaleY(0);
+    -o-transform: scaleY(0);
+    -ms-transform: scaleY(0);
+    transform: scaleY(0);
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+    background-color: rgba(68, 3, 129, 0.5);
+    visibility: hidden;
+    opacity: 0;
 }
 
+.single-project-item:hover .project-overlay {
+    visibility: visible;
+    -moz-transform: scaleY(1);
+    -webkit-transform: scaleY(1);
+    -o-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    transform: scaleY(1);
+    opacity: 1;
+}
 
-/******************header-top-bar******************/
+.project-link {
+    left: 0;
+    right: 0;
+    position: absolute;
+    top: 50%;
+    margin: 0 auto;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    visibility: hidden;
+    opacity: 0;
+    text-align: center;
+}
 
-.main-header .header-top-bar {
+.project-link a {
+    color: #FFA5A5;
+    border: 1px solid #FFA5A5;
+    background-color: #fff;
+    display: inline-block;
+    font-size: 18px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    width: 40px;
     position: relative;
-    font-size: 13px;
+    margin-right: 15px;
+}
+
+.project-link a:last-child {
+    margin-right: 0;
+}
+
+.project-link a:hover {
+    background-color: #FFA5A5;
     color: #ffffff;
-    background: #51E5FF;
 }
 
-.main-header .header-top-bar .top-left {
-    position: relative;
-    float: left;
-    padding: 8px 50px 8px 0;
-    line-height: 24px;
-    background: #FFA5A5;
-}
-
-.main-header .header-top-bar .top-left:before {
-    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #FFA5A5;
-    border-style: solid;
-    border-width: 20px 0 21px 30px;
-    content: "";
-    height: 0;
+.project-text {
+    bottom: -46px;
+    color: #fff;
+    font-size: 16px;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    padding: 12px 0;
     position: absolute;
-    right: -30px;
-    top: 0;
-    width: 0;
-}
-
-.main-header .header-top-bar .top-left:after {
-    bottom: 0;
-    content: "";
-    left: -780px;
-    position: absolute;
-    top: 0;
-    width: 1000px;
-    background: #FFA5A5;
-}
-
-.main-header .top-left .social-links {
-    list-style: none;
-    position: relative;
+    text-align: center;
+    visibility: hidden;
+    width: 100%;
     z-index: 1;
 }
 
-.main-header .top-left .social-links li {
-    display: inline-block;
-}
-
-.main-header .top-left .social-links a {
-    display: inline-block;
-    margin-left: 15px;
-    color: #ffffff;
-    font-size: 13px;
-    height: 24px;
-    width: 24px;
-    line-height: 24px;
-    text-align: center;
-    background: none;
-}
-
-.main-header .top-left .social-links li.active a,
-.main-header .top-left .social-links a:hover {
-    background-color: #ffffff;
-    color: #51E5FF;
-}
-
-.main-header .header-top-bar .top-right {
-    position: relative;
-    float: right;
-    padding: 8px 0;
-    line-height: 24px;
-}
-
-.main-header .header-top-bar .top-right ul li {
-    position: relative;
-    float: left;
-    margin-left: 20px;
-    line-height: 24px;
-    color: #e3e3e3;
-}
-
-.main-header .header-top-bar .top-right ul li a {
-    position: relative;
-    display: block;
-    padding-left: 26px;
-    line-height: 24px;
-    color: #e3e3e3;
-}
-
-.main-header .header-top-bar .top-right ul li .icon {
-    position: absolute;
+.project-text:after {
+    background: #FFA5A5 none repeat scroll 0 0;
+    content: "";
+    height: 100%;
     left: 0;
+    opacity: 0.6;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+    position: absolute;
     top: 0;
-    line-height: 24px;
-    font-size: 16px;
+    width: 100%;
+    z-index: -1;
+}
+
+.single-project-item:hover .project-text {
+    bottom: 0;
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    visibility: visible;
+}
+
+.single-project-item:hover .project-link {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    visibility: visible;
+}
+
+.project-menu ul li {
+    border: 1px solid #FFA5A5;
+    color: #000;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0 5px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.project-menu ul {
+    list-style: outside none none;
+    margin: 0 0 35px;
+    padding: 0;
+    text-align: center;
+}
+
+.project-menu ul li:hover {
+    background: #FFA5A5 none repeat scroll 0 0;
     color: #fff;
 }
 
-.main-header .header-top-bar a:hover {
+#project-wrapper .mix {
+    display: none
+}
+
+.project-menu .active {
+    background: #FFA5A5 none repeat scroll 0 0;
+    border: 1px solid #FFA5A5;
+    color: #fff;
+}
+
+
+/*
+====================================================================
+    bizface-project media screen
+====================================================================
+*/
+
+@media only screen and ( max-width:991px) {
+    .project-menu ul li {
+        margin-bottom: 15px;
+        padding: 5px 10px;
+    }
+}
+
+@media only screen and ( max-width:767px) {
+    #project-wrapper .col-sm-6 {
+        width: 50%;
+        float: left;
+        vertical-align: top;
+    }
+}
+
+@media only screen and ( max-width:480px) {
+    #project-wrapper .col-sm-6 {
+        width: 100%;
+        float: none;
+    }
+}
+
+#project .project-hover .project-btn a {
     color: #FFA5A5;
+    background: #ffd6c0;
+    display: inline-block;
+    margin: 0 5px;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -o-border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    line-height: 29px;
+    text-align: center;
+}
+
+#project .project-hover .project-btn a:hover {
+    color: #fff;
+    background: #FFA5A5;
 }
 
 
-/******************
+/*
+====================================================================
+    bizface project media screen
+====================================================================
+*/
 
-    main-menu media screen
-
-******************/
-
-@media only screen and (max-width: 1023px) {
-    .main-header .header-top-bar .top-left {
-        padding: 10px;
-    }
-    .main-header .header-top-bar .top-left:before,
-    .main-header .header-top-bar .top-left:after {
-        display: none;
-    }
-    .main-header .header-top-bar .top-right {
-        padding-right: 15px;
-    }
-    .main-header .header-top-bar .top-right ul li,
-    .main-header .header-top-bar .top-right ul li {
-        float: none;
-        display: inline-block;
-        margin: 0 10px;
+@media only screen and ( max-width:767px) {
+    .project-inner .col-sm-6 {
+        width: 50%;
+        float: left;
+        vertical-align: top;
     }
 }
-@media only screen and (max-width: 1023px) {
-    .main-header .header-top-bar .top-left{
-        width: 100%;
-        background-color: transparent;
-        text-align: center;
-    }
-    .main-header .header-top-bar .top-right{
-        float: none;
-        text-align: center;
-    }
-}
-@media only screen and (max-width: 767px) {
-    .main-header .header-top-bar .top-left,
-    .main-header .header-top-bar .top-right {
+
+@media only screen and ( max-width:530px) {
+    .project-inner .col-sm-6 {
         width: 100%;
         float: none;
-        text-align: center;
     }
 }
 
 
-
-/******************customer reviews******************/
+/*
+====================================================================
+    testimonial
+====================================================================
+*/
 
 .testimonials {
     background-size: cover;
@@ -1872,10 +2315,213 @@ about-section-panel{
 }
 
 
-/******************review******************/
+/*
+====================================================================
+    bizface-news
+====================================================================
+*/
+
+.news-item-content {
+    max-width: 100%;
+    width: 90%;
+    margin: -50px 5% 0 5%;
+    padding: 30px 20px;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.news-item-content span {
+    font-size: 12px;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.news-item-content .news-date span:first-child::after {
+    display: inline-block;
+    content: "|";
+    padding: 0 10px;
+}
+
+.news-item-content span i {
+    margin-right: 5px;
+    color: #FFA5A5;
+}
+
+.news-item-content h5 {
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    margin: 15px 0;
+}
+
+.news-btn {
+    display: inline-block;
+    margin: 20px 0 10px 0;
+}
+
+.news-carousel.owl-theme .owl-nav {
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+    position: absolute;
+    top: -50px;
+    right: 0;
+}
+
+.news-carousel.owl-theme .owl-nav [class*=owl-] {
+    color: #ffffff;
+    font-size: 12px;
+    padding: 0px 10px;
+    background: #FFA5A5;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 10px;
+    border: 1px solid #FFA5A5;
+}
+
+.news-carousel.owl-theme .owl-nav [class*=owl-]:hover {
+    background: #51E5FF;
+    color: #ffffff;
+    border: 0;
+    text-decoration: none;
+    border: 1px solid #51E5FF;
+}
+
+
+/*
+====================================================================
+    bizface-news media screen
+====================================================================
+*/
+
+@media only screen and ( max-width:767px) {
+    .news-inner {
+        padding: 15px;
+    }
+}
+
+
+/*
+====================================================================
+  bizface-blogpage
+====================================================================
+*/
+
+.page {
+    margin: 80px 0;
+}
+
+.blog-page .news-item-content {
+    max-width: 100%;
+    position: relative;
+    width: 90%;
+    margin: -50px 5% 0 5%;
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    left: 0;
+    right: 0;
+    border-left: 1px solid rgba(0, 0, 0, 0.07);
+    border-bottom: 4px solid rgba(0, 0, 0, 0.07);
+    border-right: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.blog-page .news-item {
+    margin-bottom: 50px;
+}
+
+.blog-page .news-item:last-child {
+    margin-bottom: 0;
+}
+
+
+/*
+====================================================================
+  bizface-blogpage-details
+====================================================================
+*/
+
+.blog-detail .news-item-content {
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    left: 0;
+    right: 0;
+    border-left: 1px solid rgba(0, 0, 0, 0.07);
+    border-bottom: 4px solid rgba(0, 0, 0, 0.07);
+    border-right: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.blog-detail .news-item-content h3 {
+    margin: 15px 0;
+    text-transform: capitalize;
+}
+
+.blog-detail blockquote {
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: bold;
+    font-style: italic;
+    border-left: 5px solid #51E5FF;
+    margin-top: 30px;
+}
+
+.blog-detail .news-detail-share .share-title,
+.comment-title {
+    margin: 30px 0;
+}
+
+.blog-detail .news-detail-share a {
+    display: inline-block;
+    padding: 3px 12px;
+    margin-right: 5px;
+    color: #ffffff;
+    background-color: #FFA5A5
+}
+
+.blog-detail .news-detail-share a:hover {
+    background-color: #51E5FF;
+}
+
+.tag-widget .tag-list a {
+    padding: 5px 15px;
+    border: 1px solid #FFA5A5;
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 14px;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.tag-widget .tag-list a:hover {
+    border-color: #FFA5A5;
+    background-color: #FFA5A5;
+    color: #ffffff;
+}
+
+.blog .blog-img {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/*
+====================================================================
+  bizface-comment
+====================================================================
+*/
 
 .comment-section,
-.review {
+.bizface-review {
     margin-top: 50px;
 }
 #review_button{
@@ -1902,9 +2548,452 @@ about-section-panel{
     color:#FFA5A5;
 }
 
-/******************price******************/
 
-.price{
+.bizface-comment
+{
+    position: relative;
+}
+
+.bizface-comment .comment-box {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 100px;
+    min-height: 100px;
+}
+
+.bizface-comment .comment-thumb {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80px;
+    height: 80px;
+    background: #ffd6c0fff;
+}
+
+.bizface-comment .comment-thumb img {
+    display: block;
+    width: 80px;
+    height: 80px;
+}
+
+.bizface-comment .comment-content {
+    position: relative;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    background: #ffd6c0fff;
+}
+
+.bizface-comment .rating {
+    color: #ff9c01;
+    font-size: 13px;
+}
+
+.bizface-comment .rating .fa {
+    margin-right: 1px;
+}
+
+.bizface-comment .comment-info {
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.bizface-comment .comment-text {
+    font-size: 15px;
+}
+
+.bizface-review .rating {
+    position: relative;
+    padding-top: 8px;
+}
+
+.bizface-review .rating .rate-box {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 14px;
+    color: #555555;
+}
+
+.bizface-review .rating .rate-box:hover,
+.bizface-review .rating .rate-box:focus,
+.bizface-review .rating .rate-box:active {
+    color: #fa6f1c;
+}
+
+.bizface-review label {
+    position: relative;
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #303030;
+}
+
+.bizface-review .form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.bizface-review .form-group input[type="text"],
+.bizface-review .form-group input[type="password"],
+.bizface-review .form-group input[type="tel"],
+.bizface-review .form-group input[type="email"],
+.bizface-review .form-group select {
+    position: relative;
+    display: block;
+    width: 100%;
+    line-height: 22px;
+    padding: 9px 15px;
+    color: #222222;
+    border: 1px solid #e0e0e0;
+    transition: all 300ms ease;
+    -webkit-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+}
+
+.bizface-review .form-group button[type="button"] {
+    padding: 10px 15px;
+    background-color: transparent;
+    border: 0;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.bizface-review .form-group textarea {
+    position: relative;
+    display: block;
+    width: 100%;
+    line-height: 22px;
+    padding: 8px 15px;
+    color: #222222;
+    border: 1px solid #e0e0e0;
+    height: 150px;
+    resize: none;
+    transition: all 300ms ease;
+    -webkit-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+}
+
+
+/*
+====================================================================
+  bizface-page-sidebar
+====================================================================
+*/
+
+.sidebar .sidebar-widget {
+    background: #ffd6c0fff;
+    margin-bottom: 40px;
+    padding: 15px;
+    border-top: 1px solid rgba(0, 0, 0, 0.07);
+    border-left: 1px solid rgba(0, 0, 0, 0.07);
+    border-bottom: 4px solid rgba(0, 0, 0, 0.07);
+    border-right: 1px solid rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+}
+
+.sidebar .sidebar-widget:last-child {
+    margin-bottom: 0;
+}
+
+.search-widget .form-group {
+    margin-bottom: 0;
+}
+
+.search-widget .input-group-addon {
+    background-color: #FFA5A5;
+    color: #ffffff;
+    border-color: #FFA5A5;
+    cursor: pointer;
+}
+
+.sidebar .sidebar-widget .widget-title {
+    padding-bottom: 10px;
+    border-bottom: 2px dashed #EFEFEF;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.sidebar .sidebar-widget .widget-title h3,
+.blog-detail .news-detail-share .share-title h3,
+.blog-detail .news-item-content .comment-title h3 {
+    color: #222222;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 0;
+    font-weight: 600;
+    position: relative;
+    padding-left: 15px;
+}
+
+.sidebar .sidebar-widget .widget-title h3:after,
+.blog-detail .news-detail-share .share-title h3::after,
+.comment-title h3::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    width: 2px;
+    height: 15px;
+    background-color: #FFA5A5;
+    left: 0;
+}
+
+.sidebar .category-widget ul li a {
+    font-size: 14px;
+    color: #222222;
+    text-transform: capitalize;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.5);
+}
+
+.sidebar .category-widget ul li:first-child a {
+    padding-top: 0;
+}
+
+.sidebar .category-widget ul li:last-child a {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.sidebar .category-widget ul li a span.category-count {
+    color: #000;
+}
+
+.post-widget ul li {
+    width: 100%;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    padding: 15px 0;
+}
+
+.post-widget ul li:first-child {
+    padding-top: 0;
+}
+
+.post-widget ul li:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.post-widget .post-widget-thumb {
+    width: 80px;
+    height: 80px;
+    margin-right: 15px;
+    float: left;
+}
+
+.post-widget-content {
+    overflow: hidden;
+}
+
+.post-widget-content h4 {
+    color: #222222;
+    font-size: 14px;
+    text-transform: capitalize;
+    margin: 0;
+    font-weight: 600;
+}
+
+.post-widget-content span {
+    font-size: 13px;
+    text-transform: capitalize;
+    margin-top: 10px;
+    width: 100%;
+    float: left;
+}
+
+
+/*
+====================================================================
+  bizface-blogpage medai screen
+====================================================================
+*/
+
+@media only screen and ( max-width:767px) {
+    .blog-detail .search-widget,
+    .blog-right .search-widget {
+        margin-top: 40px;
+    }
+}
+
+
+/*
+====================================================================
+    bizface-team
+====================================================================
+*/
+
+.team {
+    position: relative;
+}
+
+.team .team-details {
+    background: #ffd6c0;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.30);
+    -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.30);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.30);
+    position: relative;
+    overflow: hidden;
+}
+
+.team .team-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.team .team-bottom {
+    position: absolute;
+    width: 100%;
+    bottom: -70px;
+    left: 0;
+    right: 0;
+    background: rgba(0, 102, 153, 0.8);
+    text-align: center;
+    padding: 15px 15px;
+    color: #fff;
+    transition: all ease 0.3s;
+    -webkit-transition: all ease 0.3s;
+    -ms-transition: all ease 0.3s;
+}
+
+.team .team-details:hover .team-bottom {
+    bottom: 0;
+}
+
+.team-text .team-post {
+    font-style: italic;
+    text-transform: capitalize;
+}
+
+.team-text h3.team-name {
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    letter-spacing: 1.5px;
+    position: relative;
+    padding-bottom: 15px;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.team-text h3.team-name:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    height: 3px;
+    width: 50px;
+    bottom: 0;
+    background: #ffd6c0fff;
+}
+
+.team-social ul li {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 6px;
+}
+
+.team-social ul li a {
+    color: #fff;
+}
+
+.team-social ul li a:hover {
+    color: #FFA5A5;
+}
+
+.team-carousel.owl-theme .owl-nav {
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+    position: absolute;
+    top: -50px;
+    right: 0;
+}
+
+.team-carousel.owl-theme .owl-nav [class*=owl-] {
+    color: #ffffff;
+    font-size: 12px;
+    padding: 0px 10px;
+    background: #FFA5A5;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 10px;
+    border: 1px solid #FFA5A5;
+}
+
+.team-carousel.owl-theme .owl-nav [class*=owl-]:hover {
+    background: #51E5FF;
+    color: #ffffff;
+    border: 0;
+    text-decoration: none;
+    border: 1px solid #51E5FF;
+}
+
+
+/*
+====================================================================
+    bizface team media screen
+====================================================================
+*/
+
+@media only screen and ( max-width:767px) {
+    .team .col-xs-12 {
+        float: left;
+        width: 50%;
+    }
+    .team .col-xs-12 .team-details {
+        margin-bottom: 50px;
+    }
+    .team .col-xs-12:nth-child(4) .team-details {
+        margin-bottom: 0;
+    }
+    .team .col-xs-12:nth-child(5) .team-details {
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and ( max-width:530px) {
+    .team .col-xs-12 {
+        float: none;
+        width: 100%;
+    }
+    .team .col-xs-12 .team-details {
+        margin-bottom: 50px;
+    }
+    .team .col-xs-12:nth-child(4) .team-details {
+        margin-bottom: 50px;
+    }
+    .team .col-xs-12:nth-child(5) .team-details {
+        margin-bottom: 0;
+    }
+}
+
+
+/*
+====================================================================
+    bizface-price
+====================================================================
+*/
+.bizface-price{
     padding-bottom: 50px;
     color: #FFA5A5;
 
@@ -2006,9 +3095,9 @@ about-section-panel{
 }
 
 .price-content .price-content-list ul li {
-      font-size: 15px;
-      line-height: 1.5em;
-      margin: 0px 0px 15px;
+    font-size: 15px;
+    line-height: 1.5em;
+    margin: 0px 0px 15px;
 }
 .price-content .price-content-list ul li a {
     color: #222;
@@ -2055,19 +3144,279 @@ about-section-panel{
 }
 
 
-/******************price media screen******************/
+/*
+====================================================================
+    bizface-price media screen
+====================================================================
+*/
 
 @media only screen and ( max-width:991px) {
-    .price-inner .col-sm-6 .price-content {
+    .bizface-price-inner .col-sm-6 .price-content {
         margin-bottom: 50px;
     }
-    .price-inner .col-sm-6:nth-child(4) .price-content {
+    .bizface-price-inner .col-sm-6:nth-child(4) .price-content {
         margin-bottom: 0;
     }
 }
 
 
-/******************contact-page******************/
+/*
+====================================================================
+    bizface-counter
+====================================================================
+*/
+
+.bizface-counter {
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.bizface-counter h2,
+.bizface-counter p {
+    color: #ffffff;
+}
+
+.bizface-overlay {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(68, 3, 129, 0.8);
+}
+
+.counter-area {
+    text-align: center;
+}
+
+.icon-counter {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    color: #FFA5A5;
+    font-size: 30px;
+    background-color: #fff;
+    line-height: 80px;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+.icon-counter:hover {
+    color: #fff;
+    background-color: #FFA5A5;
+}
+
+.counter-area h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    margin: 40px 0 18px 0;
+}
+
+.counter-area h3 {
+    margin: 0;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+
+/*
+====================================================================
+    bizface counter media screen
+====================================================================
+*/
+
+@media only screen and ( max-width:768px) {
+    .bizface-counter .col-sm-6 {
+        float: left;
+        width: 50%;
+        margin-bottom: 70px;
+    }
+    .bizface-counter .col-sm-6:nth-child(3) {
+        margin-bottom: 0;
+    }
+    .bizface-counter .col-sm-6:nth-child(4) {
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and ( max-width:460px) {
+    .bizface-counter .col-sm-6 {
+        float: left;
+        width: 100%;
+        margin-bottom: 70px;
+    }
+    .bizface-counter .col-sm-6:nth-child(3) {
+        margin-bottom: 70px;
+    }
+}
+
+
+/*
+====================================================================
+    bizface-callus
+====================================================================
+*/
+
+.home-video {
+    overflow: hidden;
+    max-height: 400px;
+    position: relative;
+}
+
+#video-shot {
+    min-height: 100%;
+    max-width: 100%;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 165, 165, 0.6);
+}
+
+.video-overlay-content {
+    position: absolute;
+    top: 50%;
+    color: #ffffff;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    text-align: center;
+    padding: 15px;
+}
+
+.video-overlay-content p {
+    margin: 30px 0;
+    font-size: 18px;
+    font-style: italic;
+
+}
+
+.video-overlay-call {
+    margin-bottom: 20px;
+}
+
+.video-overlay-call span {
+    font-size: 30px;
+    margin-right: 15px;
+    display: inline-block;
+    text-transform: capitalize;
+}
+
+.video-overlay-call span:last-child {
+    margin-right: 0;
+}
+
+.video-overlay-content h2 {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.video-overlay-content .btn.btn-primary {
+    background-color: #FFA5A5;
+    border-color: #FFA5A5;
+}
+
+
+/*
+====================================================================
+    bizface counter media screen
+====================================================================
+*/
+
+@media only screen and ( max-width:767px) {
+    .home-video {
+        overflow: hidden;
+        max-height: 400px;
+        min-height: 400px;
+        position: relative;
+    }
+}
+
+@media only screen and ( max-width:480px) {
+    .video-overlay-content h2,
+    .video-overlay-call span {
+        font-size: 24px;
+    }
+}
+
+@media only screen and ( max-width:380px) {
+    .video-overlay-content p {
+        display: none;
+    }
+    .video-overlay-call {
+        margin-top: 20px;
+    }
+}
+
+
+/*
+====================================================================
+   happy-clients
+====================================================================
+*/
+
+.happy-clients.owl-theme .owl-dots .owl-dot span {
+    background: #51E5FF;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    width: 10px;
+    height: 5px;
+    margin: 0 7px;
+    display: block;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+
+.happy-clients.owl-theme .owl-dots .owl-dot.active span {
+    background: #FFA5A5;
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+    width: 15px;
+}
+
+.happy-clients.owl-theme .owl-dots {
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+    margin-top: 30px;
+}
+
+.happy-clients.owl-theme .owl-dots .owl-dot {
+    display: inline-block;
+}
+
+
+/*
+====================================================================
+    bizface-contact-page
+====================================================================
+*/
 
 .contact-info p {
     margin-bottom: 15px;
@@ -2143,13 +3492,17 @@ about-section-panel{
     position: initial;
 }
 
-.contact-page-inner .btn {
+.contact-page-inner .bizface-btn {
     margin-top: 20px;
     float: left;
 }
 
 
-/******************contactpage media screen******************/
+/*
+====================================================================
+    bizface-contactpage media screen
+====================================================================
+*/
 
 @media only screen and (min-width: 300px) and (max-width: 991px) {
     .contact-right-form {
@@ -2158,9 +3511,13 @@ about-section-panel{
 }
 
 
-/******************errorpage******************/
+/*
+====================================================================
+    bizface-errorpage
+====================================================================
+*/
 
-.errorpage {
+.bizface-errorpage {
     padding: 50px 30px 58px 30px;
     margin: 0 auto;
     max-width: 700px;
@@ -2170,7 +3527,7 @@ about-section-panel{
     text-align: center;
     margin: 30px auto;
 }
-.reviewpage{
+.bizface-reviewpage{
     padding: 50px 30px 58px 30px;
     margin: 0 auto;
     max-width: 700px;
@@ -2183,7 +3540,7 @@ about-section-panel{
 
 }
 
-.errorpage strong {
+.bizface-errorpage strong {
     display: block;
     font-size: 90px;
     line-height: 100px;
@@ -2193,7 +3550,7 @@ about-section-panel{
     text-shadow: 5px 5px 1px #eaeaea;
 }
 
-.errorpage b {
+.bizface-errorpage b {
     display: block;
     font-size: 40px;
     line-height: 50px;
@@ -2201,12 +3558,12 @@ about-section-panel{
     margin: 0;
     font-weight: 300;
 }
-.errorpage p {
+.bizface-errorpage p {
     font-size: 20px;
     font-weight: 500;
 }
 
-.errorpage em {
+.bizface-errorpage em {
     display: block;
     font-size: 18px;
     color: #51E5FF;
@@ -2216,34 +3573,170 @@ about-section-panel{
 
 
 
-/******************bizface errorpage media screen******************/
+/*
+====================================================================
+    bizface errorpage media screen
+====================================================================
+*/
 
 @media only screen and (min-width: 280px) and (max-width: 767px) {
-    .errorpage {
+    .bizface-errorpage {
         width: 100%;
         border-radius: 0;
         margin: 25px auto;
         padding: 15px;
     }
-    .reviewpage{
+    .bizface-reviewpage{
         width: 100%;
         margin: 25px auto;
         padding: 15px;
         border: 10px solid #FFA5A5;
-    border-radius:20px;
+        border-radius:20px;
     }
-    .errorpage em {
+    .bizface-errorpage em {
         line-height: none;
         margin-bottom: 10px
     }
 }
 @media only screen and (max-width: 360px){
-    .errorpage strong {
+    .bizface-errorpage strong {
         font-size: 50px;
         line-height: 30px;
     }
 }
-/******************footer******************/
+
+
+/*
+====================================================================
+    bizface-login
+====================================================================
+*/
+
+.login-form {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.10);
+    padding: 20px;
+    float: left;
+    max-width: 100%;
+    width: 100%;
+}
+
+.login-page .navbar-brand {
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 50px;
+    display: inline-block;
+}
+
+.login-page .navbar-brand img {
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+.login-page .login-btn {
+    width: 100%;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #51E5FF;
+}
+
+.login-page input[type="checkbox"] {
+    outline: none;
+    border: 0;
+    margin-right: 15px;
+}
+
+.login-page button[type="submit"] {
+    outline: none;
+    border: 0;
+}
+
+.login-page .doyou {
+    width: 100%;
+    text-align: center;
+    margin: 30px 0;
+}
+
+.login-page .doyou span {
+    margin-right: 15px;
+}
+
+.login-page .doyou span a,
+.button-box span.pull-right a {
+    color: #51E5FF;
+}
+
+.login-page .form-group {
+    margin-bottom: 30px;
+}
+
+.form-group .social-register {
+    text-align: center;
+    width: 100%;
+}
+
+.form-group .social-register a i {
+    width: 50px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #3c6195;
+    text-align: center;
+    color: #ffffff;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.form-group .social-register a i.fa-google-plus {
+    background-color: #de3635;
+}
+
+
+/*
+====================================================================
+    bizface-pagination
+====================================================================
+*/
+
+nav.pagination {
+    margin: 50px 0 0 0;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+nav.pagination a {
+    color: #ffffff;
+    display: inline-block;
+    margin-right: 10px;
+    padding: 5px 15px;
+    background-color: #FFA5A5;
+}
+
+nav.pagination span.current {
+    color: #fff;
+    display: inline-block;
+    margin-right: 10px;
+    padding: 5px 15px;
+    background-color: #51E5FF;
+}
+
+nav.pagination a:hover {
+    background-color: #51E5FF;
+}
+
+
+@media screen and (max-width: 320px){
+    nav.pagination a, nav.pagination span.current {
+        margin-right: 0;
+    }
+}
+/*
+====================================================================
+    bizface-footer
+====================================================================
+*/
 
 footer {
     position: relative;
@@ -2382,7 +3875,7 @@ footer .subscribe-widget .form-group {
     margin-bottom: 30px;
 }
 
-footer .newsletter-form .btn {
+footer .newsletter-form .bizface-btn {
     text-transform: capitalize;
     padding: 5px 15px;
 }
@@ -2403,7 +3896,11 @@ footer .newsletter-form .form-group button:hover[type="submit"] {
 }
 
 
-/******************footer-media screen******************/
+/*
+====================================================================
+   footer-media screen
+====================================================================
+*/
 
 @media only screen and (min-width: 460px) and (max-width: 767px) {
     .links-widget .col-sm-6 {
@@ -2425,7 +3922,11 @@ footer .newsletter-form .form-group button:hover[type="submit"] {
 }
 
 
-/******************footer-bottom******************/
+/*
+====================================================================
+   bizface-footer-bottom
+====================================================================
+*/
 
 .footer-bottom {
     position: relative;
@@ -2433,6 +3934,7 @@ footer .newsletter-form .form-group button:hover[type="submit"] {
     padding: 13px 5px;
     line-height: 24px;
     text-align: center;
+    /*background: linear-gradient(#51e5ff, #ec368d );*/
     background-color: #ec368d;
     color: #ffffff;
     width: 100%;
@@ -2489,7 +3991,11 @@ footer .newsletter-form .form-group button:hover[type="submit"] {
 }
 
 
-/******************scroll-top******************/
+/*
+====================================================================
+    bizface scroll-top
+====================================================================
+*/
 
 a.scroll-top {
     background-color: #FFA5A5;
@@ -2531,8 +4037,6 @@ a.scroll-top::before {
 .text-light{
     color: #fff;
 }
-
-/****************** BOOTSTRAP 4 ADDONS ******************/
 .m-0 {
     margin: 0 !important;
 }
@@ -4143,6 +5647,131 @@ a.scroll-top::before {
     overflow: auto;
     padding: 0px;
 }
+.was-validated .form-control:valid, .form-control.is-valid, .was-validated
+.custom-select:valid,
+.custom-select.is-valid {
+    border-color: #28a745;
+}
+
+.was-validated .form-control:valid:focus, .form-control.is-valid:focus, .was-validated
+.custom-select:valid:focus,
+.custom-select.is-valid:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+.was-validated .form-control:valid ~ .valid-feedback,
+.was-validated .form-control:valid ~ .valid-tooltip, .form-control.is-valid ~ .valid-feedback,
+.form-control.is-valid ~ .valid-tooltip, .was-validated
+.custom-select:valid ~ .valid-feedback,
+.was-validated
+.custom-select:valid ~ .valid-tooltip,
+.custom-select.is-valid ~ .valid-feedback,
+.custom-select.is-valid ~ .valid-tooltip {
+    display: block;
+}
+
+.was-validated .custom-control-input:valid ~ .custom-control-label, .custom-control-input.is-valid ~ .custom-control-label {
+    color: #28a745;
+}
+
+.was-validated .custom-control-input:valid ~ .custom-control-label::before, .custom-control-input.is-valid ~ .custom-control-label::before {
+    background-color: #71dd8a;
+}
+
+.was-validated .custom-control-input:valid ~ .valid-feedback,
+.was-validated .custom-control-input:valid ~ .valid-tooltip, .custom-control-input.is-valid ~ .valid-feedback,
+.custom-control-input.is-valid ~ .valid-tooltip {
+    display: block;
+}
+
+.was-validated .custom-control-input:valid:checked ~ .custom-control-label::before, .custom-control-input.is-valid:checked ~ .custom-control-label::before {
+    background-color: #34ce57;
+}
+
+.was-validated .custom-control-input:valid:focus ~ .custom-control-label::before, .custom-control-input.is-valid:focus ~ .custom-control-label::before {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+.was-validated .custom-file-input:valid ~ .custom-file-label, .custom-file-input.is-valid ~ .custom-file-label {
+    border-color: #28a745;
+}
+
+.was-validated .custom-file-input:valid ~ .custom-file-label::after, .custom-file-input.is-valid ~ .custom-file-label::after {
+    border-color: inherit;
+}
+
+.was-validated .custom-file-input:valid ~ .valid-feedback,
+.was-validated .custom-file-input:valid ~ .valid-tooltip, .custom-file-input.is-valid ~ .valid-feedback,
+.custom-file-input.is-valid ~ .valid-tooltip {
+    display: block;
+}
+
+.was-validated .custom-file-input:valid:focus ~ .custom-file-label, .custom-file-input.is-valid:focus ~ .custom-file-label {
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+.input-group > .form-control,
+.input-group > .custom-select,
+.input-group > .custom-file {
+    position: relative;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    width: 1%;
+    margin-bottom: 0;
+}
+
+.input-group > .form-control + .form-control,
+.input-group > .form-control + .custom-select,
+.input-group > .form-control + .custom-file,
+.input-group > .custom-select + .form-control,
+.input-group > .custom-select + .custom-select,
+.input-group > .custom-select + .custom-file,
+.input-group > .custom-file + .form-control,
+.input-group > .custom-file + .custom-select,
+.input-group > .custom-file + .custom-file {
+    margin-left: -1px;
+}
+
+.input-group > .form-control:focus,
+.input-group > .custom-select:focus,
+.input-group > .custom-file .custom-file-input:focus ~ .custom-file-label {
+    z-index: 3;
+}
+
+.input-group > .custom-file .custom-file-input:focus {
+    z-index: 4;
+}
+
+.input-group > .form-control:not(:last-child),
+.input-group > .custom-select:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.input-group > .form-control:not(:first-child),
+.input-group > .custom-select:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.input-group > .custom-file {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.input-group > .custom-file:not(:last-child) .custom-file-label,
+.input-group > .custom-file:not(:last-child) .custom-file-label::after {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.input-group > .custom-file:not(:first-child) .custom-file-label {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
 .custom-control {
     position: relative;
     display: block;
@@ -4571,10 +6200,8 @@ a.scroll-top::before {
     margin-left: 0;
 }
 
-/****************** OTHER ******************/
-
-/******************custom checkbox******************/
-/****************** Customize the label (the container) ******************/
+/*custom checkbox*/
+/* Customize the label (the container) */
 .container1 {
     display: block;
     position: relative;
@@ -4591,7 +6218,7 @@ a.scroll-top::before {
     font-weight: 700;
 }
 
-/****************** Hide the browser's default checkbox ******************/
+/* Hide the browser's default checkbox */
 .container1 input {
     position: absolute;
     opacity: 0;
@@ -4600,7 +6227,7 @@ a.scroll-top::before {
     width: 0;
 }
 
-/****************** Create a custom checkbox ******************/
+/* Create a custom checkbox */
 .checkmark {
     position: absolute;
     top: 0;
@@ -4611,29 +6238,29 @@ a.scroll-top::before {
     border-radius: 30%;
 }
 
-/****************** On mouse-over, add a grey background color ******************/
+/* On mouse-over, add a grey background color */
 .container1:hover input ~ .checkmark {
     background-color: #ffa5a5;
 }
 
-/****************** When the checkbox is checked, add a blue background ******************/
+/* When the checkbox is checked, add a blue background */
 .container1 input:checked ~ .checkmark {
     background-color: #51e5ff;
 }
 
-/****************** Create the checkmark/indicator (hidden when not checked) ******************/
+/* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
     content: "";
     position: absolute;
     display: none;
 }
 
-/****************** Show the checkmark when checked ******************/
+/* Show the checkmark when checked */
 .container1 input:checked ~ .checkmark:after {
     display: block;
 }
 
-/****************** Style the checkmark/indicator ******************/
+/* Style the checkmark/indicator */
 .container1 .checkmark:after {
     left: 9px;
     top: 5px;

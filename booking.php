@@ -342,7 +342,7 @@ require "includes/header.inc.php";
 <script  src="js/jquery.counterup.min.js"></script>
 <script  src=js/wow.js></script>
 <script  src="js/script.js"></script>
-<script src="js/scroll.js"></script>
+<script src="includes/old/scroll.js"></script>
 <script src="js/booking.js"></script>
 
 <!-- js library end -->

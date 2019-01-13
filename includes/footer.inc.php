@@ -7,16 +7,15 @@
                 <div class="footer-widget">
                     <h3>walk·a·dog</h3>
                     <div class="widget-content">
-                        <div class="text">Lorem ipsum dolor sit amet, consects adipiscing elit enean commodo ligula.</div>
+                        <div class="text">Here is our information. Contact us at any time!</div>
                         <address>
-                            <p><a href="#"><i class="fa fa-map-marker"></i></a> USA, America</p>
-                            <p><a href="#"><i class="fa fa-phone"></i></a>+977-9746390089</p>
-                            <p><a href="#"><i class="fa fa-envelope"></i></a> ripplethemes@gmail.com</p>
+                            <p><a href="#"><i class="fa fa-map-marker"></i></a> Subotica, Serbia</p>
+                            <p><a href="#"><i class="fa fa-phone"></i></a>+381 62 165 3523</p>
+                            <p><a href="#"><i class="fa fa-envelope"></i></a> walkadog@secondsection.in.rs</p>
                         </address>
                     </div>
                 </div>
             </div>
-
             <div class=" col-xs-12  col-sm-4 col-md-3 col-lg-3">
                 <div class="footer-widget links-widget">
                     <h3>Explore</h3>
@@ -28,12 +27,11 @@
                             <li><a href="#contact">contact</a></li>
                 </div>
             </div>
-
             <div class="pt-xs-0  col-xs-12 pt-sm-3 col-sm-12 col-md-5 col-lg-5" id="newsletter">
                 <div class="footer-widget subscribe-widget">
                     <h3>Newsletter</h3>
                     <div class="widget-content">
-                        <div class="text">Lorem ipsum dolor sit amet, adipiscing </div>
+                        <div class="text">Sign up here for our newsletter</div>
                         <div class="newsletter-form">
                             <form action="includes/newsletter.inc.php" method="post">
                                 <div class="form-group">
@@ -44,6 +42,7 @@
                                 <div>
                                     <div class="pb-3 fw-600">
                                     <?php
+                                        //error displaying for the footer newsletter
                                         if(isset($_GET['mailnewsletter'])){
                                             $mail = $_GET['mailnewsletter'];
                                             if($mail == 'error'){
@@ -75,9 +74,10 @@
             </div>
         </div>
     </div>
-
 </footer>
-<!--Footer Bottom-->
+<!-- Footer End -->
+
+<!--Footer Bottom START-->
 <div class="footer-bottom">
     <div class="container">
         <div class="row">
@@ -86,20 +86,19 @@
             </div>
             <div class="col-md-6 col-sm-6">
                 <ul class="social-links text-right">
-                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                    <li><a target='_blank' href="https://www.youtube.com/channel/UCuj4wzw9FlD5nL3nf_DEb3A"><i class="fab fa-youtube"></i></a></li>
-                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a target="_blank" href="https://www.facebook.com/Walkadog-539111946568168/"><i class="fab fa-facebook"></i></a></li>
+                    <li><a target="_blank" href="https://twitter.com/walkadog1"><i class="fab fa-twitter"></i></a></li>
+                    <li><a target="_blank" href="https://www.youtube.com/channel/UCuj4wzw9FlD5nL3nf_DEb3A"><i class="fab fa-youtube"></i></a></li>
+                    <li><a target="_blank" href="https://www.instagram.com/walkadog6/"><i class="fab fa-instagram"></i></a></li>
                 </ul>
             </div>
         </div>
     </div>
 </div>
+<!-- Footer Bottom End -->
 
 <!-- scroll top -->
 <a class="scroll-top" href="javascript:void(0)"><i class="fa fa-angle-up"></i></a>
-<!-- srolltop end -->
-
 
 <!-- js library start -->
 <script  src="js/jquery-3.2.1.min.js"></script>
@@ -111,9 +110,8 @@
 <script  src="js/jquery.counterup.min.js"></script>
 <script  src=js/wow.js></script>
 <script  src="js/script.js"></script>
-<script src="js/scroll.js"></script>
 <script src="js/booking.js"></script>
-
 <!-- js library end -->
+
 </body>
 </html>
