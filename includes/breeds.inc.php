@@ -1,5 +1,7 @@
 <?php
+/*
 require "database.inc.php";
+
 $myFile = "breeds.txt";
 $lines = file($myFile);//file in to an array
 $lines = str_replace(array("\r","\n","\r\n"),'',$lines);

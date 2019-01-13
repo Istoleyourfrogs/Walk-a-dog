@@ -8,4 +8,5 @@ if(isset($_POST['submit'])){
     exit();
 }else{
     header("Location: ../admin.php?error");
+    exit();
 }

@@ -13,9 +13,7 @@ if(isset($_POST['update'])){
                 <input type='text' name='mail' value='{$result['mail']}'>
                 <button type='submit' name='submit'>Update</button>";
     exit();
-}
-
-if(isset($_POST['delete'])){
+}elseif(isset($_POST['delete'])){
     //if the form has been submitted bt the delete button
     $delete = $_POST['delete'];
     $id = mysqli_real_escape_string($connect,trim($_POST['id']));
@@ -28,8 +26,7 @@ if(isset($_POST['delete'])){
     }
     header("Location: ../../admin.php");
     exit();
-}
-if(isset($_POST['submit'])){
+}elseif(isset($_POST['submit'])){
     //updating the newsletter from the form above
     $id = mysqli_real_escape_string($connect,trim($_POST['id']));
     $mail = mysqli_real_escape_string($connect,trim($_POST['mail']));
@@ -39,4 +36,7 @@ if(isset($_POST['submit'])){
     header("Location: ../../admin.php");
     exit();
 
+}else{
+    header("Location: ../../index.php");
+    exit();
 }

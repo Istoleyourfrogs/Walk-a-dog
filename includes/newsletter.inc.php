@@ -41,8 +41,10 @@ if(isset($_POST['submit'])) {
     mail($to, $subject, $txt, $headers);
 
     header("Location: ../index.php?mail=success#newsletter");
+    exit();
 }else{
 
     header("Location: ../index.php?mail=fatalError#newsletter");
+    exit();
 
 }
