@@ -191,7 +191,7 @@ if(isset($_POST['submit'])){
     $to = $email;
     $subject = "VERIFY";
     $txt = "<html>
-    Verify your request<a href=\"https://walkadog.secondsection.in.rs/includes/verification.inc.php?code=$verificationCode\">Verify</a> ";
+    Verify your request<br><a href=\"https://walkadog.secondsection.in.rs/verification.inc.php?code=$verificationCode\">Verify</a> ";
     $headers = "From:  walk·a·dog <walkadog@secondsection.in.rs>" . " \r\n" .
     $headers .= 'MIME-Version: 1.0' . "\r\n";
     $headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";

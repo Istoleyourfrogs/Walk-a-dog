@@ -17,17 +17,28 @@ require "includes/functions.inc.php";
 
 /***************************************NEWSLETTER**************************************************/
 ?>
-    <div class="container">
+    <div class="col-sm-12 text-center mt-5">
+        <h1>SELECT WHICH TABLE YOU WANT TO DISPLAY</h1>
+    </div>
+    <div class="col-sm-12 py-5" align="center">
+        <button class="btn btn-primary" id="btnNewsletter">Newsletter</button>
+        <button class="btn btn-primary" id="btnReviews">Reviews</button>
+        <button class="btn btn-primary" id="btnReviewCode">Review Code</button>
+        <button class="btn btn-primary" id="btnCustomers">Customers</button>
+        <button class="btn btn-primary" id="btnWalks">Walks</button>
+        <button class="btn btn-primary" id="btnDogs">Dogs</button>
+    </div>
+    <div class="container" id="newsletter">
         <div class="row mt-5">
             <div class="col-sm-12 pb-5">
                 <h1 class="text-center">Newsletter</h1>
             </div>
             <div class="col-sm-6 mb-5">
-                <form method="post" action="includes/sendMail.inc.php">
+                <form method="post" action="includes/secret/sendMail.inc.php">
                     <label>Subject</label>
                     <input type="text" name="subject">
                     <label>Message</label>
-                    <textarea name="txt"></textarea>
+                    <textarea name="comment"></textarea>
                     <button class="btn btn-primary btn-group-justified" type="submit" name="submit">Send</button>
                 </form>
                     <?php
@@ -122,7 +133,7 @@ require "includes/functions.inc.php";
             $query = mysqli_query($connect,$sql);
         ?>
 
-            <div class="container">
+            <div class="container" id="reviews">
                 <div class="row mt-5">
                     <div class="col-sm-12">
                         <h1 class="text-center">REVIEWS</h1>
@@ -250,7 +261,7 @@ require "includes/functions.inc.php";
     $query = mysqli_query($connect,$sql);
     ?>
 
-    <div class="container" id="customers">
+    <div class="container" id="walks">
         <div class="row mt-5">
             <div class="col-sm-12">
                 <h1 class="text-center">WALKS</h1>
@@ -309,7 +320,7 @@ require "includes/functions.inc.php";
     ";
     $query = mysqli_query($connect,$sql);
     ?>
-    <div class="container" id="customers">
+    <div class="container" id="dogs">
         <div class="row mt-5">
             <div class="col-sm-12">
                 <h1 class="text-center">DOGS</h1>
@@ -371,6 +382,64 @@ require "includes/functions.inc.php";
             <hr>
         </div>
     </div>
+    <?php
+    //gets all the emails from the table mail
+    $sql = "SELECT user_id,name,email,review_code FROM users
+                    WHERE review_code not in (SELECT code_fk FROM reviews)";
+    $query = mysqli_query($connect,$sql);
+
+    /***************************************REVIEW CODE**************************************************/
+    ?>
+
+    <div class="container" id="review-code">
+        <div class="row mt-5">
+            <div class="col-sm-12 pb-5">
+                <h1 class="text-center">Reveiw Code</h1>
+            </div>
+            <div class="col-sm-6 mb-5">
+                <form method="post" action="includes/secret/sendReviewCode.php">
+                    <label>Code</label>
+                    <input type="text" name="code">
+                    <label>Email</label>
+                    <input type="email" name="email">
+                    <button class="btn btn-primary btn-group-justified mt-4" type="submit" name="submit">Send</button>
+                </form>
+            </div>
+            <div class="col-sm-6 table-scroll">
+                <table class="table table-striped table-danger">
+                    <thead class="thead-light">
+                    <tr>
+                        <th>#</th>
+                        <th>name</th>
+                        <th>email</th>
+                        <th>code</th>
+                    <tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    //displays every email from table mail (inside is a form where you can delete or update the email)
+                    while($result = mysqli_fetch_assoc($query)) {
+                        echo"
+                        <tr>
+                            <td>{$result['user_id']}</td>
+                            <td>{$result['name']}</td>
+                            <td>{$result['email']}</td>
+                            <td>{$result['review_code']}</td>
+                        </tr>
+                        ";
+                    }
+                    ?>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-12">
+                <hr>
+            </div>
+        </div>
+    </div>
+    <?php
+    /***************************************REVIEW CODE**************************************************/
+    ?>
 
     <?php
         //if the admin is not logged in it will display a login form
@@ -404,11 +473,46 @@ require "includes/functions.inc.php";
                     </form>
                 </div>
             </div>
-        <div>
-    </div>
-</div>
+        </div>
 
 <script src="js/jquery-3.2.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        //sets variables for each section and sets them to hidden
+        var btnNewsletter = $('#btnNewsletter');
+        var btnReviews = $('#btnReviews');
+        var btnCustomers = $('#btnCustomers');
+        var btnWalks = $('#btnWalks');
+        var btnDogs = $('#btnDogs');
+        var btnReviewCode = $('#btnReviewCode');
+        $('#newsletter').hide();
+        $('#reviews').hide();
+        $('#customers').hide();
+        $('#walks').hide();
+        $('#dogs').hide();
+        $('#review-code').hide();
+
+        //toggles visibility of each section in admin panel
+        btnNewsletter.click(function () {
+            $('#newsletter').toggle();
+        });
+        btnReviews.click(function () {
+            $('#reviews').toggle();
+        });
+        btnCustomers.click(function () {
+            $('#customers').toggle();
+        });
+        btnWalks.click(function () {
+            $('#walks').toggle();
+        });
+        btnDogs.click(function () {
+            $('#dogs').toggle();
+        });
+        btnReviewCode.click(function () {
+            $('#review-code').toggle();
+        });
+    })
+</script>
 </body>
 </html>
 

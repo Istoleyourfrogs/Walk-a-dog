@@ -1722,11 +1722,7 @@ about-section-panel{
 }
 
 
-/******************
-
-    main-menu media screen
-
-******************/
+/******************main-menu media screen******************/
 
 @media only screen and (max-width: 1023px) {
     .main-header .header-top-bar .top-left {
@@ -1765,6 +1761,94 @@ about-section-panel{
         text-align: center;
     }
 }
+/******************error pages**********************/
+
+
+.errorpage {
+    padding: 50px 30px 58px 30px;
+    margin: 0 auto;
+    max-width: 700px;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #eee;
+    text-align: center;
+    margin: 30px auto;
+}
+.reviewpage{
+    padding: 50px 30px 58px 30px;
+    margin: 0 auto;
+    max-width: 700px;
+    width: 100%;
+    background-color: #fff;
+    border: 10px solid #FFA5A5;
+    border-radius:20px;
+    text-align: center;
+    margin: 30px auto;
+
+}
+
+.errorpage strong {
+    display: block;
+    font-size: 90px;
+    line-height: 100px;
+    color: #51E5FF;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 5px 5px 1px #eaeaea;
+}
+
+.errorpage b {
+    display: block;
+    font-size: 40px;
+    line-height: 50px;
+    color: #FFA5A5;
+    margin: 0;
+    font-weight: 300;
+}
+.errorpage p {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.errorpage em {
+    display: block;
+    font-size: 18px;
+    color: #51E5FF;
+    margin: 15px 0;
+    font-style: normal;
+}
+
+
+
+/*errorpage media screen*/
+
+@media only screen and (min-width: 280px) and (max-width: 767px) {
+    .errorpage {
+        width: 100%;
+        border-radius: 0;
+        margin: 25px auto;
+        padding: 15px;
+    }
+    .reviewpage{
+        width: 100%;
+        margin: 25px auto;
+        padding: 15px;
+        border: 10px solid #FFA5A5;
+        border-radius:20px;
+    }
+    .errorpage em {
+        line-height: none;
+        margin-bottom: 10px
+    }
+}
+@media only screen and (max-width: 360px){
+    .errorpage strong {
+        font-size: 50px;
+        line-height: 30px;
+    }
+}
+
+
 
 
 
@@ -4768,4 +4852,40 @@ input[type="color"]:focus,
 }
 .fw-600{
     font-weight: 600;
+}
+.login-form {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.10);
+    padding: 20px;
+    float: left;
+    max-width: 100%;
+    width: 100%;
+}
+
+
+.comment-section,
+.review {
+    margin-top: 50px;
+}
+#review_button{
+    background-color: #ec368d;
+    font-size: 14px;
+}
+#review_button:hover{
+    background-color: #ffa5a5;
+    color:#fff;
+}
+.reviewLabel{
+    text-transform: uppercase;
+    font-size:24px;
+}
+.reviewLabelComment{
+    font-size:18px;
+}
+#reviewCode{
+    font-size:30px;
+    width:205px;
+    margin: 0 auto;
+}
+#reviewMessage::placeholder{
+    color:#FFA5A5;
 }

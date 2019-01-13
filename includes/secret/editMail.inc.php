@@ -23,10 +23,10 @@ if(isset($_POST['delete'])){
     if($delete == 'delete'){
         $sql = "DELETE FROM newsletter WHERE id=$id;";
         $query = mysqli_query($connect,$sql);
-        header("Location: ../admin.php");
+        header("Location: ../../admin.php");
         exit();
     }
-    header("Location: ../admin.php");
+    header("Location: ../../admin.php");
     exit();
 }
 if(isset($_POST['submit'])){
@@ -36,7 +36,7 @@ if(isset($_POST['submit'])){
     $hashedMail = md5($mail);
     $sql = "UPDATE newsletter SET mail='$mail',hashedMail='$hashedMail' WHERE id='$id';";
     $query = mysqli_query($connect,$sql);
-    header("Location: ../admin.php");
+    header("Location: ../../admin.php");
     exit();
 
 }

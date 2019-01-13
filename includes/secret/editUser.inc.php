@@ -1,12 +1,12 @@
 <?php
 require "../database.inc.php";
 if(isset($_POST['update'])){
-    //enterer and a new email adress
+    //selects the user where the ID's match
     $id = mysqli_real_escape_string($connect,trim($_POST['id']));
     $sql = "SELECT * FROM users WHERE user_id=$id";
     $query = mysqli_query($connect,$sql);
     $result = mysqli_fetch_assoc($query);
-    //sending to the same page where the new email will be sent to the database
+    //form for changing the users information
     echo "<form method=\"post\" action=\"editUser.inc.php\">
             <input type=\"hidden\" name=\"id\" value=\"$id\"><br>
             <label>Name</label>
@@ -23,6 +23,7 @@ if(isset($_POST['update'])){
     exit();
 }
 elseif (isset($_POST['delete'])){
+    //deletes the user from the database where the ID's match
     $userID = $_POST['id'];
     $sql = "DELETE FROM users WHERE user_id = '$userID';";
     $query = mysqli_query ($connect,$sql);
@@ -33,6 +34,7 @@ elseif (isset($_POST['delete'])){
     header ("Location: ../../admin.php?error=success#customers");
     exit();
 }elseif(isset($_POST['submit'])){
+    //inserts the new information into the database
     foreach ($_POST as $key => $value){
         ${$key} = mysqli_real_escape_string ($connect,trim($value));
     }

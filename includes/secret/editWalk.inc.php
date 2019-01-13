@@ -1,7 +1,8 @@
 <?php
 require "../database.inc.php";
 if(isset($_POST['update'])){
-    $id = $_POST['id'];
+    $id = mysqli_real_escape_string ($connect,$_POST['id']);
+    //form for changing walk details
     ?>
         <form action="editWalk.inc.php" method="post">
             <input type="hidden" name="id" value="<?=$id?>">
@@ -32,7 +33,7 @@ if(isset($_POST['update'])){
         </form>
 <?php
 }elseif ($_POST['delete']){
-
+    //deleting the walk from the database where the ID's match
     $id = $_POST['id'];
     $sql = "DELETE FROM walks WHERE user_fk = $id;";
     $query = mysqli_query ($connect,$sql);
@@ -47,6 +48,7 @@ if(isset($_POST['update'])){
     foreach ($_POST as $key => $value){
         ${$key} = mysqli_real_escape_string ($connect,trim ($value));
     }
+    //inserting the new data into the database
     switch ($walk){
         case "oneTime":
             $dateTime = $date." ".$time;

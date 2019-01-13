@@ -1,9 +1,6 @@
-
 <?php
 require "includes/header.inc.php";
 ?>
-
-
 
 <div class="clearfix"></div>
 <!-- breadcrumb start -->

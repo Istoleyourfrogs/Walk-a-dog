@@ -1,12 +1,13 @@
 <?php
 require "../database.inc.php";
 if(isset($_POST['update'])){
-$id = $_POST['id'];
-$sqlDog = "SELECT * FROM dogs where owner_fk = $id ";
-$queryDog = mysqli_query ($connect,$sqlDog);
-$resultDog = mysqli_fetch_assoc ($queryDog);
+    //gets dog information from the database where the IDs match
+    $id = mysqli_real_escape_string ($connect,$_POST['id']);
+    $sqlDog = "SELECT * FROM dogs where owner_fk = $id;";
+    $queryDog = mysqli_query ($connect,$sqlDog);
+    $resultDog = mysqli_fetch_assoc ($queryDog);
 ?>
-
+<!-- form for changing the dogs information -->
 <form action="editDog.inc.php" method="post">
     <input type="hidden" name="id" value="<?=$id?>">
     <label>Name</label>
@@ -36,6 +37,7 @@ $resultDog = mysqli_fetch_assoc ($queryDog);
 </form>
 <script src="../../js/jquery-3.2.1.min.js"></script>
 <script>
+    //checking checkbox values
     $(document).ready(function () {
         //checks the checkbox if it has the value of 1
         $('.custom-checkbox').each(function () {
@@ -48,7 +50,8 @@ $resultDog = mysqli_fetch_assoc ($queryDog);
 </script>
 <?php
 }elseif (isset($_POST['delete'])){
-    $id = $_POST['id'];
+    //deletes the dog from the database where the owner id's match
+    $id = mysqli_real_escape_string ($connect,$_POST['id']);
     $sql = "DELETE FROM dogs WHERE owner_fk = $id";
     $query = mysqli_query ($connect,$sql);
     if(!$query){
@@ -59,6 +62,7 @@ $resultDog = mysqli_fetch_assoc ($queryDog);
     exit();
 
 }elseif(isset($_POST['submit'])){
+    //updates the dogs information based on the form above
     foreach ($_POST as $key => $value) {
         ${$key} = mysqli_real_escape_string ($connect,$value);
     }

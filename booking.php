@@ -1,5 +1,6 @@
 <?php
 require "includes/header.inc.php";
+incl
 ?>
 
 <div class="clearfix"></div>
