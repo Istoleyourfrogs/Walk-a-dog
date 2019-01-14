@@ -379,7 +379,7 @@ require "includes/header.inc.php";
             <div class="row">
                 <div class="sec-title text-center">
                     <h2>Booking</h2>
-                    <p>
+                    <p class="fw-600">
                         <?php
                         //error displaying for the booking form
                         if(isset($_GET['error'])){
@@ -459,7 +459,7 @@ require "includes/header.inc.php";
                                 <div class="col-sm-2 none" walk="time">
                                     <div class="form-group">
                                         <label for="time">*Time of walk:</label>
-                                        <input id="time" class="form-control" type="time" name="time" min="09:00:00" max="16:00:00">
+                                        <input id="time" class="form-control" type="time" name="time" min="09:00:00" max="21:00:00">
                                     </div>
                                 </div>
                                 <div class="col-sm-10 none" walk="day">

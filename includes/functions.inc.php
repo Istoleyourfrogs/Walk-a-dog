@@ -75,7 +75,7 @@ function dogValidation($connect,$dogName,$dogYear,$dogMonth,$dogBreed,$dogVaccin
         header("Location: ../index.php?error=fatal#booking");
         exit();
     }
-    if(!preg_match("/^[a-zA-Z0-9\.!?,@#:&%+$*:_'\-\(\)\s]*$/",$dogOther)){
+    if(!preg_match("/^[a-zA-Z0-9\.!?,@#:&%+$*:_\-\(\)\s]*$/",$dogOther)){
         header("Location: ../index.php?error=other#booking");
         exit();
     }
