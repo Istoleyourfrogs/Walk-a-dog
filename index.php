@@ -67,7 +67,7 @@ require "includes/header.inc.php";
                             <div class="video-overlay"></div>
                             <h2>watch video</h2>
                             <div class="playbtn">
-                                <a class="video-popup" href="https://www.youtube.com/watch?v=UXxY1ffr3ZE"><span></span></a>
+                                <a class="video-popup" href="https://www.youtube.com/watch?v=ETqBcNDtkBA&feature=youtu.be"><span></span></a>
                             </div>
                         </div>
                     </div>
