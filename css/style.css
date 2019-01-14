@@ -125,10 +125,7 @@ textarea {
     outline: none;
     font-size: 13px;
 }
-.newsletter_label{
-    font-size:20px;
-    color:#ec368d;
-}
+
 
 input.formInline {
     padding: 0 40px;
@@ -339,6 +336,14 @@ footer .newsletter-form .form-group button[type="submit"],
     background-color: #ffa5a5;
     color:#fff;
 
+}
+.newsletter_label{
+    font-size:20px;
+    color:#ec368d;
+}
+.newsletter-error{
+    font-weight: 700;
+    font-size: 18px;
 }
 .colored_input{
     color:#ec368d;
@@ -2031,13 +2036,6 @@ about-section-panel{
 .price-content .price-content-cost {
     padding: 30px 0;
 }
-.newsletter-error{
-    font-weight: 700;
-    font-size: 18px;
-}
-.contact-error{
-    font-weight: 600;
-}
 
 .price-content .price-content-cost-inner {
     display: -webkit-box;
@@ -2231,6 +2229,9 @@ about-section-panel{
     margin-top: 20px;
     float: left;
 }
+.contact-error{
+    font-weight: 600;
+}
 
 
 /******************contactpage media screen******************/
@@ -2300,7 +2301,7 @@ about-section-panel{
 
 
 
-/******************bizface errorpage media screen******************/
+/****************** errorpage media screen******************/
 
 @media only screen and (min-width: 280px) and (max-width: 767px) {
     .errorpage {
