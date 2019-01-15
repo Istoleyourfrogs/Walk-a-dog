@@ -1,9 +1,5 @@
 <?php
 //database variables
-<<<<<<< HEAD
-=======
-
->>>>>>> 937af662c60c3ca12afab86faf9e50cf3b84c140
 /*
 $database= "169.254.0.2:3306";
 $user="spolnici_linolada";
