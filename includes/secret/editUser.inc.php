@@ -21,7 +21,9 @@ if(isset($_POST['update']) and isset($_SESSION['username'])){
             <input type=\"text\" name=\"address\" value=\"{$result['address']}\"><br>
             <label>Free walk</label>
             <input type=\"checkbox\" name=\"status\" value=\"1\"> 
-            <button type=\"submit\" name=\"submit\">Update</button>";
+            <button type=\"submit\" name=\"submit\">Update</button>
+          </form>
+    ";
     exit();
 }
 elseif (isset($_POST['delete']) and isset($_SESSION['username'])){

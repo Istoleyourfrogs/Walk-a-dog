@@ -454,45 +454,7 @@ require "includes/functions.inc.php";
         </div>
 
 <script src="js/jquery-3.2.1.min.js"></script>
-<script>
-    $(document).ready(function () {
-        //sets variables for each section and sets them to hidden
-        var btnNewsletter = $('#btnNewsletter');
-        var btnReviews = $('#btnReviews');
-        var btnCustomers = $('#btnCustomers');
-        var btnWalks = $('#btnWalks');
-        var btnDogs = $('#btnDogs');
-        var btnReviewCode = $('#btnReviewCode');
-        $('#newsletter').hide();
-        $('#reviews').hide();
-        $('#customers').hide();
-        $('#walks').hide();
-        $('#dogs').hide();
-        $('#review-code').hide();
-
-        //toggles visibility of each section in admin panel
-        btnNewsletter.click(function () {
-            $('#newsletter').toggle();
-        });
-        btnReviews.click(function () {
-            $('#reviews').toggle();
-        });
-        btnCustomers.click(function () {
-            $('#customers').toggle();
-        });
-        btnWalks.click(function () {
-            $('#walks').toggle();
-        });
-        btnDogs.click(function () {
-            $('#dogs').toggle();
-        });
-        btnReviewCode.click(function () {
-            $('#review-code').toggle();
-        });
-        $('meta[name="robots"]').remove();
-        $('head').append('<meta name="robots" content="noindex,nofollow">');
-    })
-</script>
+<script src="js/admin.js"></script>
 </body>
 </html>
 

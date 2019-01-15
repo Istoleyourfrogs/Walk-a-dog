@@ -61,15 +61,6 @@ require "includes/functions.inc.php";
     </div>
 </div>
 
-
-
-        </div>
-    </div>
-
-</div>
-
-
-
 <!-- js library start -->
 <script  src="js/jquery-3.2.1.min.js"></script>
 <script  src="js/bootstrap.min.js"></script>

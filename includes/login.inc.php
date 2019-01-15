@@ -13,7 +13,7 @@ if(isset($_POST['submit'])){
     if(empty($username) or empty($password)){
             header("Location: ../admin.php?login=empty");
             exit();
-        }
+    }
     //checks if only numbers and letters are entered
     if(!preg_match("/^[a-zA-Z0-9]*$/", $username) or !preg_match("/^[a-zA-Z0-9]*$/", $password)){
         header("Location: ../admin.php?login=error");

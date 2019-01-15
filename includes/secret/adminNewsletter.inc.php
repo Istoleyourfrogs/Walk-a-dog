@@ -2,7 +2,7 @@
 require "../database.inc.php";
 session_start();
 
-if(isset($_POST['submit']) and isset($_SESSION['username']) {
+if(isset($_POST['submit']) and isset($_SESSION['username'])){
     //setting all variables from the newsletter form
     $mailFrom = mysqli_real_escape_string($connect,trim($_POST['email']));
     $hashedMail = md5($mailFrom);

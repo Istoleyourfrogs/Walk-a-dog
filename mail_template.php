@@ -1,7 +1,5 @@
 <?php
-$mailTemplate = "<!-- THIS EMAIL WAS BUILT AND TESTED WITH LITMUS http://litmus.com -->
-<!-- IT WAS RELEASED UNDER THE MIT LICENSE https://opensource.org/licenses/MIT -->
-<!-- QUESTIONS? TWEET US @LITMUSAPP -->
+$mailTemplate = "
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +7,6 @@ $mailTemplate = "<!-- THIS EMAIL WAS BUILT AND TESTED WITH LITMUS http://litmus.
     <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
     <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />
-    <!--<link rel=\"stylesheet\" href=\"css/style.css\">-->
     <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Kalam:400,700\">
     <style type=\"text/css\">
 
@@ -112,46 +109,7 @@ $mailTemplate = "<!-- THIS EMAIL WAS BUILT AND TESTED WITH LITMUS http://litmus.
                 <tr>
                     <td><br></td>
                 </tr>
-                <!-- BULLETPROOF BUTTON - ovo nije potrebno kod newsletter mail-a
-                <tr>
-                    <td bgcolor=\"#ffffff\" align=\"left\">
-                        <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">
-                            <tr>
-                                <td bgcolor=\"#ffffff\" align=\"center\" style=\"padding: 20px 30px 60px 30px;\">
-                                    <table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">
-                                        <tr>
-                                            <td align=\"center\" style=\"border-radius: 3px;\" bgcolor=\"#FFA73B\"><a href=\"https://litmus.com\" target=\"_blank\" style=\"font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 2px; border: 1px solid #FFA73B; display: inline-block;\">Confirm Account</a></td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>-->
-                <!-- COPY
-                <tr>
-                    <td bgcolor=\"#ffffff\" align=\"left\" style=\"padding: 0px 30px 0px 30px; color: #666666;   font-size: 18px; font-weight: 400; line-height: 25px;\" >
-                        <p style=\"margin: 0;\">If that doesn't work, copy and paste the following link in your browser:</p>
-                    </td>
-                </tr>
-                <!-- COPY
-                <tr>
-                    <td bgcolor=\"#ffffff\" align=\"left\" style=\"padding: 20px 30px 20px 30px; color: #666666;   font-size: 18px; font-weight: 400; line-height: 25px;\" >
-                        <p style=\"margin: 0;\"><a href=\"http://litmus.com\" target=\"_blank\" style=\"color: #FFA73B;\">XXX.XXXXXXX.XXX/XXXXXXXXXXXXX</a></p>
-                    </td>
-                </tr>
-                <!-- COPY
-                <tr>
-                    <td bgcolor=\"#ffffff\" align=\"left\" style=\"padding: 0px 30px 20px 30px; color: #666666;   font-size: 18px; font-weight: 400; line-height: 25px;\" >
-                        <p style=\"margin: 0;\">If you have any questions, just reply to this email—we're always happy to help out.</p>
-                    </td>
-                </tr>
-                <!-- COPY
-                <tr>
-                    <td bgcolor=\"#ffffff\" align=\"left\" style=\"padding: 0px 30px 40px 30px; border-radius: 0px 0px 4px 4px; color: #666666;   font-size: 18px; font-weight: 400; line-height: 25px;\" >
-                        <p style=\"margin: 0;\">Cheers,<br>The Ceej Team</p>
-                    </td>
-                </tr>-->
+           
             </table>
             <!--[if (gte mso 9)|(IE)]>
             </td>

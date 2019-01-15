@@ -10,11 +10,11 @@ if(isset($_POST['submit'])) {
     //validation("/^[0-9]{10}$/",$code,0,"error=notValidCode");
     if(!preg_match("/^[0-9]{10}$/",$code)){
         header("Location: ../review.php?error=badFormat");
-        eixt();
+        exit();
     }
     if(!preg_match("/^[a-zA-Z0-9\.!?,@#:&%+$*:_\-\(\)\s]*$/",$comment) or strlen($comment) > 100){
         header("Location: ../review.php?error=badFormat");
-        eixt();
+        exit();
     }
 
     //checks if the code is valid

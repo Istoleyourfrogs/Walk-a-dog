@@ -13,7 +13,9 @@ if(isset($_POST['update']) and isset($_SESSION['username'])){
         echo "<form method='post' action='editMail.inc.php'>
                 <input type='hidden' name='id' value='$id'>
                 <input type='text' name='mail' value='{$result['mail']}'>
-                <button type='submit' name='submit'>Update</button>";
+                <button type='submit' name='submit'>Update</button>
+              </form>
+        ";
     exit();
 }elseif(isset($_POST['delete']) and isset($_SESSION['username'])){
     //if the form has been submitted bt the delete button

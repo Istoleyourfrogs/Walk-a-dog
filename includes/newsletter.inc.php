@@ -17,11 +17,11 @@ if(isset($_POST['submit'])) {
 
     $location = $_POST['formLocation'];
 
-    if($location=='section'){
+    if($location =='section'){
         $locationPoint = "newsletter_anchor";
         mailValidation($empty,$mailFrom,$mailCheck,$locationPoint);
     }
-    elseif ($location=='footer') {
+    elseif ($location =='footer') {
         $locationPoint = "newsletter";
         mailValidation($empty,$mailFrom,$mailCheck,$locationPoint);
     }

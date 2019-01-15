@@ -18,8 +18,6 @@ require "includes/header.inc.php";
         <div class="container">
             <div class="errorpage">
                 <strong>Newsletter</strong> <br />
-
-
             <?php
                 require "includes/database.inc.php";
                 if(isset($_GET['key'])){

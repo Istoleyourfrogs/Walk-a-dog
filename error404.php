@@ -26,12 +26,9 @@ require "includes/header.inc.php";
                 <br />
                 <a href="index.php" class="btn btn-primary"> Go Back</a> </div>
             <!-- end error page notfound -->
-
         </div>
     </div>
-
 </div>
-
 
 
 <!-- js library start -->
