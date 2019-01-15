@@ -82,7 +82,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-sm-6">
-                <div class="text text-left">Copyrights &copy; <a href="#">Linolada</a>. All Rights Reserved</div>
+                <div class="text text-left">Copyrights &copy; <a href="#">Linolada <?= date("Y") ?></a>. All Rights Reserved</div>
             </div>
             <div class="col-md-6 col-sm-6">
                 <ul class="social-links text-right">
