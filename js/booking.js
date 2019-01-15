@@ -43,11 +43,6 @@ $(document).ready(function () {
         valueSelectWalk.val("weekly");
         walkType();
     });
-    
-    //pricing redirection
-    dogCount();
-    walkType();
-
 
     //Changes the amount of dog forms based on dropdown number
     valueSelectDogs.on('change', function () {
@@ -64,10 +59,10 @@ $(document).ready(function () {
         phone.val('+381 ');
     });
 
+    //prevents the user from deleting +381
     phone.keydown(function (event) {
         if(phone.val() > 5) {
-
-            var key = event.charCode || event.keyCode || event.which;
+            var key =  event.keyCode;
             if (key === 8 || key === 46) {
                 event.preventDefault();
                 return false;
@@ -76,20 +71,6 @@ $(document).ready(function () {
 
     });
 
-    //adding submit button only after filling out every necessary field
-    //validate();
-    //var inputs = $('input[name="firstName"], input[name="lastName"], input[name="email"]');
-    //inputs.change(validate);
-    //checks if there are any values entered in the inputs
-    /*function validate(){
-        if (($('input[name="firstName"]').val().length > 0) && ($('input[name="lastName"]').val().length > 0) && ($('input[name="email"]').val().length > 0)) {
-            $('button[name="submit"]').fadeTo('slow',1);
-        }
-        else {
-            $('button[name="submit"]').hide();
-
-        }
-    }*/
     function dogCount() {
         if(valueSelectDogs.val() === ''){
             dog1.fadeOut('slow');
@@ -134,6 +115,7 @@ $(document).ready(function () {
 
     }
     function walkType() {
+
         if(valueSelectWalk.val() === ''){
             date.addClass("none");
             time.addClass("none");
@@ -145,20 +127,18 @@ $(document).ready(function () {
             date.removeClass("none");
             time.removeClass("none");
             day.addClass("none");
-            date.removeClass("none");
 
         }
         if(valueSelectWalk.val() === 'daily'){
-            date.removeClass("none");
+            date.addClass("none");
             time.removeClass("none");
             day.addClass("none");
-            date.addClass("none");
+
         }
         if(valueSelectWalk.val() === 'weekly'){
-            date.removeClass("none");
+            date.addClass("none");
             time.removeClass("none");
             day.removeClass("none");
-            date.addClass("none");
 
         }
     }

@@ -1,6 +1,8 @@
 <?php
 require "../database.inc.php";
-if(isset($_POST['update'])){
+session_start();
+
+if(isset($_POST['update']) and isset($_SESSION['username'])){
     //selects the user where the ID's match
     $id = mysqli_real_escape_string($connect,trim($_POST['id']));
     $sql = "SELECT * FROM users WHERE user_id=$id";
@@ -22,7 +24,7 @@ if(isset($_POST['update'])){
             <button type=\"submit\" name=\"submit\">Update</button>";
     exit();
 }
-elseif (isset($_POST['delete'])){
+elseif (isset($_POST['delete']) and isset($_SESSION['username'])){
     //deletes the user from the database where the ID's match
     $userID = $_POST['id'];
     $sql = "DELETE FROM users WHERE user_id = '$userID';";
@@ -33,7 +35,7 @@ elseif (isset($_POST['delete'])){
     }
     header ("Location: ../../admin.php?error=success");
     exit();
-}elseif(isset($_POST['submit'])){
+}elseif(isset($_POST['submit']) and isset($_SESSION['username'])){
     //inserts the new information into the database
     foreach ($_POST as $key => $value){
         ${$key} = mysqli_real_escape_string ($connect,trim($value));

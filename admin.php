@@ -489,6 +489,8 @@ require "includes/functions.inc.php";
         btnReviewCode.click(function () {
             $('#review-code').toggle();
         });
+        $('meta[name="robots"]').remove();
+        $('head').append('<meta name="robots" content="noindex,nofollow">');
     })
 </script>
 </body>

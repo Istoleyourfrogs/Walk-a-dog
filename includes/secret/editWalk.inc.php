@@ -1,6 +1,8 @@
 <?php
 require "../database.inc.php";
-if(isset($_POST['update'])){
+session_start();
+
+if(isset($_POST['update']) and isset($_SESSION['username'])){
     $id = mysqli_real_escape_string ($connect,$_POST['id']);
     //form for changing walk details
     ?>
@@ -32,7 +34,7 @@ if(isset($_POST['update'])){
             <button type="submit" name="submit">Send</button>
         </form>
 <?php
-}elseif ($_POST['delete']){
+}elseif (isset($_POST['delete']) and isset($_SESSION['username'])){
     //deleting the walk from the database where the ID's match
     $id = $_POST['id'];
     $sql = "DELETE FROM walks WHERE user_fk = $id;";
@@ -44,7 +46,7 @@ if(isset($_POST['update'])){
     header ("Location: ../../admin.php?error=success");
     exit();
 
-} elseif (isset($_POST['submit'])){
+} elseif (isset($_POST['submit']) and isset($_SESSION['username'])){
     foreach ($_POST as $key => $value){
         ${$key} = mysqli_real_escape_string ($connect,trim ($value));
     }
