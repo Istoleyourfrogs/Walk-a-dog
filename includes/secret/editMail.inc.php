@@ -1,7 +1,9 @@
 <?php
 require "../database.inc.php";
 //if the form has been submitted by the update button
-if(isset($_POST['update'])){
+session_start();
+
+if(isset($_POST['update']) and isset($_SESSION['username'])){
     //enterer and a new email adress
     $id = mysqli_real_escape_string($connect,trim($_POST['id']));
     $sql = "SELECT * FROM newsletter WHERE id=$id";
@@ -13,7 +15,7 @@ if(isset($_POST['update'])){
                 <input type='text' name='mail' value='{$result['mail']}'>
                 <button type='submit' name='submit'>Update</button>";
     exit();
-}elseif(isset($_POST['delete'])){
+}elseif(isset($_POST['delete']) and isset($_SESSION['username'])){
     //if the form has been submitted bt the delete button
     $delete = $_POST['delete'];
     $id = mysqli_real_escape_string($connect,trim($_POST['id']));
@@ -26,7 +28,7 @@ if(isset($_POST['update'])){
     }
     header("Location: ../../admin.php?error=error");
     exit();
-}elseif(isset($_POST['submit'])){
+}elseif(isset($_POST['submit']) and isset($_SESSION['username'])){
     //updating the newsletter from the form above
     $id = mysqli_real_escape_string($connect,trim($_POST['id']));
     $mail = mysqli_real_escape_string($connect,trim($_POST['mail']));

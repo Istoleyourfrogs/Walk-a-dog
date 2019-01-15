@@ -1,6 +1,8 @@
 <?php
 require "../database.inc.php";
-if(isset($_POST['submit'])) {
+session_start();
+
+if(isset($_POST['submit']) and isset($_SESSION['username'])) {
     $code = mysqli_real_escape_string ($connect,trim($_POST['code']));
     $email = mysqli_real_escape_string ($connect,trim($_POST['email']));
     $txt = $code;

@@ -2,6 +2,7 @@
 //starts the session for the admin
 include "database.inc.php";
 session_start();
+
 if(isset($_POST['submit'])){
     //gets the username and password from the admin form
     foreach ($_POST as $key => $value){

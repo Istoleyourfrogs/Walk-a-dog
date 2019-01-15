@@ -1,6 +1,8 @@
 <?php
 require "../database.inc.php";
-if(isset($_POST['submit'])) {
+session_start();
+
+if(isset($_POST['submit']) and isset($_SESSION['username'])) {
     $comment = mysqli_real_escape_string ($connect,trim ($_POST['comment']));
     $subject =mysqli_real_escape_string ($connect,trim($_POST['subject']));
 

@@ -1,6 +1,8 @@
 <?php
 require "../database.inc.php";
-if(isset($_POST['update'])){
+session_start();
+
+if(isset($_POST['update']) and isset($_SESSION['username'])){
     //gets dog information from the database where the IDs match
     $id = mysqli_real_escape_string ($connect,$_POST['id']);
     $sqlDog = "SELECT * FROM dogs where owner_fk = $id;";
@@ -49,7 +51,7 @@ if(isset($_POST['update'])){
     })
 </script>
 <?php
-}elseif (isset($_POST['delete'])){
+}elseif (isset($_POST['delete']) and isset($_SESSION['username'])){
     //deletes the dog from the database where the owner id's match
     $id = mysqli_real_escape_string ($connect,$_POST['id']);
     $sql = "DELETE FROM dogs WHERE owner_fk = $id";
@@ -61,7 +63,7 @@ if(isset($_POST['update'])){
     header ("Location: ../../admin.php?error=success");
     exit();
 
-}elseif(isset($_POST['submit'])){
+}elseif(isset($_POST['submit']) and isset($_SESSION['username'])){
     //updates the dogs information based on the form above
     foreach ($_POST as $key => $value) {
         ${$key} = mysqli_real_escape_string ($connect,$value);
